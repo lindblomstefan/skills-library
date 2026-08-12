@@ -1,0 +1,20 @@
+decision_outcomes:
+  - id: adopt
+    label: Adopt
+    description: Use an external skill or method as-is.
+  - id: adapt
+    label: Adapt
+    description: Create a company-specific wrapper or version.
+  - id: build
+    label: Build
+    description: Create a new internal skill.
+  - id: defer
+    label: Defer
+    description: Useful, but not now.
+  - id: reject
+    label: Reject
+    description: Not useful, not trusted, duplicated, or too costly.
+  - id: replace
+    label: Replace
+    description: Supersede an existing skill with a better option.
+

@@ -1,0 +1,14 @@
+review_cadences:
+  - id: weekly
+    label: Weekly
+  - id: monthly
+    label: Monthly
+  - id: quarterly
+    label: Quarterly
+  - id: semiannual
+    label: Semiannual
+  - id: annual
+    label: Annual
+  - id: event-driven
+    label: Event driven
+

@@ -1,0 +1,12 @@
+risk_levels:
+  - id: low
+    label: Low
+  - id: medium
+    label: Medium
+  - id: high
+    label: High
+  - id: blocking
+    label: Blocking
+  - id: unknown
+    label: Unknown
+

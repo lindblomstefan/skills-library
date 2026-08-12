@@ -42,3 +42,25 @@ Treat it as:
 
 Do not assume a skill is Hermes-compatible just because it is model-agnostic. Evaluate install path, skill format, invocation behavior, permissions, and expected outputs.
 
+## Compatibility Matrix
+
+Every skill should use a compatibility matrix for evidence-backed routing:
+
+```yaml
+compatibility:
+  matrix:
+    - model_id: codex
+      runtime_id: codex-cli
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: ""
+      evidence: []
+      known_gaps: []
+```
+
+Runtimes may also be listed as summary entries, but routing should prefer matrix rows when available.

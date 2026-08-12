@@ -69,5 +69,7 @@ The MVP focus is the structure that lets the library work:
 - router-ready metadata
 - new skill onboarding
 - usage and feedback data for future metrics
+- governance gates and privacy boundaries
+- evaluation runs linked to golden tasks
 
 Do not add skills to the catalog until the first manifest structure has been reviewed.

@@ -2,6 +2,7 @@
   "task": "review a frontend pull request",
   "model": "codex",
   "runtime": "codex-cli",
+  "mode": "standard",
   "context": {
     "domain": "ui-ux",
     "sensitivity": "unknown"
@@ -10,9 +11,51 @@
     {
       "skill_id": "example-skill",
       "priority": 1,
-      "confidence": "unknown",
+      "confidence": "exploratory",
+      "score": 0,
+      "score_factors": {
+        "compatibility": "unknown",
+        "status": "candidate",
+        "trust": "unknown",
+        "risk": "unknown",
+        "freshness": "unknown",
+        "evidence": "missing"
+      },
+      "eligibility": {
+        "status": "candidate",
+        "human_review_required": true,
+        "blocking_risks": []
+      },
+      "matched_use_when": [],
+      "matched_do_not_use_when": [],
+      "compatibility": {
+        "model": "codex",
+        "runtime": "codex-cli",
+        "support": "unknown",
+        "evidence": []
+      },
+      "trust": {
+        "level": "unknown",
+        "license_state": "unknown"
+      },
+      "risk": {
+        "level": "unknown",
+        "blocking_risks": []
+      },
+      "freshness": {
+        "review_state": "unknown",
+        "next_review": null
+      },
+      "install": {
+        "command": ""
+      },
+      "invoke": {
+        "command": ""
+      },
       "reason": "Explain why this skill fits the task and runtime.",
-      "conditions": []
+      "conditions": [],
+      "evidence": [],
+      "alternatives": []
     }
   ],
   "not_recommended": [
@@ -25,6 +68,10 @@
     {
       "gap": "No approved skill exists for this task/runtime combination."
     }
-  ]
+  ],
+  "audit": {
+    "recommendation_id": "example-recommendation",
+    "catalog_version": "unknown",
+    "router_version": "unknown"
+  }
 }
-

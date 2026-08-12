@@ -1,0 +1,10 @@
+trust_levels:
+  - id: high
+    label: High
+  - id: medium
+    label: Medium
+  - id: low
+    label: Low
+  - id: unknown
+    label: Unknown
+

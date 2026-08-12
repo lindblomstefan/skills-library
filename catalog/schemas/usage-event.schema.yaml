@@ -8,6 +8,7 @@ required:
   - model
   - runtime
   - task_type
+  - catalog_version
 
 fields:
   event_id:
@@ -22,6 +23,18 @@ fields:
   pack_id:
     type: string
     description: Pack identifier, if relevant.
+  recommendation_id:
+    type: string
+    description: Router recommendation id that produced or influenced this event.
+  session_id:
+    type: string
+    description: Pseudonymous session id, if collected.
+  catalog_version:
+    type: string
+    description: Catalog version or commit sha used.
+  router_version:
+    type: string
+    description: Router version used.
   event_type:
     type: enum
     values:
@@ -47,7 +60,18 @@ fields:
   outcome:
     type: string
     description: Optional result summary.
+  rank:
+    type: integer
+    description: Recommendation rank shown to the user or agent.
+  selected:
+    type: boolean
+    description: Whether this recommendation was selected.
+  presented_alternatives:
+    type: list
+    description: Other skill ids shown in the same recommendation set.
+  privacy:
+    type: object
+    description: Sensitivity, redaction status, retention, and no-prompt/no-code/no-secret constraints.
   metadata:
     type: object
-    description: Non-sensitive contextual metadata.
-
+    description: Non-sensitive contextual metadata from an allowlist only.

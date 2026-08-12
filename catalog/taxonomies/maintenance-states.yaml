@@ -1,0 +1,12 @@
+maintenance_states:
+  - id: active
+    label: Active
+  - id: slow
+    label: Slow
+  - id: abandoned
+    label: Abandoned
+  - id: internal-owned
+    label: Internal owned
+  - id: unknown
+    label: Unknown
+

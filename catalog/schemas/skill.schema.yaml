@@ -75,7 +75,7 @@ fields:
     description: Negative routing guidance.
   compatibility:
     type: object
-    description: Model and runtime support matrix.
+    description: Model and runtime support matrix with evidence for each tested combination.
   distribution:
     type: object
     description: How the skill is installed, invoked, linked, or consumed.
@@ -97,6 +97,9 @@ fields:
   relationships:
     type: object
     description: Links to related skills using controlled relationship types.
+  metrics_readiness:
+    type: object
+    description: Which usage, recommendation, install, and feedback metrics can be captured.
   known_limitations:
     type: list
     description: Known weaknesses, assumptions, or caution areas.

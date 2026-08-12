@@ -8,6 +8,7 @@ required:
   - model
   - runtime
   - task_type
+  - catalog_version
 
 fields:
   feedback_id:
@@ -22,6 +23,18 @@ fields:
   pack_id:
     type: string
     description: Pack identifier, if relevant.
+  recommendation_id:
+    type: string
+    description: Router recommendation id, if feedback relates to a recommendation.
+  session_id:
+    type: string
+    description: Pseudonymous session id, if collected.
+  catalog_version:
+    type: string
+    description: Catalog version or commit sha used.
+  router_version:
+    type: string
+    description: Router version used.
   signal:
     type: enum
     values:
@@ -56,8 +69,10 @@ fields:
     description: Impact of the feedback.
   notes:
     type: string
-    description: Optional free-text notes.
+    description: Optional redacted notes. Do not store prompts, source code, secrets, personal data, or customer data.
+  privacy:
+    type: object
+    description: Sensitivity, redaction status, retention, and actor/team pseudonymization.
   created_issue:
     type: string
     description: Link to generated issue, if one was created.
-

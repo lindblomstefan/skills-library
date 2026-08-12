@@ -1,0 +1,62 @@
+schema: evaluation-run
+version: 0.1
+required:
+  - id
+  - skill_id
+  - golden_task_id
+  - model
+  - runtime
+  - evaluator
+  - outcome
+  - scores
+  - evidence
+
+fields:
+  id:
+    type: string
+    description: Stable evaluation run id.
+  skill_id:
+    type: string
+    description: Skill being evaluated.
+  golden_task_id:
+    type: string
+    description: Golden task used for the evaluation.
+  model:
+    type: string
+    description: Model or model family used.
+  runtime:
+    type: string
+    description: Runtime or agent environment used.
+  model_version:
+    type: string
+    description: Specific model version when known.
+  runtime_version:
+    type: string
+    description: Specific runtime version when known.
+  evaluator:
+    type: string
+    description: Person, team, or agent that ran the evaluation.
+  occurred_at:
+    type: datetime
+    description: Evaluation date/time.
+  outcome:
+    type: enum
+    values:
+      - pass
+      - partial
+      - fail
+      - blocked
+      - inconclusive
+  scores:
+    type: object
+    description: Utility, routing, safety, maintenance, and compatibility scores.
+  evidence:
+    type: object
+    description: Transcript, output, artifact, notes, and issue links.
+  compatibility_result:
+    type: object
+    description: Install, invoke, adapter, permission, and known-gap results for this runtime/model pair.
+  approval_impact:
+    type: object
+    description: Whether this run changes recommendation, compatibility, trust, or status.
+

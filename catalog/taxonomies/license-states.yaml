@@ -1,0 +1,12 @@
+license_states:
+  - id: clear
+    label: Clear
+  - id: needs-review
+    label: Needs review
+  - id: restricted
+    label: Restricted
+  - id: blocked
+    label: Blocked
+  - id: unknown
+    label: Unknown
+

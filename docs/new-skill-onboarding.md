@@ -80,6 +80,8 @@ Use `unknown`, `not-applicable`, or `needs-review` when the answer is not known 
 - compatibility support level
 - native, compatible, adapted, partial, unknown, or unsupported
 - model/runtime notes
+- model/runtime matrix evidence
+- install and invoke result per runtime
 
 ### Distribution
 
@@ -105,6 +107,7 @@ Use `unknown`, `not-applicable`, or `needs-review` when the answer is not known 
 ### Evaluation
 
 - golden tasks tested
+- evaluation runs
 - observed strengths
 - observed failures
 - reviewer

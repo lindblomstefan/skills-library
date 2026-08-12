@@ -10,11 +10,13 @@ The library should define how skills are represented before any specific skill b
 - `catalog/schemas/pack.schema.yaml`
 - `catalog/schemas/router-entry.schema.yaml`
 - `catalog/schemas/golden-task.schema.yaml`
+- `catalog/schemas/evaluation-run.schema.yaml`
 - `catalog/schemas/usage-event.schema.yaml`
 - `catalog/schemas/feedback-event.schema.yaml`
 - `catalog/templates/skill.yaml`
 - `catalog/templates/pack.yaml`
 - `catalog/templates/golden-task.yaml`
+- `catalog/templates/evaluation-run.yaml`
 - `catalog/taxonomies/*.yaml`
 - `.github/ISSUE_TEMPLATE/new-skill-onboarding.yml`
 - `router/examples/recommendation.example.json`
@@ -31,7 +33,15 @@ Only add a real skill manifest after these questions are answered:
 - What evidence is required before a skill moves from `candidate` to `approved`?
 - What usage and feedback events should be captured for future metrics?
 - What golden tasks should be used to evaluate skills?
+- What evaluation-run evidence is required before approval?
 - What router output shape should consumers depend on?
+
+## Governance And Metrics
+
+See:
+
+- `docs/governance-gates.md`
+- `docs/privacy-metrics.md`
 
 ## Graphify
 

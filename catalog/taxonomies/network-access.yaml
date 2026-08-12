@@ -1,0 +1,10 @@
+network_access:
+  - id: none
+    label: None
+  - id: optional
+    label: Optional
+  - id: required
+    label: Required
+  - id: unknown
+    label: Unknown
+

@@ -2,9 +2,14 @@
   "task": "",
   "model": "",
   "runtime": "",
+  "mode": "standard",
   "context": {},
   "recommended": [],
   "not_recommended": [],
-  "missing": []
+  "missing": [],
+  "audit": {
+    "recommendation_id": "",
+    "catalog_version": "",
+    "router_version": ""
+  }
 }
-

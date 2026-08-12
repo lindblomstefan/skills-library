@@ -14,9 +14,14 @@ source:
   type: external-repo
   url: https://example.com
   license: unknown
+  license_spdx: unknown
+  redistribution: unknown
+  modification_allowed: unknown
   maintainer: unknown
   version_or_commit: unknown
   documentation: unknown
+  dependencies: []
+  copied_assets: []
 
 domains:
   - planning
@@ -39,7 +44,25 @@ compatibility:
       support: unknown
       notes: Not evaluated.
   runtimes:
-    - codex-cli
+    - id: codex-cli
+      support: unknown
+      install_status: unknown
+      invoke_status: unknown
+      required_adapter: unknown
+      notes: Not evaluated.
+  matrix:
+    - model_id: codex
+      runtime_id: codex-cli
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: ""
+      evidence: []
+      known_gaps: []
   tags:
     - status:candidate
 
@@ -49,6 +72,8 @@ distribution:
     command: ""
   invoke:
     command: ""
+  generated_files: []
+  dependencies: []
   required_permissions: []
   required_secrets: []
   network_access: unknown
@@ -64,6 +89,9 @@ routing:
     - ""
   anti_examples:
     - ""
+  keywords: []
+  aliases: []
+  matched_patterns: []
 
 trust:
   level: unknown
@@ -76,6 +104,7 @@ risk:
   security: unknown
   privacy: unknown
   compliance: unknown
+  data_classification: unknown
   data_handling_notes: ""
 
 freshness:
@@ -83,6 +112,7 @@ freshness:
   last_reviewed: null
   next_review: null
   replacement_watch: false
+  deprecation_criteria: []
 
 decision:
   outcome: defer
@@ -99,5 +129,16 @@ relationships:
   overlaps_with: []
   specializes: []
   generalizes: []
+
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: false
+  known_metrics_gaps: []
 
 known_limitations: []

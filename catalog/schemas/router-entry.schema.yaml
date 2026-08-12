@@ -4,6 +4,7 @@ required:
   - task
   - model
   - runtime
+  - mode
   - recommended
 
 fields:
@@ -19,13 +20,22 @@ fields:
   context:
     type: object
     description: Optional project, domain, environment, sensitivity, or maturity context.
+  mode:
+    type: enum
+    values:
+      - standard
+      - exploratory
+      - evaluation
+    description: Standard mode should not recommend unknown-risk candidates as ready for use.
   recommended:
     type: list
-    description: Ranked skill recommendations with reasons.
+    description: Ranked skill recommendations with score, evidence, eligibility, and reasons.
   not_recommended:
     type: list
     description: Skills that may look relevant but should not be used in this context.
   missing:
     type: list
     description: Skill gaps discovered by the router.
-
+  audit:
+    type: object
+    description: Catalog version, router version, taxonomy versions, and generated recommendation id.

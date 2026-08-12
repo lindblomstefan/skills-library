@@ -10,6 +10,7 @@ Do not approve, recommend, or add a skill to a pack based only on a source link.
 evaluations/
   skill-id/
     2026-08-initial.md
+    evaluation-run.yaml
     test-results.json
 ```
 
@@ -22,3 +23,6 @@ evaluations/
 - `reject`: not useful, not trusted, duplicated, or too costly
 - `replace`: supersede with another skill
 
+## Evaluation Runs
+
+Use `catalog/templates/evaluation-run.yaml` for structured results tied to golden tasks. Free-form notes are useful, but approval decisions should reference structured evidence whenever possible.

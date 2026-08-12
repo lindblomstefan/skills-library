@@ -1,5 +1,5 @@
 name: Skill evaluation
-description: Evaluate whether a discovered skill should be adopted, adapted, built internally, deferred, or rejected.
+description: Evaluate whether a discovered skill should be adopted, adapted, built internally, deferred, rejected, or replaced.
 title: "[Evaluation]: "
 labels:
   - skill-evaluation
@@ -36,7 +36,7 @@ body:
       label: Evidence
       description: Test results, example outputs, pilots, usage notes, or comparisons.
     validations:
-      required: false
+      required: true
   - type: textarea
     id: risks
     attributes:
@@ -54,6 +54,7 @@ body:
         - build
         - defer
         - reject
+        - replace
     validations:
       required: true
   - type: textarea
@@ -63,4 +64,3 @@ body:
       description: What needs to happen after this evaluation?
     validations:
       required: true
-

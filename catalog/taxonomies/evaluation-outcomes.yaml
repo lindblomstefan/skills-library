@@ -1,0 +1,12 @@
+evaluation_outcomes:
+  - id: pass
+    label: Pass
+  - id: partial
+    label: Partial
+  - id: fail
+    label: Fail
+  - id: blocked
+    label: Blocked
+  - id: inconclusive
+    label: Inconclusive
+

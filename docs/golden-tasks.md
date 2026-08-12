@@ -41,5 +41,22 @@ Use:
 catalog/golden-tasks/
 catalog/templates/golden-task.yaml
 catalog/schemas/golden-task.schema.yaml
+catalog/templates/evaluation-run.yaml
+catalog/schemas/evaluation-run.schema.yaml
 ```
 
+## Evaluation Runs
+
+Golden task definitions should not store results directly. Store each run separately so the same task can be tested across skills, models, runtimes, and versions.
+
+Each evaluation run should capture:
+
+- skill id
+- golden task id
+- model and runtime
+- versions when known
+- evaluator
+- transcript or artifact links
+- utility, routing, safety, maintenance, and compatibility scores
+- pass, partial, fail, blocked, or inconclusive outcome
+- approval or compatibility impact

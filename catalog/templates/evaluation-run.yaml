@@ -1,0 +1,40 @@
+id: example-evaluation-run
+skill_id: example-skill
+golden_task_id: example-golden-task
+model: codex
+model_version: unknown
+runtime: codex-cli
+runtime_version: unknown
+evaluator: unassigned
+occurred_at: null
+
+outcome: inconclusive
+
+scores:
+  utility: unknown
+  routing_fit: unknown
+  safety: unknown
+  maintenance: unknown
+  compatibility: unknown
+
+evidence:
+  transcript: ""
+  artifacts: []
+  notes: ""
+  issue: ""
+
+compatibility_result:
+  support: unknown
+  install_result: unknown
+  invoke_result: unknown
+  adapter: unknown
+  permission_notes: ""
+  known_gaps: []
+
+approval_impact:
+  status_change: none
+  compatibility_change: none
+  trust_change: none
+  risk_change: none
+  recommendation_change: none
+

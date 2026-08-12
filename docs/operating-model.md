@@ -30,6 +30,7 @@ Every evaluation should end with one of these outcomes:
 - `build`: create a new internal skill
 - `defer`: useful, but not now
 - `reject`: not useful, not trusted, duplicated, or too costly
+- `replace`: supersede an existing skill with a better option
 
 ## Evaluation Criteria
 
@@ -57,12 +58,14 @@ Each adopted or internal skill should have:
 - Usage examples
 - Known limitations
 
-## Suggested Statuses
+## Canonical Statuses
 
-- `proposed`
+- `candidate`
 - `evaluating`
 - `approved`
 - `in-use`
-- `needs-update`
+- `needs-review`
 - `deprecated`
+- `rejected`
 
+Use these status values consistently in schemas, templates, issues, and router output. Do not introduce synonyms such as `proposed` or `needs-update` without updating the taxonomy first.
