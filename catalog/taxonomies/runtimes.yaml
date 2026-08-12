@@ -11,6 +11,8 @@ runtimes:
     label: Aider
   - id: gemini-cli
     label: Gemini CLI
+  - id: hermes-agent
+    label: Hermes Agent
+    notes: Nous Research Hermes Agent CLI/runtime. In scope because it is intentionally used and supports skills.
   - id: opencode
     label: OpenCode
-

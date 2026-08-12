@@ -4,6 +4,8 @@ New skill onboarding ensures that every candidate skill captures enough informat
 
 This workflow applies whether the information is filled in by a person, Codex, another LLM, or an automated importer.
 
+This workflow should become an internal skill, tentatively `skill-library-onboarding`, so any agent session can follow the same process when helping add, evaluate, or catalog skills.
+
 ## Core Rule
 
 No required field should be left blank.
@@ -170,4 +172,3 @@ A skill is ready for catalog entry when:
 - trust and risk fields have been reviewed
 - owner and review cadence are set
 - decision outcome is documented
-

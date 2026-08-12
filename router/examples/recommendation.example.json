@@ -1,0 +1,30 @@
+{
+  "task": "review a frontend pull request",
+  "model": "codex",
+  "runtime": "codex-cli",
+  "context": {
+    "domain": "ui-ux",
+    "sensitivity": "unknown"
+  },
+  "recommended": [
+    {
+      "skill_id": "example-skill",
+      "priority": 1,
+      "confidence": "unknown",
+      "reason": "Explain why this skill fits the task and runtime.",
+      "conditions": []
+    }
+  ],
+  "not_recommended": [
+    {
+      "skill_id": "other-skill",
+      "reason": "Explain why this skill should not be used here."
+    }
+  ],
+  "missing": [
+    {
+      "gap": "No approved skill exists for this task/runtime combination."
+    }
+  ]
+}
+

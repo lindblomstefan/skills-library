@@ -1,0 +1,44 @@
+schema: golden-task
+version: 0.1
+required:
+  - id
+  - title
+  - domain
+  - task_type
+  - prompt
+  - expected_behaviors
+  - failure_modes
+  - evaluation
+
+fields:
+  id:
+    type: string
+    description: Stable lowercase hyphen-case identifier.
+  title:
+    type: string
+    description: Human-readable task name.
+  domain:
+    type: string
+    description: Primary domain from catalog taxonomy.
+  task_type:
+    type: string
+    description: Primary task type from catalog taxonomy.
+  prompt:
+    type: string
+    description: User-style request used to evaluate a skill.
+  context:
+    type: object
+    description: Optional scenario data, files, constraints, or environment assumptions.
+  expected_behaviors:
+    type: list
+    description: Behaviors a useful skill should produce.
+  failure_modes:
+    type: list
+    description: Problems that should reduce confidence in the skill.
+  compatible_runtimes:
+    type: list
+    description: Runtimes where the golden task should be tested.
+  evaluation:
+    type: object
+    description: Scoring or pass/fail criteria.
+

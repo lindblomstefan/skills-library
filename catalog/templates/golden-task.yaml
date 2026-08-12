@@ -1,0 +1,35 @@
+id: example-golden-task
+title: Example Golden Task
+domain: planning
+task_type: project-onboarding
+
+prompt: >
+  Write the realistic user request here.
+
+context:
+  sensitivity: unknown
+  repository_required: false
+  files: []
+  notes: ""
+
+expected_behaviors:
+  - Identifies the central problem.
+  - Asks for or states missing context.
+  - Produces an actionable next step.
+
+failure_modes:
+  - Gives generic advice without using the relevant skill.
+  - Ignores model or runtime compatibility.
+  - Misses obvious risk or uncertainty.
+
+compatible_runtimes:
+  - codex-cli
+
+evaluation:
+  method: rubric
+  pass_threshold: unknown
+  reviewer: unassigned
+  evidence_required:
+    - output transcript
+    - evaluator notes
+

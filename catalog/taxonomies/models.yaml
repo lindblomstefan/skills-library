@@ -1,0 +1,17 @@
+models:
+  - id: codex
+    label: Codex
+    description: OpenAI Codex-oriented agent or model environment.
+  - id: claude
+    label: Claude
+    description: Anthropic Claude-oriented agent or model environment.
+  - id: chatgpt
+    label: ChatGPT
+    description: ChatGPT skill or assistant environment.
+  - id: hermes
+    label: Hermes
+    description: Nous Research Hermes model or Hermes Agent environment where model-specific behavior matters.
+  - id: model-agnostic
+    label: Model agnostic
+    description: Skill or workflow is intended to work across model families when the runtime supports it.
+
