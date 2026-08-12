@@ -1,0 +1,56 @@
+name: Skill discovery
+description: Capture an external skill, method, template, or reusable workflow worth evaluating.
+title: "[Discovery]: "
+labels:
+  - skill-discovery
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Link, repository, document, marketplace entry, or person who suggested it.
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      options:
+        - Planning and product discovery
+        - Architecture and technical design
+        - Coding and refactoring
+        - Testing and quality
+        - UI, UX, and accessibility
+        - Security, privacy, and compliance
+        - DevOps and delivery
+        - Documentation and communication
+        - Data, analytics, and AI engineering
+        - Incident response and learning
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Why it looks useful
+      description: Describe the recurring work this could improve.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example use cases
+      description: List realistic user requests or project situations where this would help.
+    validations:
+      required: false
+  - type: checkboxes
+    id: initial-checks
+    attributes:
+      label: Initial checks
+      options:
+        - label: Source appears trustworthy enough to evaluate
+        - label: License or reuse constraints need review
+        - label: May require company adaptation
+        - label: May involve sensitive data, security, or compliance concerns
+

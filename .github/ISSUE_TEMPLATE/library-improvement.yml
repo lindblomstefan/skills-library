@@ -1,0 +1,28 @@
+name: Library improvement
+description: Improve the repository structure, governance, automation, documentation, or catalog process.
+title: "[Library]: "
+labels:
+  - library-improvement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What needs to improve in the library itself?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the smallest useful improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Expected impact
+      description: Who benefits and how?
+    validations:
+      required: false
+

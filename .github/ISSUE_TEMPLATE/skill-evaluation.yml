@@ -1,0 +1,66 @@
+name: Skill evaluation
+description: Evaluate whether a discovered skill should be adopted, adapted, built internally, deferred, or rejected.
+title: "[Evaluation]: "
+labels:
+  - skill-evaluation
+body:
+  - type: input
+    id: candidate
+    attributes:
+      label: Candidate
+      description: Link to the discovery issue, source skill, or reference.
+    validations:
+      required: true
+  - type: dropdown
+    id: source-type
+    attributes:
+      label: Source type
+      options:
+        - external
+        - internal
+        - adapted
+        - reference
+        - candidate
+    validations:
+      required: true
+  - type: textarea
+    id: recurring-work
+    attributes:
+      label: Recurring work improved
+      description: What work will become faster, safer, or more consistent?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Test results, example outputs, pilots, usage notes, or comparisons.
+    validations:
+      required: false
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and constraints
+      description: Include license, security, privacy, maintenance, quality, and ownership concerns.
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Recommendation
+      options:
+        - adopt
+        - adapt
+        - build
+        - defer
+        - reject
+    validations:
+      required: true
+  - type: textarea
+    id: next-steps
+    attributes:
+      label: Next steps
+      description: What needs to happen after this evaluation?
+    validations:
+      required: true
+

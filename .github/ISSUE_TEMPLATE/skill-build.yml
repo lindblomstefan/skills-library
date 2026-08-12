@@ -1,0 +1,53 @@
+name: Skill build
+description: Plan and track creation or adaptation of a company-owned skill.
+title: "[Build]: "
+labels:
+  - skill-build
+body:
+  - type: input
+    id: skill-name
+    attributes:
+      label: Proposed skill name
+      description: Use lowercase hyphen-case if known.
+      placeholder: "initiative-kickoff"
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What task should this skill help Codex perform better?
+    validations:
+      required: true
+  - type: textarea
+    id: triggers
+    attributes:
+      label: Trigger examples
+      description: What would a user say that should activate this skill?
+    validations:
+      required: true
+  - type: textarea
+    id: reusable-resources
+    attributes:
+      label: Reusable resources
+      description: References, scripts, templates, examples, schemas, policies, or assets needed.
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How will we know the skill is useful and ready?
+    validations:
+      required: true
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: Readiness checklist
+      options:
+        - label: SKILL.md has clear frontmatter and concise instructions
+        - label: Large context lives in references instead of SKILL.md
+        - label: Scripts are tested if scripts are included
+        - label: Example tasks have been tried
+        - label: Owner and review cadence are documented
+
