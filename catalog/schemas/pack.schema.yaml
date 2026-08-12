@@ -1,0 +1,44 @@
+schema: skill-pack
+version: 0.1
+required:
+  - id
+  - name
+  - status
+  - purpose
+  - compatibility
+  - skills
+
+fields:
+  id:
+    type: string
+    description: Stable lowercase hyphen-case identifier.
+  name:
+    type: string
+    description: Human-readable pack name.
+  status:
+    type: enum
+    values:
+      - candidate
+      - evaluating
+      - approved
+      - in-use
+      - deprecated
+  purpose:
+    type: string
+    description: What work this pack optimizes for.
+  audience:
+    type: list
+    description: Intended teams, roles, or user groups.
+  compatibility:
+    type: object
+    description: Supported models and runtimes for the pack.
+  skills:
+    type: list
+    description: Included skill ids and optional inclusion rationale.
+  excludes:
+    type: list
+    description: Skills intentionally excluded with rationale.
+  review:
+    type: object
+    description: Owner, cadence, and next review date.
+

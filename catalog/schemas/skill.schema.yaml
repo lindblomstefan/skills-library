@@ -1,0 +1,102 @@
+schema: skill-manifest
+version: 0.1
+required:
+  - id
+  - name
+  - source_type
+  - status
+  - owner
+  - summary
+  - source
+  - domains
+  - task_types
+  - use_when
+  - do_not_use_when
+  - compatibility
+  - distribution
+  - routing
+  - trust
+  - risk
+  - freshness
+  - decision
+
+fields:
+  id:
+    type: string
+    description: Stable lowercase hyphen-case identifier.
+  name:
+    type: string
+    description: Human-readable skill name.
+  source_type:
+    type: enum
+    values:
+      - external
+      - internal
+      - adapted
+      - reference
+      - candidate
+    description: Where the skill or method originates.
+  status:
+    type: enum
+    values:
+      - candidate
+      - evaluating
+      - approved
+      - in-use
+      - needs-review
+      - deprecated
+      - rejected
+    description: Current lifecycle state.
+  stability:
+    type: enum
+    values:
+      - stable
+      - fast-moving
+      - short-lived
+      - unknown
+    description: Expected rate of change.
+  summary:
+    type: string
+    description: Short routing-oriented description.
+  source:
+    type: object
+    description: Link, package, repository, plugin, marketplace entry, or internal location.
+  domains:
+    type: list
+    description: Work domains improved by the skill.
+  task_types:
+    type: list
+    description: Task patterns where the skill may apply.
+  use_when:
+    type: list
+    description: Positive routing guidance.
+  do_not_use_when:
+    type: list
+    description: Negative routing guidance.
+  compatibility:
+    type: object
+    description: Model and runtime support matrix.
+  distribution:
+    type: object
+    description: How the skill is installed, invoked, linked, or consumed.
+  routing:
+    type: object
+    description: Router-ready recommendation guidance.
+  trust:
+    type: object
+    description: Trust, license, maintenance, and provenance signals.
+  risk:
+    type: object
+    description: Security, privacy, compliance, data-handling, and operational risk.
+  freshness:
+    type: object
+    description: Review cadence and replacement watch metadata.
+  decision:
+    type: object
+    description: Current adopt/adapt/build/defer/reject/replace decision.
+  relationships:
+    type: object
+    description: Links to related skills using controlled relationship types.
+  known_limitations:
+    type: list
+    description: Known weaknesses, assumptions, or caution areas.

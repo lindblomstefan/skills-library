@@ -1,0 +1,24 @@
+domains:
+  - id: architecture
+    label: Architecture
+  - id: codebase-understanding
+    label: Codebase understanding
+  - id: coding
+    label: Coding
+  - id: discovery
+    label: Discovery
+  - id: documentation
+    label: Documentation
+  - id: knowledge-graph
+    label: Knowledge graph
+  - id: planning
+    label: Planning
+  - id: repository-analysis
+    label: Repository analysis
+  - id: security
+    label: Security
+  - id: testing
+    label: Testing
+  - id: ui-ux
+    label: UI/UX
+

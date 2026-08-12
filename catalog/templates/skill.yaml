@@ -1,0 +1,103 @@
+id: example-skill
+name: Example Skill
+source_type: candidate
+status: candidate
+stability: unknown
+owner: unassigned
+proposed_by: unknown
+proposed_at: null
+
+summary: >
+  One or two sentence routing-oriented description.
+
+source:
+  type: external-repo
+  url: https://example.com
+  license: unknown
+  maintainer: unknown
+  version_or_commit: unknown
+  documentation: unknown
+
+domains:
+  - planning
+
+task_types:
+  - example-task
+
+use_when:
+  - The task matches this recurring situation.
+
+do_not_use_when:
+  - The task requires a different model, runtime, environment, or level of trust.
+
+compatibility:
+  models:
+    - id: codex
+      support: unknown
+      notes: Not evaluated.
+    - id: claude
+      support: unknown
+      notes: Not evaluated.
+  runtimes:
+    - codex-cli
+  tags:
+    - status:candidate
+
+distribution:
+  install:
+    type: unknown
+    command: ""
+  invoke:
+    command: ""
+  required_permissions: []
+  required_secrets: []
+  network_access: unknown
+
+routing:
+  recommend_for:
+    - ""
+  caution_for:
+    - ""
+  not_recommended_for:
+    - ""
+  example_prompts:
+    - ""
+  anti_examples:
+    - ""
+
+trust:
+  level: unknown
+  license_state: unknown
+  maintenance_state: unknown
+  provenance_notes: ""
+
+risk:
+  level: unknown
+  security: unknown
+  privacy: unknown
+  compliance: unknown
+  data_handling_notes: ""
+
+freshness:
+  review_cadence: monthly
+  last_reviewed: null
+  next_review: null
+  replacement_watch: false
+
+decision:
+  outcome: defer
+  rationale: ""
+  decided_by: unknown
+  decided_at: null
+
+relationships:
+  pairs_with: []
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+
+known_limitations: []

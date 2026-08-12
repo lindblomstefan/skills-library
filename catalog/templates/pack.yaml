@@ -1,0 +1,30 @@
+id: example-pack
+name: Example Pack
+status: candidate
+
+purpose: >
+  Describe what work this pack optimizes for.
+
+audience:
+  - engineers
+
+compatibility:
+  models:
+    - id: codex
+      support: unknown
+  runtimes:
+    - codex-cli
+
+skills:
+  - id: example-skill
+    reason: Included as an example.
+
+excludes:
+  - id: other-skill
+    reason: Not compatible with this runtime.
+
+review:
+  owner: unassigned
+  cadence: monthly
+  next_review: null
+

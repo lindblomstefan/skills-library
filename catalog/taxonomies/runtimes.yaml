@@ -1,0 +1,16 @@
+runtimes:
+  - id: codex-cli
+    label: Codex CLI
+  - id: claude-code
+    label: Claude Code
+  - id: chatgpt
+    label: ChatGPT
+  - id: cursor
+    label: Cursor
+  - id: aider
+    label: Aider
+  - id: gemini-cli
+    label: Gemini CLI
+  - id: opencode
+    label: OpenCode
+

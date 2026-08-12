@@ -1,0 +1,17 @@
+source_types:
+  - id: external
+    label: External
+    description: Maintained outside the company.
+  - id: internal
+    label: Internal
+    description: Authored and maintained by the company.
+  - id: adapted
+    label: Adapted
+    description: Based on an external skill or method but changed for company use.
+  - id: reference
+    label: Reference
+    description: A method, document, pattern, or guide that may inform a skill.
+  - id: candidate
+    label: Candidate
+    description: Unvalidated idea or discovered item.
+

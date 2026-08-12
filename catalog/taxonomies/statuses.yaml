@@ -1,0 +1,16 @@
+statuses:
+  - id: candidate
+    label: Candidate
+  - id: evaluating
+    label: Evaluating
+  - id: approved
+    label: Approved
+  - id: in-use
+    label: In use
+  - id: needs-review
+    label: Needs review
+  - id: deprecated
+    label: Deprecated
+  - id: rejected
+    label: Rejected
+

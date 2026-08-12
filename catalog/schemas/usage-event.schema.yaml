@@ -1,0 +1,53 @@
+schema: usage-event
+version: 0.1
+required:
+  - event_id
+  - occurred_at
+  - skill_id
+  - event_type
+  - model
+  - runtime
+  - task_type
+
+fields:
+  event_id:
+    type: string
+    description: Unique event id.
+  occurred_at:
+    type: datetime
+    description: When the event happened.
+  skill_id:
+    type: string
+    description: Skill identifier.
+  pack_id:
+    type: string
+    description: Pack identifier, if relevant.
+  event_type:
+    type: enum
+    values:
+      - recommended
+      - installed
+      - invoked
+      - completed
+      - skipped
+      - failed
+    description: Usage signal type.
+  model:
+    type: string
+    description: Model or agent family.
+  runtime:
+    type: string
+    description: CLI, IDE, website, or agent runtime.
+  task_type:
+    type: string
+    description: Task type associated with the usage.
+  source:
+    type: string
+    description: CLI, website, router, manual, or automation.
+  outcome:
+    type: string
+    description: Optional result summary.
+  metadata:
+    type: object
+    description: Non-sensitive contextual metadata.
+

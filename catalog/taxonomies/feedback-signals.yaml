@@ -1,0 +1,22 @@
+feedback_signals:
+  - id: worked-well
+    label: Worked well
+  - id: wrong-recommendation
+    label: Wrong recommendation
+  - id: skill-stale
+    label: Skill stale
+  - id: skill-missing
+    label: Skill missing
+  - id: model-runtime-mismatch
+    label: Model/runtime mismatch
+  - id: bad-output
+    label: Bad output
+  - id: security-concern
+    label: Security concern
+  - id: privacy-concern
+    label: Privacy concern
+  - id: license-concern
+    label: License concern
+  - id: better-replacement-exists
+    label: Better replacement exists
+

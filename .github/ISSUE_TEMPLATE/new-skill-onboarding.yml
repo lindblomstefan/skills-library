@@ -1,0 +1,115 @@
+name: New skill onboarding
+description: Capture all required data for a candidate skill before evaluation or catalog entry.
+title: "[Onboarding]: "
+labels:
+  - skill-discovery
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill every section. Use `unknown`, `not-applicable`, or `needs-review` instead of leaving required information blank.
+  - type: input
+    id: skill-name
+    attributes:
+      label: Skill name
+      description: Human-readable name.
+    validations:
+      required: true
+  - type: input
+    id: proposed-id
+    attributes:
+      label: Proposed skill id
+      description: Lowercase hyphen-case if known.
+      placeholder: example-skill
+    validations:
+      required: true
+  - type: dropdown
+    id: source-type
+    attributes:
+      label: Source type
+      options:
+        - external
+        - internal
+        - adapted
+        - reference
+        - candidate
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL or location
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What does this skill/tool/method help with?
+    validations:
+      required: true
+  - type: textarea
+    id: use-when
+    attributes:
+      label: Use when
+      description: Positive routing guidance.
+    validations:
+      required: true
+  - type: textarea
+    id: do-not-use-when
+    attributes:
+      label: Do not use when
+      description: Negative routing guidance.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example prompts or use cases
+      description: Include realistic situations where this should be recommended.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Model and runtime compatibility
+      description: List known support for Codex CLI, Claude Code, ChatGPT, Cursor, or other runtimes. Use unknown where needed.
+    validations:
+      required: true
+  - type: textarea
+    id: install-invoke
+    attributes:
+      label: Install and invoke
+      description: How is it installed, pulled, linked, or invoked?
+    validations:
+      required: true
+  - type: textarea
+    id: trust-risk
+    attributes:
+      label: Trust, license, and risk
+      description: Capture license, maintainer, security, privacy, compliance, data handling, and unknowns.
+    validations:
+      required: true
+  - type: textarea
+    id: relationships
+    attributes:
+      label: Relationships
+      description: Pairs with, replaces, depends on, conflicts with, overlaps with, specializes, or generalizes.
+    validations:
+      required: true
+  - type: textarea
+    id: freshness
+    attributes:
+      label: Freshness and lifecycle
+      description: Stability, review cadence, next review, replacement watch, and deprecation concerns.
+    validations:
+      required: true
+  - type: textarea
+    id: evaluation-plan
+    attributes:
+      label: Evaluation plan
+      description: Golden tasks, reviewer, evidence needed, and decision criteria.
+    validations:
+      required: true
+

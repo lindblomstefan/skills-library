@@ -1,0 +1,31 @@
+schema: router-entry
+version: 0.1
+required:
+  - task
+  - model
+  - runtime
+  - recommended
+
+fields:
+  task:
+    type: string
+    description: User task or task class.
+  model:
+    type: string
+    description: Target model family or agent.
+  runtime:
+    type: string
+    description: Target runtime or CLI environment.
+  context:
+    type: object
+    description: Optional project, domain, environment, sensitivity, or maturity context.
+  recommended:
+    type: list
+    description: Ranked skill recommendations with reasons.
+  not_recommended:
+    type: list
+    description: Skills that may look relevant but should not be used in this context.
+  missing:
+    type: list
+    description: Skill gaps discovered by the router.
+

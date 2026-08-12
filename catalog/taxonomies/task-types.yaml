@@ -1,0 +1,20 @@
+task_types:
+  - id: architecture-review
+    label: Architecture review
+  - id: codebase-navigation
+    label: Codebase navigation
+  - id: impact-analysis
+    label: Impact analysis
+  - id: project-onboarding
+    label: Project onboarding
+  - id: pull-request-review
+    label: Pull request review
+  - id: release-readiness
+    label: Release readiness
+  - id: relationship-discovery
+    label: Relationship discovery
+  - id: test-strategy
+    label: Test strategy
+  - id: threat-modeling
+    label: Threat modeling
+

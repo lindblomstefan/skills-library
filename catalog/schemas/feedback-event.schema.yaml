@@ -1,0 +1,63 @@
+schema: feedback-event
+version: 0.1
+required:
+  - feedback_id
+  - occurred_at
+  - skill_id
+  - signal
+  - model
+  - runtime
+  - task_type
+
+fields:
+  feedback_id:
+    type: string
+    description: Unique feedback id.
+  occurred_at:
+    type: datetime
+    description: When the feedback was captured.
+  skill_id:
+    type: string
+    description: Skill identifier.
+  pack_id:
+    type: string
+    description: Pack identifier, if relevant.
+  signal:
+    type: enum
+    values:
+      - worked-well
+      - wrong-recommendation
+      - skill-stale
+      - skill-missing
+      - model-runtime-mismatch
+      - bad-output
+      - security-concern
+      - privacy-concern
+      - license-concern
+      - better-replacement-exists
+    description: Feedback signal.
+  model:
+    type: string
+    description: Model or agent family.
+  runtime:
+    type: string
+    description: CLI, IDE, website, or agent runtime.
+  task_type:
+    type: string
+    description: Task type associated with the feedback.
+  severity:
+    type: enum
+    values:
+      - low
+      - medium
+      - high
+      - blocking
+      - unknown
+    description: Impact of the feedback.
+  notes:
+    type: string
+    description: Optional free-text notes.
+  created_issue:
+    type: string
+    description: Link to generated issue, if one was created.
+

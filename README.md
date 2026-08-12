@@ -20,7 +20,7 @@ Use GitHub issues as the intake and planning system.
 - Use **Skill build** issues when the company needs to create or adapt a skill.
 - Use **Library improvement** issues for catalog structure, governance, automation, and documentation.
 
-Store reusable documentation in `docs/`. Add actual skills only when there is a clear reason to own, adapt, or distribute them from this repo.
+Store reusable documentation in `docs/`. Store skill metadata in `catalog/`. Add actual skill files only when there is a clear reason to own, adapt, or distribute them from this repo.
 
 ## Skill Lifecycle
 
@@ -50,7 +50,24 @@ Classify skills by what work they improve, not by implementation format.
 ```text
 .
 ├── .github/ISSUE_TEMPLATE/   # Intake templates
+├── catalog/                  # Skill manifests, packs, and taxonomies
+├── evaluations/              # Evaluation notes and evidence
 ├── docs/                     # Library model and issue backlog
+├── AGENTS.md                 # Agent guidance, including Graphify usage
 └── README.md                 # Entry point
 ```
 
+## Current Focus
+
+The MVP focus is the structure that lets the library work:
+
+- catalog schema
+- compatibility metadata
+- source and lifecycle taxonomies
+- pack definitions
+- evaluation evidence
+- router-ready metadata
+- new skill onboarding
+- usage and feedback data for future metrics
+
+Do not add skills to the catalog until the first manifest structure has been reviewed.

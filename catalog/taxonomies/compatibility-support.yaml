@@ -1,0 +1,20 @@
+compatibility_support:
+  - id: native
+    label: Native
+    description: Designed for that model or runtime.
+  - id: compatible
+    label: Compatible
+    description: Works without meaningful changes.
+  - id: adapted
+    label: Adapted
+    description: Works through a wrapper, conversion, or local company guidance.
+  - id: partial
+    label: Partial
+    description: Useful but missing features, context, or direct integration.
+  - id: unknown
+    label: Unknown
+    description: Not yet evaluated.
+  - id: unsupported
+    label: Unsupported
+    description: Should not be recommended for that target.
+

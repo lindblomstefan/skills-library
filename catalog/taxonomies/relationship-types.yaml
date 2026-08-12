@@ -1,0 +1,26 @@
+relationship_types:
+  - id: pairs_with
+    label: Pairs with
+    description: Often useful together.
+  - id: replaces
+    label: Replaces
+    description: Supersedes another skill.
+  - id: replaced_by
+    label: Replaced by
+    description: Superseded by another skill.
+  - id: depends_on
+    label: Depends on
+    description: Requires or assumes another skill, method, or capability.
+  - id: conflicts_with
+    label: Conflicts with
+    description: Should not normally be used together.
+  - id: overlaps_with
+    label: Overlaps with
+    description: Covers similar work.
+  - id: specializes
+    label: Specializes
+    description: More specific version of another skill.
+  - id: generalizes
+    label: Generalizes
+    description: Broader version of another skill.
+
