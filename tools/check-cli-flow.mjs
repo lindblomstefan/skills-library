@@ -74,7 +74,7 @@ for (const file of [
   "docs/poc-plan.md",
   ".codex/skills/skill-library/SKILL.md",
   ".codex/skills/skill-library/references/catalog-overview.md",
-  ".codex/skills/skill-library/agents/openai.yaml"
+  ".codex/skills/skill-library/agents/claude.yaml"
 ]) {
   const text = readText(file);
   for (const forbidden of [
