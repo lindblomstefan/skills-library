@@ -52,7 +52,7 @@ A complete onboarding PR should include the relevant subset of:
 - routing guidance and anti-examples
 - risk, trust, license, and freshness fields
 - open questions and blockers
-- skill files under `.codex/skills/<id>/`, if the skill is internal or adapted
+- skill files under `.claude/skills/<id>/`, if the skill is internal or adapted
 
 ## Model-Agnostic Use
 

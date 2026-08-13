@@ -1,7 +1,4 @@
 models:
-  - id: codex
-    label: Codex
-    description: OpenAI Codex-oriented agent or model environment.
   - id: claude
     label: Claude
     description: Anthropic Claude-oriented agent or model environment.

@@ -18,8 +18,8 @@ The router should optimize for recommendation quality, not catalog size.
 ```json
 {
   "task": "review a frontend pull request",
-  "model": "codex",
-  "runtime": "codex-cli",
+  "model": "claude",
+  "runtime": "claude-code",
   "mode": "standard",
   "context": {
     "domain": "ui-ux",
@@ -47,8 +47,8 @@ The router should optimize for recommendation quality, not catalog size.
       "matched_use_when": [],
       "matched_do_not_use_when": [],
       "compatibility": {
-        "model": "codex",
-        "runtime": "codex-cli",
+        "model": "claude",
+        "runtime": "claude-code",
         "support": "unknown",
         "evidence": []
       },

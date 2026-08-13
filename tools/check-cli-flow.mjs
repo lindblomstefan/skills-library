@@ -60,7 +60,7 @@ assertIncludes(
   "contradictory evidence should block recommendations even after repo read"
 );
 
-const skillText = readText(".codex/skills/skill-library/SKILL.md");
+const skillText = readText(".claude/skills/skill-library/SKILL.md");
 assertNotIncludes(skillText, "Include repo-inspection consent as the first question", "skill instructions should not put repo consent first");
 assertNotIncludes(skillText, "Start with repo-inspection consent", "skill instructions should not put repo consent first");
 if (skillText.split("\n").length > 90) {
@@ -72,9 +72,9 @@ for (const file of [
   "README.md",
   "docs/cli-usage.md",
   "docs/poc-plan.md",
-  ".codex/skills/skill-library/SKILL.md",
-  ".codex/skills/skill-library/references/catalog-overview.md",
-  ".codex/skills/skill-library/agents/claude.yaml"
+  ".claude/skills/skill-library/SKILL.md",
+  ".claude/skills/skill-library/references/catalog-overview.md",
+  ".claude/skills/skill-library/agents/claude.yaml"
 ]) {
   const text = readText(file);
   for (const forbidden of [

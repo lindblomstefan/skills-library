@@ -10,7 +10,7 @@ Run commands through Node:
 node bin/skills-library.mjs validate
 node bin/skills-library.mjs build
 node bin/skills-library.mjs assist --repo . --format text
-node bin/skills-library.mjs recommend --repo . --repo-consent accepted --task "start a repo onboarding initiative" --model codex --runtime codex-cli
+node bin/skills-library.mjs recommend --repo . --repo-consent accepted --task "start a repo onboarding initiative" --model claude --runtime claude-code
 node bin/skills-library.mjs onboard --repo . --candidate <url-or-path> --format text
 ```
 
@@ -39,8 +39,8 @@ After the user accepts repo inspection or answers the interview, call the router
   --repo . \
   --repo-consent accepted \
   --task "what skill set should we use for this initiative?" \
-  --model codex \
-  --runtime codex-cli \
+  --model claude \
+  --runtime claude-code \
   --mode exploratory \
   --format text
 ```
@@ -52,8 +52,8 @@ For questions-only mode:
   --repo . \
   --task "what skill set should we use for this initiative?" \
   --interview-answers "goal, work area, sensitivity, runtime, and known constraints" \
-  --model codex \
-  --runtime codex-cli \
+  --model claude \
+  --runtime claude-code \
   --mode exploratory \
   --format text
 ```
@@ -62,13 +62,13 @@ The target repo is inspected for `graphify-out/graph.json`. If present, the reco
 
 ## Install From GitHub, Then Invoke
 
-This repo intentionally exposes one installable Codex skill:
+This repo intentionally exposes one installable Claude skill:
 
 ```text
-.codex/skills/skill-library/
+.claude/skills/skill-library/
 ```
 
-Internal workflow instructions are stored under `.codex/internal-workflows/` and should not be offered as separate installable skills.
+Internal workflow instructions are stored under `.claude/internal-workflows/` and should not be offered as separate installable skills.
 
 If a user gives an agent this URL:
 
@@ -196,8 +196,8 @@ Collect locally first:
   --signal wrong-recommendation \
   --severity medium \
   --task-type architecture-review \
-  --model codex \
-  --runtime codex-cli \
+  --model claude \
+  --runtime claude-code \
   --notes "Redacted feedback from the user"
 ```
 

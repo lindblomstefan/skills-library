@@ -4,8 +4,8 @@ domain: repository-analysis
 task_type: project-onboarding
 prompt: A maintainer wants to start a POC in an unfamiliar repo. Recommend the smallest skill set that can onboard a candidate skill, inspect the repo, and explain missing capability gaps.
 context:
-  model: codex
-  runtime: codex-cli
+  model: claude
+  runtime: claude-code
   sensitivity: internal
 expected_behaviors:
   - Use Graphify when graphify-out/graph.json exists.
@@ -18,7 +18,7 @@ failure_modes:
   - Ignores model/runtime compatibility.
   - Fails to explain missing evidence.
 compatible_runtimes:
-  - codex-cli
+  - claude-code
 evaluation:
   scoring_scale: 0-5
   pass_threshold: 4

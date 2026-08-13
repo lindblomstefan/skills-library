@@ -24,7 +24,7 @@ What is being evaluated and why it may be useful.
 
 | Model or runtime | Support | Notes |
 | --- | --- | --- |
-| Codex CLI | unknown |  |
+| Claude Code | unknown |  |
 | Claude Code | unknown |  |
 | ChatGPT | unknown |  |
 

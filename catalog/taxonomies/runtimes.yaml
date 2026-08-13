@@ -2,8 +2,6 @@ runtimes:
   - id: agent-skill-host
     label: Agent skill host
     notes: Model-agnostic runtime that can read skill instructions and perform local tool or artifact steps.
-  - id: codex-cli
-    label: Codex CLI
   - id: claude-code
     label: Claude Code
   - id: chatgpt

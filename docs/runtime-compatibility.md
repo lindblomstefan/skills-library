@@ -11,7 +11,6 @@ These are related but not identical:
 
 Start with:
 
-- `codex-cli`
 - `claude-code`
 - `chatgpt`
 - `cursor`
@@ -49,8 +48,8 @@ Every skill should use a compatibility matrix for evidence-backed routing:
 ```yaml
 compatibility:
   matrix:
-    - model_id: codex
-      runtime_id: codex-cli
+    - model_id: claude
+      runtime_id: claude-code
       support: unknown
       tested_at: null
       tested_by: unknown

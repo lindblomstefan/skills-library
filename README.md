@@ -5,7 +5,7 @@ This repository is a **working CLI proof of concept** for a skill-agnostic compa
 Current status:
 
 - The CLI POC works locally and can be called from another repository.
-- The repo exposes one installable Codex skill: `skill-library`.
+- The repo exposes one installable Claude skill: `skill-library`.
 - Public library entries are candidates or evaluating entries, not approved production skills.
 - External skills are stored as metadata pointers to upstream sources; external skill files are not copied into this repo.
 - Standard recommendations intentionally block unapproved skills. Exploratory recommendations can surface candidates with blockers.
@@ -16,7 +16,7 @@ The library has two skill layers:
 - **Library skills**: publishable/recommendable skills under `catalog/library-skills/`.
 - **Internal skills**: operating skills under `catalog/internal-skills/` used by this repo and the `skill-library` workflow. They are not made available as library inventory.
 
-The only installable skill folder is `.codex/skills/skill-library/`. Internal workflow instructions live under `.codex/internal-workflows/` so a GitHub skill installer should not offer them as separate public skills.
+The only installable skill folder is `.claude/skills/skill-library/`. Internal workflow instructions live under `.claude/internal-workflows/` so a GitHub skill installer should not offer them as separate public skills.
 
 The library should support multiple sources:
 
@@ -121,7 +121,7 @@ git@github.com:lindblomstefan/skills-library.git
 
 the intended flow is:
 
-1. Install the single `skill-library` skill from `.codex/skills/skill-library/`.
+1. Install the single `skill-library` skill from `.claude/skills/skill-library/`.
 2. Invoke `skill-library`.
 3. Start guided assist/interview for the target repo or initiative.
 
@@ -148,7 +148,7 @@ node bin/skills-library.mjs validate
 node bin/skills-library.mjs build
 node bin/skills-library.mjs assist --repo . --format text
 node bin/skills-library.mjs onboard --repo . --candidate <url-or-path> --format text
-node bin/skills-library.mjs recommend --repo . --repo-consent accepted --task "start a repo onboarding initiative" --model codex --runtime codex-cli --format text
+node bin/skills-library.mjs recommend --repo . --repo-consent accepted --task "start a repo onboarding initiative" --model claude --runtime claude-code --format text
 node bin/skills-library.mjs feedback collect --repo . --skill-id gstack --signal wrong-recommendation
 ```
 
@@ -163,8 +163,8 @@ From another repo:
   --repo . \
   --repo-consent accepted \
   --task "what skill set should we use for this initiative?" \
-  --model codex \
-  --runtime codex-cli \
+  --model claude \
+  --runtime claude-code \
   --mode exploratory \
   --format text
 ```

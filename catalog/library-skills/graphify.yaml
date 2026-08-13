@@ -38,11 +38,11 @@ do_not_use_when:
   - The user explicitly says not to use Graphify.
 compatibility:
   matrix:
-    - model_id: codex
-      runtime_id: codex-cli
+    - model_id: claude
+      runtime_id: claude-code
       support: compatible
       tested_at: 2026-08-13
-      tested_by: codex
+      tested_by: claude
       runtime_version: local
       adapter: none
       install_result: already-installed
@@ -55,7 +55,7 @@ compatibility:
         - Raw JSON router examples produce zero AST nodes.
   tags:
     - status:evaluating
-    - runtime:codex-cli
+    - runtime:claude-code
 distribution:
   install:
     type: local-tool

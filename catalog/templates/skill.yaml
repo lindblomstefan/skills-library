@@ -37,22 +37,19 @@ do_not_use_when:
 
 compatibility:
   models:
-    - id: codex
-      support: unknown
-      notes: Not evaluated.
     - id: claude
       support: unknown
       notes: Not evaluated.
   runtimes:
-    - id: codex-cli
+    - id: claude-code
       support: unknown
       install_status: unknown
       invoke_status: unknown
       required_adapter: unknown
       notes: Not evaluated.
   matrix:
-    - model_id: codex
-      runtime_id: codex-cli
+    - model_id: claude
+      runtime_id: claude-code
       support: unknown
       tested_at: null
       tested_by: unknown

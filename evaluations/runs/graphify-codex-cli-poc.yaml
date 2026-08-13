@@ -1,11 +1,11 @@
 id: graphify-codex-cli-poc
 skill_id: graphify
 golden_task_id: recommend-repo-onboarding-skill-set
-model: codex
-runtime: codex-cli
+model: claude
+runtime: claude-code
 model_version: unknown
 runtime_version: local
-evaluator: codex
+evaluator: claude
 occurred_at: 2026-08-13
 outcome: partial
 scores:
@@ -29,6 +29,6 @@ compatibility_result:
     - Semantic extraction would need explicit approval for private content.
 approval_impact:
   recommendation: exploratory-only
-  compatibility: compatible-for-codex-cli
+  compatibility: compatible-for-claude-code
   trust: needs-license-review
   status: evaluating

@@ -10,10 +10,10 @@ audience:
 
 compatibility:
   models:
-    - id: codex
+    - id: claude
       support: unknown
   runtimes:
-    - codex-cli
+    - claude-code
 
 skills:
   - id: example-skill

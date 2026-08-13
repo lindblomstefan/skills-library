@@ -10,7 +10,7 @@ No router implementation exists yet. This directory captures the intended contra
 
 ```bash
 skills assist --repo . --format text
-skills recommend --repo . --repo-consent accepted --task "review this API design" --model codex --runtime codex-cli --format json
+skills recommend --repo . --repo-consent accepted --task "review this API design" --model claude --runtime claude-code --format json
 skills explain graphify
 skills search "frontend accessibility review"
 ```

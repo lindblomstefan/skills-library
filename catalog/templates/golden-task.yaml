@@ -23,7 +23,7 @@ failure_modes:
   - Misses obvious risk or uncertainty.
 
 compatible_runtimes:
-  - codex-cli
+  - claude-code
 
 evaluation:
   method: rubric

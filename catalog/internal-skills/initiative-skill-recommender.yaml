@@ -10,7 +10,7 @@ proposed_at: 2026-08-13
 summary: Internal workflow skill that interviews a user, repo, and runtime context to recommend a set of skills or packs for an initiative.
 source:
   type: internal-skill
-  url: .codex/internal-workflows/initiative-skill-recommender
+  url: .claude/internal-workflows/initiative-skill-recommender
   license: internal
   license_spdx: not-applicable
   redistribution: internal
@@ -40,29 +40,29 @@ compatibility:
       runtime_id: agent-skill-host
       support: compatible
       tested_at: 2026-08-13
-      tested_by: codex
+      tested_by: claude
       runtime_version: local
       adapter: none
       install_result: pass
       invoke_result: pass
       permission_notes: Procedural skill works when the host can read repo summaries with consent and present structured questions.
       evidence:
-        - .codex/internal-workflows/initiative-skill-recommender/WORKFLOW.md
+        - .claude/internal-workflows/initiative-skill-recommender/WORKFLOW.md
         - tools/lib/guided-session.mjs
       known_gaps:
         - Rich UI rendering is deferred; CLI emits JSON/text.
-    - model_id: codex
-      runtime_id: codex-cli
+    - model_id: claude
+      runtime_id: claude-code
       support: compatible
       tested_at: 2026-08-13
-      tested_by: codex
+      tested_by: claude
       runtime_version: local
       adapter: none
       install_result: pass
       invoke_result: pass
-      permission_notes: Uses `.codex/skills` instructions and `assist` CLI helper.
+      permission_notes: Uses `.claude/skills` instructions and `assist` CLI helper.
       evidence:
-        - .codex/internal-workflows/initiative-skill-recommender/WORKFLOW.md
+        - .claude/internal-workflows/initiative-skill-recommender/WORKFLOW.md
         - bin/skills-library.mjs
       known_gaps:
         - Interactive prompt rendering is still host-dependent.

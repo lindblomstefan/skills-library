@@ -10,7 +10,7 @@ proposed_at: 2026-08-13
 summary: Repo-level skill wrapper that lets other projects call the skills-library CLI for skill recommendations and privacy-safe feedback capture.
 source:
   type: internal-skill
-  url: .codex/skills/skill-library
+  url: .claude/skills/skill-library
   license: internal
   license_spdx: not-applicable
   redistribution: internal
@@ -41,29 +41,29 @@ compatibility:
       runtime_id: agent-skill-host
       support: compatible
       tested_at: 2026-08-13
-      tested_by: codex
+      tested_by: claude
       runtime_version: local
       adapter: none
       install_result: pass
       invoke_result: pass
       permission_notes: Procedural wrapper works when the host can call a local CLI or reproduce the JSON contract.
       evidence:
-        - .codex/skills/skill-library/SKILL.md
+        - .claude/skills/skill-library/SKILL.md
         - docs/cli-usage.md
       known_gaps:
         - Runtime must know where the skills-library repo is cloned.
-    - model_id: codex
-      runtime_id: codex-cli
+    - model_id: claude
+      runtime_id: claude-code
       support: compatible
       tested_at: 2026-08-13
-      tested_by: codex
+      tested_by: claude
       runtime_version: local
       adapter: none
       install_result: pass
       invoke_result: pass
       permission_notes: Calls the repo-local CLI from another working tree.
       evidence:
-        - .codex/skills/skill-library/SKILL.md
+        - .claude/skills/skill-library/SKILL.md
         - bin/skills-library.mjs
       known_gaps:
         - Requires the user or host repo to know where skills-library is cloned.

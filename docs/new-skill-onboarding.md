@@ -2,7 +2,7 @@
 
 New skill onboarding ensures that every candidate skill captures enough information to be evaluated, routed, installed, reviewed, and eventually replaced.
 
-This workflow applies whether the information is filled in by a person, Codex, another LLM, or an automated importer.
+This workflow applies whether the information is filled in by a person, Claude, another LLM, or an automated importer.
 
 This workflow should become an internal skill, tentatively `skill-library-onboarding`, so any agent session can follow the same process when helping add, evaluate, or catalog skills.
 
@@ -174,7 +174,7 @@ Use public issues only for redacted discussion and skill-specific feedback comme
 
 Use pull requests for any onboarding change that adds or modifies:
 
-- `.codex/skills/`
+- `.claude/skills/`
 - `catalog/library-skills/`
 - `catalog/internal-skills/`
 - `catalog/packs/`

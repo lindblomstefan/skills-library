@@ -152,7 +152,7 @@ function recommendationQuestions({ repoContext, inferred, options }) {
   ], { blocks: true }));
   questions.push(question("runtime", "Where should recommended skills run?", [
     choice(options.runtime ?? "agent-skill-host", runtimeLabel(options.runtime), "Use a model-agnostic skill runtime."),
-    choice("codex-cli", "Codex CLI", "Use this repo's tested local CLI flow."),
+    choice("claude-code", "Claude Code", "Use this repo's tested local CLI flow."),
     choice("other", "Other runtime", "Capture compatibility as unknown until tested.")
   ]));
   return questions;
@@ -209,7 +209,7 @@ function choice(value, label, description) {
 
 function runtimeLabel(runtime) {
   if (!runtime || runtime === "agent-skill-host") return "Agent skill host";
-  if (runtime === "codex-cli") return "Codex CLI";
+  if (runtime === "claude-code") return "Claude Code";
   return String(runtime);
 }
 

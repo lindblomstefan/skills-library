@@ -10,11 +10,11 @@ compatibility:
   models:
     - id: model-agnostic
       support: partial
-    - id: codex
+    - id: claude
       support: partial
   runtimes:
     - agent-skill-host
-    - codex-cli
+    - claude-code
 skills:
   - id: graphify
     reason: Provides the repo graph used before raw browsing.

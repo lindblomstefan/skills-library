@@ -1,9 +1,9 @@
 id: example-evaluation-run
 skill_id: example-skill
 golden_task_id: example-golden-task
-model: codex
+model: claude
 model_version: unknown
-runtime: codex-cli
+runtime: claude-code
 runtime_version: unknown
 evaluator: unassigned
 occurred_at: null

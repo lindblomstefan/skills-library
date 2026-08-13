@@ -36,7 +36,7 @@ Use `AskUserQuestion` for every interview question — never type questions as p
 5. Ask remaining narrowing questions one `AskUserQuestion` call at a time (batch only truly independent ones). Cover: work area, sensitivity, runtime/model, constraints, time horizon, and any missing goal details. Example option sets:
    - Work area: `Architecture | Security | Frontend | Backend | Data / ML | DevOps`
    - Sensitivity: `Internal | Confidential | Public`
-   - Runtime: `Agent skill host | Codex CLI | Other`
+   - Runtime: `Agent skill host | Claude Code | Other`
 
 6. If answers or repo evidence are vague, contradictory, or unstable, ask a focused follow-up `AskUserQuestion` before continuing.
 7. Recommend only after either a repo read happened or concrete interview answers exist.
