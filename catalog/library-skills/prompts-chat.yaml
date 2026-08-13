@@ -1,0 +1,90 @@
+id: prompts-chat
+name: Prompts Chat
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Large community prompt catalog useful as reference material when designing or comparing prompt-style skills.
+source:
+  type: external-repository
+  url: https://github.com/f/prompts.chat
+  license: Other
+  license_spdx: NOASSERTION
+  redistribution: needs-review
+  modification_allowed: needs-review
+  maintainer: f/prompts.chat
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/f/prompts.chat
+  stars_observed: 167079
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - discovery
+  - documentation
+task_types:
+  - project-onboarding
+use_when:
+  - A user needs examples of prompt patterns or prompt catalog structure.
+  - The task is to compare prompt styles before creating an internal skill.
+do_not_use_when:
+  - The user needs an executable coding, testing, or deployment workflow.
+  - License review has not cleared redistribution or adaptation.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/f/prompts.chat
+      known_gaps:
+        - Catalog value needs curation before recommendation.
+distribution:
+  install:
+    type: external-repository
+    command: Fetch or inspect from the original repository only.
+  invoke:
+    command: Use as reference material after license review.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - network-access
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - prompt pattern discovery
+    - prompt catalog review
+  caution_for:
+    - uncurated community prompts
+    - unclear license state
+  not_recommended_for:
+    - production coding workflows
+  keywords:
+    - prompts
+    - chatgpt
+    - prompt catalog
+trust:
+  level: low
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: medium
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: public-reference
+  data_handling_notes: Community prompts may include unsafe or unsuitable patterns and need review before use.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Popular reference candidate, but license and curation need review before recommendation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

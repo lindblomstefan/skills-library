@@ -1,0 +1,129 @@
+id: gstack-plan-eng-review
+name: GStack Plan Engineering Review
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Engineering plan review skill for architecture, data flow, edge cases, diagrams, and test coverage before implementation.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#plan-eng-review
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - architecture
+  - planning
+task_types:
+  - architecture-review
+  - test-strategy
+use_when:
+  - A plan needs technical architecture and edge-case review before coding.
+  - The user needs diagrams, state transitions, or test matrices.
+do_not_use_when:
+  - The user only needs product-market scope critique.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Needs host compatibility evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#plan-eng-review
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack, then invoke /plan-eng-review in a supported agent host.
+  invoke:
+    command: /plan-eng-review
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - read-repository
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - architecture review
+    - engineering planning
+    - test strategy
+  caution_for:
+    - plans with no implementation context
+  not_recommended_for:
+    - product discovery before scope exists
+  example_prompts:
+    - Review this plan for architecture, edge cases, and tests.
+  anti_examples:
+    - Generate release notes from merged commits.
+  keywords:
+    - engineering review
+    - architecture
+    - edge cases
+    - tests
+  aliases:
+    - plan-eng-review
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Onboarded from popular MIT-licensed garrytan/gstack repository.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Architecture plans may reveal internal systems; keep local unless reviewed.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Useful architecture candidate; needs evaluation before approval.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-spec
+    - gstack-review
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

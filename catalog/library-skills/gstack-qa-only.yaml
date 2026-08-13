@@ -1,0 +1,131 @@
+id: gstack-qa-only
+name: GStack QA Only
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Read-only QA reporting skill that finds browser-visible bugs without making code changes.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#qa
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - testing
+  - ui-ux
+task_types:
+  - test-strategy
+  - release-readiness
+use_when:
+  - The user wants browser QA findings without code changes.
+  - A team needs a report for triage before assigning fixes.
+do_not_use_when:
+  - The user wants the agent to fix and verify defects.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Browser/tool requirements need evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/AGENTS.md
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack, then invoke /qa-only in a supported agent host.
+  invoke:
+    command: /qa-only
+  generated_files: []
+  dependencies:
+    - gstack
+    - browser automation
+  required_permissions:
+    - read-repository
+    - run-app
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - read-only QA
+    - bug report
+    - release readiness
+  caution_for:
+    - sensitive authenticated sessions
+  not_recommended_for:
+    - automatic bug fixing
+  example_prompts:
+    - QA this app and report bugs only.
+  anti_examples:
+    - Fix every bug you find.
+  keywords:
+    - qa-only
+    - bug report
+    - testing
+  aliases:
+    - qa-only
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Onboarded from popular MIT-licensed garrytan/gstack repository.
+risk:
+  level: medium
+  security: medium
+  privacy: high
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Browser screenshots and reports may contain sensitive data.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Read-only QA candidate; needs browser/runtime evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-review
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with:
+    - gstack-qa
+  overlaps_with:
+    - gstack-qa
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

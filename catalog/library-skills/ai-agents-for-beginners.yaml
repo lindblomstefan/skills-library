@@ -1,0 +1,91 @@
+id: ai-agents-for-beginners
+name: AI Agents For Beginners
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Microsoft learning repository candidate for onboarding teams to agent concepts and implementation patterns.
+source:
+  type: external-repository
+  url: https://github.com/microsoft/ai-agents-for-beginners
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: microsoft/ai-agents-for-beginners
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/microsoft/ai-agents-for-beginners
+  stars_observed: 72061
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - documentation
+  - discovery
+  - planning
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - A team needs structured learning material before choosing agent skills.
+  - The user is new to AI agent architecture and terminology.
+do_not_use_when:
+  - The user needs repo-specific code changes.
+  - The initiative already has advanced agent architecture decisions.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/microsoft/ai-agents-for-beginners
+      known_gaps:
+        - Educational content needs filtering before recommendation as a skill.
+distribution:
+  install:
+    type: external-repository
+    command: Fetch or inspect from the original repository only.
+  invoke:
+    command: Use as onboarding reference material.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - network-access
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - agent learning path
+    - project onboarding
+  caution_for:
+    - advanced teams that need implementation help
+  not_recommended_for:
+    - direct code generation
+  keywords:
+    - agents
+    - beginners
+    - learning
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: unknown
+  data_classification: public-reference
+  data_handling_notes: Educational reference only.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Clear-license education candidate, but not evaluated as an installable skill.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

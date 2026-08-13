@@ -1,0 +1,131 @@
+id: gstack-benchmark
+name: GStack Benchmark
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Performance regression skill for measuring page load, Core Web Vitals, and resource-size changes.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#benchmark
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - testing
+  - ui-ux
+task_types:
+  - release-readiness
+  - test-strategy
+use_when:
+  - A web app needs performance baseline or regression detection.
+  - The user wants Core Web Vitals or resource-size comparison.
+do_not_use_when:
+  - There is no reachable app or page to benchmark.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Browser/performance tooling requirements need evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#benchmark
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack from the original source, then invoke /benchmark in a supported agent host.
+  invoke:
+    command: /benchmark
+  generated_files: []
+  dependencies:
+    - gstack
+    - browser automation
+  required_permissions:
+    - run-app
+    - access-test-environment
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - performance regression
+    - release readiness
+    - Core Web Vitals
+  caution_for:
+    - noisy environments where benchmark results are unstable
+  not_recommended_for:
+    - backend-only static analysis
+  example_prompts:
+    - Benchmark this change for page-load regressions.
+  anti_examples:
+    - Write a product spec.
+  keywords:
+    - benchmark
+    - performance
+    - Core Web Vitals
+  aliases:
+    - benchmark
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer to popular MIT-licensed garrytan/gstack repository; no external skill files copied.
+risk:
+  level: medium
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Benchmark URLs and screenshots may reveal internal surfaces.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Useful performance candidate; needs reproducibility evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-canary
+    - gstack-qa
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.
+

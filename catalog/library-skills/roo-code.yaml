@@ -1,0 +1,93 @@
+id: roo-code
+name: Roo Code
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: IDE agent-team candidate for coding, review, and repository assistance workflows.
+source:
+  type: external-repository
+  url: https://github.com/RooCodeInc/Roo-Code
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: RooCodeInc/Roo-Code
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/RooCodeInc/Roo-Code
+  stars_observed: 24345
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - testing
+task_types:
+  - pull-request-review
+  - impact-analysis
+use_when:
+  - A user wants to evaluate multi-mode IDE agent assistance.
+  - The repo needs coding help with review and execution modes.
+do_not_use_when:
+  - Provider, extension, or repo-write permissions are not approved.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/RooCodeInc/Roo-Code
+      known_gaps:
+        - Requires local host and permission evaluation.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original Roo Code distribution after review.
+  invoke:
+    command: Use Roo Code in a supported host.
+  generated_files: []
+  dependencies:
+    - external-agent-runtime
+  required_permissions:
+    - read-repository
+    - write-repository
+  required_secrets:
+    - model provider credentials, if required
+  network_access: required
+routing:
+  recommend_for:
+    - IDE coding
+    - review workflows
+  caution_for:
+    - private repositories
+    - broad tool permissions
+  not_recommended_for:
+    - prompt catalog work
+  keywords:
+    - roo code
+    - ide agent
+    - coding
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: high
+  security: high
+  privacy: high
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: IDE agent permissions and model provider settings need explicit approval.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Useful coding-agent candidate, but runtime and permissions need evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

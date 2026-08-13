@@ -1,0 +1,135 @@
+id: gstack-qa
+name: GStack QA
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: QA skill that uses a real browser to find bugs, fix them, and re-verify behavior.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#qa
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - testing
+  - ui-ux
+task_types:
+  - test-strategy
+  - release-readiness
+use_when:
+  - A web app needs browser-based QA before release.
+  - The user wants bugs fixed and re-verified.
+do_not_use_when:
+  - The user only wants a read-only bug report.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Browser/tool requirements need evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#qa
+      known_gaps:
+        - Requires runnable app and browser automation.
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack, then invoke /qa in a supported agent host.
+  invoke:
+    command: /qa
+  generated_files: []
+  dependencies:
+    - gstack
+    - browser automation
+  required_permissions:
+    - read-repository
+    - run-app
+    - edit-files
+    - run-tests
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - browser QA
+    - release readiness
+    - regression testing
+  caution_for:
+    - authenticated production systems
+  not_recommended_for:
+    - pure architecture planning
+  example_prompts:
+    - QA this web app and fix the issues you find.
+  anti_examples:
+    - Write an architecture decision record.
+  keywords:
+    - QA
+    - browser
+    - regression
+    - testing
+  aliases:
+    - qa
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Onboarded from popular MIT-licensed garrytan/gstack repository.
+risk:
+  level: high
+  security: medium
+  privacy: high
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Browser sessions may expose cookies or user data; avoid sensitive production sessions.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Strong QA candidate; needs browser/runtime evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-review
+    - gstack-ship
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with:
+    - gstack-qa-only
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

@@ -1,0 +1,132 @@
+id: gstack-spec
+name: GStack Spec
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Specification skill that turns vague intent into a precise executable spec with phases and downstream handoff.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#spec
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - planning
+  - documentation
+task_types:
+  - project-onboarding
+  - release-readiness
+use_when:
+  - Vague product or engineering intent needs a precise build-ready spec.
+  - A task should be decomposed before implementation starts.
+do_not_use_when:
+  - The work already has an approved implementation spec.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Requires evaluation outside native gstack host.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#spec
+      known_gaps:
+        - May create issues or worktrees depending on host configuration.
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack, then invoke /spec in a supported agent host.
+  invoke:
+    command: /spec
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - read-repository
+    - write-docs
+    - create-issues
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - write a spec
+    - clarify vague work
+    - plan implementation
+  caution_for:
+    - sensitive requirements that should not be written to public issues
+  not_recommended_for:
+    - live production debugging
+  example_prompts:
+    - Turn this vague feature idea into an executable spec.
+  anti_examples:
+    - Monitor production after deploy.
+  keywords:
+    - spec
+    - requirements
+    - planning
+    - decomposition
+  aliases:
+    - spec
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Onboarded from popular MIT-licensed garrytan/gstack repository.
+risk:
+  level: medium
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Specs may include proprietary requirements; review before public issue creation.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Useful planning candidate; needs local evaluation and privacy review.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-office-hours
+    - gstack-plan-eng-review
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

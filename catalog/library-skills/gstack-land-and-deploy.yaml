@@ -1,0 +1,134 @@
+id: gstack-land-and-deploy
+name: GStack Land And Deploy
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Deployment skill that merges an approved PR, waits for CI/deploy, and verifies production health.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#land-and-deploy
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - coding
+  - testing
+task_types:
+  - release-readiness
+use_when:
+  - An approved PR needs merge, CI wait, deployment, and production verification.
+  - The repo has known deployment commands and health checks.
+do_not_use_when:
+  - Deployment credentials or approval gates are unclear.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Needs deployment permission and runtime evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#land-and-deploy
+      known_gaps:
+        - Production deploy verification can be high risk.
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack from the original source, then invoke /land-and-deploy in a supported agent host.
+  invoke:
+    command: /land-and-deploy
+  generated_files: []
+  dependencies:
+    - gstack
+    - git
+    - gh
+  required_permissions:
+    - read-repository
+    - merge-pull-requests
+    - deploy
+    - verify-production
+  required_secrets:
+    - deployment credentials, if required by repo
+  network_access: required
+routing:
+  recommend_for:
+    - deploy approved PR
+    - verify production
+    - release readiness
+  caution_for:
+    - regulated or production-critical systems
+  not_recommended_for:
+    - unreviewed branches
+  example_prompts:
+    - Land this approved PR and verify deploy health.
+  anti_examples:
+    - Review this idea before building.
+  keywords:
+    - deploy
+    - land
+    - production
+  aliases:
+    - land-and-deploy
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer to popular MIT-licensed garrytan/gstack repository; no external skill files copied.
+risk:
+  level: high
+  security: high
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Deployment commands and production status can expose sensitive operational details.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Useful release candidate but too risky for approval without deployment review.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-ship
+    - gstack-canary
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

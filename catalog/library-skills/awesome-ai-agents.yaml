@@ -1,0 +1,91 @@
+id: awesome-ai-agents
+name: Awesome AI Agents
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: AI agent landscape catalog for discovering candidate tools and comparing agent categories.
+source:
+  type: external-repository
+  url: https://github.com/e2b-dev/awesome-ai-agents
+  license: Other
+  license_spdx: NOASSERTION
+  redistribution: needs-review
+  modification_allowed: needs-review
+  maintainer: e2b-dev/awesome-ai-agents
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/e2b-dev/awesome-ai-agents
+  stars_observed: 29400
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - discovery
+  - architecture
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - A user needs a broad map of AI agent projects before selecting skills.
+  - The recommender lacks enough candidate coverage for a new domain.
+do_not_use_when:
+  - A specific tool has already been selected for evaluation.
+  - License review has not cleared use beyond pointer metadata.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/e2b-dev/awesome-ai-agents
+      known_gaps:
+        - Listed projects need separate validation.
+distribution:
+  install:
+    type: external-repository
+    command: Inspect the original repository as a discovery catalog.
+  invoke:
+    command: Use as agent candidate discovery reference.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - network-access
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - agent landscape discovery
+    - tool shortlist creation
+  caution_for:
+    - unverified lists
+    - unclear license state
+  not_recommended_for:
+    - direct runtime installation
+  keywords:
+    - agents
+    - catalog
+    - discovery
+trust:
+  level: low
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: medium
+  security: medium
+  privacy: low
+  compliance: unknown
+  data_classification: public-reference
+  data_handling_notes: Treat listed tools as untrusted until individually reviewed.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Useful landscape catalog, but license state and listed tools need review.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

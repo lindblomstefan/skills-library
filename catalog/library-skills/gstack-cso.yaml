@@ -1,0 +1,130 @@
+id: gstack-cso
+name: GStack CSO
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Security review skill for OWASP Top 10 and STRIDE-style threat modeling.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#cso
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - security
+  - architecture
+task_types:
+  - threat-modeling
+  - architecture-review
+use_when:
+  - A repo or design needs security review or threat modeling.
+  - The user wants OWASP or STRIDE coverage.
+do_not_use_when:
+  - The task is only product discovery with no system boundary.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Needs local evaluation and security-review calibration.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#cso
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack from the original source, then invoke /cso in a supported agent host.
+  invoke:
+    command: /cso
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - read-repository
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - threat model
+    - security audit
+    - OWASP review
+  caution_for:
+    - sensitive systems where findings need controlled disclosure
+  not_recommended_for:
+    - visual design review
+  example_prompts:
+    - Threat model this feature and check OWASP risks.
+  anti_examples:
+    - Create a UI mockup.
+  keywords:
+    - security
+    - threat model
+    - OWASP
+    - STRIDE
+  aliases:
+    - cso
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer to popular MIT-licensed garrytan/gstack repository; no external skill files copied.
+risk:
+  level: high
+  security: high
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Security findings and system details should stay local unless reviewed.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Security candidate is useful but needs review rigor before approval.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-plan-eng-review
+    - gstack-review
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.
+

@@ -1,0 +1,132 @@
+id: gstack-design-review
+name: GStack Design Review
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Live visual audit and fix-loop skill for user-facing product surfaces.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#design-review
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - ui-ux
+  - testing
+task_types:
+  - test-strategy
+  - release-readiness
+use_when:
+  - A user-facing interface needs visual QA or design polish.
+  - The user wants before/after screenshots and atomic fixes.
+do_not_use_when:
+  - The repo has no runnable UI or visual surface.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Browser/tool requirements need evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#design-review
+      known_gaps:
+        - Requires browser capability for full value.
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack, then invoke /design-review in a supported agent host.
+  invoke:
+    command: /design-review
+  generated_files: []
+  dependencies:
+    - gstack
+    - browser automation
+  required_permissions:
+    - read-repository
+    - run-app
+    - edit-files
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - visual QA
+    - UI polish
+    - design review
+  caution_for:
+    - authenticated or sensitive production pages
+  not_recommended_for:
+    - backend-only repositories
+  example_prompts:
+    - Review this interface visually and fix the issues you find.
+  anti_examples:
+    - Threat model this authentication flow.
+  keywords:
+    - design review
+    - visual audit
+    - UI
+  aliases:
+    - design-review
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Onboarded from popular MIT-licensed garrytan/gstack repository.
+risk:
+  level: high
+  security: medium
+  privacy: high
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Browser screenshots may contain sensitive data; use non-production data where possible.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Useful UI candidate; browser/privacy requirements need evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-qa
+    - gstack-plan-design-review
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

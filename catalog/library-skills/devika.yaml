@@ -1,0 +1,91 @@
+id: devika
+name: Devika
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Agentic software engineer project candidate for comparing autonomous planning and implementation workflows.
+source:
+  type: external-repository
+  url: https://github.com/stitionai/devika
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: stitionai/devika
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/stitionai/devika
+  stars_observed: 19560
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - architecture-review
+  - impact-analysis
+use_when:
+  - A team wants to compare autonomous software engineer approaches.
+  - The task is research or evaluation of agent workflow design.
+do_not_use_when:
+  - The user needs a maintained production-ready coding workflow without further review.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/stitionai/devika
+      known_gaps:
+        - Activity and production suitability need review before use.
+distribution:
+  install:
+    type: external-repository
+    command: Inspect the original repository for evaluation only.
+  invoke:
+    command: Use as comparative research candidate.
+  generated_files: []
+  dependencies:
+    - external-agent-runtime
+  required_permissions:
+    - read-repository
+  required_secrets:
+    - model provider credentials, if required
+  network_access: required
+routing:
+  recommend_for:
+    - autonomous agent comparison
+    - planning workflow research
+  caution_for:
+    - production use
+  not_recommended_for:
+    - low-risk coding tasks
+  keywords:
+    - autonomous software engineer
+    - planning
+    - agent
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: Treat as external agent runtime until tested locally.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Useful comparison candidate, but not evaluated for current runtime.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

@@ -1,0 +1,91 @@
+id: awesome-mcp-servers
+name: Awesome MCP Servers
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Curated MCP server index for discovering integration candidates across developer, data, browser, and infrastructure workflows.
+source:
+  type: external-repository
+  url: https://github.com/punkpeye/awesome-mcp-servers
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: punkpeye/awesome-mcp-servers
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/punkpeye/awesome-mcp-servers
+  stars_observed: 92215
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - architecture
+  - discovery
+  - repository-analysis
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - A repo needs possible MCP integrations mapped before implementation.
+  - The user asks what external tools could support an agent workflow.
+do_not_use_when:
+  - A vetted, approved MCP server is already selected.
+  - The task requires direct installation without human review.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/punkpeye/awesome-mcp-servers
+      known_gaps:
+        - Individual servers need separate license, security, and runtime review.
+distribution:
+  install:
+    type: external-repository
+    command: Inspect the original repository and select server candidates for separate onboarding.
+  invoke:
+    command: Use as an MCP discovery reference.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - network-access
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - MCP discovery
+    - tool integration planning
+  caution_for:
+    - unverified server lists
+  not_recommended_for:
+    - approving a specific server without evaluation
+  keywords:
+    - mcp
+    - integrations
+    - server catalog
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: public-reference
+  data_handling_notes: Listed MCP servers can request broad permissions and must be reviewed individually.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Strong discovery candidate, but listed integrations need individual onboarding.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

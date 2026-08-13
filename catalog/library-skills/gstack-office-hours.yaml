@@ -1,0 +1,135 @@
+id: gstack-office-hours
+name: GStack Office Hours
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Product discovery skill that reframes early product ideas through structured office-hours questions before implementation starts.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#office-hours
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - discovery
+  - planning
+task_types:
+  - project-onboarding
+use_when:
+  - A product or initiative idea is vague and needs sharper problem framing before planning.
+  - The user needs forcing questions before committing to implementation scope.
+do_not_use_when:
+  - The user has a clear approved spec and only needs implementation.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: GStack host semantics need local evaluation before recommendation as ready.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/AGENTS.md
+      known_gaps:
+        - Not installed or invoked from this library yet.
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack, then invoke /office-hours in a supported agent host.
+  invoke:
+    command: /office-hours
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - read-repository
+    - write-design-docs
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - product discovery
+    - initiative framing
+    - project onboarding
+  caution_for:
+    - teams that already have approved requirements
+  not_recommended_for:
+    - code review
+    - release readiness
+  example_prompts:
+    - Help me decide what this product idea should really become.
+  anti_examples:
+    - Review this pull request for bugs.
+  keywords:
+    - product
+    - discovery
+    - office hours
+    - idea
+  aliases:
+    - office-hours
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: GitHub metadata showed garrytan/gstack as a popular MIT-licensed repository with 127785 stars when onboarded.
+risk:
+  level: medium
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: May capture product strategy and user intent; keep outputs local unless reviewed.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria:
+    - GStack skill changes materially
+    - Better product discovery skill replaces it
+decision:
+  outcome: defer
+  rationale: Popular candidate; license and runtime compatibility need human review before approval.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-spec
+    - gstack-plan-ceo-review
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps:
+    - No local install or invoke event yet.
+known_limitations:
+  - Candidate only; not evaluated locally.
+  - Source is optimized for gstack/Claude-style invocation.

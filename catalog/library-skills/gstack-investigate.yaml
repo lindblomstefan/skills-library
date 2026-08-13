@@ -1,0 +1,129 @@
+id: gstack-investigate
+name: GStack Investigate
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Systematic debugging skill that investigates root cause before allowing fixes.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#investigate
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - coding
+  - codebase-understanding
+task_types:
+  - impact-analysis
+  - codebase-navigation
+use_when:
+  - A bug needs root-cause analysis before edits.
+  - Multiple failed fixes suggest the problem is not understood.
+do_not_use_when:
+  - The user wants a quick speculative patch without investigation.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Needs host compatibility evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#investigate
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack, then invoke /investigate in a supported agent host.
+  invoke:
+    command: /investigate
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - read-repository
+    - run-tests
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - root cause analysis
+    - debugging
+    - impact analysis
+  caution_for:
+    - production systems where commands need approval
+  not_recommended_for:
+    - writing release notes
+  example_prompts:
+    - Investigate why this bug happens before fixing it.
+  anti_examples:
+    - Draft a product strategy memo.
+  keywords:
+    - investigate
+    - debug
+    - root cause
+  aliases:
+    - investigate
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Onboarded from popular MIT-licensed garrytan/gstack repository.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Debugging may expose logs, secrets, or customer data; redact before feedback.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Useful debugging candidate; needs local evaluation before approval.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-careful
+    - gstack-qa
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

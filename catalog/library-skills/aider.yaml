@@ -1,0 +1,93 @@
+id: aider
+name: Aider
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Terminal pair-programming agent candidate for code editing and repository-aware development workflows.
+source:
+  type: external-repository
+  url: https://github.com/Aider-AI/aider
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: Aider-AI/aider
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/Aider-AI/aider
+  stars_observed: 48165
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - repository-analysis
+task_types:
+  - impact-analysis
+  - pull-request-review
+use_when:
+  - The user wants terminal-based pair programming with repository context.
+  - Code edits should be proposed through a known external agent rather than copied skill files.
+do_not_use_when:
+  - The repo cannot be exposed to configured LLM providers.
+  - The user needs only documentation or interview support.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: aider
+      support: native
+      evidence:
+        - https://github.com/Aider-AI/aider
+      known_gaps:
+        - Provider, model, and repo privacy settings need local evaluation.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original Aider distribution.
+  invoke:
+    command: Use aider in a target repository after review.
+  generated_files: []
+  dependencies:
+    - aider-runtime
+  required_permissions:
+    - read-repository
+    - write-repository
+  required_secrets:
+    - model provider credentials, if required
+  network_access: required
+routing:
+  recommend_for:
+    - terminal pair programming
+    - code editing
+  caution_for:
+    - sensitive repositories
+  not_recommended_for:
+    - non-code interviewing
+  keywords:
+    - aider
+    - pair programming
+    - coding agent
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: medium
+  security: medium
+  privacy: high
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: Repository content may be included in model prompts depending on configuration.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Clear-license coding candidate, but provider privacy and local evaluation are required.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

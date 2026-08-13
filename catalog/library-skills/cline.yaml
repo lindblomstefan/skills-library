@@ -1,0 +1,94 @@
+id: cline
+name: Cline
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Autonomous coding agent candidate available as SDK, IDE extension, or CLI-style assistant.
+source:
+  type: external-repository
+  url: https://github.com/cline/cline
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: cline/cline
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/cline/cline
+  stars_observed: 66133
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - codebase-understanding
+task_types:
+  - codebase-navigation
+  - impact-analysis
+  - pull-request-review
+use_when:
+  - The user wants to evaluate IDE-based autonomous coding assistance.
+  - The repo needs agent help that can inspect and modify files with approval.
+do_not_use_when:
+  - Extension permissions or provider data handling have not been reviewed.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/cline/cline
+      known_gaps:
+        - IDE extension behavior and provider configuration need local review.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original Cline distribution after review.
+  invoke:
+    command: Use Cline in a supported host.
+  generated_files: []
+  dependencies:
+    - external-agent-runtime
+  required_permissions:
+    - read-repository
+    - write-repository
+  required_secrets:
+    - model provider credentials, if required
+  network_access: required
+routing:
+  recommend_for:
+    - IDE coding assistance
+    - codebase navigation
+  caution_for:
+    - private repositories
+    - broad extension permissions
+  not_recommended_for:
+    - pure documentation research
+  keywords:
+    - cline
+    - ide
+    - autonomous coding
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: high
+  security: high
+  privacy: high
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: IDE agents may read files, run commands, and call configured model providers.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Strong coding-agent candidate, but permissions and provider behavior must be reviewed.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

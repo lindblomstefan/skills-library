@@ -1,0 +1,91 @@
+id: modelcontextprotocol-servers
+name: Model Context Protocol Servers
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Official-style MCP server repository candidate for understanding common server patterns and integration shape.
+source:
+  type: external-repository
+  url: https://github.com/modelcontextprotocol/servers
+  license: Other
+  license_spdx: NOASSERTION
+  redistribution: needs-review
+  modification_allowed: needs-review
+  maintainer: modelcontextprotocol/servers
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/modelcontextprotocol/servers
+  stars_observed: 89531
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - architecture
+  - coding
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - An initiative needs to understand MCP server implementation patterns.
+  - A user is evaluating whether MCP is the right integration mechanism.
+do_not_use_when:
+  - License review or security review is required but has not happened.
+  - The user only needs a high-level list of available servers.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/modelcontextprotocol/servers
+      known_gaps:
+        - License state is not clear from the GitHub API summary.
+distribution:
+  install:
+    type: external-repository
+    command: Fetch from the original repository only after review.
+  invoke:
+    command: Use as an MCP implementation reference.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - network-access
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - MCP architecture review
+    - integration reference
+  caution_for:
+    - unclear license state
+    - runtime-specific server permissions
+  not_recommended_for:
+    - immediate production installation
+  keywords:
+    - mcp
+    - server
+    - protocol
+trust:
+  level: low
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: public-reference
+  data_handling_notes: MCP servers can bridge local data and external tools; permissions need explicit review.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Useful MCP reference, but NOASSERTION license state blocks approval.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

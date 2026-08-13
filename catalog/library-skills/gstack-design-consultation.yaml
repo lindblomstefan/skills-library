@@ -1,0 +1,128 @@
+id: gstack-design-consultation
+name: GStack Design Consultation
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Design partner skill for creating or improving a complete design system and product direction.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#design-consultation
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - ui-ux
+  - discovery
+task_types:
+  - project-onboarding
+use_when:
+  - A product needs design system direction or creative design exploration.
+  - The user wants a design partner before UI implementation.
+do_not_use_when:
+  - The task is a narrow backend or infrastructure change.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Needs host compatibility evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#design-consultation
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack, then invoke /design-consultation in a supported agent host.
+  invoke:
+    command: /design-consultation
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - read-repository
+    - write-design-docs
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - design system
+    - product design
+    - UI direction
+  caution_for:
+    - regulated brand work that needs formal approval
+  not_recommended_for:
+    - production incident response
+  example_prompts:
+    - Help shape a design system for this product.
+  anti_examples:
+    - Debug this failing API request.
+  keywords:
+    - design system
+    - visual design
+    - product design
+  aliases:
+    - design-consultation
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Onboarded from popular MIT-licensed garrytan/gstack repository.
+risk:
+  level: medium
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Design strategy may be proprietary.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Strong design candidate; needs evaluation before approval.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-plan-design-review
+    - gstack-design-review
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

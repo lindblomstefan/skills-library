@@ -1,0 +1,148 @@
+id: graphify
+name: Graphify
+catalog_visibility: library
+source_type: external
+status: evaluating
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-12
+summary: Repository knowledge graph tooling that builds a navigable graph from code and documentation so agents can query structure before browsing raw files.
+source:
+  type: external-tool
+  url: https://github.com/modelcontextprotocol/graphify
+  license: needs-review
+  license_spdx: unknown
+  redistribution: needs-review
+  modification_allowed: needs-review
+  maintainer: external
+  version_or_commit: installed-local
+  documentation: graphify --help
+  dependencies: []
+  copied_assets: []
+domains:
+  - knowledge-graph
+  - repository-analysis
+  - codebase-understanding
+task_types:
+  - codebase-navigation
+  - relationship-discovery
+  - impact-analysis
+use_when:
+  - A repo has enough structure that graph navigation can reduce raw browsing.
+  - An agent needs to answer architecture, relationship, or impact questions before editing.
+  - The repository already has graphify-out/graph.json or can run graphify update locally.
+do_not_use_when:
+  - The task depends on source content that Graphify does not extract.
+  - The graph is known stale and cannot be updated.
+  - The user explicitly says not to use Graphify.
+compatibility:
+  matrix:
+    - model_id: codex
+      runtime_id: codex-cli
+      support: compatible
+      tested_at: 2026-08-13
+      tested_by: codex
+      runtime_version: local
+      adapter: none
+      install_result: already-installed
+      invoke_result: pass
+      permission_notes: Uses local files and generated graphify-out artifacts.
+      evidence:
+        - graphify-out/graph.json
+        - graphify-out/GRAPH_REPORT.md
+      known_gaps:
+        - Raw JSON router examples produce zero AST nodes.
+  tags:
+    - status:evaluating
+    - runtime:codex-cli
+distribution:
+  install:
+    type: local-tool
+    command: graphify --help
+  invoke:
+    command: graphify query "<question>"
+  generated_files:
+    - graphify-out/graph.json
+    - graphify-out/GRAPH_REPORT.md
+    - graphify-out/graph.html
+  dependencies: []
+  required_permissions:
+    - read-repository
+    - write-graphify-out
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - repo onboarding
+    - architecture review
+    - relationship discovery
+    - impact analysis
+  caution_for:
+    - repositories with no generated graph
+    - non-code artifacts that need semantic extraction
+  not_recommended_for:
+    - tasks where the user forbids graph use
+  example_prompts:
+    - What should I inspect before changing the router?
+    - What connects governance gates to recommendation output?
+  anti_examples:
+    - Translate this paragraph.
+  keywords:
+    - graph
+    - repo map
+    - codebase
+    - relationships
+    - architecture
+  aliases:
+    - repo graph
+    - knowledge graph
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Installed locally and already used by this repository's AGENTS.md workflow.
+risk:
+  level: medium
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Should not send private repository content to semantic extraction without approval.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria:
+    - graph extraction stops working
+    - better repo graph tooling replaces it
+decision:
+  outcome: defer
+  rationale: Useful for the POC and repo navigation, but license and governance review are not complete.
+  decided_by: poc
+  decided_at: 2026-08-13
+relationships:
+  pairs_with: []
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested:
+    - recommend-repo-onboarding-skill-set
+  evidence_links:
+    - evaluations/runs/graphify-codex-cli-poc.yaml
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: true
+  recommendation_signal_available: true
+  known_metrics_gaps:
+    - Privacy-safe usage event storage is not implemented.
+known_limitations:
+  - Raw JSON examples do not become useful repo graph nodes through AST extraction.
+  - Community labels may need refresh after large doc changes.

@@ -1,0 +1,128 @@
+id: gstack-plan-design-review
+name: GStack Plan Design Review
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Plan-stage design review skill that scores and improves design dimensions before implementation.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#plan-design-review
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - ui-ux
+  - planning
+task_types:
+  - project-onboarding
+use_when:
+  - A plan needs design critique before UI implementation.
+  - The user wants design dimensions scored and improved.
+do_not_use_when:
+  - The task has no user-facing surface.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Needs host compatibility evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#plan-design-review
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack, then invoke /plan-design-review in a supported agent host.
+  invoke:
+    command: /plan-design-review
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - read-repository
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - design planning
+    - UI review
+    - product experience critique
+  caution_for:
+    - backend-only or infrastructure tasks
+  not_recommended_for:
+    - security threat modeling
+  example_prompts:
+    - Review this UI plan before we implement it.
+  anti_examples:
+    - Scan this repo for secrets.
+  keywords:
+    - design
+    - ui
+    - ux
+    - plan
+  aliases:
+    - plan-design-review
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Onboarded from popular MIT-licensed garrytan/gstack repository.
+risk:
+  level: medium
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Product mockups and strategy may be sensitive.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Useful UI planning candidate; needs evaluation before approval.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-design-review
+    - gstack-design-consultation
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

@@ -1,0 +1,130 @@
+id: gstack-review
+name: GStack Review
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Pre-landing code review skill that looks for bugs that pass CI but fail in production.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#review
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - coding
+  - testing
+task_types:
+  - pull-request-review
+  - release-readiness
+use_when:
+  - A branch or pull request needs pre-landing review.
+  - The user wants bug risk checked beyond CI status.
+do_not_use_when:
+  - The task is product discovery or initial scope framing.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Needs host compatibility evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#review
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack, then invoke /review in a supported agent host.
+  invoke:
+    command: /review
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - read-repository
+    - run-tests
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - code review
+    - pull request review
+    - release readiness
+  caution_for:
+    - untrusted diffs or generated code needing sandbox review
+  not_recommended_for:
+    - product strategy
+  example_prompts:
+    - Review this branch for bugs before it lands.
+  anti_examples:
+    - Create a design system from scratch.
+  keywords:
+    - review
+    - pull request
+    - bugs
+    - pre-landing
+  aliases:
+    - review
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Onboarded from popular MIT-licensed garrytan/gstack repository.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Reviews source code and diffs; do not submit raw code as feedback.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Strong code review candidate; needs local evaluation before approval.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-qa
+    - gstack-ship
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

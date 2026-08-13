@@ -1,0 +1,91 @@
+id: gpt-engineer
+name: GPT Engineer
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Code generation experiment platform candidate for comparing prompt-to-application development workflows.
+source:
+  type: external-repository
+  url: https://github.com/AntonOsika/gpt-engineer
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: AntonOsika/gpt-engineer
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/AntonOsika/gpt-engineer
+  stars_observed: 55148
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - project-onboarding
+  - impact-analysis
+use_when:
+  - The initiative wants to compare prompt-to-code generation approaches.
+  - A user is exploring greenfield application generation tools.
+do_not_use_when:
+  - The repo needs conservative edits in an existing production codebase.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/AntonOsika/gpt-engineer
+      known_gaps:
+        - Current maintenance path and successor tooling should be reviewed.
+distribution:
+  install:
+    type: external-repository
+    command: Inspect or install from the original repository only after review.
+  invoke:
+    command: Use as code-generation comparison candidate.
+  generated_files: []
+  dependencies:
+    - external-agent-runtime
+  required_permissions:
+    - write-repository
+  required_secrets:
+    - model provider credentials, if required
+  network_access: required
+routing:
+  recommend_for:
+    - code generation comparison
+    - greenfield prototype exploration
+  caution_for:
+    - existing production repositories
+  not_recommended_for:
+    - security review
+  keywords:
+    - code generation
+    - prototype
+    - gpt engineer
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: Generated code and prompts need review before use.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Popular code-generation candidate, but successor/tooling status needs review.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

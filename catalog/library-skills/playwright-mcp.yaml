@@ -1,0 +1,94 @@
+id: playwright-mcp
+name: Playwright MCP
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Browser automation MCP server candidate for testing web flows and giving agents structured browser control.
+source:
+  type: external-repository
+  url: https://github.com/microsoft/playwright-mcp
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: microsoft/playwright-mcp
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/microsoft/playwright-mcp
+  stars_observed: 36080
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - testing
+  - ui-ux
+task_types:
+  - test-strategy
+  - release-readiness
+use_when:
+  - A repo needs browser automation through MCP for web testing or UI verification.
+  - An agent host supports MCP and the user consents to browser automation.
+do_not_use_when:
+  - Browser sessions may expose private data without isolation.
+  - The project is not a web or browser-facing workflow.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/microsoft/playwright-mcp
+      known_gaps:
+        - MCP host compatibility and browser isolation need local evaluation.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original Microsoft Playwright MCP repository after review.
+  invoke:
+    command: Connect through an approved MCP host.
+  generated_files: []
+  dependencies:
+    - mcp-host
+    - browser-runtime
+  required_permissions:
+    - browser-automation
+    - network-access
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - browser automation
+    - UI testing
+    - release verification
+  caution_for:
+    - authenticated browser sessions
+  not_recommended_for:
+    - backend-only repositories
+  keywords:
+    - playwright
+    - mcp
+    - browser testing
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: medium
+  security: medium
+  privacy: high
+  compliance: unknown
+  data_classification: session-sensitive
+  data_handling_notes: Browser automation can expose session cookies, screenshots, and private page content.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Strong test automation candidate, but host and privacy behavior need evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

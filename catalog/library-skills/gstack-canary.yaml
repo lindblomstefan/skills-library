@@ -1,0 +1,128 @@
+id: gstack-canary
+name: GStack Canary
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Post-deploy monitoring skill that checks for errors, failures, and regressions after a release.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#canary
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - testing
+task_types:
+  - release-readiness
+use_when:
+  - A release has just deployed and needs short-loop verification.
+  - The user wants console, page, or performance smoke checks after deploy.
+do_not_use_when:
+  - No deployment or reachable environment exists.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Browser and production access requirements need evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#canary
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack from the original source, then invoke /canary in a supported agent host.
+  invoke:
+    command: /canary
+  generated_files: []
+  dependencies:
+    - gstack
+    - browser automation
+  required_permissions:
+    - access-deployed-environment
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - post-deploy verification
+    - canary monitoring
+    - release readiness
+  caution_for:
+    - sensitive production sessions or authenticated flows
+  not_recommended_for:
+    - pre-implementation planning
+  example_prompts:
+    - Monitor the deployment for regressions after release.
+  anti_examples:
+    - Write a new feature spec.
+  keywords:
+    - canary
+    - post deploy
+    - monitoring
+  aliases:
+    - canary
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer to popular MIT-licensed garrytan/gstack repository; no external skill files copied.
+risk:
+  level: high
+  security: medium
+  privacy: high
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Production monitoring can expose URLs, user data, and logs.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Useful post-deploy candidate; needs production safety evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-land-and-deploy
+    - gstack-benchmark
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.
+

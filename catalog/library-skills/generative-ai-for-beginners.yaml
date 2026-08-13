@@ -1,0 +1,88 @@
+id: generative-ai-for-beginners
+name: Generative AI For Beginners
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Microsoft generative AI learning repository candidate for foundational team onboarding and terminology alignment.
+source:
+  type: external-repository
+  url: https://github.com/microsoft/generative-ai-for-beginners
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: microsoft/generative-ai-for-beginners
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/microsoft/generative-ai-for-beginners
+  stars_observed: 117662
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - documentation
+  - discovery
+task_types:
+  - project-onboarding
+use_when:
+  - A repo team needs baseline generative AI concepts before skill recommendations.
+  - The initiative has mixed experience levels and needs shared vocabulary.
+do_not_use_when:
+  - The task needs a concrete coding agent or repo-specific workflow.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/microsoft/generative-ai-for-beginners
+      known_gaps:
+        - Broad education content is not a specialized workflow skill.
+distribution:
+  install:
+    type: external-repository
+    command: Fetch or inspect from the original repository only.
+  invoke:
+    command: Use as learning reference material.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - network-access
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - generative AI onboarding
+    - shared terminology
+  caution_for:
+    - advanced implementation tasks
+  not_recommended_for:
+    - security review
+  keywords:
+    - generative ai
+    - beginners
+    - learning
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: unknown
+  data_classification: public-reference
+  data_handling_notes: Educational reference only.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Popular clear-license learning candidate, but not evaluated as a runnable skill.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

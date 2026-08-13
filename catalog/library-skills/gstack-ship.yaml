@@ -1,0 +1,135 @@
+id: gstack-ship
+name: GStack Ship
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Release preparation skill that syncs main, runs tests, reviews readiness, pushes work, and opens a pull request.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#ship
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - coding
+  - testing
+task_types:
+  - release-readiness
+  - pull-request-review
+use_when:
+  - Work is ready to package into a PR after tests and review.
+  - A repo needs a structured shipping checklist.
+do_not_use_when:
+  - The user is still discovering product scope.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Needs evaluation in a supported gstack host before ready recommendation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#ship
+      known_gaps:
+        - May push branches or open PRs depending on host permissions.
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack from the original source, then invoke /ship in a supported agent host.
+  invoke:
+    command: /ship
+  generated_files: []
+  dependencies:
+    - gstack
+    - git
+    - gh
+  required_permissions:
+    - read-repository
+    - run-tests
+    - create-branches
+    - create-pull-requests
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - prepare release
+    - open pull request
+    - run pre-ship checks
+  caution_for:
+    - repos where branch pushes or PR creation require explicit approval
+  not_recommended_for:
+    - product discovery
+  example_prompts:
+    - Ship this branch after running the right checks.
+  anti_examples:
+    - Reframe this product idea.
+  keywords:
+    - ship
+    - release
+    - pull request
+  aliases:
+    - ship
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer to popular MIT-licensed garrytan/gstack repository; no external skill files copied.
+risk:
+  level: high
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: May inspect source and create PRs; keep generated feedback redacted.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Popular release workflow candidate; needs permission and runtime evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-review
+    - gstack-qa
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.
+

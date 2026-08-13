@@ -1,0 +1,90 @@
+id: awesome-cursorrules
+name: Awesome Cursor Rules
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Cursor rule configuration catalog candidate for studying editor-agent instruction patterns.
+source:
+  type: external-repository
+  url: https://github.com/PatrickJS/awesome-cursorrules
+  license: Creative Commons Zero v1.0 Universal
+  license_spdx: CC0-1.0
+  redistribution: public-domain-dedication
+  modification_allowed: yes
+  maintainer: PatrickJS/awesome-cursorrules
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/PatrickJS/awesome-cursorrules
+  stars_observed: 40576
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - documentation
+task_types:
+  - project-onboarding
+  - codebase-navigation
+use_when:
+  - A team wants examples of editor-agent rule structure.
+  - The task is to compare instruction patterns before writing local rules.
+do_not_use_when:
+  - The user wants runtime-agnostic skills only and no editor-specific examples.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: cursor
+      support: native
+      evidence:
+        - https://github.com/PatrickJS/awesome-cursorrules
+      known_gaps:
+        - Rule quality varies and needs curation.
+distribution:
+  install:
+    type: external-repository
+    command: Inspect original examples and adapt only after review.
+  invoke:
+    command: Use as Cursor rule pattern reference.
+  generated_files: []
+  dependencies:
+    - cursor
+  required_permissions:
+    - read-repository
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - Cursor rule design
+    - instruction pattern comparison
+  caution_for:
+    - uncurated community examples
+  not_recommended_for:
+    - non-Cursor execution
+  keywords:
+    - cursor
+    - rules
+    - instructions
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: unknown
+  data_classification: public-reference
+  data_handling_notes: Community rules should be reviewed before adapting into local repo instructions.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Useful editor-rule reference, but examples still need curation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

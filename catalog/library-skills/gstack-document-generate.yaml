@@ -1,0 +1,130 @@
+id: gstack-document-generate
+name: GStack Document Generate
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Documentation-generation skill for producing Diataxis-style tutorials, how-to guides, references, or explanations from code.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#document-generate
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - documentation
+  - codebase-understanding
+task_types:
+  - codebase-navigation
+  - project-onboarding
+use_when:
+  - A feature needs tutorial, how-to, reference, or explanation documentation.
+  - Documentation should be generated from existing code behavior.
+do_not_use_when:
+  - The user needs release verification rather than docs.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Needs host compatibility evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#document-generate
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack from the original source, then invoke /document-generate in a supported agent host.
+  invoke:
+    command: /document-generate
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - read-repository
+    - write-docs
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - generate docs
+    - Diataxis documentation
+    - feature explanation
+  caution_for:
+    - proprietary code where docs should stay internal
+  not_recommended_for:
+    - browser QA
+  example_prompts:
+    - Generate docs for this feature from the code.
+  anti_examples:
+    - Deploy this PR.
+  keywords:
+    - docs
+    - Diataxis
+    - tutorial
+    - how-to
+  aliases:
+    - document-generate
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer to popular MIT-licensed garrytan/gstack repository; no external skill files copied.
+risk:
+  level: low
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Generated docs may disclose internal behavior.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Useful documentation candidate; needs quality evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-document-release
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.
+

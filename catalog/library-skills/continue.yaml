@@ -1,0 +1,92 @@
+id: continue
+name: Continue
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Open-source coding agent candidate for IDE and CLI assisted development workflows.
+source:
+  type: external-repository
+  url: https://github.com/continuedev/continue
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: continuedev/continue
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/continuedev/continue
+  stars_observed: 35473
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - codebase-understanding
+task_types:
+  - codebase-navigation
+  - pull-request-review
+use_when:
+  - A user wants an open-source coding assistant candidate for IDE or CLI workflows.
+  - The repo needs codebase-aware help beyond prompt examples.
+do_not_use_when:
+  - The user does not want to install an external coding agent.
+  - Security review for local repo access has not happened.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/continuedev/continue
+      known_gaps:
+        - Actual host compatibility and permission model must be evaluated.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository or official distribution.
+  invoke:
+    command: Use Continue in a supported IDE or CLI after review.
+  generated_files: []
+  dependencies:
+    - external-agent-runtime
+  required_permissions:
+    - read-repository
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - coding assistance
+    - codebase navigation
+  caution_for:
+    - private repositories
+    - unreviewed extensions
+  not_recommended_for:
+    - architecture-only learning
+  keywords:
+    - coding agent
+    - ide
+    - cli
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: Coding agents may read local source and transmit prompts depending on provider configuration.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Strong coding-agent candidate, but runtime and data handling must be tested before approval.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

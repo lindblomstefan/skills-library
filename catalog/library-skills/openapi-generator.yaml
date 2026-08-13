@@ -1,0 +1,96 @@
+id: openapi-generator
+name: OpenAPI Generator
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: API client, server stub, and documentation generator candidate for backend and integration workflows.
+source:
+  type: external-repository
+  url: https://github.com/OpenAPITools/openapi-generator
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: OpenAPITools/openapi-generator
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/OpenAPITools/openapi-generator
+  stars_observed: 26666
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - architecture
+documentation:
+  note: Candidate is a tool pointer, not copied generator templates.
+task_types:
+  - architecture-review
+  - release-readiness
+use_when:
+  - A repo has OpenAPI specs and needs generated clients, servers, or docs.
+  - Backend integration work depends on keeping API contracts explicit.
+do_not_use_when:
+  - No OpenAPI specification exists.
+  - Generated code policy has not been agreed.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/OpenAPITools/openapi-generator
+      known_gaps:
+        - Language-specific generator behavior needs evaluation per repo.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original OpenAPI Generator distribution.
+  invoke:
+    command: Run generator against an approved OpenAPI spec.
+  generated_files:
+    - generated API clients, server stubs, or docs in the target repo
+  dependencies:
+    - openapi-spec
+  required_permissions:
+    - read-repository
+    - write-repository
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - API generation
+    - backend integration
+    - contract-driven development
+  caution_for:
+    - generated code churn
+  not_recommended_for:
+    - non-API projects
+  keywords:
+    - openapi
+    - api generation
+    - backend
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: medium
+  security: medium
+  privacy: low
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: API specs may reveal internal endpoints and schemas.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-13
+  next_review: 2026-11-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Mature clear-license backend candidate, but generator outputs need policy review.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

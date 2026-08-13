@@ -1,0 +1,128 @@
+id: gstack-careful
+name: GStack Careful
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Safety guardrail skill that warns before destructive commands such as recursive deletes, force pushes, and destructive database operations.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#safety--guardrails
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - security
+  - coding
+task_types:
+  - release-readiness
+  - threat-modeling
+use_when:
+  - The user is about to work near production, data deletion, force pushes, or risky shell commands.
+  - A session needs lightweight destructive-command warnings.
+do_not_use_when:
+  - The runtime cannot enforce or surface tool-use warnings.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Hook behavior is host-specific and must be evaluated.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#safety--guardrails
+      known_gaps:
+        - May depend on Claude Code hook mechanics.
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack from the original source, then invoke /careful in a supported agent host.
+  invoke:
+    command: /careful
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - tool-hook-access
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - destructive command safety
+    - production caution
+    - release safety
+  caution_for:
+    - runtimes without enforceable hooks
+  not_recommended_for:
+    - product discovery
+  example_prompts:
+    - Be careful before running destructive commands in this repo.
+  anti_examples:
+    - Generate design variants.
+  keywords:
+    - careful
+    - safety
+    - destructive commands
+  aliases:
+    - careful
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer to popular MIT-licensed garrytan/gstack repository; no external skill files copied.
+risk:
+  level: medium
+  security: medium
+  privacy: low
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Intended to reduce operational risk; host-specific enforcement must be verified.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Safety candidate is promising but hook support must be evaluated per runtime.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-investigate
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.

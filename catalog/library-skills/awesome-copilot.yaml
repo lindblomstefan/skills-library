@@ -1,0 +1,91 @@
+id: awesome-copilot
+name: Awesome Copilot
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: GitHub Copilot community catalog candidate for instructions, agents, skills, and configuration examples.
+source:
+  type: external-repository
+  url: https://github.com/github/awesome-copilot
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: github/awesome-copilot
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/github/awesome-copilot
+  stars_observed: 37778
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - documentation
+task_types:
+  - project-onboarding
+  - codebase-navigation
+use_when:
+  - A team wants Copilot instruction or agent configuration examples.
+  - The user asks for skill-like patterns in the GitHub Copilot ecosystem.
+do_not_use_when:
+  - The runtime is not Copilot and the user needs immediately executable skills.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/github/awesome-copilot
+      known_gaps:
+        - Individual examples need separate review and adaptation.
+distribution:
+  install:
+    type: external-repository
+    command: Inspect original examples and fetch from source only.
+  invoke:
+    command: Use as Copilot configuration reference.
+  generated_files: []
+  dependencies:
+    - github-copilot
+  required_permissions:
+    - read-repository
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - Copilot configuration
+    - instruction examples
+  caution_for:
+    - runtime mismatch
+    - unreviewed community examples
+  not_recommended_for:
+    - non-Copilot production workflows
+  keywords:
+    - copilot
+    - instructions
+    - agents
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: unknown
+  data_classification: public-reference
+  data_handling_notes: Examples need review before adapting to private repositories.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Useful Copilot ecosystem candidate, but examples need review before public recommendation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

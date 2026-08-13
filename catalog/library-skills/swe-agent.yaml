@@ -1,0 +1,98 @@
+id: swe-agent
+name: SWE-agent
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: Issue-solving software engineering agent candidate for automated bug fixing and evaluation workflows.
+source:
+  type: external-repository
+  url: https://github.com/SWE-agent/SWE-agent
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: SWE-agent/SWE-agent
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/SWE-agent/SWE-agent
+  stars_observed: 20054
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - testing
+  - security
+task_types:
+  - impact-analysis
+  - pull-request-review
+  - threat-modeling
+use_when:
+  - The initiative needs to evaluate issue-fixing agents or benchmark repair workflows.
+  - A repository has clear issues and tests that can bound agent behavior.
+do_not_use_when:
+  - The task cannot tolerate broad tool execution or offensive security capabilities.
+  - The repo lacks test signals or a sandbox.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/SWE-agent/SWE-agent
+      known_gaps:
+        - Security posture and sandboxing need explicit review.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original SWE-agent distribution after review.
+  invoke:
+    command: Use in a sandboxed repo with clear test gates.
+  generated_files: []
+  dependencies:
+    - external-agent-runtime
+  required_permissions:
+    - read-repository
+    - write-repository
+    - run-tests
+  required_secrets:
+    - model provider credentials, if required
+  network_access: required
+routing:
+  recommend_for:
+    - issue fixing
+    - repair benchmark
+    - test-driven code changes
+  caution_for:
+    - offensive security workflows
+    - insufficient sandboxing
+  not_recommended_for:
+    - discovery-only tasks
+  keywords:
+    - swe agent
+    - issue fixing
+    - benchmark
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: high
+  security: high
+  privacy: high
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: Use only with sandboxing and explicit permission because the project can support powerful code and security workflows.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Useful issue-fixing candidate, but high-risk execution model needs review.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13

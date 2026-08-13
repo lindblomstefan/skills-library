@@ -1,0 +1,128 @@
+id: gstack-document-release
+name: GStack Document Release
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: agent-research
+proposed_at: 2026-08-13
+summary: Documentation skill that updates project docs to match shipped changes.
+source:
+  type: external-skill
+  url: https://github.com/garrytan/gstack
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: garrytan/gstack
+  version_or_commit: main@2026-08-12
+  documentation: https://github.com/garrytan/gstack/blob/main/docs/skills.md#document-release
+  dependencies:
+    - gstack
+  copied_assets: []
+domains:
+  - documentation
+task_types:
+  - release-readiness
+use_when:
+  - Shipped changes require README, docs, or release documentation updates.
+  - The user wants stale docs detected after implementation.
+do_not_use_when:
+  - No code or behavior has changed.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: unknown
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Needs host compatibility evaluation.
+      evidence:
+        - https://github.com/garrytan/gstack/blob/main/docs/skills.md#document-release
+      known_gaps: []
+  tags:
+    - source:gstack
+distribution:
+  install:
+    type: external-skill
+    command: Install gstack from the original source, then invoke /document-release in a supported agent host.
+  invoke:
+    command: /document-release
+  generated_files: []
+  dependencies:
+    - gstack
+  required_permissions:
+    - read-repository
+    - edit-docs
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - update docs after release
+    - release notes
+    - documentation freshness
+  caution_for:
+    - regulated documents that require formal approval
+  not_recommended_for:
+    - security threat modeling
+  example_prompts:
+    - Update docs to match what just shipped.
+  anti_examples:
+    - Find visual regressions in the UI.
+  keywords:
+    - docs
+    - release docs
+    - documentation
+  aliases:
+    - document-release
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer to popular MIT-licensed garrytan/gstack repository; no external skill files copied.
+risk:
+  level: low
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Documentation may reveal internal implementation details.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+  deprecation_criteria: []
+decision:
+  outcome: defer
+  rationale: Useful documentation candidate; needs output quality evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - gstack-ship
+    - gstack-document-generate
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Candidate only; not evaluated locally.
+

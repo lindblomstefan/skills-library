@@ -1,0 +1,95 @@
+id: openhands
+name: OpenHands
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+owner: unassigned
+proposed_by: github-popularity-research
+proposed_at: 2026-08-13
+summary: AI-driven development environment candidate for autonomous implementation, issue work, and coding workflows.
+source:
+  type: external-repository
+  url: https://github.com/OpenHands/OpenHands
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: OpenHands/OpenHands
+  version_or_commit: observed-2026-08-13
+  documentation: https://github.com/OpenHands/OpenHands
+  stars_observed: 83907
+  observed_at: 2026-08-13
+  copied_assets: []
+domains:
+  - coding
+  - testing
+task_types:
+  - impact-analysis
+  - pull-request-review
+use_when:
+  - A repo needs evaluation of autonomous coding workflows.
+  - The user asks for issue-to-implementation agent candidates.
+do_not_use_when:
+  - The repo has not approved container, network, or credential boundaries.
+  - The work is small enough for a simpler local skill.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: unknown
+      evidence:
+        - https://github.com/OpenHands/OpenHands
+      known_gaps:
+        - Runtime footprint and permission model need evaluation.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original OpenHands distribution after review.
+  invoke:
+    command: Use OpenHands in an approved execution environment.
+  generated_files: []
+  dependencies:
+    - external-agent-runtime
+  required_permissions:
+    - read-repository
+    - write-repository
+    - network-access
+  required_secrets:
+    - model provider credentials, if required
+  network_access: required
+routing:
+  recommend_for:
+    - autonomous coding
+    - issue implementation
+  caution_for:
+    - production repositories
+    - broad tool permissions
+  not_recommended_for:
+    - lightweight prompt references
+  keywords:
+    - autonomous coding
+    - development agent
+    - issues
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Metadata-only pointer from GitHub API observation; no repository content copied.
+risk:
+  level: high
+  security: high
+  privacy: high
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: Autonomous development environments can run tools and access source, logs, and credentials if misconfigured.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: true
+decision:
+  outcome: defer
+  rationale: Popular clear-license coding candidate, but high operational risk requires evaluation.
+  decided_by: onboarding-research
+  decided_at: 2026-08-13
