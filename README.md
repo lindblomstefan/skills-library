@@ -113,25 +113,15 @@ The first POC is a local onboarding-to-recommendation flow. The primary interfac
 
 ## Installing And Invoking The Skill
 
-No special tooling required. Paste this prompt into any Claude Code session:
+Paste this into any Claude Code session:
 
 ```text
-Install the skill-library skill from https://github.com/lindblomstefan/skills-library
-
-1. Clone the repo: git clone https://github.com/lindblomstefan/skills-library /tmp/skills-library-install
-2. Copy the skill: mkdir -p ~/.claude/skills && cp -r /tmp/skills-library-install/.claude/skills/skill-library ~/.claude/skills/
-3. Add the following block to ~/.claude/CLAUDE.md (create the file if it does not exist):
-
-## Skill Library
-- When I type /skill-library, read ~/.claude/skills/skill-library/SKILL.md and run the guided interview.
-- When I ask what AI skills, tools, or AI-powered workflows to use for a project or team, suggest /skill-library before answering directly.
-
-4. Confirm it is installed and remind me: type /skill-library to start.
+Install the skill-library skill from https://github.com/lindblomstefan/skills-library and set it up so I can type /skill-library to start it.
 ```
 
-After installation, type `/skill-library` in any Claude Code session to start the guided interview.
+Claude will clone the repo, copy the skill into `~/.claude/skills/`, and add the trigger instructions to `~/.claude/CLAUDE.md`. After that, type `/skill-library` in any session to start the guided interview.
 
-The key sentence trigger (`what AI skills … to use for a project or team`) is a light auto-suggest — Claude will recommend running the interview rather than jumping to answers. It does not trigger on general "build X" statements.
+Claude will also suggest `/skill-library` when you ask what AI skills, tools, or AI-powered workflows to use for a project or team — without triggering on general "I want to build X" statements.
 
 Run:
 
