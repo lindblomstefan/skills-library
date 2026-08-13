@@ -44,7 +44,7 @@ export function recommendCommand(options = {}) {
   const catalogJson = buildCatalogJson(loadCatalog());
   const recommendation = buildRecommendation(catalogJson, options);
   if (options.format === "text") {
-    console.log(formatRecommendationText(recommendation));
+    console.log(formatRecommendationText(recommendation, options));
     return;
   }
   console.log(JSON.stringify(recommendation, null, 2));
@@ -95,7 +95,8 @@ export function optionsFromArgs(args) {
     model: args.model ? String(args.model) : undefined,
     runtime: args.runtime ? String(args.runtime) : undefined,
     mode: args.mode ? String(args.mode) : "exploratory",
-    format: args.format ? String(args.format) : "json",
+    format: args.format ? String(args.format) : "text",
+    limit: args.limit ? Number(args.limit) : 5,
     domain: args.domain ? String(args.domain) : undefined,
     taskTypes: args.taskTypes ? String(args.taskTypes).split(",").map((value) => value.trim()).filter(Boolean) : undefined
   };

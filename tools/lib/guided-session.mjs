@@ -39,11 +39,12 @@ export function buildGuidedSession(options = {}) {
 
 export function formatGuidedSessionText(session) {
   const lines = [
-    `Guided session: ${session.kind}`,
-    `Repo: ${session.repo_exists ? session.repo : "missing"}`,
+    `Skill-library interview: ${session.kind}`,
+    `Target repo: ${session.repo_exists ? session.repo : "missing"}`,
     `Repo inspection: ${session.repo_inspection.consent}${session.repo_inspection.inspected ? " (done)" : ""}`,
     ""
   ];
+
   if (session.repo_context) {
     lines.push("Repo context:");
     lines.push(`- name: ${session.repo_context.name}`);
@@ -51,12 +52,20 @@ export function formatGuidedSessionText(session) {
     lines.push(`- graphify: ${session.repo_context.graphify.available ? "available" : "missing"}`);
     lines.push("");
   }
-  lines.push("Questions:");
-  for (const question of session.questions) {
-    lines.push(`- ${question.id}: ${question.question}`);
-    lines.push(`  choices: ${question.choices.map((choice) => choice.label).join(" | ")}`);
-    if (question.allow_free_text) lines.push("  free text: allowed");
+
+  lines.push("Answer these so I can recommend skills:");
+  session.questions.forEach((question, index) => {
+    lines.push(`${index + 1}. ${question.question}`);
+    lines.push(`   Choices: ${question.choices.map((choice) => choice.label).join(" | ")}`);
+    if (question.allow_free_text) lines.push("   You can also answer in your own words.");
+  });
+
+  if (session.repo_inspection.consent === "unknown") {
+    lines.push("", "Guidance:");
+    lines.push("- If you choose Inspect repo, I will read safe local metadata first and then refine the recommendation.");
+    lines.push("- If you choose Questions only, I will recommend from your answers without reading files.");
   }
+
   if (session.next_actions.length) {
     lines.push("", "Next actions:");
     for (const action of session.next_actions) lines.push(`- ${action}`);

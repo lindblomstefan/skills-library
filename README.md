@@ -148,7 +148,7 @@ node bin/skills-library.mjs validate
 node bin/skills-library.mjs build
 node bin/skills-library.mjs assist --repo . --format text
 node bin/skills-library.mjs onboard --repo . --candidate <url-or-path> --format text
-node bin/skills-library.mjs recommend --task "start a repo onboarding initiative" --model codex --runtime codex-cli
+node bin/skills-library.mjs recommend --task "start a repo onboarding initiative" --model codex --runtime codex-cli --format text
 node bin/skills-library.mjs feedback collect --repo . --skill-id gstack --signal wrong-recommendation
 ```
 

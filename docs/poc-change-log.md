@@ -192,3 +192,9 @@ Impact:
 - Removed generated `graphify-out/` artifacts from version control.
 - Changed `.gitignore` to ignore all of `graphify-out/`.
 - Removed Graphify-specific local agent instructions from `AGENTS.md` so internal navigation tooling is not exposed as repo guidance.
+
+### Human-Guided Recommendation Output
+
+- Changed the default `recommend` output to text instead of JSON.
+- Limited text recommendations to a short ranked shortlist with blockers, gaps, and one suggested next step.
+- Kept `--format json` available for full router output and automation.

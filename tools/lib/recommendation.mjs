@@ -51,28 +51,50 @@ export function buildRecommendation(catalogJson, options = {}) {
   };
 }
 
-export function formatRecommendationText(recommendation) {
+export function formatRecommendationText(recommendation, options = {}) {
+  const limit = Number(options.limit ?? 5);
+  const shown = recommendation.recommended.slice(0, limit);
   const lines = [
-    `Task: ${recommendation.task}`,
-    `Mode: ${recommendation.mode}`,
-    `Model/runtime: ${recommendation.model}/${recommendation.runtime}`,
-    `Pack: ${recommendation.recommended_pack?.pack_id ?? "none"}`,
+    "Skill recommendation",
+    `- Task: ${recommendation.task}`,
+    `- Mode: ${recommendation.mode}`,
+    `- Model/runtime: ${recommendation.model}/${recommendation.runtime}`,
+    `- Standard-ready skills: ${recommendation.recommended.filter((item) => item.eligibility.ready_for_standard_use).length}`,
+    `- Exploratory matches: ${recommendation.recommended.length}`,
     "",
-    "Recommended:"
+    "Recommended shortlist:"
   ];
-  for (const item of recommendation.recommended) {
-    lines.push(`- ${item.skill_id} (${item.confidence}, score ${item.score})`);
+
+  if (!shown.length) {
+    lines.push("- No skills are ready to recommend for this profile.");
+  }
+
+  for (const item of shown) {
+    const blockers = item.eligibility.blocking_risks.length
+      ? ` Blockers: ${item.eligibility.blocking_risks.join(", ")}.`
+      : "";
+    lines.push(`- ${item.skill_id}: ${item.confidence}, score ${item.score}.${blockers}`);
     lines.push(`  ${item.reason}`);
-    if (item.eligibility.blocking_risks.length) lines.push(`  blockers: ${item.eligibility.blocking_risks.join(", ")}`);
   }
-  if (recommendation.not_recommended.length) {
-    lines.push("", "Not recommended:");
-    for (const item of recommendation.not_recommended) lines.push(`- ${item.skill_id}: ${item.reason}`);
+
+  if (recommendation.recommended.length > shown.length) {
+    lines.push(`- ${recommendation.recommended.length - shown.length} lower-ranked exploratory matches hidden. Use --format json for full router output.`);
   }
+
   if (recommendation.missing.length) {
-    lines.push("", "Missing:");
-    for (const item of recommendation.missing) lines.push(`- ${item.gap}`);
+    lines.push("", "Important gaps:");
+    for (const item of recommendation.missing.slice(0, 3)) lines.push(`- ${item.gap}`);
   }
+
+  lines.push("", "Suggested next step:");
+  if (shown.some((item) => item.eligibility.blocking_risks.includes("license:needs-review"))) {
+    lines.push("- Resolve license review for the top candidate before treating it as approved.");
+  } else if (shown.length) {
+    lines.push(`- Pick one candidate to evaluate first: ${shown[0].skill_id}.`);
+  } else {
+    lines.push("- Clarify initiative goal, runtime, and work area, then rerun the recommendation.");
+  }
+
   return lines.join("\n");
 }
 
@@ -188,7 +210,7 @@ function matchesProfile(text, profile) {
 }
 
 function reasonFor(skill, item) {
-  if (skill.id === "graphify") return "Graphify is the repo-map skill for the POC and already has local evidence in graphify-out.";
+  if (skill.id === "graphify") return "Graphify is the repo-map candidate when the target repo has graph artifacts or can generate them locally.";
   if (skill.id === "initiative-skill-recommender") return "This skill captures initiative intent and turns it into router input for skill-set recommendation.";
   if (skill.id === "skill-library-onboarding") return "This skill covers the first POC step: onboarding a known candidate skill into the library.";
   if (skill.id === "skill-feedback-capture") return "This skill captures privacy-safe feedback with local repo context before issue submission.";

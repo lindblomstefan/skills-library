@@ -16,11 +16,12 @@ When this skill is invoked, start the guided recommendation flow immediately.
 Do not ask a broad "what do you want to do?" question. Do this instead:
 
 1. Identify the target repo. If the user is already in a repo, use it as the target.
-2. Ask for repo-inspection consent before reading files.
+2. Ask a concise interview the user can answer directly. Include repo-inspection consent as the first question.
 3. If consent is accepted, inspect only enough repo context to understand language, framework, risk, test surface, docs, and agent instruction files.
 4. Ask focused follow-up questions only for missing or contradictory intent.
 5. Recommend candidate skills only from stable evidence. If evidence is vague or contradictory, explain the confusion and ask for clarification instead of recommending.
-6. Show license state, status, risk, compatibility, and whether each recommendation is standard-ready or exploratory.
+6. Give a short shortlist and a next step. Do not dump raw JSON or every candidate unless the user explicitly asks for full router output.
+7. Show license state, status, risk, compatibility, and whether each recommendation is standard-ready or exploratory.
 
 ## Setup Assumption
 
@@ -47,10 +48,10 @@ Run from the target project:
   --model codex \
   --runtime codex-cli \
   --mode exploratory \
-  --format json
+  --format text
 ```
 
-Use `--format text` for human review.
+Use `--format json` only when another tool needs the full machine-readable router output. For user-facing answers, summarize the top 3-5 candidates and the immediate next decision.
 
 Recommendations do not download skills by default. Treat recommendation output as a reviewed shortlist with install metadata.
 
@@ -82,7 +83,7 @@ Start with repo-inspection consent and structured questions:
 ```bash
 /path/to/skills-library/bin/skills-library.mjs assist \
   --repo . \
-  --format json
+  --format text
 ```
 
 After the user accepts repo inspection:
@@ -94,7 +95,7 @@ After the user accepts repo inspection:
   --task "describe the initiative or task" \
   --model <model-id> \
   --runtime <runtime-id> \
-  --format json
+  --format text
 ```
 
 Use onboarding for known candidate skills:
@@ -114,7 +115,7 @@ If the CLI is unavailable, read `references/catalog-overview.md` and run the sam
 - Ask for repo-inspection consent.
 - Gather initiative goal, repo type, current pain, runtime/model, sensitivity, and time horizon.
 - Identify contradictions or missing intent before recommending.
-- Recommend a small set of skills or candidate areas with explicit blockers.
+- Recommend a small set of skills or candidate areas with explicit blockers and one suggested next step.
 - Never imply that candidate skills are approved or installed.
 
 ## Capture Feedback

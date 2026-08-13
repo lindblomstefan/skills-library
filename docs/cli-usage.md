@@ -79,16 +79,16 @@ Expected first useful command when the full repo is locally available:
 
 ## Output Formats
 
-JSON is the default and is the recommended interface for agents and automation:
+Text is the default and is the recommended interface for humans:
+
+```bash
+node bin/skills-library.mjs recommend
+```
+
+JSON output is for agents and automation that need the full router result:
 
 ```bash
 node bin/skills-library.mjs recommend --format json
-```
-
-Text output is for quick human review:
-
-```bash
-node bin/skills-library.mjs recommend --format text
 ```
 
 ## Current Commands
