@@ -9,7 +9,8 @@ No router implementation exists yet. This directory captures the intended contra
 ## Planned Commands
 
 ```bash
-skills recommend --task "review this API design" --model codex --runtime codex-cli --format json
+skills assist --repo . --format text
+skills recommend --repo . --repo-consent accepted --task "review this API design" --model codex --runtime codex-cli --format json
 skills explain graphify
 skills search "frontend accessibility review"
 ```
@@ -21,4 +22,3 @@ See:
 - `docs/router-output.md`
 - `catalog/schemas/router-entry.schema.yaml`
 - `router/examples/recommendation.example.json`
-

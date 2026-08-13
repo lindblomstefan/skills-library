@@ -99,11 +99,12 @@ export function formatRecommendationText(recommendation, options = {}) {
 }
 
 function buildProfile(options) {
-  const inferred = inferProfile(options.task ?? "");
+  const goalText = options.task ?? options.interviewAnswers ?? options.answers;
+  const inferred = inferProfile(goalText ?? "");
   return {
     id: options.profileId ?? "poc-repo-onboarding",
-    goal: options.task ?? "Build the first local POC for the skills library.",
-    desired_outcome: options.task ?? "Onboard a skill, compile catalog and graph data, recommend a skill set, and expose CLI output.",
+    goal: goalText ?? "Build the first local POC for the skills library.",
+    desired_outcome: goalText ?? "Onboard a skill, compile catalog and graph data, recommend a skill set, and expose CLI output.",
     current_repo_state: options.repoState ?? "Documentation-first repository with Graphify repo map and POC planning docs.",
     missing_information: [
       "Production graph database choice is deferred.",

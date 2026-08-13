@@ -26,10 +26,11 @@ Use this only when the full `skills-library` CLI is unavailable. Prefer the CLI 
 
 Ask only what is needed:
 
-1. May I inspect this repo before recommending skills?
-2. What outcome are you trying to achieve: onboard, plan, build, review, test, secure, document, deploy, or learn?
-3. What is the repo shape: frontend, backend, full-stack, library, infrastructure, data/AI, docs, or unknown?
-4. Which runtime/model should the skills work with?
-5. Any privacy, license, network, or production constraints?
+1. What is the idea, goal, and intended end product?
+2. May I inspect this repo before recommending skills?
+3. What outcome are you trying to achieve: onboard, plan, build, review, test, secure, document, deploy, or learn?
+4. What is the repo shape: frontend, backend, full-stack, library, infrastructure, data/AI, docs, or unknown?
+5. Which runtime/model should the skills work with?
+6. Any privacy, license, network, or production constraints?
 
 If answers conflict, pause recommendations and name the contradiction.

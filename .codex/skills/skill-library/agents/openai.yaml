@@ -1,4 +1,4 @@
 interface:
   display_name: "Skill Library"
   short_description: "Evaluate a repo and recommend skills"
-  default_prompt: "Use $skill-library to inspect this repo with consent and recommend useful skills. Start with guided assist; do not clone anything unless I explicitly ask."
+  default_prompt: "Use $skill-library. Start the sequenced interview with the idea, goal, and intended end product question. Do not clone anything unless I explicitly ask."

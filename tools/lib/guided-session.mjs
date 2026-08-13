@@ -103,6 +103,7 @@ function buildRepoContext(repo) {
 
 function buildQuestions(input) {
   const questions = [];
+  if (input.kind === "recommendation" && !hasInterviewAnswers(input.options)) questions.push(initiativeContextQuestion());
   if (input.repoConsent === "unknown") questions.push(repoConsentQuestion());
   if (!input.repoExists) questions.push(repoMissingQuestion());
   if (input.kind === "onboarding") questions.push(...onboardingQuestions(input));
@@ -111,8 +112,16 @@ function buildQuestions(input) {
   return questions;
 }
 
+function initiativeContextQuestion() {
+  return question("initiative_context", "Tell me about the idea: what are you trying to build or improve, what goal should it achieve, and what should the intended end product look like?", [
+    choice("describe-freely", "Describe freely", "Use your own words so the recommendation starts from real intent."),
+    choice("problem-only", "Problem only", "Share the pain point even if the solution is not clear yet."),
+    choice("chat-about-this", "Chat about this", "Talk through the idea before narrowing it down.")
+  ], { blocks: true, open: true });
+}
+
 function repoConsentQuestion() {
-  return question("repo_inspection", "May I inspect this repo before asking follow-up questions?", [
+  return question("repo_inspection", "May I inspect this repo to ground the follow-up questions and recommendations?", [
     choice("inspect-repo", "Inspect repo", "Use safe local metadata to reduce unnecessary questions."),
     choice("questions-only", "Questions only", "Skip repo reads and answer the interview manually."),
     choice("chat-about-this", "Chat about this", "Discuss scope or privacy concerns before deciding.")
@@ -129,13 +138,6 @@ function repoMissingQuestion() {
 
 function recommendationQuestions({ repoContext, inferred, options }) {
   const questions = [];
-  if (!options.task) {
-    questions.push(question("initiative_goal", "What outcome should this initiative produce?", [
-      choice("choose-skills", "Choose skills", "Recommend a skill set for upcoming work."),
-      choice("understand-repo", "Understand repo", "Prioritize repo navigation and architecture help."),
-      choice("improve-quality", "Improve quality", "Prioritize testing, security, and guardrails.")
-    ], { blocks: true }));
-  }
   if (!repoContext || inferred.domain === "unknown") {
     questions.push(question("work_area", "Which work area is closest?", [
       choice("architecture", "Architecture", "Architecture, boundaries, or decisions."),
@@ -195,6 +197,7 @@ function question(id, text, choices, options = {}) {
     why_it_matters: options.why ?? "This answer changes what the skill can safely infer or recommend.",
     choices,
     allow_free_text: true,
+    open_response: options.open === true,
     evidence_needed: options.evidence ?? [],
     blocks_recommendation: options.blocks === true
   };
@@ -208,6 +211,14 @@ function runtimeLabel(runtime) {
   if (!runtime || runtime === "agent-skill-host") return "Agent skill host";
   if (runtime === "codex-cli") return "Codex CLI";
   return String(runtime);
+}
+
+function hasInterviewAnswers(options) {
+  return hasText(options.interviewAnswers) || hasText(options.answers);
+}
+
+function hasText(value) {
+  return typeof value === "string" && value.trim().length > 0;
 }
 
 function inferFromContext(repoContext, options) {
@@ -230,7 +241,7 @@ function inferFromContext(repoContext, options) {
 }
 
 function nextActions(kind, repoConsent, questions) {
-  if (repoConsent === "unknown") return ["Ask the repo inspection consent question first."];
+  if (repoConsent === "unknown") return ["Ask the listed interview questions in order."];
   if (questions.some((questionItem) => questionItem.blocks_recommendation)) {
     return ["Resolve blocking questions before recommending skills or preparing a PR."];
   }

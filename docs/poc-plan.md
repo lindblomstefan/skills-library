@@ -128,7 +128,7 @@ The interview should ask the fewest useful questions, then infer from repository
 
 Skill help should be available before the user knows which exact command to run.
 
-The first action is always a repo-inspection consent question. If the user denies access or no repo exists, the flow continues with structured questions. If the user accepts, the skill inspects only safe summary context and asks follow-up questions for missing, realistic decisions.
+The first action is an open question about the idea, goal, and intended end product. The second step asks repo-inspection consent before reading files. If the user denies access or no repo exists, the flow continues with structured questions. If the user accepts, the skill inspects only safe summary context and asks follow-up questions for missing, realistic decisions.
 
 Guided questions use choices plus free text so a CLI, agent chat, or future dashboard can render the same contract.
 

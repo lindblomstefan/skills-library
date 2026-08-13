@@ -132,7 +132,7 @@ Good prompt:
 ```text
 Install and use the skill-library skill from git@github.com:lindblomstefan/skills-library.git.
 After installing it, invoke skill-library and start helping me evaluate what skills this repo needs.
-Ask for repo-inspection consent before reading files.
+Start by asking about the idea, goal, and intended end product. Ask for repo-inspection consent before reading files.
 ```
 
 After installation, a shorter prompt should work:
@@ -148,23 +148,28 @@ node bin/skills-library.mjs validate
 node bin/skills-library.mjs build
 node bin/skills-library.mjs assist --repo . --format text
 node bin/skills-library.mjs onboard --repo . --candidate <url-or-path> --format text
-node bin/skills-library.mjs recommend --task "start a repo onboarding initiative" --model codex --runtime codex-cli --format text
+node bin/skills-library.mjs recommend --repo . --repo-consent accepted --task "start a repo onboarding initiative" --model codex --runtime codex-cli --format text
 node bin/skills-library.mjs feedback collect --repo . --skill-id gstack --signal wrong-recommendation
 ```
 
 From another repo:
 
 ```bash
+/path/to/skills-library/bin/skills-library.mjs assist \
+  --repo . \
+  --format text
+
 /path/to/skills-library/bin/skills-library.mjs recommend \
   --repo . \
+  --repo-consent accepted \
   --task "what skill set should we use for this initiative?" \
   --model codex \
   --runtime codex-cli \
   --mode exploratory \
-  --format json
+  --format text
 ```
 
-Use `assist` when the user needs guided help before a recommendation. Use `onboard` when adding or evaluating a known skill candidate. Onboarding changes to skills, catalog entries, schemas, router logic, or evaluation evidence must go through a PR.
+Use `assist` first for human guidance. `recommend` is gated and should only produce a shortlist after repo inspection with consent or concrete interview answers. Use `onboard` when adding or evaluating a known skill candidate. Onboarding changes to skills, catalog entries, schemas, router logic, or evaluation evidence must go through a PR.
 
 See `docs/cli-usage.md` for the CLI contract.
 
@@ -178,6 +183,7 @@ The POC currently:
 - emits catalog, router, graph, recommendation, and Kuzu load artifacts under `dist/`
 - exposes a callable `bin/skills-library.mjs` CLI
 - starts guided recommendation and onboarding sessions with repo-inspection consent
+- blocks recommendations unless the repo was inspected with consent or concrete interview answers are present
 - captures privacy-safe local feedback for later issue submission
 - does not download recommended repositories by default; future acceptance flow must offer an explicit preview and fetch only accepted skills from original upstream sources
 - requires accepted skills to handle target repo agent instruction files, either by safe update or reviewable patch

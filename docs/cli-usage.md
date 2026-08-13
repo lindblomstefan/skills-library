@@ -9,8 +9,8 @@ Run commands through Node:
 ```bash
 node bin/skills-library.mjs validate
 node bin/skills-library.mjs build
-node bin/skills-library.mjs recommend --task "start a repo onboarding initiative" --model codex --runtime codex-cli
 node bin/skills-library.mjs assist --repo . --format text
+node bin/skills-library.mjs recommend --repo . --repo-consent accepted --task "start a repo onboarding initiative" --model codex --runtime codex-cli
 node bin/skills-library.mjs onboard --repo . --candidate <url-or-path> --format text
 ```
 
@@ -27,13 +27,35 @@ npm run poc:recommend
 Call this repository's binary and point `--repo` at the target repository:
 
 ```bash
+/path/to/skills-library/bin/skills-library.mjs assist \
+  --repo . \
+  --format text
+```
+
+After the user accepts repo inspection or answers the interview, call the router with explicit evidence:
+
+```bash
 /path/to/skills-library/bin/skills-library.mjs recommend \
   --repo . \
+  --repo-consent accepted \
   --task "what skill set should we use for this initiative?" \
   --model codex \
   --runtime codex-cli \
   --mode exploratory \
-  --format json
+  --format text
+```
+
+For questions-only mode:
+
+```bash
+/path/to/skills-library/bin/skills-library.mjs recommend \
+  --repo . \
+  --task "what skill set should we use for this initiative?" \
+  --interview-answers "goal, work area, sensitivity, runtime, and known constraints" \
+  --model codex \
+  --runtime codex-cli \
+  --mode exploratory \
+  --format text
 ```
 
 The target repo is inspected for `graphify-out/graph.json`. If present, the recommendation profile records that Graphify context is available. If missing, the output records the gap instead of failing.
@@ -60,15 +82,16 @@ Expected post-install behavior:
 
 1. Invoke the installed `skill-library` skill.
 2. Start guided assist/interview for the current target repo or initiative.
-3. Ask for repo-inspection consent before reading files.
-4. Recommend skills only after intent and evidence are stable enough.
+3. Ask an open first question about the idea, goal, and intended end product.
+4. Ask for repo-inspection consent before reading files.
+5. Recommend skills only after intent and evidence are stable enough.
 
 Good first prompt:
 
 ```text
 Install and use the skill-library skill from git@github.com:lindblomstefan/skills-library.git.
 After installing it, invoke skill-library and start helping me evaluate what skills this repo needs.
-Ask for repo-inspection consent before reading files.
+Start by asking about the idea, goal, and intended end product. Ask for repo-inspection consent before reading files.
 ```
 
 Expected first useful command when the full repo is locally available:
@@ -79,7 +102,7 @@ Expected first useful command when the full repo is locally available:
 
 ## Output Formats
 
-Text is the default and is the recommended interface for humans:
+Text is the default and is the recommended interface for humans. Without repo inspection or concrete interview answers, `recommend` returns questions instead of a shortlist:
 
 ```bash
 node bin/skills-library.mjs recommend
@@ -95,8 +118,8 @@ node bin/skills-library.mjs recommend --format json
 
 - `validate`: checks required seed catalog fields, taxonomy references, duplicate ids, relationship targets, and license gate fields.
 - `build`: emits generated catalog, router, graph, recommendation, and Kuzu data.
-- `recommend`: returns an evidence-backed recommendation for the requested task/model/runtime/repo.
-- `assist`: starts a guided recommendation session with repo-inspection consent, choices, and follow-up questions.
+- `recommend`: returns an evidence-backed recommendation only after repo inspection with consent or concrete interview answers. Without that, it returns the interview gate and questions.
+- `assist`: starts a guided recommendation session with an open context question, repo-inspection consent, choices, and follow-up questions.
 - `onboard`: starts a guided skill onboarding session with license-first checks and PR-oriented outputs.
 - `feedback collect`: writes a redacted feedback event into the target repo under `.skills-library/feedback/`.
 - `feedback preview`: prints a privacy-focused summary of a feedback event before submission.
@@ -128,7 +151,7 @@ The flow should preserve existing instructions and add only the smallest useful 
 
 ## Guided Help Flow
 
-Guided flows are local-first. The first question is always whether repo inspection is allowed.
+Guided flows are local-first. The first question asks what the user is trying to build or improve, what goal it should achieve, and what the intended end product should look like. Repo-inspection consent comes before reading files.
 
 ```bash
 /path/to/skills-library/bin/skills-library.mjs assist \
@@ -159,6 +182,8 @@ Skill onboarding uses the same pattern, but is PR-oriented:
 ```
 
 If the repo does not exist or inspection is denied, the CLI returns structured questions instead of failing.
+
+Do not route from inferred defaults. Recommendations must never be given without either a repo read or concrete answered questions.
 
 ## Feedback Flow
 

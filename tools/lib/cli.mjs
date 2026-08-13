@@ -4,6 +4,7 @@ import { collectFeedback, previewFeedback } from "./feedback.mjs";
 import { submitFeedback } from "./feedback-submit.mjs";
 import { buildGraph, buildKuzuLoad } from "./graph.mjs";
 import { buildGuidedSession, formatGuidedSessionText } from "./guided-session.mjs";
+import { buildRecommendationGate, formatRecommendationGateText, recommendationGate } from "./recommendation-gate.mjs";
 import { buildRecommendation, formatRecommendationText } from "./recommendation.mjs";
 import { root, writeJson, writeText } from "./paths.mjs";
 import { validateCatalog } from "./validation.mjs";
@@ -41,6 +42,17 @@ export function buildCommand(options = {}) {
 }
 
 export function recommendCommand(options = {}) {
+  const session = buildGuidedSession({ ...options, kind: "recommendation" });
+  const gate = recommendationGate(options, session);
+  if (!gate.ready) {
+    if (options.format === "json") {
+      console.log(JSON.stringify(buildRecommendationGate(gate, session), null, 2));
+      return;
+    }
+    console.log(formatRecommendationGateText(gate, session, formatGuidedSessionText));
+    return;
+  }
+
   const catalogJson = buildCatalogJson(loadCatalog());
   const recommendation = buildRecommendation(catalogJson, options);
   if (options.format === "text") {
@@ -97,6 +109,11 @@ export function optionsFromArgs(args) {
     mode: args.mode ? String(args.mode) : "exploratory",
     format: args.format ? String(args.format) : "text",
     limit: args.limit ? Number(args.limit) : 5,
+    repoConsent: args.repoConsent ? String(args.repoConsent) : undefined,
+    interviewComplete: args.interviewComplete,
+    interviewAnswers: args.interviewAnswers ?? args.answers,
+    evidenceState: args.evidenceState ? String(args.evidenceState) : undefined,
+    sensitivity: args.sensitivity ? String(args.sensitivity) : undefined,
     domain: args.domain ? String(args.domain) : undefined,
     taskTypes: args.taskTypes ? String(args.taskTypes).split(",").map((value) => value.trim()).filter(Boolean) : undefined
   };

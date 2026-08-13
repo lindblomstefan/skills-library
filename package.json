@@ -10,9 +10,10 @@
     "poc": "node bin/skills-library.mjs build",
     "poc:validate": "node bin/skills-library.mjs validate",
     "poc:build": "node bin/skills-library.mjs build",
-    "poc:recommend": "node bin/skills-library.mjs recommend",
+    "poc:recommend": "node bin/skills-library.mjs recommend --repo . --repo-consent accepted",
     "guardrails": "node tools/check-guardrails.mjs",
     "skills:check": "node tools/check-skills.mjs",
-    "test": "node bin/skills-library.mjs validate && node bin/skills-library.mjs build && node tools/check-guardrails.mjs && npm run skills:check"
+    "cli:check": "node tools/check-cli-flow.mjs",
+    "test": "node bin/skills-library.mjs validate && node bin/skills-library.mjs build && node tools/check-guardrails.mjs && npm run skills:check && npm run cli:check"
   }
 }

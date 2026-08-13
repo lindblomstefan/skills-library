@@ -198,3 +198,12 @@ Impact:
 - Changed the default `recommend` output to text instead of JSON.
 - Limited text recommendations to a short ranked shortlist with blockers, gaps, and one suggested next step.
 - Kept `--format json` available for full router output and automation.
+
+### Interview Gate For Recommendations
+
+- Added a recommendation gate so `recommend` returns interview questions instead of a shortlist when neither repo inspection nor concrete interview answers exist, or when evidence is vague, contradictory, or unstable.
+- Added `--repo-consent accepted`, `--interview-answers`, and `--evidence-state` controls so routing must be grounded in a repo read or answered questions.
+- Added CLI flow checks to keep `assist` first and prevent regression back to no-question recommendations.
+- Changed the guided interview so the first question is open context about the idea, goal, and intended end product; repo-inspection consent now follows before any file reads.
+- Reduced the installable `skill-library` instructions to a short fixed sequence so models do not have to choose between competing guidance.
+- Added regression checks for bloated or contradictory active skill instructions.
