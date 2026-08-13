@@ -32,7 +32,6 @@ The goal is not to store every skill here. The goal is to make skill work visibl
 - Catalog validation for library skills, internal skills, packs, golden tasks, evaluation runs, relationships, compatibility rows, and license-state values.
 - CLI commands for `validate`, `build`, `recommend`, `assist`, `onboard`, and `feedback`.
 - A generated router index, catalog JSON, graph JSON, and Kuzu load script under ignored `dist/` outputs.
-- Graphify-based repo navigation under `graphify-out/`.
 - Internal operating skills for recommendation, onboarding, feedback capture, and calling this repo as a skill from another repo.
 - A starter public library catalog with 40 metadata-only skill manifests.
 - CI-facing guardrails for source and documentation file size.
@@ -87,7 +86,7 @@ Classify skills by what work they improve, not by implementation format.
 ├── catalog/                  # Library/internal manifests, packs, and taxonomies
 ├── evaluations/              # Evaluation notes and evidence
 ├── docs/                     # Library model and issue backlog
-├── AGENTS.md                 # Agent guidance, including Graphify usage
+├── AGENTS.md                 # Agent guidance
 └── README.md                 # Entry point
 ```
 

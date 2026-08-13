@@ -18,7 +18,7 @@ The POC should stay easy to inspect as it grows. When a file starts carrying mor
 
 - Source files (`.mjs`, `.js`, `.css`, `.html`) warn above 300 lines and fail above 450 lines.
 - Documentation files (`.md`) warn above 350 lines and fail above 700 lines.
-- Generated output is exempt: `dist/`, `graphify-out/`, and package lock files.
+- Generated output is exempt: `dist/` and package lock files.
 
 Do not raise limits to make a change pass. First split by responsibility. If a file genuinely needs more room, document why in `docs/poc-change-log.md` before changing the guardrail.
 

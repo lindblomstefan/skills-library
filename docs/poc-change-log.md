@@ -186,3 +186,9 @@ Impact:
 - Moved helper/domain workflow instructions to `.codex/internal-workflows/` and renamed their `SKILL.md` files to `WORKFLOW.md`.
 - Updated `skill-library` so invocation starts guided repo/initiative interviewing instead of asking a broad open-ended question.
 - Added a compact catalog overview inside the installable skill for use when the full CLI repo is unavailable.
+
+### Internal Tool Artifact Cleanup
+
+- Removed generated `graphify-out/` artifacts from version control.
+- Changed `.gitignore` to ignore all of `graphify-out/`.
+- Removed Graphify-specific local agent instructions from `AGENTS.md` so internal navigation tooling is not exposed as repo guidance.
