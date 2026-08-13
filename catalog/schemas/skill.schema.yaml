@@ -3,6 +3,7 @@ version: 0.1
 required:
   - id
   - name
+  - catalog_visibility
   - source_type
   - status
   - owner
@@ -27,6 +28,12 @@ fields:
   name:
     type: string
     description: Human-readable skill name.
+  catalog_visibility:
+    type: enum
+    values:
+      - library
+      - internal
+    description: Whether the skill is publishable/recommendable library inventory or an internal operating skill used by this repository.
   source_type:
     type: enum
     values:
@@ -35,7 +42,7 @@ fields:
       - adapted
       - reference
       - candidate
-    description: Where the skill or method originates.
+    description: Where the skill or method originates. This is separate from catalog_visibility.
   status:
     type: enum
     values:

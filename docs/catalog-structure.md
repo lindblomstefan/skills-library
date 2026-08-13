@@ -1,8 +1,6 @@
 # Catalog Structure
 
-The first milestone is structure, not content.
-
-The library should define how skills are represented before any specific skill becomes part of the catalog. This prevents early tools from shaping the whole model accidentally.
+The first milestone established structure before content. The current POC now has a candidate seed catalog so the router can be tested with varied skill types without copying external skill source.
 
 ## MVP Artifacts
 
@@ -21,9 +19,20 @@ The library should define how skills are represented before any specific skill b
 - `.github/ISSUE_TEMPLATE/new-skill-onboarding.yml`
 - `router/examples/recommendation.example.json`
 
-## Add Skills Later
+## Skill Visibility Split
 
-Only add a real skill manifest after these questions are answered:
+The catalog has two skill inventories:
+
+- `catalog/library-skills/`: skills that can be recommended to users and eventually made available.
+- `catalog/internal-skills/`: operating skills used by the skills-library workflow itself.
+
+Internal skills improve over time with the library, but they are not public library inventory. They should not appear in public router recommendations, public packs, or user-facing skill browsing.
+
+Use `catalog_visibility: library` or `catalog_visibility: internal` in every manifest. Directory and field must match.
+
+## Add Or Promote Skills
+
+Candidate metadata can be added when the source, license state, routing scope, risk, and install guidance are explicit. Promotion to `approved` requires stronger evidence:
 
 - What fields are required for routing?
 - What fields are required for trust and freshness?
@@ -43,8 +52,10 @@ See:
 - `docs/governance-gates.md`
 - `docs/privacy-metrics.md`
 
-## Graphify
+## Library Seed
 
-Graphify is installed in this repository as infrastructure, but should not be added as a cataloged skill until the structure is reviewed.
+Graphify is the first evaluated library-skill candidate under `catalog/library-skills/`.
 
-Use it as a test candidate once the catalog schema is accepted.
+It is still evaluating and blocked from standard recommendations until license and governance review complete.
+
+The broader seed includes metadata-only external pointers for gstack skills and varied popular GitHub projects. These are candidates, not copied skills. Recommendation acceptance must fetch only explicitly accepted skills from original upstream sources.

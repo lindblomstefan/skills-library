@@ -10,3 +10,15 @@ Rules:
 - If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+
+## engineering guardrails
+
+Before adding substantial code, read `docs/engineering-guardrails.md`.
+
+Rules:
+- Keep files focused on one responsibility and split before adding a second reason to change.
+- `npm test` runs `tools/check-guardrails.mjs`.
+- Source files warn above 300 lines and fail above 450 lines.
+- Documentation files warn above 350 lines and fail above 700 lines.
+- Generated output paths such as `dist/` and `graphify-out/` are exempt.
+- Do not raise size limits just to land behavior; split the file first and document any justified limit change in `docs/poc-change-log.md`.

@@ -13,8 +13,9 @@ task_types:
     label: Release readiness
   - id: relationship-discovery
     label: Relationship discovery
+  - id: skill-feedback
+    label: Skill feedback
   - id: test-strategy
     label: Test strategy
   - id: threat-modeling
     label: Threat modeling
-

@@ -6,4 +6,8 @@ dist/
 build/
 .cache/
 graphify-out/cache/
+graphify-out/*/
+.kuzu/
+*.kuzu
+website/dist/
 .codex/hooks.json

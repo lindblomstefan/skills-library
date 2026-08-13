@@ -5,8 +5,9 @@ license_states:
     label: Needs review
   - id: restricted
     label: Restricted
+  - id: paid
+    label: Paid or commercial
   - id: blocked
     label: Blocked
   - id: unknown
     label: Unknown
-

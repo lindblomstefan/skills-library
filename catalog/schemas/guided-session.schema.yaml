@@ -1,0 +1,43 @@
+schema: guided-session
+version: 0.1
+required:
+  - session_id
+  - kind
+  - repo_inspection
+  - questions
+  - privacy
+
+fields:
+  session_id:
+    type: string
+    description: Local identifier for a guided recommendation or onboarding session.
+  kind:
+    type: enum
+    values:
+      - recommendation
+      - onboarding
+    description: Whether the session is interviewing initiative intent or onboarding a known skill candidate.
+  repo:
+    type: string
+    description: Target repository path or unknown placeholder.
+  repo_exists:
+    type: boolean
+    description: Whether the local repo path exists.
+  repo_inspection:
+    type: object
+    description: Consent state, whether inspection happened, and the safe inspection scope.
+  repo_context:
+    type: object
+    description: Redacted summary of repo metadata. Must not include source code, secrets, raw prompts, or personal data.
+  inferred_profile:
+    type: object
+    description: Initial profile inferred from repo context and command options.
+  questions:
+    type: list
+    description: Structured questions with choices, free-text allowance, evidence needs, and recommendation blockers.
+  next_actions:
+    type: list
+    description: Safe next steps after the visible questions are answered.
+  privacy:
+    type: object
+    description: Data handling flags for the session output.

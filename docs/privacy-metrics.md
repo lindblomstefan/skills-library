@@ -1,6 +1,6 @@
 # Privacy And Metrics
 
-Usage and feedback data should support future dashboards without becoming a source of sensitive content.
+Usage and feedback data should support future reporting without becoming a source of sensitive content.
 
 ## Principle
 
@@ -23,6 +23,9 @@ Collect the minimum event data needed for metrics and routing improvement. Do no
 - feedback signal
 - severity
 - redacted notes
+- redacted repo context summary
+- expected versus actual outcome summary
+- suggested catalog, router, or skill action
 
 ## Prohibited Event Data
 
@@ -33,6 +36,8 @@ Collect the minimum event data needed for metrics and routing improvement. Do no
 - customer data
 - confidential project names unless explicitly approved
 - unredacted transcripts
+- raw repository names when the project name is sensitive
+- file contents or file-level paths from private repositories
 
 ## Privacy Fields
 
@@ -47,4 +52,3 @@ Usage and feedback events should include:
 - `contains_secret`
 
 The expected value for `contains_prompt`, `contains_code`, and `contains_secret` is `false`.
-

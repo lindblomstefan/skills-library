@@ -50,13 +50,13 @@ fields:
     description: Model or agent family.
   runtime:
     type: string
-    description: CLI, IDE, website, or agent runtime.
+    description: CLI, IDE, dashboard, or agent runtime.
   task_type:
     type: string
     description: Task type associated with the usage.
   source:
     type: string
-    description: CLI, website, router, manual, or automation.
+    description: CLI, dashboard, router, manual, or automation.
   outcome:
     type: string
     description: Optional result summary.

@@ -1,0 +1,28 @@
+id: recommend-repo-onboarding-skill-set
+title: Recommend a repo onboarding skill set
+domain: repository-analysis
+task_type: project-onboarding
+prompt: A maintainer wants to start a POC in an unfamiliar repo. Recommend the smallest skill set that can onboard a candidate skill, inspect the repo, and explain missing capability gaps.
+context:
+  model: codex
+  runtime: codex-cli
+  sensitivity: internal
+expected_behaviors:
+  - Use Graphify when graphify-out/graph.json exists.
+  - Use internal operating skills for known candidate onboarding and initiative interviewing.
+  - Recommend only library-visible skills in public recommendation output.
+  - Surface missing approval evidence for candidate or evaluating skills.
+failure_modes:
+  - Recommends candidate skills as approved in standard mode.
+  - Leaks internal operating skills into public recommendation output.
+  - Ignores model/runtime compatibility.
+  - Fails to explain missing evidence.
+compatible_runtimes:
+  - codex-cli
+evaluation:
+  scoring_scale: 0-5
+  pass_threshold: 4
+  required_evidence:
+    - router output
+    - graph export
+    - CLI output

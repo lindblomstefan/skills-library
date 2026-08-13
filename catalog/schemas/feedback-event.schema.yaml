@@ -54,7 +54,7 @@ fields:
     description: Model or agent family.
   runtime:
     type: string
-    description: CLI, IDE, website, or agent runtime.
+    description: CLI, IDE, dashboard, or agent runtime.
   task_type:
     type: string
     description: Task type associated with the feedback.
@@ -70,9 +70,21 @@ fields:
   notes:
     type: string
     description: Optional redacted notes. Do not store prompts, source code, secrets, personal data, or customer data.
+  repo_context:
+    type: object
+    description: Redacted local repo summary including fingerprint, git state, stack markers, language counts, CI/test signals, and Graphify availability.
+  usage_context:
+    type: object
+    description: How the skill or recommendation was selected and what outcome was expected versus observed.
+  diagnosis:
+    type: object
+    description: Likely cause and suggested catalog, router, skill, or governance action.
   privacy:
     type: object
     description: Sensitivity, redaction status, retention, and actor/team pseudonymization.
   created_issue:
     type: string
     description: Link to generated issue, if one was created.
+  created_comment:
+    type: string
+    description: Link or identifier for generated issue comment, if one was created.

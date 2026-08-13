@@ -1,6 +1,6 @@
 # Router Output
 
-The router is the machine-readable layer that helps an LLM, CLI, or future website decide what skill to use.
+The router is the machine-readable layer that helps an LLM, CLI, or future dashboard decide what skill to use.
 
 The router should optimize for recommendation quality, not catalog size.
 
@@ -104,6 +104,5 @@ The same output should support:
 
 - CLI recommendations
 - LLM skill selection
-- future website assistant
 - future dashboard metrics
 - evaluation workflows
