@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scanner Interviewing"
+  short_description: "Plan and synthesize scanner interviews"
+  default_prompt: "Use $scanner-interviewing to prepare stakeholder interviews for the scanner identity discovery."

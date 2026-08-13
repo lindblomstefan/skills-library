@@ -1,0 +1,167 @@
+id: skill-feedback-capture
+name: Skill Feedback Capture
+catalog_visibility: internal
+source_type: internal
+status: candidate
+stability: stable
+owner: unassigned
+proposed_by: poc
+proposed_at: 2026-08-13
+summary: Internal workflow skill and CLI path for collecting privacy-safe feedback after a skill or recommendation is used in a local repo.
+source:
+  type: internal-skill
+  url: .codex/skills/skill-feedback-capture
+  license: internal
+  license_spdx: not-applicable
+  redistribution: internal
+  modification_allowed: yes
+  maintainer: unassigned
+  version_or_commit: poc
+  documentation: docs/cli-usage.md
+  dependencies: []
+  copied_assets: []
+domains:
+  - feedback
+  - planning
+  - repository-analysis
+task_types:
+  - skill-feedback
+  - project-onboarding
+  - relationship-discovery
+use_when:
+  - A user has feedback after using a skill or receiving a skill recommendation.
+  - Feedback needs local repo context before it can be diagnosed.
+  - Feedback should become a redacted event, GitHub issue, or future review artifact.
+do_not_use_when:
+  - The user wants to submit raw prompts, source code, secrets, personal data, or customer data.
+  - The user expects direct push to the main skills-library branch.
+  - The feedback is unrelated to skill behavior, routing, catalog metadata, or governance.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: compatible
+      tested_at: 2026-08-13
+      tested_by: codex
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Procedural skill works when the host can summarize repo context with consent and create a redacted local event.
+      evidence:
+        - .codex/skills/skill-feedback-capture/SKILL.md
+        - catalog/schemas/feedback-event.schema.yaml
+      known_gaps:
+        - GitHub submission depends on `gh` or an equivalent issue/PR integration.
+    - model_id: codex
+      runtime_id: codex-cli
+      support: compatible
+      tested_at: 2026-08-13
+      tested_by: codex
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Reads local repo metadata and writes a local feedback JSON file.
+      evidence:
+        - tools/lib/feedback.mjs
+        - tools/lib/feedback-submit.mjs
+        - .codex/skills/skill-feedback-capture/SKILL.md
+      known_gaps:
+        - GitHub submission requires explicit approval and installed `gh`.
+  tags:
+    - status:candidate
+distribution:
+  install:
+    type: repo-skill
+    command: git clone <skills-library-repo>
+  invoke:
+    command: bin/skills-library.mjs feedback collect --repo . --skill-id <id>
+  generated_files:
+    - .skills-library/feedback/*.json
+  dependencies:
+    - git
+    - gh for issue submission
+  required_permissions:
+    - read-repository
+    - write-local-feedback-file
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - capture skill feedback
+    - report wrong recommendation
+    - report stale skill
+    - report missing skill
+    - report model runtime mismatch
+    - report security privacy or license concern
+  caution_for:
+    - sensitive repositories where even redacted summaries need review
+    - feedback containing raw prompts or code
+  not_recommended_for:
+    - submitting unredacted telemetry
+    - direct push to the main skills-library repo
+  example_prompts:
+    - Capture feedback that gstack was the wrong recommendation for this repo.
+    - Record that the frontend skill worked well but missed our test setup.
+    - Submit a privacy-safe feedback issue to the skills library.
+  anti_examples:
+    - Push this raw transcript into the main repo.
+  keywords:
+    - feedback
+    - telemetry
+    - skill review
+    - wrong recommendation
+    - missing skill
+  aliases:
+    - feedback capture
+    - skill feedback
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: internal-owned
+  provenance_notes: Internal POC skill that wraps local-first feedback capture.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Must redact notes and block submission when prompt, code, or secret flags are true.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: false
+  deprecation_criteria:
+    - feedback API replaces local issue submission
+    - privacy review requires stronger redaction
+decision:
+  outcome: build
+  rationale: Feedback needs repo context and privacy-safe submission before router and catalog behavior can improve.
+  decided_by: poc
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - initiative-skill-recommender
+    - skill-library-onboarding
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: true
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps:
+    - feedback storage is local JSON plus optional issue submission
+known_limitations:
+  - Public issue comments are only appropriate for fully redacted feedback.
+  - Redaction is conservative but not a substitute for human review.

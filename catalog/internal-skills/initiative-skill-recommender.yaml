@@ -1,0 +1,151 @@
+id: initiative-skill-recommender
+name: Initiative Skill Recommender
+catalog_visibility: internal
+source_type: internal
+status: candidate
+stability: stable
+owner: unassigned
+proposed_by: poc
+proposed_at: 2026-08-13
+summary: Internal workflow skill that interviews a user, repo, and runtime context to recommend a set of skills or packs for an initiative.
+source:
+  type: internal-skill
+  url: .codex/skills/initiative-skill-recommender
+  license: internal
+  license_spdx: not-applicable
+  redistribution: internal
+  modification_allowed: yes
+  maintainer: unassigned
+  version_or_commit: poc
+  documentation: docs/poc-plan.md
+  dependencies: []
+  copied_assets: []
+domains:
+  - planning
+  - repository-analysis
+task_types:
+  - project-onboarding
+  - codebase-navigation
+  - relationship-discovery
+use_when:
+  - A new initiative needs the right skill set before work starts.
+  - The repo, user intent, and runtime constraints need to be interviewed together.
+  - Missing skills or missing evidence should become follow-up issues.
+do_not_use_when:
+  - A known skill candidate simply needs catalog onboarding.
+  - The task is only to run an already-selected skill.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: compatible
+      tested_at: 2026-08-13
+      tested_by: codex
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Procedural skill works when the host can read repo summaries with consent and present structured questions.
+      evidence:
+        - .codex/skills/initiative-skill-recommender/SKILL.md
+        - tools/lib/guided-session.mjs
+      known_gaps:
+        - Rich UI rendering is deferred; CLI emits JSON/text.
+    - model_id: codex
+      runtime_id: codex-cli
+      support: compatible
+      tested_at: 2026-08-13
+      tested_by: codex
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Uses `.codex/skills` instructions and `assist` CLI helper.
+      evidence:
+        - .codex/skills/initiative-skill-recommender/SKILL.md
+        - bin/skills-library.mjs
+      known_gaps:
+        - Interactive prompt rendering is still host-dependent.
+  tags:
+    - status:candidate
+distribution:
+  install:
+    type: planned
+    command: ""
+  invoke:
+    command: ""
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - read-repository
+    - create-issues
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - choose a skill set
+    - plan an initiative
+    - inspect repo readiness
+    - identify missing skills
+  caution_for:
+    - sensitive projects where repo details should not be captured in events
+  not_recommended_for:
+    - direct catalog entry creation for a known candidate
+  example_prompts:
+    - We are starting a repo modernization initiative. What skill set should we use?
+  anti_examples:
+    - Add this one skill to the catalog.
+  keywords:
+    - initiative
+    - recommendation
+    - skill set
+    - interview
+  aliases:
+    - initiative interview
+trust:
+  level: unknown
+  license_state: clear
+  maintenance_state: internal-owned
+  provenance_notes: Internal skill concept from issue 30.
+risk:
+  level: low
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Must not persist raw prompts, code, secrets, customer data, or sensitive project names in events.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: false
+  deprecation_criteria: []
+decision:
+  outcome: build
+  rationale: Required to turn initiative intent into skill and pack recommendations.
+  decided_by: poc
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - graphify
+    - skill-library-onboarding
+  replaces: []
+  replaced_by: []
+  depends_on:
+    - graphify
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested:
+    - recommend-repo-onboarding-skill-set
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Interactive prompt rendering is initial JSON/text only.

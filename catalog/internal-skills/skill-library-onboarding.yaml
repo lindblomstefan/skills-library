@@ -1,0 +1,144 @@
+id: skill-library-onboarding
+name: Skill Library Onboarding
+catalog_visibility: internal
+source_type: internal
+status: candidate
+stability: stable
+owner: unassigned
+proposed_by: poc
+proposed_at: 2026-08-13
+summary: Internal workflow skill for adding or evaluating a known skill candidate in the skills library.
+source:
+  type: internal-skill
+  url: .codex/skills/skill-library-onboarding
+  license: internal
+  license_spdx: not-applicable
+  redistribution: internal
+  modification_allowed: yes
+  maintainer: unassigned
+  version_or_commit: poc
+  documentation: docs/new-skill-onboarding.md
+  dependencies: []
+  copied_assets: []
+domains:
+  - documentation
+  - planning
+task_types:
+  - project-onboarding
+  - relationship-discovery
+use_when:
+  - A specific skill candidate needs to be captured, evaluated, or prepared for catalog entry.
+  - Required skill metadata is incomplete and should be made explicit.
+do_not_use_when:
+  - The user does not yet know which skill or candidate should be evaluated.
+  - The task is to choose a set of skills for a broader initiative.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: compatible
+      tested_at: 2026-08-13
+      tested_by: codex
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Procedural skill works when the host can inspect candidates with consent and prepare PR artifacts.
+      evidence:
+        - .codex/skills/skill-library-onboarding/SKILL.md
+        - tools/lib/guided-session.mjs
+      known_gaps:
+        - PR creation automation is not implemented for onboarding packages.
+    - model_id: codex
+      runtime_id: codex-cli
+      support: compatible
+      tested_at: 2026-08-13
+      tested_by: codex
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Uses `.codex/skills` instructions and `onboard` CLI helper.
+      evidence:
+        - .codex/skills/skill-library-onboarding/SKILL.md
+        - bin/skills-library.mjs
+      known_gaps:
+        - PR creation automation is deferred.
+  tags:
+    - status:candidate
+distribution:
+  install:
+    type: planned
+    command: ""
+  invoke:
+    command: ""
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - read-repository
+    - create-issues
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - onboard a known skill
+    - evaluate an external skill
+    - create a catalog entry
+  caution_for:
+    - governance fields needing human review
+  not_recommended_for:
+    - initiative-level skill-set recommendation
+  example_prompts:
+    - Onboard Graphify into the skills library.
+  anti_examples:
+    - Which skills should this new initiative use?
+  keywords:
+    - onboarding
+    - catalog
+    - candidate skill
+  aliases:
+    - skill onboarding
+trust:
+  level: unknown
+  license_state: clear
+  maintenance_state: internal-owned
+  provenance_notes: Internal skill concept from issue 22.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Should not store sensitive source content in issues or events.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: false
+  deprecation_criteria: []
+decision:
+  outcome: build
+  rationale: Required to make catalog additions repeatable.
+  decided_by: poc
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - initiative-skill-recommender
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - PR creation automation is deferred; the skill prepares reviewable content and commands.

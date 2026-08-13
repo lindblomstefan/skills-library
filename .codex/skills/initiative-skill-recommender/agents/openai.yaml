@@ -1,0 +1,4 @@
+interface:
+  display_name: "Initiative Skill Recommender"
+  short_description: "Interview intent and recommend skills"
+  default_prompt: "Use $initiative-skill-recommender to inspect this repo with consent, interview the initiative intent, and recommend a skill set."

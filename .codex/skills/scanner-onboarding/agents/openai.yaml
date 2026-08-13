@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scanner Onboarding"
+  short_description: "Build scanner domain onboarding packs"
+  default_prompt: "Use $scanner-onboarding to turn this scanner project context into a concise onboarding pack."

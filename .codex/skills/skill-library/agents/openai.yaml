@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Library"
+  short_description: "Recommend skills and capture feedback"
+  default_prompt: "Use $skill-library to recommend skills for this repo or capture feedback about a used skill."

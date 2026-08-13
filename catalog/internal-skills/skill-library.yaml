@@ -1,0 +1,159 @@
+id: skill-library
+name: Skill Library
+catalog_visibility: internal
+source_type: internal
+status: candidate
+stability: stable
+owner: unassigned
+proposed_by: poc
+proposed_at: 2026-08-13
+summary: Repo-level skill wrapper that lets other projects call the skills-library CLI for skill recommendations and privacy-safe feedback capture.
+source:
+  type: internal-skill
+  url: .codex/skills/skill-library
+  license: internal
+  license_spdx: not-applicable
+  redistribution: internal
+  modification_allowed: yes
+  maintainer: unassigned
+  version_or_commit: poc
+  documentation: docs/cli-usage.md
+  dependencies: []
+  copied_assets: []
+domains:
+  - feedback
+  - planning
+  - repository-analysis
+task_types:
+  - skill-feedback
+  - project-onboarding
+  - relationship-discovery
+use_when:
+  - A repo wants to call the skills library for recommendations.
+  - A repo wants to capture skill feedback locally and submit it for review.
+  - An agent needs a stable command interface into the skill catalog.
+do_not_use_when:
+  - The task is to use a specific downstream skill directly.
+  - The user wants to submit raw repo content or direct-push feedback to main.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: agent-skill-host
+      support: compatible
+      tested_at: 2026-08-13
+      tested_by: codex
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Procedural wrapper works when the host can call a local CLI or reproduce the JSON contract.
+      evidence:
+        - .codex/skills/skill-library/SKILL.md
+        - docs/cli-usage.md
+      known_gaps:
+        - Runtime must know where the skills-library repo is cloned.
+    - model_id: codex
+      runtime_id: codex-cli
+      support: compatible
+      tested_at: 2026-08-13
+      tested_by: codex
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Calls the repo-local CLI from another working tree.
+      evidence:
+        - .codex/skills/skill-library/SKILL.md
+        - bin/skills-library.mjs
+      known_gaps:
+        - Requires the user or host repo to know where skills-library is cloned.
+  tags:
+    - status:candidate
+distribution:
+  install:
+    type: repo-skill
+    command: git clone <skills-library-repo>
+  invoke:
+    command: /path/to/skills-library/bin/skills-library.mjs recommend --repo .
+  generated_files:
+    - .skills-library/feedback/*.json
+  dependencies:
+    - node
+    - git
+    - gh for issue submission
+  required_permissions:
+    - read-repository
+    - write-local-feedback-file
+  required_secrets: []
+  network_access: optional
+routing:
+  recommend_for:
+    - skill recommendation
+    - initiative skill selection
+    - skill feedback capture
+    - catalog lookup from another repo
+  caution_for:
+    - sensitive repos where even redacted feedback needs review
+  not_recommended_for:
+    - direct execution of a chosen specialist skill
+    - direct push to main
+  example_prompts:
+    - Which skills should this repo use for a modernization initiative?
+    - Capture feedback that the recommended skill was wrong for this repo.
+  anti_examples:
+    - Run the frontend skill directly.
+  keywords:
+    - skill library
+    - recommendation
+    - feedback
+    - catalog
+  aliases:
+    - skills-library
+    - catalog skill
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: internal-owned
+  provenance_notes: Internal wrapper around the repo CLI.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Recommendation output is local; feedback submission must be previewed and redacted.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-13
+  next_review: 2026-09-13
+  replacement_watch: false
+  deprecation_criteria: []
+decision:
+  outcome: build
+  rationale: Other repos need a stable skill entrypoint to call recommendations and feedback without knowing internal modules.
+  decided_by: poc
+  decided_at: 2026-08-13
+relationships:
+  pairs_with:
+    - initiative-skill-recommender
+    - skill-feedback-capture
+    - skill-library-onboarding
+  replaces: []
+  replaced_by: []
+  depends_on:
+    - initiative-skill-recommender
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: true
+  install_signal_available: true
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Path discovery for the cloned skills-library repo is manual.

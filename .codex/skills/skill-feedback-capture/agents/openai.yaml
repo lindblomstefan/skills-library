@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Feedback Capture"
+  short_description: "Capture redacted skill feedback"
+  default_prompt: "Use $skill-feedback-capture to collect privacy-safe feedback for a skill used in this repo."

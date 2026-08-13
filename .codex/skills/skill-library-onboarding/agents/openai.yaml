@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Library Onboarding"
+  short_description: "Onboard skills through PR review"
+  default_prompt: "Use $skill-library-onboarding to inspect a skill candidate, check license first, gather metadata, and prepare a PR-ready onboarding package."
