@@ -10,7 +10,7 @@ proposed_at: 2026-08-13
 summary: Internal workflow skill that interviews a user, repo, and runtime context to recommend a set of skills or packs for an initiative.
 source:
   type: internal-skill
-  url: .codex/skills/initiative-skill-recommender
+  url: .codex/internal-workflows/initiative-skill-recommender
   license: internal
   license_spdx: not-applicable
   redistribution: internal
@@ -47,7 +47,7 @@ compatibility:
       invoke_result: pass
       permission_notes: Procedural skill works when the host can read repo summaries with consent and present structured questions.
       evidence:
-        - .codex/skills/initiative-skill-recommender/SKILL.md
+        - .codex/internal-workflows/initiative-skill-recommender/WORKFLOW.md
         - tools/lib/guided-session.mjs
       known_gaps:
         - Rich UI rendering is deferred; CLI emits JSON/text.
@@ -62,7 +62,7 @@ compatibility:
       invoke_result: pass
       permission_notes: Uses `.codex/skills` instructions and `assist` CLI helper.
       evidence:
-        - .codex/skills/initiative-skill-recommender/SKILL.md
+        - .codex/internal-workflows/initiative-skill-recommender/WORKFLOW.md
         - bin/skills-library.mjs
       known_gaps:
         - Interactive prompt rendering is still host-dependent.

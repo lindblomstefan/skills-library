@@ -1,23 +1,40 @@
 ---
 name: skill-library
-description: Use the skills-library repo from another project to recommend skills, run guided help, collect privacy-safe skill feedback, preview feedback, or submit reviewed feedback to the main skills-library repo. Use when an AI agent is in a different repository and needs to call the local or cloned skills-library CLI, inspect available skills/packs, run a recommendation, start an assist/onboarding session, or create a redacted feedback event after a skill was used.
+description: Use when the user asks to use, test, or install the skills-library skill; asks what AI skills a repo, initiative, or team needs; wants guided skill recommendations; wants to browse/evaluate the library catalog; or wants privacy-safe feedback capture after using a skill. The skill should start by helping evaluate the target repo or initiative, not by asking open-endedly what to do.
 ---
 
 # Skill Library
 
 ## Purpose
 
-Use this repository as a callable skill catalog from another repo. Prefer CLI JSON output over copying catalog data manually.
+Help a user evaluate what skills a repo or initiative needs, then recommend skills with clear blockers. Prefer the local `skills-library` CLI when available; use the bundled catalog overview as a fallback when this skill was installed without the full repository.
+
+## Default Start
+
+When this skill is invoked, start the guided recommendation flow immediately.
+
+Do not ask a broad "what do you want to do?" question. Do this instead:
+
+1. Identify the target repo. If the user is already in a repo, use it as the target.
+2. Ask for repo-inspection consent before reading files.
+3. If consent is accepted, inspect only enough repo context to understand language, framework, risk, test surface, docs, and agent instruction files.
+4. Ask focused follow-up questions only for missing or contradictory intent.
+5. Recommend candidate skills only from stable evidence. If evidence is vague or contradictory, explain the confusion and ask for clarification instead of recommending.
+6. Show license state, status, risk, compatibility, and whether each recommendation is standard-ready or exploratory.
 
 ## Setup Assumption
 
-The skills-library repo is cloned somewhere the user can access, for example:
+The full skills-library repo may be cloned somewhere the user can access, for example:
 
 ```bash
 /path/to/skills-library
 ```
 
 If the path is unknown, ask for it or search nearby workspace roots.
+
+If the full repo is not available, continue with the manual guided flow. Use `references/catalog-overview.md` for the compact candidate catalog.
+
+A Git remote by itself, such as `git@github.com:lindblomstefan/skills-library.git`, is not a skill invocation. Treat it only as a clone source if the user explicitly asks to clone or install the library. After cloning, call the CLI from the target repository.
 
 ## Recommend Skills
 
@@ -89,6 +106,16 @@ Use onboarding for known candidate skills:
   --candidate <url-or-path> \
   --format json
 ```
+
+## Manual Fallback
+
+If the CLI is unavailable, read `references/catalog-overview.md` and run the same flow manually:
+
+- Ask for repo-inspection consent.
+- Gather initiative goal, repo type, current pain, runtime/model, sensitivity, and time horizon.
+- Identify contradictions or missing intent before recommending.
+- Recommend a small set of skills or candidate areas with explicit blockers.
+- Never imply that candidate skills are approved or installed.
 
 ## Capture Feedback
 

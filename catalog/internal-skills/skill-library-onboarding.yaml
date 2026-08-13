@@ -10,7 +10,7 @@ proposed_at: 2026-08-13
 summary: Internal workflow skill for adding or evaluating a known skill candidate in the skills library.
 source:
   type: internal-skill
-  url: .codex/skills/skill-library-onboarding
+  url: .codex/internal-workflows/skill-library-onboarding
   license: internal
   license_spdx: not-applicable
   redistribution: internal
@@ -45,7 +45,7 @@ compatibility:
       invoke_result: pass
       permission_notes: Procedural skill works when the host can inspect candidates with consent and prepare PR artifacts.
       evidence:
-        - .codex/skills/skill-library-onboarding/SKILL.md
+        - .codex/internal-workflows/skill-library-onboarding/WORKFLOW.md
         - tools/lib/guided-session.mjs
       known_gaps:
         - PR creation automation is not implemented for onboarding packages.
@@ -60,7 +60,7 @@ compatibility:
       invoke_result: pass
       permission_notes: Uses `.codex/skills` instructions and `onboard` CLI helper.
       evidence:
-        - .codex/skills/skill-library-onboarding/SKILL.md
+        - .codex/internal-workflows/skill-library-onboarding/WORKFLOW.md
         - bin/skills-library.mjs
       known_gaps:
         - PR creation automation is deferred.

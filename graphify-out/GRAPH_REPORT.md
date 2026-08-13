@@ -1,16 +1,16 @@
 # Graph Report - skills-library  (2026-08-13)
 
 ## Corpus Check
-- 45 files · ~39,587 words
+- 46 files · ~40,482 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 414 nodes · 589 edges · 34 communities (32 shown, 2 thin omitted)
+- 424 nodes · 598 edges · 35 communities (33 shown, 2 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e5aaf068`
+- Built from commit: `991099fe`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,31 +36,32 @@
 - scripts
 - feedback.mjs
 - 2026-08-13
+- Scanner Interviewing
+- Scanner Onboarding
+- Skill Feedback Capture
 - CLI Usage
 - check-guardrails.mjs
 - validation.mjs
 - guided-session.mjs
-- Scanner Interviewing
+- Initiative Skill Recommender
 - Engineering Guardrails
 - feedback-submit.mjs
-- Scanner Onboarding
-- Skill Feedback Capture
-- Skill Library
-- Initiative Skill Recommender
 - Skill Library Onboarding
+- Skill Library Catalog Overview
+- Skill Library
 - skills/README.md
 
 ## God Nodes (most connected - your core abstractions)
-1. `2026-08-13` - 14 edges
+1. `2026-08-13` - 15 edges
 2. `buildCommand()` - 12 edges
-3. `main()` - 11 edges
-4. `validateCatalog()` - 11 edges
-5. `Scanner Interviewing` - 11 edges
-6. `CLI Usage` - 11 edges
+3. `CLI Usage` - 12 edges
+4. `main()` - 11 edges
+5. `validateCatalog()` - 11 edges
+6. `Scanner Interviewing` - 11 edges
 7. `Required Data Groups` - 11 edges
 8. `Core Question Bank` - 10 edges
 9. `Skill Feedback Capture` - 10 edges
-10. `buildGuidedSession()` - 9 edges
+10. `Skills Library` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `loadYamlFiles()` --calls--> `parseYaml()`  [EXTRACTED]
@@ -77,7 +78,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (34 total, 2 thin omitted)
+## Communities (35 total, 2 thin omitted)
 
 ### Community 0 - "Required Data Groups"
 Cohesion: 0.10
@@ -116,8 +117,8 @@ Cohesion: 0.29
 Nodes (6): Consumers, Minimal Output Shape, Output Principles, Recommendation Evidence, Recommendation Modes, Router Output
 
 ### Community 9 - "Skills Library"
-Cohesion: 0.20
-Nodes (9): Catalog Dimensions, Current Focus, Local CLI POC, Not Implemented Yet, Operating Model, Repository Contents, Skill Lifecycle, Skills Library (+1 more)
+Cohesion: 0.18
+Nodes (10): Catalog Dimensions, Current Focus, Installing And Invoking The Skill, Local CLI POC, Not Implemented Yet, Operating Model, Repository Contents, Skill Lifecycle (+2 more)
 
 ### Community 10 - "Catalog Structure"
 Cohesion: 0.29
@@ -157,11 +158,23 @@ Nodes (15): buildRepoContext(), collectFeedback(), detectCi(), detectStack(), di
 
 ### Community 20 - "2026-08-13"
 Cohesion: 0.12
-Nodes (15): 2026-08-13, CLI-First Pivot, Graph Database Path, Guided Skill Help Flow, Internal Vs Library Skill Split, Local Feedback Capture, Mandatory License Check In Onboarding, POC Change Log (+7 more)
+Nodes (16): 2026-08-13, CLI-First Pivot, Graph Database Path, Guided Skill Help Flow, Internal Vs Library Skill Split, Local Feedback Capture, Mandatory License Check In Onboarding, POC Change Log (+8 more)
+
+### Community 21 - "Scanner Interviewing"
+Cohesion: 0.07
+Nodes (27): As-Is Flow, Codes And Scan Events, Core Question Bank, Gate Pressure, Identity And Cards, Integrations, Interview Guide, Interview Plan Template (+19 more)
+
+### Community 22 - "Scanner Onboarding"
+Cohesion: 0.09
+Nodes (21): Confidence Labels, Contradictions and Confusion, Evidence Labels, Onboarding Pack Guide, Open Decisions, Recommended Pack Structure, Solution Hypotheses, Stabilization Output For Blocked Evidence (+13 more)
+
+### Community 23 - "Skill Feedback Capture"
+Cohesion: 0.18
+Nodes (10): CLI Commands, Model-Agnostic Use, Privacy Rules, Purpose, Required Fields, Signal Guidance, Skill Feedback Capture, Submission Rules (+2 more)
 
 ### Community 24 - "CLI Usage"
-Cohesion: 0.17
-Nodes (11): Agent Instruction Files, CLI Usage, Contract Direction, Current Commands, Feedback Flow, From Another Repo, From This Repo, Guided Help Flow (+3 more)
+Cohesion: 0.15
+Nodes (12): Agent Instruction Files, CLI Usage, Contract Direction, Current Commands, Feedback Flow, From Another Repo, From This Repo, Guided Help Flow (+4 more)
 
 ### Community 25 - "check-guardrails.mjs"
 Cohesion: 0.19
@@ -175,9 +188,9 @@ Nodes (11): allow(), ids(), requireArrayValues(), requireFields(), taxonomyIds()
 Cohesion: 0.24
 Nodes (19): buildGuidedSession(), buildQuestions(), buildRepoContext(), chatQuestion(), choice(), detectStack(), inferFromContext(), languageCounts() (+11 more)
 
-### Community 28 - "Scanner Interviewing"
-Cohesion: 0.07
-Nodes (27): As-Is Flow, Codes And Scan Events, Core Question Bank, Gate Pressure, Identity And Cards, Integrations, Interview Guide, Interview Plan Template (+19 more)
+### Community 28 - "Initiative Skill Recommender"
+Cohesion: 0.22
+Nodes (8): CLI Helper, Evidence Gate, Initiative Skill Recommender, Model-Agnostic Use, Output, Purpose, Question Contract, Workflow
 
 ### Community 29 - "Engineering Guardrails"
 Cohesion: 0.40
@@ -187,28 +200,20 @@ Nodes (4): Engineering Guardrails, Responsibility Boundaries, Size Limits, Split
 Cohesion: 0.21
 Nodes (20): feedbackCommand(), buildIssueBody(), previewFeedback(), readFeedback(), buildFeedbackComment(), buildPrBody(), buildSkillFeedbackIssueBody(), ensureCleanGit() (+12 more)
 
-### Community 31 - "Scanner Onboarding"
-Cohesion: 0.09
-Nodes (21): Confidence Labels, Contradictions and Confusion, Evidence Labels, Onboarding Pack Guide, Open Decisions, Recommended Pack Structure, Solution Hypotheses, Stabilization Output For Blocked Evidence (+13 more)
-
-### Community 32 - "Skill Feedback Capture"
-Cohesion: 0.18
-Nodes (10): CLI Commands, Model-Agnostic Use, Privacy Rules, Purpose, Required Fields, Signal Guidance, Skill Feedback Capture, Submission Rules (+2 more)
-
-### Community 33 - "Skill Library"
-Cohesion: 0.25
-Nodes (7): Capture Feedback, Guided Help, Purpose, Recommend Skills, Rules, Setup Assumption, Skill Library
-
-### Community 35 - "Initiative Skill Recommender"
-Cohesion: 0.22
-Nodes (8): CLI Helper, Evidence Gate, Initiative Skill Recommender, Model-Agnostic Use, Output, Purpose, Question Contract, Workflow
-
-### Community 36 - "Skill Library Onboarding"
+### Community 31 - "Skill Library Onboarding"
 Cohesion: 0.25
 Nodes (7): CLI Helper, Model-Agnostic Use, PR Package, Purpose, Required Gates, Skill Library Onboarding, Workflow
 
+### Community 32 - "Skill Library Catalog Overview"
+Cohesion: 0.40
+Nodes (4): Current Public Candidate Groups, First Questions, Recommendation Rules, Skill Library Catalog Overview
+
+### Community 33 - "Skill Library"
+Cohesion: 0.20
+Nodes (9): Capture Feedback, Default Start, Guided Help, Manual Fallback, Purpose, Recommend Skills, Rules, Setup Assumption (+1 more)
+
 ## Knowledge Gaps
-- **221 isolated node(s):** `name`, `version`, `private`, `type`, `skills-library` (+216 more)
+- **229 isolated node(s):** `name`, `version`, `private`, `type`, `skills-library` (+224 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -222,7 +227,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `graphifyState()` connect `cli.mjs` to `guided-session.mjs`, `feedback.mjs`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `private` to the rest of the system?**
-  _221 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _229 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Required Data Groups` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
 - **Should `Discovery` be split into smaller, more focused modules?**

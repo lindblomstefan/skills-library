@@ -10,7 +10,7 @@ proposed_at: 2026-08-13
 summary: Internal workflow skill and CLI path for collecting privacy-safe feedback after a skill or recommendation is used in a local repo.
 source:
   type: internal-skill
-  url: .codex/skills/skill-feedback-capture
+  url: .codex/internal-workflows/skill-feedback-capture
   license: internal
   license_spdx: not-applicable
   redistribution: internal
@@ -49,7 +49,7 @@ compatibility:
       invoke_result: pass
       permission_notes: Procedural skill works when the host can summarize repo context with consent and create a redacted local event.
       evidence:
-        - .codex/skills/skill-feedback-capture/SKILL.md
+        - .codex/internal-workflows/skill-feedback-capture/WORKFLOW.md
         - catalog/schemas/feedback-event.schema.yaml
       known_gaps:
         - GitHub submission depends on `gh` or an equivalent issue/PR integration.
@@ -66,7 +66,7 @@ compatibility:
       evidence:
         - tools/lib/feedback.mjs
         - tools/lib/feedback-submit.mjs
-        - .codex/skills/skill-feedback-capture/SKILL.md
+        - .codex/internal-workflows/skill-feedback-capture/WORKFLOW.md
       known_gaps:
         - GitHub submission requires explicit approval and installed `gh`.
   tags:

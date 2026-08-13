@@ -5,6 +5,7 @@ This repository is a **working CLI proof of concept** for a skill-agnostic compa
 Current status:
 
 - The CLI POC works locally and can be called from another repository.
+- The repo exposes one installable Codex skill: `skill-library`.
 - Public library entries are candidates or evaluating entries, not approved production skills.
 - External skills are stored as metadata pointers to upstream sources; external skill files are not copied into this repo.
 - Standard recommendations intentionally block unapproved skills. Exploratory recommendations can surface candidates with blockers.
@@ -14,6 +15,8 @@ The library has two skill layers:
 
 - **Library skills**: publishable/recommendable skills under `catalog/library-skills/`.
 - **Internal skills**: operating skills under `catalog/internal-skills/` used by this repo and the `skill-library` workflow. They are not made available as library inventory.
+
+The only installable skill folder is `.codex/skills/skill-library/`. Internal workflow instructions live under `.codex/internal-workflows/` so a GitHub skill installer should not offer them as separate public skills.
 
 The library should support multiple sources:
 
@@ -108,6 +111,36 @@ The first catalog seed is intentionally candidate-heavy. Keep adding external sk
 ## Local CLI POC
 
 The first POC is a local onboarding-to-recommendation flow. The primary interface is CLI output that can be called from this repo or another repo.
+
+## Installing And Invoking The Skill
+
+If a user gives an agent this repo URL:
+
+```text
+git@github.com:lindblomstefan/skills-library.git
+```
+
+the intended flow is:
+
+1. Install the single `skill-library` skill from `.codex/skills/skill-library/`.
+2. Invoke `skill-library`.
+3. Start guided assist/interview for the target repo or initiative.
+
+The model should not treat the URL itself as the work request. The URL is only the source used to install the skill.
+
+Good prompt:
+
+```text
+Install and use the skill-library skill from git@github.com:lindblomstefan/skills-library.git.
+After installing it, invoke skill-library and start helping me evaluate what skills this repo needs.
+Ask for repo-inspection consent before reading files.
+```
+
+After installation, a shorter prompt should work:
+
+```text
+Use skill-library to recommend skills for this repo.
+```
 
 Run:
 

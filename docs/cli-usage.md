@@ -38,6 +38,45 @@ Call this repository's binary and point `--repo` at the target repository:
 
 The target repo is inspected for `graphify-out/graph.json`. If present, the recommendation profile records that Graphify context is available. If missing, the output records the gap instead of failing.
 
+## Install From GitHub, Then Invoke
+
+This repo intentionally exposes one installable Codex skill:
+
+```text
+.codex/skills/skill-library/
+```
+
+Internal workflow instructions are stored under `.codex/internal-workflows/` and should not be offered as separate installable skills.
+
+If a user gives an agent this URL:
+
+```text
+git@github.com:lindblomstefan/skills-library.git
+```
+
+the agent should treat it as the source for installing `skill-library`, not as the task itself.
+
+Expected post-install behavior:
+
+1. Invoke the installed `skill-library` skill.
+2. Start guided assist/interview for the current target repo or initiative.
+3. Ask for repo-inspection consent before reading files.
+4. Recommend skills only after intent and evidence are stable enough.
+
+Good first prompt:
+
+```text
+Install and use the skill-library skill from git@github.com:lindblomstefan/skills-library.git.
+After installing it, invoke skill-library and start helping me evaluate what skills this repo needs.
+Ask for repo-inspection consent before reading files.
+```
+
+Expected first useful command when the full repo is locally available:
+
+```bash
+/path/to/skills-library/bin/skills-library.mjs assist --repo . --format text
+```
+
 ## Output Formats
 
 JSON is the default and is the recommended interface for agents and automation:

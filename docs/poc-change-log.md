@@ -134,7 +134,7 @@ Impact:
 - `feedback collect` writes redacted JSON under `.skills-library/feedback/` in the target repo by default.
 - `feedback submit` currently supports GitHub issue creation with explicit `--yes`.
 - Direct push is blocked by design.
-- Added `.codex/skills/skill-feedback-capture`.
+- Added `.codex/internal-workflows/skill-feedback-capture`.
 - Added `.codex/skills/skill-library` so another repo can invoke this repo as the Skill Library skill.
 - Added catalog entries for `skill-feedback-capture` and `skill-library`.
 
@@ -179,3 +179,10 @@ Impact:
 - Kept each as metadata-only external pointers with `copied_assets: []`.
 - Recorded observed stars, source URL, license state, routing scope, risk, install/invoke shape, and freshness metadata.
 - Left all new entries as `candidate`; they are exploratory only until evaluated.
+
+### Single Installable Skill Surface
+
+- Kept `.codex/skills/skill-library/` as the only installable Codex skill in the repo.
+- Moved helper/domain workflow instructions to `.codex/internal-workflows/` and renamed their `SKILL.md` files to `WORKFLOW.md`.
+- Updated `skill-library` so invocation starts guided repo/initiative interviewing instead of asking a broad open-ended question.
+- Added a compact catalog overview inside the installable skill for use when the full CLI repo is unavailable.
