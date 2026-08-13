@@ -113,33 +113,25 @@ The first POC is a local onboarding-to-recommendation flow. The primary interfac
 
 ## Installing And Invoking The Skill
 
-If a user gives an agent this repo URL:
+No special tooling required. Paste this prompt into any Claude Code session:
 
 ```text
-git@github.com:lindblomstefan/skills-library.git
+Install the skill-library skill from https://github.com/lindblomstefan/skills-library
+
+1. Clone the repo: git clone https://github.com/lindblomstefan/skills-library /tmp/skills-library-install
+2. Copy the skill: mkdir -p ~/.claude/skills && cp -r /tmp/skills-library-install/.claude/skills/skill-library ~/.claude/skills/
+3. Add the following block to ~/.claude/CLAUDE.md (create the file if it does not exist):
+
+## Skill Library
+- When I type /skill-library, read ~/.claude/skills/skill-library/SKILL.md and run the guided interview.
+- When I ask what AI skills, tools, or AI-powered workflows to use for a project or team, suggest /skill-library before answering directly.
+
+4. Confirm it is installed and remind me: type /skill-library to start.
 ```
 
-the intended flow is:
+After installation, type `/skill-library` in any Claude Code session to start the guided interview.
 
-1. Install the single `skill-library` skill from `.claude/skills/skill-library/`.
-2. Invoke `skill-library`.
-3. Start guided assist/interview for the target repo or initiative.
-
-The model should not treat the URL itself as the work request. The URL is only the source used to install the skill.
-
-Good prompt:
-
-```text
-Install and use the skill-library skill from git@github.com:lindblomstefan/skills-library.git.
-After installing it, invoke skill-library and start helping me evaluate what skills this repo needs.
-Start by asking about the idea, goal, and intended end product. Ask for repo-inspection consent before reading files.
-```
-
-After installation, a shorter prompt should work:
-
-```text
-Use skill-library to recommend skills for this repo.
-```
+The key sentence trigger (`what AI skills … to use for a project or team`) is a light auto-suggest — Claude will recommend running the interview rather than jumping to answers. It does not trigger on general "build X" statements.
 
 Run:
 
