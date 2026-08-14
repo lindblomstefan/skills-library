@@ -28,11 +28,11 @@ Use `AskUserQuestion` for structured choices. After any choice that signals the 
      - `Describe freely` — user will write their own description
      - `Problem only` — user wants to share a pain point, solution not needed yet
      - `Chat about this` — user wants to talk it through first
-   - After the user picks, follow up with a plain open question matching their choice:
-     - "Describe freely" → ask: `Go ahead — what are you trying to build or improve, and what should the end result look like?`
-     - "Problem only" → ask: `What is the problem you are trying to solve?`
-     - "Chat about this" → ask: `What is on your mind?`
-   - Wait for the user's typed answer before continuing.
+   - After the user picks, write a plain conversational follow-up — NOT an AskUserQuestion. The user must type a free-text answer:
+     - "Describe freely" → write: `Go ahead — what are you trying to build or improve, and what should the end result look like?`
+     - "Problem only" → write: `What is the problem you are trying to solve?`
+     - "Chat about this" → write: `What is on your mind?`
+   - Wait for the user's typed answer before continuing. Do not present any options.
 
 2. Repo inspection — only ask if the current session is inside a repo that has existing content. If the repo is empty, missing, or not detectable, skip this step entirely and continue with questions only.
    - question: `May I inspect this repo to ground the follow-up questions and recommendations?`
