@@ -49,10 +49,11 @@ Use `AskUserQuestion` for structured choices. After any choice that signals the 
      - "Chat about this" → write: `What is on your mind?`
    - Wait for the user's typed answer before continuing. Do not present any options.
 
-3. Ask remaining narrowing questions one `AskUserQuestion` at a time. Cover what is still unknown: work area, sensitivity, constraints, and time horizon. Always include `Not decided yet` as an option on any question where the answer may not exist yet (stack, timeline, runtime, etc.). Example option sets:
-   - Work area: `Architecture | Security | Frontend | Backend | Data / ML | DevOps`
+3. Ask remaining narrowing questions one `AskUserQuestion` at a time. Cover what is still unknown: work area, sensitivity, constraints, and time horizon. Always include `Not decided yet` as an option on any question where the answer may not exist yet (stack, timeline, runtime, etc.). Use `multiSelect: true` for any question where multiple answers are valid (work area, constraints). Example option sets:
+   - Work area (multiSelect): `Architecture | Security | Frontend | Backend | Data / ML | DevOps`
    - Sensitivity: `Internal | Confidential | Public`
-   - Stack: `Node / TypeScript | Python | Other / Mixed | Not decided yet`
+   - Stack (multiSelect): `Node / TypeScript | Python | Other / Mixed | Not decided yet`
+   - Constraints (multiSelect): `Security / compliance | No new external services | Ship fast / MVP first`
 
 4. If answers are vague, contradictory, or unstable, ask one focused follow-up before continuing.
 5. Recommend only after either a repo read happened or concrete typed answers exist.
