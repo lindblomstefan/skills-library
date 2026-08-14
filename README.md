@@ -1,4 +1,4 @@
-# Skills Library
+# skills-library
 
 Version is early so please be patient and help improving.
 
@@ -27,34 +27,26 @@ Type `/skills-library` in any Claude Code session to start the guided interview.
 
 Claude will also suggest `/skills-library` automatically when you ask what AI skills, tools, or AI-powered workflows to use for a project or team.
 
-## Feedback
-
-After using a recommended skill, tell Claude "I have feedback on [skill name]." Claude runs a short capture flow, appends a dated entry to `~/.claude/skills/skills-library/feedback/<skill-id>.md`, and previews the change before saving.
-
-Once a skill accumulates 3 feedback entries, Claude sets `validated: true` in that file. Validated means the skill has been confirmed working in practice — not that it is universally the right fit. Claude reads these files before recommending, so the library improves with use.
+After using a recommended skill, say "I have feedback on [skill name]." Claude appends a dated entry to a local feedback file. Once a skill reaches 3 entries it is marked validated — confirmed working in practice, not universally recommended.
 
 ## Catalog
 
 Two skills have feedback files seeded and are ready to accumulate validation:
 
-- **gstack** — structured workflow skill for specification, design review, implementation, QA, and ship
+- **gstack** — structured workflow suite for specification, design review, implementation, QA, and ship
 - **graphify** — repository knowledge graph that lets agents query structure before browsing raw files
 
 Other candidates are under evaluation. See `catalog/library-skills/` for the full list.
 
-## Add a skill
-
-Type `/skills-library` and say you have a skill to add. Claude runs the onboarding flow: source, license, mode, and PR scope — and creates a feedback file for the new skill from the template. Onboarding changes go through a PR; nothing is pushed to main directly.
-
 ## Contributing
 
-The library grows through use. There are three paths — no GitHub required for the first two:
+The library grows through use. No GitHub account required for the first two paths:
 
 - **Validate a skill** — use a skill, then say "I have feedback on [skill name]" in Claude. Three feedback entries from real sessions marks a skill as validated.
-- **Add a skill** — type `/skills-library` and say "I have a skill to add." Claude runs the onboarding flow and prepares a PR package.
+- **Add a skill** — type `/skills-library` and say "I have a skill to add." Claude runs the onboarding flow and prepares a PR package for you to open.
 - **Improve the library** — fork, edit, open a PR. Run `npm test` before pushing.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide including the validation model and what makes a good skill addition.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the validation model and what makes a good skill addition.
 
 ## This repository
 
@@ -62,7 +54,7 @@ The installable artifact is the skill folder:
 
 ```text
 .claude/skills/skills-library/
-├── SKILL.md          # All interview, recommendation, onboarding, and feedback instructions
+├── SKILL.md          # Interview, recommendation, onboarding, and feedback instructions
 ├── VERSION           # Used for update detection
 ├── feedback/         # Per-skill feedback files; read before recommending
 │   ├── _template.md  # Template for new skills
@@ -72,7 +64,7 @@ The installable artifact is the skill folder:
 └── references/       # Catalog overview for offline use
 ```
 
-The rest of the repo is catalog governance tooling — YAML manifests, evaluation runs, and validation scripts used to manage the library itself. It is not part of the installed skill.
+The rest of the repo is catalog governance tooling — YAML manifests, evaluation runs, and validation scripts. It is not part of the installed skill.
 
 ```text
 catalog/      # Library skill manifests and taxonomies
