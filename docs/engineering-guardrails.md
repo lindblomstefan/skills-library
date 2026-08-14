@@ -18,7 +18,7 @@ The POC should stay easy to inspect as it grows. When a file starts carrying mor
 
 - Source files (`.mjs`, `.js`, `.css`, `.html`) warn above 300 lines and fail above 450 lines.
 - Documentation files (`.md`) warn above 350 lines and fail above 700 lines.
-- The installable `.claude/skills/skill-library/SKILL.md` must stay short and sequenced. `npm test` fails if it grows beyond 90 lines or reintroduces repo-consent-first wording.
+- The installable `.claude/skills/skills-library/SKILL.md` must stay short and sequenced. `npm test` fails if it grows beyond 90 lines or reintroduces repo-consent-first wording.
 - Generated output is exempt: `dist/` and package lock files.
 
 Do not raise limits to make a change pass. First split by responsibility. If a file genuinely needs more room, document why in `docs/poc-change-log.md` before changing the guardrail.

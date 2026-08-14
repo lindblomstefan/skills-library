@@ -65,7 +65,7 @@ The target repo is inspected for `graphify-out/graph.json`. If present, the reco
 This repo intentionally exposes one installable Claude skill:
 
 ```text
-.claude/skills/skill-library/
+.claude/skills/skills-library/
 ```
 
 Internal workflow instructions are stored under `.claude/internal-workflows/` and should not be offered as separate installable skills.
@@ -76,11 +76,11 @@ If a user gives an agent this URL:
 git@github.com:lindblomstefan/skills-library.git
 ```
 
-the agent should treat it as the source for installing `skill-library`, not as the task itself.
+the agent should treat it as the source for installing `skills-library`, not as the task itself.
 
 Expected post-install behavior:
 
-1. Invoke the installed `skill-library` skill.
+1. Invoke the installed `skills-library` skill.
 2. Start guided assist/interview for the current target repo or initiative.
 3. Ask an open first question about the idea, goal, and intended end product.
 4. Ask for repo-inspection consent before reading files.
@@ -89,8 +89,8 @@ Expected post-install behavior:
 Good first prompt:
 
 ```text
-Install and use the skill-library skill from git@github.com:lindblomstefan/skills-library.git.
-After installing it, invoke skill-library and start helping me evaluate what skills this repo needs.
+Install and use the skills-library skill from git@github.com:lindblomstefan/skills-library.git.
+After installing it, invoke skills-library and start helping me evaluate what skills this repo needs.
 Start by asking about the idea, goal, and intended end product. Ask for repo-inspection consent before reading files.
 ```
 

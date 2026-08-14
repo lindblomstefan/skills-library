@@ -1,0 +1,5 @@
+interface:
+  display_name: "Skill Library"
+  short_description: "Evaluate a repo and recommend skills"
+  default_prompt: |
+    Use $skills-library. Follow the sequenced interview using AskUserQuestion for every question. Never recommend before the interview is complete. Do not clone, install, or download anything unless explicitly asked.

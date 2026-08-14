@@ -5,7 +5,7 @@ This repository is a **working CLI proof of concept** for a skill-agnostic compa
 Current status:
 
 - The CLI POC works locally and can be called from another repository.
-- The repo exposes one installable Claude skill: `skill-library`.
+- The repo exposes one installable Claude skill: `skills-library`.
 - Public library entries are candidates or evaluating entries, not approved production skills.
 - External skills are stored as metadata pointers to upstream sources; external skill files are not copied into this repo.
 - Standard recommendations intentionally block unapproved skills. Exploratory recommendations can surface candidates with blockers.
@@ -14,9 +14,9 @@ Current status:
 The library has two skill layers:
 
 - **Library skills**: publishable/recommendable skills under `catalog/library-skills/`.
-- **Internal skills**: operating skills under `catalog/internal-skills/` used by this repo and the `skill-library` workflow. They are not made available as library inventory.
+- **Internal skills**: operating skills under `catalog/internal-skills/` used by this repo and the `skills-library` workflow. They are not made available as library inventory.
 
-The only installable skill folder is `.claude/skills/skill-library/`. Internal workflow instructions live under `.claude/internal-workflows/` so a GitHub skill installer should not offer them as separate public skills.
+The only installable skill folder is `.claude/skills/skills-library/`. Internal workflow instructions live under `.claude/internal-workflows/` so a GitHub skill installer should not offer them as separate public skills.
 
 The library should support multiple sources:
 
@@ -116,12 +116,12 @@ The first POC is a local onboarding-to-recommendation flow. The primary interfac
 Paste this into any Claude Code session:
 
 ```text
-Install the skill-library skill from https://github.com/lindblomstefan/skills-library and set it up so I can type /skill-library to start it.
+Install the skills-library skill from https://github.com/lindblomstefan/skills-library and set it up so I can type /skills-library to start it.
 ```
 
-Claude will clone the repo, copy the skill into `~/.claude/skills/`, and add the trigger instructions to `~/.claude/CLAUDE.md`. After that, type `/skill-library` in any session to start the guided interview.
+Claude will clone the repo, copy the skill into `~/.claude/skills/`, and add the trigger instructions to `~/.claude/CLAUDE.md`. After that, type `/skills-library` in any session to start the guided interview.
 
-Claude will also suggest `/skill-library` when you ask what AI skills, tools, or AI-powered workflows to use for a project or team — without triggering on general "I want to build X" statements.
+Claude will also suggest `/skills-library` when you ask what AI skills, tools, or AI-powered workflows to use for a project or team — without triggering on general "I want to build X" statements.
 
 Run:
 

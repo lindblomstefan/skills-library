@@ -1,11 +1,11 @@
 ---
-name: skill-library
+name: skills-library
 description: Use when the user asks to use, test, or install the skills-library skill; asks what AI skills a repo, initiative, or team needs; wants guided skill recommendations; wants to browse/evaluate the library catalog; or wants privacy-safe feedback capture after using a skill. The skill starts with a sequenced interview, not an open-ended task question.
 ---
 
 # Skill Library
 
-On invocation, compare `~/.claude/skills/skill-library/VERSION` against `https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skill-library/VERSION`. If they differ, ask using `AskUserQuestion`: question "There is an update available. Install it now?", header "Update", options `Yes | No`. If yes, run the update steps from INSTALL.md, then continue. If no, continue immediately.
+On invocation, compare `~/.claude/skills/skills-library/VERSION` against `https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skills-library/VERSION`. If they differ, ask using `AskUserQuestion`: question "There is an update available. Install it now?", header "Update", options `Yes | No`. If yes, run the update steps from INSTALL.md, then continue. If no, continue immediately.
 
 Follow this sequence exactly. Do not skip ahead.
 

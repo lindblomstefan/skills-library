@@ -215,6 +215,6 @@ function reasonFor(skill, item) {
   if (skill.id === "initiative-skill-recommender") return "This skill captures initiative intent and turns it into router input for skill-set recommendation.";
   if (skill.id === "skill-library-onboarding") return "This skill covers the first POC step: onboarding a known candidate skill into the library.";
   if (skill.id === "skill-feedback-capture") return "This skill captures privacy-safe feedback with local repo context before issue submission.";
-  if (skill.id === "skill-library") return "This skill is the wrapper that lets another repo call recommendations and feedback capture from the skills library.";
+  if (skill.id === "skills-library") return "This skill is the wrapper that lets another repo call recommendations and feedback capture from the skills library.";
   return `Score ${item.score} from task, compatibility, governance, trust, risk, freshness, and evidence factors.`;
 }

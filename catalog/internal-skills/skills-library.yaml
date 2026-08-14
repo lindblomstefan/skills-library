@@ -1,4 +1,4 @@
-id: skill-library
+id: skills-library
 name: Skill Library
 catalog_visibility: internal
 source_type: internal
@@ -10,7 +10,7 @@ proposed_at: 2026-08-13
 summary: Repo-level skill wrapper that lets other projects call the skills-library CLI for skill recommendations and privacy-safe feedback capture.
 source:
   type: internal-skill
-  url: .claude/skills/skill-library
+  url: .claude/skills/skills-library
   license: internal
   license_spdx: not-applicable
   redistribution: internal
@@ -48,7 +48,7 @@ compatibility:
       invoke_result: pass
       permission_notes: Procedural wrapper works when the host can call a local CLI or reproduce the JSON contract.
       evidence:
-        - .claude/skills/skill-library/SKILL.md
+        - .claude/skills/skills-library/SKILL.md
         - docs/cli-usage.md
       known_gaps:
         - Runtime must know where the skills-library repo is cloned.
@@ -63,7 +63,7 @@ compatibility:
       invoke_result: pass
       permission_notes: Calls the repo-local CLI from another working tree.
       evidence:
-        - .claude/skills/skill-library/SKILL.md
+        - .claude/skills/skills-library/SKILL.md
         - bin/skills-library.mjs
       known_gaps:
         - Requires the user or host repo to know where skills-library is cloned.

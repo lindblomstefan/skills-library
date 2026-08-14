@@ -60,11 +60,11 @@ assertIncludes(
   "contradictory evidence should block recommendations even after repo read"
 );
 
-const skillText = readText(".claude/skills/skill-library/SKILL.md");
+const skillText = readText(".claude/skills/skills-library/SKILL.md");
 assertNotIncludes(skillText, "Include repo-inspection consent as the first question", "skill instructions should not put repo consent first");
 assertNotIncludes(skillText, "Start with repo-inspection consent", "skill instructions should not put repo consent first");
 if (skillText.split("\n").length > 90) {
-  console.error("error: skill-library SKILL.md is too long for deterministic invocation");
+  console.error("error: skills-library SKILL.md is too long for deterministic invocation");
   process.exit(1);
 }
 
@@ -72,9 +72,9 @@ for (const file of [
   "README.md",
   "docs/cli-usage.md",
   "docs/poc-plan.md",
-  ".claude/skills/skill-library/SKILL.md",
-  ".claude/skills/skill-library/references/catalog-overview.md",
-  ".claude/skills/skill-library/agents/claude.yaml"
+  ".claude/skills/skills-library/SKILL.md",
+  ".claude/skills/skills-library/references/catalog-overview.md",
+  ".claude/skills/skills-library/agents/claude.yaml"
 ]) {
   const text = readText(file);
   for (const forbidden of [
