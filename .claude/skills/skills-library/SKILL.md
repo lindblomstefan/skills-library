@@ -30,7 +30,7 @@ Use `AskUserQuestion` for structured choices. After any choice that signals the 
    git rev-parse --git-dir > /dev/null 2>&1 && echo "IS_REPO" || echo "NO_REPO"
    ```
    - If `IS_REPO`: ask using `AskUserQuestion`: question `May I inspect this repo to ground the follow-up questions and recommendations?`, header `"Repo"`, options `Inspect repo | Skip`. If consent given, inspect only safe local context: top-level files, dependency manifests, scripts, language shape, tests, docs, and agent instruction files. A new or empty repo is still a valid repo — inspect what exists.
-   - If `NO_REPO`: print `The current directory isn't a git repo, so I'll skip the repo scan and move straight to questions.` then continue.
+   - If `NO_REPO`: continue immediately to step 2 without comment.
 
 2. Ask how the user wants to share context:
    - question: `How would you like to tell me about what you need?`
