@@ -1,3 +1,9 @@
+## VERSION bump rule
+
+**Always bump `.claude/skills/skills-library/VERSION` before pushing any change that touches the skill** — SKILL.md, feedback files, references/, or agents/. Bump in the same commit or as the final commit before push.
+
+If VERSION is not bumped, installed users never receive the update. The auto-update check compares versions and silently passes if they match.
+
 ## engineering guardrails
 
 Before adding substantial code, read `docs/engineering-guardrails.md`.
