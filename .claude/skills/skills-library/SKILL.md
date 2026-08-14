@@ -53,14 +53,6 @@ Use `AskUserQuestion` for structured choices. After any choice that signals the 
 5. Recommend only after either a repo read happened or concrete typed answers exist.
 6. Return a shortlist of at most 5 skills. For each, show license state, status, blockers, and whether it is standard-ready or exploratory.
 
-Use the CLI when available:
-
-```bash
-/path/to/skills-library/bin/skills-library.mjs assist --repo . --format text
-```
-
-Run `recommend` only after step 7 is satisfied. If it returns `Skill-library interview required`, ask those questions instead of recommending.
-
 ## 3. Onboarding Sequence
 
 Use `AskUserQuestion` for every step. Ask one question at a time unless questions are truly independent.
