@@ -1,0 +1,138 @@
+id: frontend-design
+name: Frontend Design
+catalog_visibility: library
+source_type: external
+status: evaluating
+stability: stable
+owner: unassigned
+proposed_by: skills-library
+proposed_at: 2026-08-14
+summary: Official Anthropic skill that generates HTML, CSS, and React components with Tailwind and shadcn, with deliberate attention to spacing, alignment, and visual hierarchy.
+source:
+  type: external-skill
+  url: https://github.com/anthropics/skills/tree/main/skills/frontend-design
+  license: MIT License
+  license_spdx: MIT
+  redistribution: needs-review
+  modification_allowed: needs-review
+  maintainer: anthropics/skills
+  version_or_commit: main
+  documentation: https://github.com/anthropics/skills/tree/main/skills/frontend-design
+  dependencies: []
+  copied_assets: []
+domains:
+  - coding
+  - ui-ux
+task_types:
+  - project-onboarding
+use_when:
+  - The task requires generating a UI component, page, or layout.
+  - The user wants consistent spacing, alignment, and hierarchy enforced.
+  - The project uses Tailwind CSS or shadcn/ui.
+do_not_use_when:
+  - The project uses a different design system with strict token constraints.
+  - Backend-only work with no UI component.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: none
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Ships with paid Claude by default; copy to ~/.claude/skills/ if not present.
+      evidence:
+        - https://github.com/anthropics/skills/tree/main/skills/frontend-design
+      known_gaps: []
+  tags:
+    - source:anthropic
+    - runtime:claude-code
+distribution:
+  install:
+    type: external-skill
+    command: Copy the frontend-design folder from the anthropics/skills repo into ~/.claude/skills/. Ships with paid Claude by default.
+  invoke:
+    command: Invoked automatically when UI generation tasks are detected; or via slash command if configured.
+  generated_files: []
+  dependencies:
+    - tailwindcss
+    - shadcn-ui
+  required_permissions:
+    - read-repository
+    - write-files
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - generate a UI component
+    - create a landing page
+    - build a form or layout
+    - design a dashboard
+  caution_for:
+    - projects with strict proprietary design systems
+  not_recommended_for:
+    - backend-only tasks
+    - CLI tools with no UI
+  example_prompts:
+    - Build a signup form with validation using Tailwind.
+    - Create a dashboard card component with shadcn.
+  anti_examples:
+    - Write a database migration.
+  keywords:
+    - frontend
+    - ui
+    - tailwind
+    - shadcn
+    - component
+    - design
+  aliases:
+    - frontend-design
+    - ui-design
+trust:
+  level: high
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Official Anthropic skill from the anthropics/skills repository. Ships with paid Claude subscriptions.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Generates local files only; no external calls.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-14
+  next_review: 2026-11-14
+  replacement_watch: false
+  deprecation_criteria:
+    - Anthropic removes or archives the skills repo.
+decision:
+  outcome: defer
+  rationale: Official Anthropic source with high trust; pending local evaluation and license state confirmation.
+  decided_by: skills-library
+  decided_at: 2026-08-14
+relationships:
+  pairs_with: []
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Primarily tuned for Tailwind and shadcn; may need guidance for other stacks.
+  - Ships with paid Claude only; manual install required otherwise.

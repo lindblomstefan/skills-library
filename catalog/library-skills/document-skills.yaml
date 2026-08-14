@@ -1,0 +1,145 @@
+id: document-skills
+name: Document Skills (Word, Excel, PowerPoint, PDF)
+catalog_visibility: library
+source_type: external
+status: evaluating
+stability: stable
+owner: unassigned
+proposed_by: skills-library
+proposed_at: 2026-08-14
+summary: Official Anthropic skill suite for creating and editing real Office documents — formatted Word reports, Excel models with calculations, PowerPoint decks, and filled PDF forms.
+source:
+  type: external-skill
+  url: https://github.com/anthropics/skills
+  license: MIT License
+  license_spdx: MIT
+  redistribution: needs-review
+  modification_allowed: needs-review
+  maintainer: anthropics/skills
+  version_or_commit: main
+  documentation: https://github.com/anthropics/skills
+  dependencies: []
+  copied_assets: []
+domains:
+  - documentation
+task_types:
+  - project-onboarding
+use_when:
+  - The output needs to be a deliverable someone else opens — Word, Excel, PowerPoint, or PDF.
+  - A financial model, formatted report, or deck is required.
+  - The user needs a filled or generated PDF form.
+do_not_use_when:
+  - The output is plain text or markdown only.
+  - The task is analysis only with no document output.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: none
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Ships with paid Claude by default; ask for a Word/Excel/PowerPoint/PDF file directly.
+      evidence:
+        - https://github.com/anthropics/skills
+      known_gaps: []
+  tags:
+    - source:anthropic
+    - runtime:claude-code
+distribution:
+  install:
+    type: external-skill
+    command: Built into paid Claude by default. Ask for a Word, Excel, PowerPoint, or PDF file. Manual install via anthropics/skills repo if needed.
+  invoke:
+    command: Ask Claude to create or edit a Word/Excel/PowerPoint/PDF file directly.
+  generated_files:
+    - "*.docx"
+    - "*.xlsx"
+    - "*.pptx"
+    - "*.pdf"
+  dependencies: []
+  required_permissions:
+    - write-files
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - create a Word document
+    - generate an Excel model
+    - build a PowerPoint deck
+    - fill a PDF form
+    - produce a formatted report
+  caution_for:
+    - complex Excel formulas that need manual verification
+  not_recommended_for:
+    - plain text or markdown output only
+  example_prompts:
+    - Create a project status report as a Word document.
+    - Build a financial model in Excel with monthly projections.
+    - Make a five-slide pitch deck in PowerPoint.
+  anti_examples:
+    - Summarize this text.
+  keywords:
+    - word
+    - excel
+    - powerpoint
+    - pdf
+    - docx
+    - xlsx
+    - pptx
+    - document
+    - report
+    - deck
+  aliases:
+    - document-skills
+    - office-skills
+    - word-skill
+    - excel-skill
+trust:
+  level: high
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Official Anthropic skill suite from the anthropics/skills repository. Ships with paid Claude subscriptions.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Generates local files only; no external calls.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-14
+  next_review: 2026-11-14
+  replacement_watch: false
+  deprecation_criteria:
+    - Anthropic removes or archives the skills repo.
+decision:
+  outcome: defer
+  rationale: Official Anthropic source with high trust; pending local evaluation and license state confirmation.
+  decided_by: skills-library
+  decided_at: 2026-08-14
+relationships:
+  pairs_with: []
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Ships with paid Claude only; manual install required otherwise.
+  - Complex Excel formulas and macros may need manual review.

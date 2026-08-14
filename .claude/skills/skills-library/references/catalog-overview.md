@@ -13,6 +13,9 @@ Use this only when the full `skills-library` repo is unavailable locally.
 
 - **gstack** — structured workflow suite: spec, design review, planning, QA, ship, deploy, security, benchmarking (`garrytan/gstack`)
 - **graphify** — repo knowledge graph for structure-aware agents
+- **frontend-design** — official Anthropic skill for Tailwind/shadcn UI generation (`anthropics/skills`)
+- **document-skills** — official Anthropic suite for Word, Excel, PowerPoint, and PDF (`anthropics/skills`)
+- **skill-creator** — official Anthropic skill that scaffolds new skills from plain-English descriptions (`anthropics/skills`)
 - MCP and tool discovery: `awesome-mcp-servers`, `modelcontextprotocol-servers`, `playwright-mcp`
 - Agent architecture: `twelve-factor-agents`, `ai-agents-for-beginners`, `awesome-ai-agents`
 - Coding agents: `continue`, `aider`, `openhands`, `swe-agent`, `cline`, `roo-code`

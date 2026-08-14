@@ -1,0 +1,138 @@
+id: skill-creator
+name: Skill Creator
+catalog_visibility: library
+source_type: external
+status: evaluating
+stability: stable
+owner: unassigned
+proposed_by: skills-library
+proposed_at: 2026-08-14
+summary: Official Anthropic meta-skill that generates standardized skill files and folder structures from a plain-English description, including correct YAML frontmatter and SKILL.md scaffolding.
+source:
+  type: external-skill
+  url: https://github.com/anthropics/skills/tree/main/skills/skill-creator
+  license: MIT License
+  license_spdx: MIT
+  redistribution: needs-review
+  modification_allowed: needs-review
+  maintainer: anthropics/skills
+  version_or_commit: main
+  documentation: https://github.com/anthropics/skills/tree/main/skills/skill-creator
+  dependencies: []
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - project-onboarding
+use_when:
+  - The user wants to turn a repeatable workflow into an installable skill.
+  - Skill scaffolding (correct YAML frontmatter, folder structure) is needed.
+  - Starting a new skill from scratch without copying an existing template manually.
+do_not_use_when:
+  - The skill already exists and only needs editing.
+  - The task is not about creating a reusable skill.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: none
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Ships with paid Claude by default. Say "create a skill that does X."
+      evidence:
+        - https://github.com/anthropics/skills/tree/main/skills/skill-creator
+      known_gaps: []
+  tags:
+    - source:anthropic
+    - runtime:claude-code
+distribution:
+  install:
+    type: external-skill
+    command: Built into paid Claude by default. Say "create a skill that does X." Manual install via anthropics/skills repo if needed.
+  invoke:
+    command: Tell Claude to create a skill with a plain-English description of what it should do.
+  generated_files:
+    - SKILL.md
+    - "*.yaml"
+  dependencies: []
+  required_permissions:
+    - write-files
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - create a new skill
+    - build a reusable workflow
+    - scaffold a skill file
+    - codify a repeatable process
+  caution_for:
+    - complex multi-agent skills that need custom orchestration beyond scaffolding
+  not_recommended_for:
+    - editing an existing skill
+    - tasks unrelated to skill authoring
+  example_prompts:
+    - Create a skill that runs a code review checklist before every PR.
+    - Build a skill that summarises meeting notes in my preferred format.
+  anti_examples:
+    - Run a code review on this file.
+  keywords:
+    - skill
+    - scaffold
+    - create
+    - template
+    - workflow
+    - SKILL.md
+  aliases:
+    - skill-creator
+    - skill-builder
+trust:
+  level: high
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Official Anthropic skill from the anthropics/skills repository. Ships with paid Claude subscriptions.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Generates local files only; no external calls.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-14
+  next_review: 2026-11-14
+  replacement_watch: false
+  deprecation_criteria:
+    - Anthropic removes or archives the skills repo.
+    - Claude Code introduces a built-in skill scaffolding command that replaces it.
+decision:
+  outcome: defer
+  rationale: Official Anthropic source with high trust; directly relevant to the skills-library mission. Pending local evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-14
+relationships:
+  pairs_with: []
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Ships with paid Claude only; manual install required otherwise.
+  - Generated scaffolding may need adjustment for non-standard skill patterns.
