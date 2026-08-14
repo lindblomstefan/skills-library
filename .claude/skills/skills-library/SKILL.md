@@ -57,11 +57,11 @@ Use `AskUserQuestion` for structured choices. After any choice that signals the 
 
 4. If answers are vague, contradictory, or unstable, ask one focused follow-up before continuing.
 5. Recommend only after either a repo read happened or concrete typed answers exist.
-6. Return a shortlist of at most 5 skills. For each, show license state, status, blockers, and whether it is standard-ready or exploratory.
+6. For each candidate, check `~/.claude/skills/skills-library/feedback/<skill-id>.md` and read it if it exists. Return a shortlist of at most 5 skills: license state, status, blockers, and standard-ready vs exploratory.
 
 ## 3. Onboarding Sequence
 
-Use `AskUserQuestion` for every step. Ask one question at a time unless questions are truly independent.
+Use `AskUserQuestion` for every step. Ask one question at a time unless questions are truly independent. If the user declines any step, say "Onboarding cancelled. Come back when you're ready." and stop.
 
 1. Candidate source — header `"Source"`, options: `URL or path | Build internal | Chat about this`
 2. License state — header `"License"`, options: `Clear | Needs review | Unknown` — ask this before evaluating anything.
