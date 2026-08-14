@@ -63,7 +63,7 @@ Use `AskUserQuestion` for every step. Ask one question at a time unless question
 2. License state — header `"License"`, options: `Clear | Needs review | Unknown` — ask this before evaluating anything.
 3. Onboarding mode — header `"Mode"`, options: `Reference only | Adapt | Copy assets` — copying requires explicit license/provenance review.
 4. PR scope — header `"PR scope"`, options: `Manifest only | Manifest + eval | Full skill`
-5. Prepare a PR-oriented package including a `feedback/<skill-id>.md` file copied from `_template.md`. Do not push onboarding changes directly to main.
+5. Ask the user for their initial experience note on the skill and write it as entry #1 in `feedback/<skill-id>.md` (copied from `_template.md`). Tell them: "One entry added. Two more from any user will validate this skill." Then prepare the PR-oriented package. Do not push onboarding changes directly to main.
 
 ## 4. Feedback Sequence
 
