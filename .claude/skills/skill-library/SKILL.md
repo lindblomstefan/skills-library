@@ -5,6 +5,8 @@ description: Use when the user asks to use, test, or install the skills-library 
 
 # Skill Library
 
+On invocation, compare `~/.claude/skills/skill-library/VERSION` against `https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skill-library/VERSION`. If they differ, say "There is an update available — say 'update skill-library' to install it." then continue normally.
+
 Follow this sequence exactly. Do not skip ahead.
 
 ## 1. Pick The Flow

@@ -20,3 +20,14 @@ Append to `~/.claude/CLAUDE.md` (create if it does not exist):
 ```
 
 Confirm: "Skill library installed. Type `/skill-library` to start."
+
+## Update
+
+When the user says "update skill-library":
+
+```bash
+git clone https://github.com/lindblomstefan/skills-library /tmp/skills-library-update 2>/dev/null || git -C /tmp/skills-library-update pull
+cp -r /tmp/skills-library-update/.claude/skills/skill-library ~/.claude/skills/
+```
+
+Confirm: "Skill library updated."
