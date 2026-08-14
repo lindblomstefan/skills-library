@@ -29,7 +29,12 @@ If unsure, use **Recommendation**.
 
 Use `AskUserQuestion` for structured choices. After any choice that signals the user wants to type, immediately follow up with a plain open-ended question to collect the actual text — do not assume the choice label is the answer.
 
-1. Ask how the user wants to share context:
+1. Repo check first — before any questions, check if the current directory is a git repo with existing content.
+   - If yes, ask using `AskUserQuestion`: question `May I inspect this repo to ground the follow-up questions and recommendations?`, header `"Repo"`, options `Inspect repo | Skip`.
+   - If consent given, inspect only safe local context: top-level files, dependency manifests, scripts, language shape, tests, docs, and agent instruction files.
+   - If empty, missing, or not a git repo, write exactly: `The current directory isn't a git repo with existing content, so I'll skip the repo scan and move straight to questions.` Then continue.
+
+2. Ask how the user wants to share context:
    - question: `How would you like to tell me about what you need?`
    - header: `"Context"`
    - options:
@@ -41,12 +46,6 @@ Use `AskUserQuestion` for structured choices. After any choice that signals the 
      - "Problem only" → write: `What is the problem you are trying to solve?`
      - "Chat about this" → write: `What is on your mind?`
    - Wait for the user's typed answer before continuing. Do not present any options.
-
-2. Repo inspection — only ask if the current session is inside a repo that has existing content. If the repo is empty, missing, or not detectable, skip this step entirely and continue with questions only.
-   - question: `May I inspect this repo to ground the follow-up questions and recommendations?`
-   - header: `"Repo access"`
-   - options: `Inspect repo | Questions only`
-   - If consent is accepted, inspect only safe local context: top-level files, dependency manifests, scripts, language shape, tests, docs, and agent instruction files.
 
 3. Ask remaining narrowing questions one `AskUserQuestion` at a time. Cover what is still unknown: work area, sensitivity, constraints, and time horizon. Always include `Not decided yet` as an option on any question where the answer may not exist yet (stack, timeline, runtime, etc.). Example option sets:
    - Work area: `Architecture | Security | Frontend | Backend | Data / ML | DevOps`
