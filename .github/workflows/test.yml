@@ -1,4 +1,4 @@
-name: POC
+name: Test
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  poc:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
