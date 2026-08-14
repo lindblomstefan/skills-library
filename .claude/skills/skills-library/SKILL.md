@@ -29,10 +29,9 @@ If unsure, use **Recommendation**.
 
 Use `AskUserQuestion` for structured choices. After any choice that signals the user wants to type, immediately follow up with a plain open-ended question to collect the actual text — do not assume the choice label is the answer.
 
-1. Repo check first — before any questions, check if the current directory is a git repo with existing content.
-   - If yes, ask using `AskUserQuestion`: question `May I inspect this repo to ground the follow-up questions and recommendations?`, header `"Repo"`, options `Inspect repo | Skip`.
-   - If consent given, inspect only safe local context: top-level files, dependency manifests, scripts, language shape, tests, docs, and agent instruction files.
-   - If empty, missing, or not a git repo, write exactly: `The current directory isn't a git repo with existing content, so I'll skip the repo scan and move straight to questions.` Then continue.
+1. Repo check — always run this before any questions. Check if the current directory is a git repo with existing content.
+   - If yes: ask using `AskUserQuestion`: question `May I inspect this repo to ground the follow-up questions and recommendations?`, header `"Repo"`, options `Inspect repo | Skip`. If consent given, inspect only safe local context: top-level files, dependency manifests, scripts, language shape, tests, docs, and agent instruction files.
+   - If no (empty, missing, or not a git repo): you must print this message to the user before continuing — `The current directory isn't a git repo with existing content, so I'll skip the repo scan and move straight to questions.`
 
 2. Ask how the user wants to share context:
    - question: `How would you like to tell me about what you need?`
