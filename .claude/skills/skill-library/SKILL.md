@@ -5,7 +5,7 @@ description: Use when the user asks to use, test, or install the skills-library 
 
 # Skill Library
 
-On invocation, compare `~/.claude/skills/skill-library/VERSION` against `https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skill-library/VERSION`. If they differ, say "There is an update available — say 'update skill-library' to install it." then continue normally.
+On invocation, compare `~/.claude/skills/skill-library/VERSION` against `https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skill-library/VERSION`. If they differ, ask using `AskUserQuestion`: question "There is an update available. Install it now?", header "Update", options `Yes | No`. If yes, run the update steps from INSTALL.md, then continue. If no, continue immediately.
 
 Follow this sequence exactly. Do not skip ahead.
 
