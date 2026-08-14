@@ -36,7 +36,7 @@ export function collectFeedback(options = {}) {
     recommendation_id: options.recommendationId ?? null,
     session_id: options.sessionId ?? null,
     catalog_version: currentCommit(),
-    router_version: options.routerVersion ?? "poc-0.1",
+    router_version: options.routerVersion ?? "1.0",
     signal,
     model: options.model ?? "unknown",
     runtime: options.runtime ?? "unknown",

@@ -1,5 +1,5 @@
-id: poc-repo-intelligence
-name: POC Repo Intelligence Pack
+id: repo-intelligence
+name: Repo Intelligence Pack
 catalog_visibility: internal
 status: candidate
 purpose: Internal operating pack for onboarding a repository, understanding initiative intent, and using graph context before implementation.
@@ -21,7 +21,7 @@ skills:
   - id: initiative-skill-recommender
     reason: Interviews initiative intent and maps it to a skill set.
   - id: skill-library-onboarding
-    reason: Handles the first POC step of onboarding a known skill candidate.
+    reason: Handles onboarding a known skill candidate.
 excludes: []
 review:
   owner: unassigned

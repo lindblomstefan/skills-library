@@ -5,7 +5,7 @@ source_type: internal
 status: candidate
 stability: stable
 owner: unassigned
-proposed_by: poc
+proposed_by: skills-library
 proposed_at: 2026-08-13
 summary: Internal workflow skill that interviews a user, repo, and runtime context to recommend a set of skills or packs for an initiative.
 source:
@@ -16,8 +16,8 @@ source:
   redistribution: internal
   modification_allowed: yes
   maintainer: unassigned
-  version_or_commit: poc
-  documentation: docs/poc-plan.md
+  version_or_commit: main
+  documentation: docs/design-decisions.md
   dependencies: []
   copied_assets: []
 domains:
@@ -123,7 +123,7 @@ freshness:
 decision:
   outcome: build
   rationale: Required to turn initiative intent into skill and pack recommendations.
-  decided_by: poc
+  decided_by: skills-library
   decided_at: 2026-08-13
 relationships:
   pairs_with:

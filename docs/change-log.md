@@ -1,6 +1,6 @@
-# POC Change Log
+# Change Log
 
-This log records implementation decisions made while building the first local POC.
+This log records implementation decisions made during the initial build.
 
 ## 2026-08-13
 

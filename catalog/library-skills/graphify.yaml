@@ -119,8 +119,8 @@ freshness:
     - better repo graph tooling replaces it
 decision:
   outcome: defer
-  rationale: Useful for the POC and repo navigation, but license and governance review are not complete.
-  decided_by: poc
+  rationale: Useful for repo navigation, but license and governance review are not complete.
+  decided_by: skills-library
   decided_at: 2026-08-13
 relationships:
   pairs_with: []
@@ -135,7 +135,7 @@ evaluation:
   golden_tasks_tested:
     - recommend-repo-onboarding-skill-set
   evidence_links:
-    - evaluations/runs/graphify-codex-cli-poc.yaml
+    - evaluations/runs/graphify-evaluation.yaml
 metrics_readiness:
   usage_signal_available: false
   review_signal_available: false

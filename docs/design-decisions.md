@@ -1,8 +1,8 @@
-# First POC Plan
+# Design Decisions
 
 This document records the first proof-of-concept decisions so later work can understand what was intentional, what was deferred, and what should be revisited.
 
-## POC Goal
+## Goals
 
 Prove this end-to-end flow:
 
@@ -134,7 +134,7 @@ Guided questions use choices plus free text so a CLI, agent chat, or future dash
 
 Skill onboarding uses this flow but requires license-first checks and PR-based submission for library changes.
 
-## POC Build Order
+## Build Order
 
 1. Add enforceable schemas and validation.
 2. Create the first candidate onboarding flow.

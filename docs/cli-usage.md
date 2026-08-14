@@ -1,6 +1,6 @@
 # CLI Usage
 
-The POC direction is CLI-first. The stable interface should be commands and JSON output that humans, scripts, agents, and other repositories can call.
+The primary interface is CLI commands and JSON output that humans, scripts, agents, and other repositories can call.
 
 ## From This Repo
 
@@ -14,12 +14,12 @@ node bin/skills-library.mjs recommend --repo . --repo-consent accepted --task "s
 node bin/skills-library.mjs onboard --repo . --candidate <url-or-path> --format text
 ```
 
-Or use npm scripts:
+Or use npm shortcuts:
 
 ```bash
-npm run poc:validate
-npm run poc:build
-npm run poc:recommend
+node bin/skills-library.mjs validate
+node bin/skills-library.mjs build
+node bin/skills-library.mjs recommend
 ```
 
 ## From Another Repo

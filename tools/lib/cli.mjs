@@ -34,8 +34,8 @@ export function buildCommand(options = {}) {
   writeJson("dist/graph/nodes.json", graph.nodes);
   writeJson("dist/graph/edges.json", graph.edges);
   writeJson("dist/graph/graph.json", graph);
-  writeJson("dist/recommendations/poc.exploratory.json", exploratory);
-  writeJson("dist/recommendations/poc.standard.json", standard);
+  writeJson("dist/recommendations/exploratory.json", exploratory);
+  writeJson("dist/recommendations/standard.json", standard);
   writeText("dist/kuzu/load.cypher", buildKuzuLoad(graph));
 
   console.log(`built catalog (${catalogJson.skills.length} library skills, ${catalogJson.internal_skills.length} internal skills), graph (${graph.nodes.length} nodes/${graph.edges.length} edges), and recommendation outputs`);

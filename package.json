@@ -1,5 +1,5 @@
 {
-  "name": "skills-library-poc",
+  "name": "skills-library",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,10 +7,6 @@
     "skills-library": "bin/skills-library.mjs"
   },
   "scripts": {
-    "poc": "node bin/skills-library.mjs build",
-    "poc:validate": "node bin/skills-library.mjs validate",
-    "poc:build": "node bin/skills-library.mjs build",
-    "poc:recommend": "node bin/skills-library.mjs recommend --repo . --repo-consent accepted",
     "guardrails": "node tools/check-guardrails.mjs",
     "skills:check": "node tools/check-skills.mjs",
     "cli:check": "node tools/check-cli-flow.mjs",

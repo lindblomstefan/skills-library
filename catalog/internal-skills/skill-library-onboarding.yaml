@@ -5,7 +5,7 @@ source_type: internal
 status: candidate
 stability: stable
 owner: unassigned
-proposed_by: poc
+proposed_by: skills-library
 proposed_at: 2026-08-13
 summary: Internal workflow skill for adding or evaluating a known skill candidate in the skills library.
 source:
@@ -16,7 +16,7 @@ source:
   redistribution: internal
   modification_allowed: yes
   maintainer: unassigned
-  version_or_commit: poc
+  version_or_commit: main
   documentation: docs/new-skill-onboarding.md
   dependencies: []
   copied_assets: []
@@ -119,7 +119,7 @@ freshness:
 decision:
   outcome: build
   rationale: Required to make catalog additions repeatable.
-  decided_by: poc
+  decided_by: skills-library
   decided_at: 2026-08-13
 relationships:
   pairs_with:

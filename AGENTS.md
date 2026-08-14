@@ -8,4 +8,4 @@ Rules:
 - Source files warn above 300 lines and fail above 450 lines.
 - Documentation files warn above 350 lines and fail above 700 lines.
 - Generated output paths such as `dist/` are exempt.
-- Do not raise size limits just to land behavior; split the file first and document any justified limit change in `docs/poc-change-log.md`.
+- Do not raise size limits just to land behavior; split the file first and document any justified limit change in `docs/change-log.md`.

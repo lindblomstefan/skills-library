@@ -15,10 +15,10 @@ export function buildRecommendation(catalogJson, options = {}) {
     .filter((item) => !item.recommendationAllowed || item.score === 0)
     .map((item) => ({
       skill_id: item.skill.id,
-      reason: item.score === 0 ? "No meaningful task/domain/runtime match for this POC profile." : `Blocked in ${mode} mode by ${item.blocked.join(", ")}.`
+      reason: item.score === 0 ? "No meaningful task/domain/runtime match for this profile." : `Blocked in ${mode} mode by ${item.blocked.join(", ")}.`
     }));
 
-  const pack = catalogJson.packs.find((candidate) => candidate.id === "poc-repo-intelligence");
+  const pack = catalogJson.packs.find((candidate) => candidate.id === "repo-intelligence");
   const packEligible = pack && (pack.status === "approved" || pack.status === "in-use" || mode !== "standard");
 
   return {
@@ -37,15 +37,15 @@ export function buildRecommendation(catalogJson, options = {}) {
     recommended,
     not_recommended: notRecommended,
     missing: [
-      { gap: "No approved production-ready skill set exists yet; POC recommendations are exploratory." },
+      { gap: "No approved production-ready skill set exists yet; recommendations are exploratory." },
       { gap: "Internal operating skills are not part of the public library recommendation set." },
-      { gap: "Rich guided-session rendering is still runtime-dependent; the POC emits JSON/text." },
+      { gap: "Rich guided-session rendering is runtime-dependent; CLI emits JSON/text." },
       { gap: "Privacy-safe usage metrics are not implemented." }
     ],
     audit: {
-      recommendation_id: `poc-${mode}-${today}`,
+      recommendation_id: `rec-${mode}-${today}`,
       catalog_version: catalogJson.catalog_version,
-      router_version: "poc-0.1",
+      router_version: "1.0",
       generated_at: today
     }
   };
@@ -102,10 +102,10 @@ function buildProfile(options) {
   const goalText = options.task ?? options.interviewAnswers ?? options.answers;
   const inferred = inferProfile(goalText ?? "");
   return {
-    id: options.profileId ?? "poc-repo-onboarding",
-    goal: goalText ?? "Build the first local POC for the skills library.",
+    id: options.profileId ?? "repo-onboarding",
+    goal: goalText ?? "Recommend skills for this repository or initiative.",
     desired_outcome: goalText ?? "Onboard a skill, compile catalog and graph data, recommend a skill set, and expose CLI output.",
-    current_repo_state: options.repoState ?? "Documentation-first repository with Graphify repo map and POC planning docs.",
+    current_repo_state: options.repoState ?? "Documentation-first repository with Graphify repo map and design decisions.",
     missing_information: [
       "Production graph database choice is deferred.",
       "Human review gates are not complete.",
@@ -118,8 +118,8 @@ function buildProfile(options) {
     runtime: options.runtime ?? "claude-code",
     sensitivity: options.sensitivity ?? "internal",
     risk_level: options.riskLevel ?? "medium",
-    urgency: options.urgency ?? "poc",
-    constraints: options.constraints ?? ["local repo", "callable CLI", "no required package install for first POC"],
+    urgency: options.urgency ?? "standard",
+    constraints: options.constraints ?? ["local repo", "callable CLI", "no required package install"],
     repo: options.repo ?? root,
     graphify: options.graphify ?? graphifyState(options.repo ?? root)
   };
@@ -213,7 +213,7 @@ function matchesProfile(text, profile) {
 function reasonFor(skill, item) {
   if (skill.id === "graphify") return "Graphify is the repo-map candidate when the target repo has graph artifacts or can generate them locally.";
   if (skill.id === "initiative-skill-recommender") return "This skill captures initiative intent and turns it into router input for skill-set recommendation.";
-  if (skill.id === "skill-library-onboarding") return "This skill covers the first POC step: onboarding a known candidate skill into the library.";
+  if (skill.id === "skill-library-onboarding") return "This skill handles onboarding a known candidate skill into the library.";
   if (skill.id === "skill-feedback-capture") return "This skill captures privacy-safe feedback with local repo context before issue submission.";
   if (skill.id === "skills-library") return "This skill is the wrapper that lets another repo call recommendations and feedback capture from the skills library.";
   return `Score ${item.score} from task, compatibility, governance, trust, risk, freshness, and evidence factors.`;

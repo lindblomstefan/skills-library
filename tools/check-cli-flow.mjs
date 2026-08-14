@@ -71,7 +71,7 @@ if (skillText.split("\n").length > 90) {
 for (const file of [
   "README.md",
   "docs/cli-usage.md",
-  "docs/poc-plan.md",
+  "docs/design-decisions.md",
   ".claude/skills/skills-library/SKILL.md",
   ".claude/skills/skills-library/references/catalog-overview.md",
   ".claude/skills/skills-library/agents/claude.yaml"

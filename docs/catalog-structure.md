@@ -1,6 +1,6 @@
 # Catalog Structure
 
-The first milestone established structure before content. The current POC now has a candidate seed catalog so the router can be tested with varied skill types without copying external skill source.
+The catalog has seed skill manifests across varied categories, usable immediately without copying external skill source.
 
 ## MVP Artifacts
 

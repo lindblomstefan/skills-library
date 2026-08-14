@@ -2,7 +2,7 @@ id: recommend-repo-onboarding-skill-set
 title: Recommend a repo onboarding skill set
 domain: repository-analysis
 task_type: project-onboarding
-prompt: A maintainer wants to start a POC in an unfamiliar repo. Recommend the smallest skill set that can onboard a candidate skill, inspect the repo, and explain missing capability gaps.
+prompt: A maintainer wants to onboard skills in an unfamiliar repo. Recommend the smallest skill set that can onboard a candidate skill, inspect the repo, and explain missing capability gaps.
 context:
   model: claude
   runtime: claude-code

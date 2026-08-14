@@ -1,4 +1,4 @@
-id: graphify-codex-cli-poc
+id: graphify-evaluation
 skill_id: graphify
 golden_task_id: recommend-repo-onboarding-skill-set
 model: claude

@@ -1,6 +1,6 @@
 # Engineering Guardrails
 
-The POC should stay easy to inspect as it grows. When a file starts carrying more than one reason to change, split it before adding more behavior.
+Keep this repository easy to inspect as it grows. When a file starts carrying more than one reason to change, split it before adding more behavior.
 
 ## Responsibility Boundaries
 
@@ -21,7 +21,7 @@ The POC should stay easy to inspect as it grows. When a file starts carrying mor
 - The installable `.claude/skills/skills-library/SKILL.md` must stay short and sequenced. `npm test` fails if it grows beyond 90 lines or reintroduces repo-consent-first wording.
 - Generated output is exempt: `dist/` and package lock files.
 
-Do not raise limits to make a change pass. First split by responsibility. If a file genuinely needs more room, document why in `docs/poc-change-log.md` before changing the guardrail.
+Do not raise limits to make a change pass. First split by responsibility. If a file genuinely needs more room, document why in `docs/change-log.md` before changing the guardrail.
 
 ## Split Triggers
 

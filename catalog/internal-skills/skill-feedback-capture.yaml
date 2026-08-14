@@ -5,7 +5,7 @@ source_type: internal
 status: candidate
 stability: stable
 owner: unassigned
-proposed_by: poc
+proposed_by: skills-library
 proposed_at: 2026-08-13
 summary: Internal workflow skill and CLI path for collecting privacy-safe feedback after a skill or recommendation is used in a local repo.
 source:
@@ -16,7 +16,7 @@ source:
   redistribution: internal
   modification_allowed: yes
   maintainer: unassigned
-  version_or_commit: poc
+  version_or_commit: main
   documentation: docs/cli-usage.md
   dependencies: []
   copied_assets: []
@@ -120,7 +120,7 @@ trust:
   level: medium
   license_state: clear
   maintenance_state: internal-owned
-  provenance_notes: Internal POC skill that wraps local-first feedback capture.
+  provenance_notes: Internal skill that wraps local-first feedback capture.
 risk:
   level: medium
   security: medium
@@ -139,7 +139,7 @@ freshness:
 decision:
   outcome: build
   rationale: Feedback needs repo context and privacy-safe submission before router and catalog behavior can improve.
-  decided_by: poc
+  decided_by: skills-library
   decided_at: 2026-08-13
 relationships:
   pairs_with:
