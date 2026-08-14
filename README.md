@@ -44,6 +44,16 @@ Other candidates are under evaluation. See `catalog/library-skills/` for the ful
 
 Type `/skills-library` and say you have a skill to add. Claude runs the onboarding flow: source, license, mode, and PR scope — and creates a feedback file for the new skill from the template. Onboarding changes go through a PR; nothing is pushed to main directly.
 
+## Contributing
+
+The library grows through use. There are three paths — no GitHub required for the first two:
+
+- **Validate a skill** — use a skill, then say "I have feedback on [skill name]" in Claude. Three feedback entries from real sessions marks a skill as validated.
+- **Add a skill** — type `/skills-library` and say "I have a skill to add." Claude runs the onboarding flow and prepares a PR package.
+- **Improve the library** — fork, edit, open a PR. Run `npm test` before pushing.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide including the validation model and what makes a good skill addition.
+
 ## This repository
 
 The installable artifact is the skill folder:
