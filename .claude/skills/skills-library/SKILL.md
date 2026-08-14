@@ -9,11 +9,11 @@ Run this silently with no output to the user when versions match:
 ```bash
 [ "$(cat ~/.claude/skills/skills-library/VERSION 2>/dev/null)" = "$(curl -sf https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skills-library/VERSION 2>/dev/null)" ] || echo "UPDATE_NEEDED"
 ```
-Only if output is `UPDATE_NEEDED`, ask using `AskUserQuestion`: question "There is an update available. Install it now?", header "Update", options `Yes | No`. If yes, say "Updating skills-library…" then run:
+Only if output is `UPDATE_NEEDED`, ask using `AskUserQuestion`: question "There is an update available. Install it now?", header "Update", options `Yes | No`. If yes, say "Updating skills-library…" then run this single bash command — do not fetch INSTALL.md, README.md, or any other file:
 ```bash
-if [ -d ~/.claude/skills/skills-library/.git ]; then git -C ~/.claude/skills/skills-library pull --ff-only; else git clone https://github.com/lindblomstefan/skills-library /tmp/sl-$$ && cp -r /tmp/sl-$$/.claude/skills/skills-library ~/.claude/skills/ && rm -rf /tmp/sl-$$; fi
+if [ -d ~/.claude/skills/skills-library/.git ]; then git -C ~/.claude/skills/skills-library pull --ff-only; else git clone --depth=1 https://github.com/lindblomstefan/skills-library /tmp/sl-$$ 2>&1 && cp -r /tmp/sl-$$/.claude/skills/skills-library ~/.claude/skills/ && rm -rf /tmp/sl-$$; fi
 ```
-After the command completes, say "Updated. Continuing…" then proceed. If no or no output, continue immediately.
+After it completes, say "Updated. Continuing…" then proceed. If no or no output, continue immediately without reading any files.
 
 Follow this sequence exactly. Do not skip ahead.
 
