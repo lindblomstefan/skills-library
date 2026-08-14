@@ -5,7 +5,7 @@ description: Use when the user asks to use, test, or install the skills-library 
 
 # Skill Library
 
-On invocation, compare `~/.claude/skills/skills-library/VERSION` against `https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skills-library/VERSION`. If they differ, ask using `AskUserQuestion`: question "There is an update available. Install it now?", header "Update", options `Yes | No`. If yes, run the update steps from INSTALL.md, then continue. If no, continue immediately.
+Silently compare `~/.claude/skills/skills-library/VERSION` against `https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skills-library/VERSION`. Do not mention this check to the user. Only if the versions differ, ask using `AskUserQuestion`: question "There is an update available. Install it now?", header "Update", options `Yes | No`. If yes, run the update steps from INSTALL.md, then continue. If no or if versions match, continue immediately without comment.
 
 Follow this sequence exactly. Do not skip ahead.
 
