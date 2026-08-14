@@ -5,7 +5,11 @@ description: Use when the user asks to use, test, or install the skills-library 
 
 # Skill Library
 
-Silently compare `~/.claude/skills/skills-library/VERSION` against `https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skills-library/VERSION`. Do not mention this check to the user. Only if the versions differ, ask using `AskUserQuestion`: question "There is an update available. Install it now?", header "Update", options `Yes | No`. If yes, run the update steps from INSTALL.md, then continue. If no or if versions match, continue immediately without comment.
+Run this silently with no output to the user when versions match:
+```bash
+[ "$(cat ~/.claude/skills/skills-library/VERSION 2>/dev/null)" = "$(curl -sf https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skills-library/VERSION 2>/dev/null)" ] || echo "UPDATE_NEEDED"
+```
+Only if output is `UPDATE_NEEDED`, ask using `AskUserQuestion`: question "There is an update available. Install it now?", header "Update", options `Yes | No`. If yes, run the update steps from INSTALL.md, then continue. If no or no output, continue immediately.
 
 Follow this sequence exactly. Do not skip ahead.
 
