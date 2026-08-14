@@ -21,13 +21,4 @@ Append to `~/.claude/CLAUDE.md` (create if it does not exist):
 
 Confirm: "Skill library installed. Type `/skills-library` to start."
 
-## Update
-
-When the user says "update skills-library":
-
-```bash
-git clone https://github.com/lindblomstefan/skills-library /tmp/skills-library-update 2>/dev/null || git -C /tmp/skills-library-update pull
-cp -r /tmp/skills-library-update/.claude/skills/skills-library ~/.claude/skills/
-```
-
-Confirm: "Skill library updated."
+The skill checks for updates automatically each time it runs.
