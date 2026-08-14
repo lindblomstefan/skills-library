@@ -1,5 +1,7 @@
 # Skills Library
 
+Version is early so please be patient and help improving.
+
 A Claude Code skill that runs a guided interview and recommends the right AI skills for your repo or team.
 
 The skill runs entirely inside Claude — no CLI, no server, no external dependencies. The interview, recommendations, onboarding, and feedback flows are all driven by `SKILL.md` and Claude Code's native tooling.
