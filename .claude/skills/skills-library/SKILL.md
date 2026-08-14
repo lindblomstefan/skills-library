@@ -40,9 +40,10 @@ Use `AskUserQuestion` for structured choices. After any choice that signals the 
    - options: `Inspect repo | Questions only`
    - If consent is accepted, inspect only safe local context: top-level files, dependency manifests, scripts, language shape, tests, docs, and agent instruction files.
 
-3. Ask remaining narrowing questions one `AskUserQuestion` at a time. Cover what is still unknown: work area, sensitivity, constraints, and time horizon. Example option sets:
+3. Ask remaining narrowing questions one `AskUserQuestion` at a time. Cover what is still unknown: work area, sensitivity, constraints, and time horizon. Always include `Not decided yet` as an option on any question where the answer may not exist yet (stack, timeline, runtime, etc.). Example option sets:
    - Work area: `Architecture | Security | Frontend | Backend | Data / ML | DevOps`
    - Sensitivity: `Internal | Confidential | Public`
+   - Stack: `Node / TypeScript | Python | Other / Mixed | Not decided yet`
 
 4. If answers are vague, contradictory, or unstable, ask one focused follow-up before continuing.
 5. Recommend only after either a repo read happened or concrete typed answers exist.
