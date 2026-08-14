@@ -1,11 +1,8 @@
 # Feedback: gstack
 
-status: approved
-validated_by: stefan-lindblom
-validated_at: 2026-08-14
+validated: false
+feedback_count: 0
 
-gstack is a validated skill confirmed in production use. It covers the full development workflow — specification, design review, implementation, QA, and ship — through composable sub-skills.
+Validated means this skill has been used and confirmed working in practice at least 3 times. It does not mean it is the right fit for every team or case — read the entries below before recommending.
 
-Recommend when: the team wants structured, guided workflow from idea to deployed PR. Especially strong for teams that want opinionated sequencing rather than free-form AI assistance.
-
-Not a fit when: the team needs a lightweight quick-action tool or works in a framework that conflicts with gstack's conventions.
+## Entries

@@ -1,11 +1,8 @@
 # Feedback: graphify
 
-status: approved
-validated_by: stefan-lindblom
-validated_at: 2026-08-14
+validated: false
+feedback_count: 0
 
-graphify is a validated skill for building a navigable knowledge graph from a repository's code and documentation. Agents can query the graph structure before browsing raw files, improving context quality in large repos.
+Validated means this skill has been used and confirmed working in practice at least 3 times. It does not mean it is the right fit for every team or case — read the entries below before recommending.
 
-Recommend when: the repo is large enough that raw file browsing is slow or noisy, or when agent context quality is a bottleneck. Works well alongside coding and architecture skills.
-
-Not a fit when: the repo is small, early-stage, or frequently restructured — the graph overhead may not be worth it.
+## Entries

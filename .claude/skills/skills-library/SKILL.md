@@ -67,16 +67,15 @@ Use `AskUserQuestion` for every step. Ask one question at a time unless question
 2. License state — header `"License"`, options: `Clear | Needs review | Unknown` — ask this before evaluating anything.
 3. Onboarding mode — header `"Mode"`, options: `Reference only | Adapt | Copy assets` — copying requires explicit license/provenance review.
 4. PR scope — header `"PR scope"`, options: `Manifest only | Manifest + eval | Full skill`
-5. Prepare a PR-oriented package. Do not push onboarding changes directly to main.
+5. Prepare a PR-oriented package including a `feedback/<skill-id>.md` file copied from `_template.md`. Do not push onboarding changes directly to main.
 
 ## 4. Feedback Sequence
 
 Use `AskUserQuestion` for every step.
 
-1. Repo access — header `"Repo access"`, options: `Allow repo read | Skip repo read`
-2. Capture the user's redacted feedback as free text.
-3. Preview the submission to the user before doing anything.
-4. Submit only with explicit approval — header `"Submit"`, options: `Approve | Edit first | Cancel`. Use public issue comments only for redacted, skill-specific feedback.
+1. Ask which skill the feedback is about, then capture redacted free-text feedback (one or two sentences is enough).
+2. If `~/.claude/skills/skills-library/feedback/<skill-id>.md` does not exist, create it from `_template.md`. Append the feedback as a dated entry under `## Entries`, increment `feedback_count`, and if `feedback_count` is now 3 or more, set `validated: true` in the file header.
+3. Preview the file change. Submit with explicit approval — header `"Submit"`, options: `Save locally | Save + open GitHub issue | Cancel`.
 
 ## Hard Rules
 
