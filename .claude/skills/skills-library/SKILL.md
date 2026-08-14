@@ -73,9 +73,9 @@ Use `AskUserQuestion` for every step. Ask one question at a time unless question
 
 Use `AskUserQuestion` for every step.
 
-1. Ask which skill the feedback is about, then capture redacted free-text feedback (one or two sentences is enough).
-2. If `~/.claude/skills/skills-library/feedback/<skill-id>.md` does not exist, create it from `_template.md`. Append the feedback as a dated entry under `## Entries`, increment `feedback_count`, and if `feedback_count` is now 3 or more, set `validated: true` in the file header.
-3. Preview the file change. Submit with explicit approval — header `"Submit"`, options: `Save locally | Save + open GitHub issue | Cancel`.
+1. Ask which skill the feedback is about, then capture redacted free-text feedback.
+2. Use the Edit or Write tool to update `~/.claude/skills/skills-library/feedback/<skill-id>.md`: create it from `_template.md` if missing, append a `### <YYYY-MM-DD>` dated entry under `## Entries`, increment `feedback_count`, and set `validated: true` if the new count is 3 or more. Do this before previewing.
+3. Show the updated file. Ask — header `"Share"`, options: `Keep local only | Also open a GitHub issue | Discard changes`.
 
 ## Hard Rules
 
