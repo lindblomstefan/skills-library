@@ -25,13 +25,13 @@ Claude will also suggest `/skills-library` automatically when you ask what AI sk
 
 ## Feedback
 
-After using a recommended skill, tell Claude "I have feedback on [skill name]." Claude runs a short capture flow, previews the submission, and asks for approval before filing it.
+After using a recommended skill, tell Claude "I have feedback on [skill name]." Claude runs a short capture flow, appends a dated entry to `~/.claude/skills/skills-library/feedback/<skill-id>.md`, and previews the change before saving.
 
-Feedback is stored locally in `~/.claude/skills/skills-library/feedback/` and read back before future recommendations — so the library improves with use.
+Once a skill has accumulated 3 feedback entries, Claude sets `validated: true` in that file. Validated means the skill has been confirmed working in practice — not that it is the right fit for every case. Claude reads feedback files before recommending, so the library improves with use.
 
 ## Catalog
 
-Two skills are currently validated:
+Two skills have feedback files seeded and are ready to accumulate validation:
 
 - **gstack** — structured workflow skill for specification, design review, implementation, QA, and ship
 - **graphify** — repository knowledge graph that lets agents query structure before browsing raw files
