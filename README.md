@@ -2,6 +2,8 @@
 
 A Claude Code skill that runs a guided interview and recommends the right AI skills for your repo or team.
 
+The skill runs entirely inside Claude — no CLI, no server, no external dependencies. The interview, recommendations, onboarding, and feedback flows are all driven by `SKILL.md` and Claude Code's native tooling.
+
 ## Install
 
 Paste this into any Claude Code session:
@@ -10,7 +12,7 @@ Paste this into any Claude Code session:
 Install the skills-library skill from https://github.com/lindblomstefan/skills-library and set it up so I can type /skills-library to start it.
 ```
 
-Claude will clone the repo, copy the skill into `~/.claude/skills/`, and add the trigger lines to `~/.claude/CLAUDE.md`.
+Claude will clone the repo, copy `.claude/skills/skills-library/` into `~/.claude/skills/`, and add the trigger lines to `~/.claude/CLAUDE.md`. Nothing else runs.
 
 ## Use
 
@@ -27,7 +29,7 @@ Claude will also suggest `/skills-library` automatically when you ask what AI sk
 
 After using a recommended skill, tell Claude "I have feedback on [skill name]." Claude runs a short capture flow, appends a dated entry to `~/.claude/skills/skills-library/feedback/<skill-id>.md`, and previews the change before saving.
 
-Once a skill has accumulated 3 feedback entries, Claude sets `validated: true` in that file. Validated means the skill has been confirmed working in practice — not that it is the right fit for every case. Claude reads feedback files before recommending, so the library improves with use.
+Once a skill accumulates 3 feedback entries, Claude sets `validated: true` in that file. Validated means the skill has been confirmed working in practice — not that it is universally the right fit. Claude reads these files before recommending, so the library improves with use.
 
 ## Catalog
 
@@ -40,25 +42,29 @@ Other candidates are under evaluation. See `catalog/library-skills/` for the ful
 
 ## Add a skill
 
-Type `/skills-library` and say you have a skill to add. Claude runs the onboarding flow: source, license, mode, and PR scope. Onboarding changes go through a PR — nothing is pushed to main directly.
+Type `/skills-library` and say you have a skill to add. Claude runs the onboarding flow: source, license, mode, and PR scope — and creates a feedback file for the new skill from the template. Onboarding changes go through a PR; nothing is pushed to main directly.
 
-## Repository structure
+## This repository
+
+The installable artifact is the skill folder:
 
 ```text
-.
-├── .claude/skills/skills-library/   # The installable Claude skill
-│   ├── SKILL.md                     # Interview and recommendation instructions
-│   ├── feedback/                    # Per-skill feedback read before recommendations
-│   └── references/                  # Catalog overview for offline use
-├── catalog/                         # Library skill manifests and taxonomies
-├── evaluations/                     # Evaluation runs and evidence
-└── docs/                            # Engineering guardrails and design decisions
+.claude/skills/skills-library/
+├── SKILL.md          # All interview, recommendation, onboarding, and feedback instructions
+├── VERSION           # Used for update detection
+├── feedback/         # Per-skill feedback files; read before recommending
+│   ├── _template.md  # Template for new skills
+│   ├── gstack.md
+│   └── graphify.md
+├── agents/           # Claude agent descriptor
+└── references/       # Catalog overview for offline use
 ```
 
-See `docs/engineering-guardrails.md` for file boundaries and size limits.
+The rest of the repo is catalog governance tooling — YAML manifests, evaluation runs, and validation scripts used to manage the library itself. It is not part of the installed skill.
 
-## Validate and test
-
-```bash
-npm test
+```text
+catalog/      # Library skill manifests and taxonomies
+evaluations/  # Evaluation runs and evidence
+tools/        # Catalog validation and guardrail checks
+docs/         # Engineering decisions and guardrails
 ```
