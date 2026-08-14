@@ -1,6 +1,6 @@
 ---
 name: skills-library
-description: Use when the user asks to use, test, or install the skills-library skill; asks what AI skills a repo, initiative, or team needs; wants guided skill recommendations; wants to browse/evaluate the library catalog; or wants privacy-safe feedback capture after using a skill. The skill starts with a sequenced interview, not an open-ended task question.
+description: Get guided AI skill recommendations for your repo or team.
 ---
 
 # Skill Library
