@@ -17,30 +17,34 @@ If unsure, use **Recommendation**.
 
 ## 2. Recommendation Sequence
 
-Use `AskUserQuestion` for every interview question — never type questions as plain prose.
+Use `AskUserQuestion` for structured choices. After any choice that signals the user wants to type, immediately follow up with a plain open-ended question to collect the actual text — do not assume the choice label is the answer.
 
-1. Open with a single free-text question (no choices required):
-   - question: `Tell me about the idea: what are you trying to build or improve, what goal should it achieve, and what should the intended end product look like?`
+1. Ask how the user wants to share context:
+   - question: `How would you like to tell me about what you need?`
    - header: `"Context"`
-   - options: `Describe freely | Problem only | Chat about this`
-   - Allow the user to type their own answer (treat any answer as valid input).
+   - options:
+     - `Describe freely` — user will write their own description
+     - `Problem only` — user wants to share a pain point, solution not needed yet
+     - `Chat about this` — user wants to talk it through first
+   - After the user picks, follow up with a plain open question matching their choice:
+     - "Describe freely" → ask: `Go ahead — what are you trying to build or improve, and what should the end result look like?`
+     - "Problem only" → ask: `What is the problem you are trying to solve?`
+     - "Chat about this" → ask: `What is on your mind?`
+   - Wait for the user's typed answer before continuing.
 
-2. Ask repo-inspection consent as the next `AskUserQuestion`:
+2. Repo inspection — only ask if the current session is inside a repo that has existing content. If the repo is empty, missing, or not detectable, skip this step entirely and continue with questions only.
    - question: `May I inspect this repo to ground the follow-up questions and recommendations?`
    - header: `"Repo access"`
-   - options: `Inspect repo | Questions only | Chat about this`
+   - options: `Inspect repo | Questions only`
+   - If consent is accepted, inspect only safe local context: top-level files, dependency manifests, scripts, language shape, tests, docs, and agent instruction files.
 
-3. If consent is accepted, inspect only safe local context: top-level files, dependency manifests, scripts, language shape, tests, docs, and agent instruction files.
-4. If consent is denied or no repo exists, continue by questions only.
-
-5. Ask remaining narrowing questions one `AskUserQuestion` call at a time (batch only truly independent ones). Cover: work area, sensitivity, runtime/model, constraints, time horizon, and any missing goal details. Example option sets:
+3. Ask remaining narrowing questions one `AskUserQuestion` at a time. Cover what is still unknown: work area, sensitivity, constraints, and time horizon. Example option sets:
    - Work area: `Architecture | Security | Frontend | Backend | Data / ML | DevOps`
    - Sensitivity: `Internal | Confidential | Public`
-   - Runtime: `Agent skill host | Claude Code | Other`
 
-6. If answers or repo evidence are vague, contradictory, or unstable, ask a focused follow-up `AskUserQuestion` before continuing.
-7. Recommend only after either a repo read happened or concrete interview answers exist.
-8. Return a shortlist of at most 5 skills. For each, show license state, status, blockers, compatibility, and whether it is standard-ready or exploratory.
+4. If answers are vague, contradictory, or unstable, ask one focused follow-up before continuing.
+5. Recommend only after either a repo read happened or concrete typed answers exist.
+6. Return a shortlist of at most 5 skills. For each, show license state, status, blockers, and whether it is standard-ready or exploratory.
 
 Use the CLI when available:
 
