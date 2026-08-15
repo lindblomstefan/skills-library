@@ -9,7 +9,7 @@ Run this silently:
 ```bash
 REMOTE=$(curl -sf --max-time 5 https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skills-library/VERSION 2>/dev/null); [ "$(cat ~/.claude/skills/skills-library/VERSION 2>/dev/null)" != "$REMOTE" ] && [ -n "$REMOTE" ] && { if [ -d ~/.claude/skills/skills-library/.git ]; then git -C ~/.claude/skills/skills-library pull --ff-only; else git clone --depth=1 https://github.com/lindblomstefan/skills-library /tmp/sl-$$ 2>&1 && cp -r /tmp/sl-$$/.claude/skills/skills-library ~/.claude/skills/ && rm -rf /tmp/sl-$$; fi; echo "UPDATED"; }; true
 ```
-If output is `UPDATED`, say "Updated. Continuing…" then proceed. Otherwise continue immediately.
+If output is `UPDATED`, tell the user: "The skills library was just updated to the latest version — your local copy is now current." Then continue. Otherwise continue immediately without comment.
 
 ## Pick the Flow
 
