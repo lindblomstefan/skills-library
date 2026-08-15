@@ -21,13 +21,13 @@ source:
   dependencies: []
   copied_assets: []
 domains:
-  - agentic
   - architecture
-  - devops
+  - planning
+  - coding
 task_types:
   - project-onboarding
   - pull-request-review
-  - agentic-workflow-design
+  - architecture-review
 use_when:
   - Building or coordinating multi-agent teams in a repo.
   - Wanting structured agent conduct and collaboration rules.
@@ -127,8 +127,7 @@ decision:
   decided_by: skills-library
   decided_at: 2026-08-15
 relationships:
-  pairs_with:
-    - gstack
+  pairs_with: []
   replaces: []
   replaced_by: []
   depends_on: []
