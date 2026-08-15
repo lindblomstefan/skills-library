@@ -11,7 +11,7 @@ REMOTE=$(curl -sf --max-time 5 https://raw.githubusercontent.com/lindblomstefan/
 ```
 If output is `UPDATE_AVAILABLE`: output this text — "**A new version of the skills library is available.**" — then ask via AskUserQuestion (question: "Would you like to update?", header: "Update", options: "Update now | Skip"). If "Update now", run:
 ```bash
-if [ -d ~/.claude/skills/skills-library/.git ]; then git -C ~/.claude/skills/skills-library pull --ff-only; else git clone --depth=1 https://github.com/lindblomstefan/skills-library /tmp/sl-$$ 2>&1 && cp -r /tmp/sl-$$/.claude/skills/skills-library ~/.claude/skills/ && rm -rf /tmp/sl-$$; fi; true
+if [ -d ~/.claude/skills/skills-library/.git ]; then git -C ~/.claude/skills/skills-library pull --ff-only; else T=/tmp/sl-$$; FB=/tmp/sl-fb-$$; cp -r ~/.claude/skills/skills-library/feedback $FB 2>/dev/null; git clone --depth=1 https://github.com/lindblomstefan/skills-library $T 2>&1 && cp -r $T/.claude/skills/skills-library ~/.claude/skills/ && cp -rn $FB/. ~/.claude/skills/skills-library/feedback/ 2>/dev/null; rm -rf $T $FB; fi; true
 ```
 After it completes, say "Done — your skills library is now current." Otherwise continue without comment.
 
