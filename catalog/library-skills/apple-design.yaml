@@ -1,0 +1,156 @@
+id: apple-design
+name: Apple Design
+catalog_visibility: library
+source_type: external
+status: evaluating
+stability: stable
+owner: unassigned
+proposed_by: skills-library
+proposed_at: 2026-08-15
+summary: Apple's approach to interface design and fluid, physical motion translated for the web — springs, gesture physics, interruptibility, translucent materials, typography, and the eight design principles from WWDC talks.
+source:
+  type: external-skill
+  url: https://github.com/emilkowalski/skills/tree/main/skills/apple-design
+  license: MIT License
+  license_spdx: MIT
+  redistribution: allowed
+  modification_allowed: allowed
+  maintainer: emilkowalski/skills
+  version_or_commit: main
+  documentation: https://github.com/emilkowalski/skills/blob/main/skills/apple-design/SKILL.md
+  dependencies: []
+  copied_assets: []
+domains:
+  - ui-ux
+  - coding
+task_types:
+  - pull-request-review
+  - project-onboarding
+use_when:
+  - Building gesture-driven UI with drag, swipe, or sheet interactions.
+  - Implementing spring animations that need to feel physically natural and interruptible.
+  - Reviewing frontend UI for motion quality, responsiveness, or design coherence.
+  - The project aims for Apple-quality feel in a web or React context.
+do_not_use_when:
+  - Backend-only work with no UI component.
+  - The design system forbids custom animations or uses a rigid component library.
+  - Accessibility requirements prohibit motion (use reduced-motion guidance from the skill instead).
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: none
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Install from emilkowalski/skills; copy apple-design folder to ~/.claude/skills/.
+      evidence:
+        - https://github.com/emilkowalski/skills/blob/main/skills/apple-design/SKILL.md
+      known_gaps: []
+  tags:
+    - source:community
+    - runtime:claude-code
+distribution:
+  install:
+    type: external-skill
+    command: Copy the apple-design folder from emilkowalski/skills into ~/.claude/skills/.
+  invoke:
+    command: Reference the skill by name in a Claude session; or trigger via slash command if configured.
+  generated_files: []
+  dependencies:
+    - motion
+    - framer-motion
+  required_permissions:
+    - read-repository
+    - write-files
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - build a gesture-driven UI
+    - implement spring animations
+    - review UI for motion quality
+    - design a bottom sheet or drawer
+    - make an interface feel fluid and physical
+  caution_for:
+    - teams with strict design system tokens that conflict with custom spring values
+    - projects where prefers-reduced-motion must be the default
+  not_recommended_for:
+    - backend-only tasks
+    - CLI tools with no UI
+    - projects using non-web runtimes
+  example_prompts:
+    - Review this drag gesture implementation for fluid interruptibility.
+    - Help me implement a spring animation that hands off velocity from the drag release.
+    - Does this sheet interaction follow Apple's motion principles?
+  anti_examples:
+    - Write a database migration.
+    - Refactor this API handler.
+  keywords:
+    - apple
+    - design
+    - animation
+    - spring
+    - gesture
+    - motion
+    - fluid
+    - interruptible
+    - ui
+    - ux
+    - framer-motion
+    - vaul
+  aliases:
+    - apple-design
+    - apple-hig
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Written by Emil Kowalski (author of Vaul and Sonner). Distilled from Apple WWDC design talks, primarily Designing Fluid Interfaces (WWDC 2018). MIT license.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Knowledge-only skill; no external calls or file writes.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-15
+  next_review: 2026-11-15
+  replacement_watch: false
+  deprecation_criteria:
+    - Emil Kowalski archives the skills repo.
+    - Apple fundamentally changes its design language in a way that makes the content misleading.
+decision:
+  outcome: defer
+  rationale: Clear MIT license, credible author, well-scoped content. Pending local evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-15
+relationships:
+  pairs_with:
+    - frontend-design
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with:
+    - frontend-design
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Focused on web platform; iOS/macOS native specifics are not the target.
+  - Spring library examples use Motion/Framer Motion; other libraries may need translation.
+  - No automated tests — knowledge skill, not executable tooling.

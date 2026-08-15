@@ -1,0 +1,26 @@
+id: recommend-ui-animation-skill
+title: Recommend a UI animation and motion design skill
+domain: ui-ux
+task_type: pull-request-review
+prompt: A frontend developer is building gesture-driven UI with spring animations and wants a skill that covers fluid motion, interruptibility, and Apple-quality feel. Recommend the most relevant skill from the library.
+context:
+  model: claude
+  runtime: claude-code
+  sensitivity: internal
+expected_behaviors:
+  - Recommend apple-design when the task involves spring animations, gesture physics, or motion quality.
+  - Surface that apple-design is in evaluating status with no validated feedback yet.
+  - Pair with frontend-design when component generation is also needed.
+  - Note that Motion or Framer Motion is a dependency.
+failure_modes:
+  - Recommends apple-design as validated before it has 3 feedback entries.
+  - Fails to mention the skill's evaluating status.
+  - Recommends a general coding skill instead of the motion-specific one.
+compatible_runtimes:
+  - claude-code
+evaluation:
+  scoring_scale: 0-5
+  pass_threshold: 4
+  required_evidence:
+    - recommendation output showing apple-design
+    - status and feedback count surfaced correctly
