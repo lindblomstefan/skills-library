@@ -25,6 +25,7 @@ Then read the file for the chosen flow and follow it exactly:
 
 ## Hard Rules
 
+- Only recommend skills listed in the Library Skills section of `references/catalog-overview.md`. Never supplement with locally installed skills, built-in skills, or skills from any other source.
 - Never recommend without a repo read or concrete answered questions.
 - Never recommend from vague, contradictory, or unstable evidence.
 - Never download or install recommended skills automatically.
