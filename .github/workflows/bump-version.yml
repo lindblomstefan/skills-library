@@ -1,0 +1,40 @@
+name: Auto-bump skill VERSION
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.claude/skills/skills-library/**'
+      - '!.claude/skills/skills-library/VERSION'
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bump VERSION
+        run: |
+          CURRENT=$(cat .claude/skills/skills-library/VERSION | tr -d '[:space:]')
+          TODAY=$(date +%Y-%m-%d)
+          CURRENT_DATE=$(echo "$CURRENT" | cut -d'.' -f1)
+          CURRENT_NUM=$(echo "$CURRENT" | cut -d'.' -f2)
+          if [ "$CURRENT_DATE" = "$TODAY" ]; then
+            NEW_NUM=$((CURRENT_NUM + 1))
+          else
+            NEW_NUM=1
+          fi
+          echo "${TODAY}.${NEW_NUM}" > .claude/skills/skills-library/VERSION
+          echo "Bumped $CURRENT → ${TODAY}.${NEW_NUM}"
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .claude/skills/skills-library/VERSION
+          git diff --staged --quiet || git commit -m "Auto-bump VERSION [skip ci]"
+          git push

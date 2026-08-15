@@ -1,8 +1,8 @@
 ## VERSION bump rule
 
-**Always bump `.claude/skills/skills-library/VERSION` before pushing any change that touches the skill** — SKILL.md, feedback files, references/, or agents/. Bump in the same commit or as the final commit before push.
+The `bump-version.yml` GitHub Action auto-bumps VERSION after any merge to main that touches `.claude/skills/skills-library/**`. Contributors submitting PRs do not need to bump manually.
 
-If VERSION is not bumped, installed users never receive the update. The auto-update check compares versions and silently passes if they match.
+**When pushing directly to main** (e.g. in a development session): bump VERSION manually before pushing so the Action does not need to do it as a follow-up commit. The Action will still run and increment again if you forget — installed users will get the update either way.
 
 ## engineering guardrails
 
