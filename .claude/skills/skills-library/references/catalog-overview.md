@@ -9,17 +9,46 @@ Use this only when the full `skills-library` repo is unavailable locally.
 3. Ask narrowing questions one at a time: work area, sensitivity, stack, constraints.
 4. Recommend up to 5 skills only after a repo read or concrete answers exist.
 
-## Library Skills
+## Evaluating
 
-These skills have catalog entries and feedback files. Recommend from this list only.
+Have catalog entries and feedback files. Recommend these — show status when you do.
 
 - **gstack** — structured workflow suite: spec, design review, planning, QA, ship, deploy, security, benchmarking (`garrytan/gstack`)
 - **graphify** — repo knowledge graph for structure-aware agents (`graphify`)
 - **frontend-design** — Anthropic skill for Tailwind/shadcn UI generation (`anthropics/skills`)
 - **document-skills** — Anthropic suite for Word, Excel, PowerPoint, and PDF (`anthropics/skills`)
 - **skill-creator** — Anthropic skill that scaffolds new skills from plain-English descriptions (`anthropics/skills`)
-- **apple-design** — Apple's fluid interface design principles for the web: springs, gesture physics, interruptibility, translucent materials, typography (`emilkowalski/skills`)
-- **squad** — structured skills for multi-agent teams: collaboration, conduct, architectural review, CI validation gates, agentic workflow design (`bradygaster/squad`)
+- **apple-design** — Apple's fluid interface design principles for the web: springs, gesture physics, interruptibility (`emilkowalski/skills`)
+- **squad** — structured skills for multi-agent teams: collaboration, conduct, architectural review, CI validation gates (`bradygaster/squad`)
+
+## Candidates
+
+Not yet evaluated — recommend when relevant, always show status as "candidate — not yet validated".
+
+- **aider** — terminal pair-programming agent for code editing and repo-aware refactoring
+- **cline** — autonomous coding agent as SDK, IDE extension, or CLI
+- **continue** — open-source coding agent for IDE and CLI assisted development
+- **openhands** — AI-driven dev environment for autonomous implementation
+- **roo-code** — IDE agent-team for coding, review, and repository assistance
+- **swe-agent** — issue-solving software engineering agent for automated bug fixing
+- **bolt-diy** — full-stack web app generation for frontend and prototype workflows
+- **playwright-mcp** — browser automation MCP server for testing web flows
+- **awesome-mcp-servers** — curated MCP server index across developer tool categories
+- **twelve-factor-agents** — agent architecture principles for reviewing LLM product and workflow design
+- **gstack-spec** — turns vague intent into a precise executable spec
+- **gstack-review** — pre-landing code review for bugs that pass CI but fail in production
+- **gstack-ship** — release prep: syncs main, runs tests, reviews readiness, pushes
+- **gstack-qa** — QA with real browser: find bugs, fix, re-verify
+- **gstack-investigate** — systematic debugging: root cause before fixes
+- **gstack-cso** — security review: OWASP Top 10 and STRIDE threat modeling
+- **gstack-design-review** — live visual audit and fix-loop for user-facing surfaces
+- **gstack-plan-eng-review** — engineering plan review: architecture, data flow, edge cases
+- **gstack-benchmark** — performance regression: page load, Core Web Vitals, resource budgets
+- **gstack-canary** — post-deploy monitoring: checks for errors, failures, and regressions
+- **gstack-careful** — safety guardrail: warns before destructive commands
+- **openapi-generator** — API client, server stub, and documentation generator
+- **prompts-chat** — large community prompt catalog as reference for skill design
+- **awesome-ai-agents** — agent landscape catalog for discovering and comparing agent tooling
 
 ## Discovery Sources
 

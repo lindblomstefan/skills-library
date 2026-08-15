@@ -29,25 +29,9 @@ After using a recommended skill, say "I have feedback on [skill name]." Claude a
 
 ## Catalog
 
-45 skills are tracked across all stages. 7 are actively recommended — the rest are candidates under evaluation.
+45 skills tracked across all stages. The skill recommends from the full catalog — status is always shown so you know the confidence level.
 
-**Actively recommended**
-
-| Skill | What it does |
-|---|---|
-| **gstack** | Structured workflow suite: spec, design review, planning, QA, ship, deploy, security, benchmarking |
-| **graphify** | Repo knowledge graph so agents can query structure before browsing raw files |
-| **frontend-design** | Tailwind/shadcn UI generation (Anthropic) |
-| **document-skills** | Word, Excel, PowerPoint, and PDF workflows (Anthropic) |
-| **skill-creator** | Scaffolds new skills from plain-English descriptions (Anthropic) |
-| **apple-design** | Apple's fluid interface design principles: springs, gesture physics, interruptible motion |
-| **squad** | Multi-agent team skills: collaboration, conduct, architectural review, CI validation gates |
-
-**Under evaluation** (38 candidates — not yet recommended)
-
-Includes: aider, cline, continue, openhands, roo-code, swe-agent, bolt-diy, playwright-mcp, awesome-mcp-servers, twelve-factor-agents, and more. See `catalog/library-skills/` for the full list and status of each.
-
-Skills move from candidate → evaluating → approved through real usage and community feedback. Use the feedback flow to help validate them.
+See [CATALOG.md](CATALOG.md) for the full list. Skills move from candidate → evaluating → approved through real usage and community feedback.
 
 ## Contributing
 
