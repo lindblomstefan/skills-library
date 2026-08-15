@@ -1,7 +1,5 @@
 # skills-library
 
-Version is early so please be patient and help improving.
-
 A Claude Code skill that runs a guided interview and recommends the right AI skills for your repo or team.
 
 The skill runs entirely inside Claude — no CLI, no server, no external dependencies. The interview, recommendations, onboarding, and feedback flows are all driven by `SKILL.md` and Claude Code's native tooling.
@@ -31,12 +29,19 @@ After using a recommended skill, say "I have feedback on [skill name]." Claude a
 
 ## Catalog
 
-Two skills have feedback files seeded and are ready to accumulate validation:
+Seven skills are in the library. All three flows have been validated in practice — recommendation, onboarding, and feedback all work as described.
 
-- **gstack** — structured workflow suite for specification, design review, implementation, QA, and ship
-- **graphify** — repository knowledge graph that lets agents query structure before browsing raw files
+| Skill | What it does |
+|---|---|
+| **gstack** | Structured workflow suite: spec, design review, planning, QA, ship, deploy, security, benchmarking |
+| **graphify** | Repo knowledge graph so agents can query structure before browsing raw files |
+| **frontend-design** | Tailwind/shadcn UI generation (Anthropic) |
+| **document-skills** | Word, Excel, PowerPoint, and PDF workflows (Anthropic) |
+| **skill-creator** | Scaffolds new skills from plain-English descriptions (Anthropic) |
+| **apple-design** | Apple's fluid interface design principles: springs, gesture physics, interruptible motion |
+| **squad** | Multi-agent team skills: collaboration, conduct, architectural review, CI validation gates |
 
-Other candidates are under evaluation. See `catalog/library-skills/` for the full list.
+See `catalog/library-skills/` for full manifests including license state and status.
 
 ## Contributing
 
