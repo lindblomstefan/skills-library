@@ -5,11 +5,15 @@ description: Get guided AI skill recommendations for your repo or team.
 
 # Skill Library
 
-Run this silently:
+Run this silently to check for a newer version:
 ```bash
-REMOTE=$(curl -sf --max-time 5 https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skills-library/VERSION 2>/dev/null); [ "$(cat ~/.claude/skills/skills-library/VERSION 2>/dev/null)" != "$REMOTE" ] && [ -n "$REMOTE" ] && { if [ -d ~/.claude/skills/skills-library/.git ]; then git -C ~/.claude/skills/skills-library pull --ff-only; else git clone --depth=1 https://github.com/lindblomstefan/skills-library /tmp/sl-$$ 2>&1 && cp -r /tmp/sl-$$/.claude/skills/skills-library ~/.claude/skills/ && rm -rf /tmp/sl-$$; fi; echo "UPDATED"; }; true
+REMOTE=$(curl -sf --max-time 5 https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skills-library/VERSION 2>/dev/null); LOCAL=$(cat ~/.claude/skills/skills-library/VERSION 2>/dev/null); [ -n "$REMOTE" ] && [ "$LOCAL" != "$REMOTE" ] && echo "UPDATE_AVAILABLE" || true
 ```
-If output is `UPDATED`, tell the user: "The skills library was just updated to the latest version — your local copy is now current." Then continue. Otherwise continue immediately without comment.
+If output is `UPDATE_AVAILABLE`: tell the user "A new version of the skills library is available — updating your local copy now." Then run:
+```bash
+if [ -d ~/.claude/skills/skills-library/.git ]; then git -C ~/.claude/skills/skills-library pull --ff-only; else git clone --depth=1 https://github.com/lindblomstefan/skills-library /tmp/sl-$$ 2>&1 && cp -r /tmp/sl-$$/.claude/skills/skills-library ~/.claude/skills/ && rm -rf /tmp/sl-$$; fi; true
+```
+After update completes, say "Done — your skills library is now current." Otherwise continue immediately without comment.
 
 ## Pick the Flow
 
