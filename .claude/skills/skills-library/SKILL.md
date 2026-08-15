@@ -13,7 +13,7 @@ If output is `UPDATED`, say "Updated. Continuing…" then proceed. Otherwise con
 
 ## Pick the Flow
 
-If the user's intent is clear from context, go directly to that flow. Otherwise ask:
+Always ask — even when intent seems clear. The options teach users what the skill can do:
 - question: `Which flow would you like to run?`
 - header: `"Flow"`
 - options: `Recommendation — get skill suggestions for my project | Add a skill — I have a skill to onboard | Give feedback — I used a skill and want to share my experience`
