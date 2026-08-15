@@ -29,7 +29,9 @@ After using a recommended skill, say "I have feedback on [skill name]." Claude a
 
 ## Catalog
 
-Seven skills are in the library. All three flows have been validated in practice — recommendation, onboarding, and feedback all work as described.
+45 skills are tracked across all stages. 7 are actively recommended — the rest are candidates under evaluation.
+
+**Actively recommended**
 
 | Skill | What it does |
 |---|---|
@@ -41,7 +43,11 @@ Seven skills are in the library. All three flows have been validated in practice
 | **apple-design** | Apple's fluid interface design principles: springs, gesture physics, interruptible motion |
 | **squad** | Multi-agent team skills: collaboration, conduct, architectural review, CI validation gates |
 
-See `catalog/library-skills/` for full manifests including license state and status.
+**Under evaluation** (38 candidates — not yet recommended)
+
+Includes: aider, cline, continue, openhands, roo-code, swe-agent, bolt-diy, playwright-mcp, awesome-mcp-servers, twelve-factor-agents, and more. See `catalog/library-skills/` for the full list and status of each.
+
+Skills move from candidate → evaluating → approved through real usage and community feedback. Use the feedback flow to help validate them.
 
 ## Contributing
 
