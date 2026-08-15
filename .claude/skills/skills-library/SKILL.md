@@ -13,13 +13,15 @@ If output is `UPDATED`, say "Updated. Continuing…" then proceed. Otherwise con
 
 ## Pick the Flow
 
-Read the file for the chosen flow and follow it exactly.
+If the user's intent is clear from context, go directly to that flow. Otherwise ask:
+- question: `Which flow would you like to run?`
+- header: `"Flow"`
+- options: `Recommendation — get skill suggestions for my project | Add a skill — I have a skill to onboard | Give feedback — I used a skill and want to share my experience`
 
-- **Recommendation** — user wants skills for a repo, team, initiative, or task → read `~/.claude/skills/skills-library/recommendation.md`
-- **Onboarding** — user has a specific skill candidate to add → read `~/.claude/skills/skills-library/onboarding.md`
-- **Feedback** — user is reporting how a skill behaved after use → read `~/.claude/skills/skills-library/feedback.md`
-
-If unsure, use **Recommendation**.
+Then read the file for the chosen flow and follow it exactly:
+- **Recommendation** → `~/.claude/skills/skills-library/recommendation.md`
+- **Onboarding** → `~/.claude/skills/skills-library/onboarding.md`
+- **Feedback** → `~/.claude/skills/skills-library/feedback.md`
 
 ## Hard Rules
 
