@@ -63,9 +63,21 @@ assertIncludes(
 const skillText = readText(".claude/skills/skills-library/SKILL.md");
 assertNotIncludes(skillText, "Include repo-inspection consent as the first question", "skill instructions should not put repo consent first");
 assertNotIncludes(skillText, "Start with repo-inspection consent", "skill instructions should not put repo consent first");
-if (skillText.split("\n").length > 90) {
-  console.error("error: skills-library SKILL.md is too long for deterministic invocation");
+if (skillText.split("\n").length > 40) {
+  console.error("error: SKILL.md router is too long — keep it under 40 lines; move flow logic into recommendation.md, onboarding.md, or feedback.md");
   process.exit(1);
+}
+
+for (const [subFile, limit] of [
+  [".claude/skills/skills-library/recommendation.md", 60],
+  [".claude/skills/skills-library/onboarding.md", 60],
+  [".claude/skills/skills-library/feedback.md", 40],
+]) {
+  const lines = readText(subFile).split("\n").length;
+  if (lines > limit) {
+    console.error(`error: ${subFile} exceeds ${limit} lines (${lines}) — split or tighten before adding more`);
+    process.exit(1);
+  }
 }
 
 for (const file of [
@@ -73,6 +85,9 @@ for (const file of [
   "docs/cli-usage.md",
   "docs/design-decisions.md",
   ".claude/skills/skills-library/SKILL.md",
+  ".claude/skills/skills-library/recommendation.md",
+  ".claude/skills/skills-library/onboarding.md",
+  ".claude/skills/skills-library/feedback.md",
   ".claude/skills/skills-library/references/catalog-overview.md",
   ".claude/skills/skills-library/agents/claude.yaml"
 ]) {

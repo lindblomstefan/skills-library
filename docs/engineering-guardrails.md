@@ -18,7 +18,7 @@ Keep this repository easy to inspect as it grows. When a file starts carrying mo
 
 - Source files (`.mjs`, `.js`, `.css`, `.html`) warn above 300 lines and fail above 450 lines.
 - Documentation files (`.md`) warn above 350 lines and fail above 700 lines.
-- The installable `.claude/skills/skills-library/SKILL.md` must stay short and sequenced. `npm test` fails if it grows beyond 90 lines or reintroduces repo-consent-first wording.
+- `SKILL.md` is a router only — auto-update, flow picker, hard rules. `npm test` fails above 40 lines. Flow logic lives in `recommendation.md` (≤60), `onboarding.md` (≤60), `feedback.md` (≤40).
 - Generated output is exempt: `dist/` and package lock files.
 
 Do not raise limits to make a change pass. First split by responsibility. If a file genuinely needs more room, document why in `docs/change-log.md` before changing the guardrail.
