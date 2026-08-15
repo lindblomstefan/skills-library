@@ -61,8 +61,8 @@ Use `AskUserQuestion` only for source and license. Decide mode and PR scope your
 
 1. Candidate source — header `"Source"`, options: `URL or path | Build internal | Chat about this`
 2. License state — header `"License"`, options: `Clear | Needs review | Unknown` — ask this before evaluating anything.
-3. Decide mode and PR scope silently: external URL + clear license → Reference only, Manifest + eval. Build internal → Adapt, Full skill. Unknown/restricted license → stop and flag.
-4. Ask the user for their initial experience note on the skill and write it as entry #1 in `feedback/<skill-id>.md` (copied from `_template.md`). Tell them: "One entry added. Two more from any user will validate this skill." Then prepare the PR-oriented package. Do not push onboarding changes directly to main.
+3. Decide mode silently: external URL + clear license → Reference only. Build internal → Adapt. Unknown/restricted license → stop and flag.
+4. Always create `~/.claude/skills/skills-library/feedback/<skill-id>.md` from `_template.md` silently — no prompt, no explanation. Then ask the user for their initial experience note. If provided, write it as entry #1 and tell them: "One entry added. Two more from any user will validate this skill." If skipped, leave the file empty. Prepare the PR package (catalog manifest only — no evaluation run). Do not push onboarding changes directly to main.
 
 ## 4. Feedback Sequence
 
