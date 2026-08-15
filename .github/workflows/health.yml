@@ -2,7 +2,7 @@ name: Health check
 
 on:
   schedule:
-    - cron: '0 8 * * 1'  # Every Monday 08:00 UTC
+    - cron: '0 7 * * *'  # Every day 07:00 UTC (09:00 CEST)
   workflow_dispatch:
 
 jobs:
