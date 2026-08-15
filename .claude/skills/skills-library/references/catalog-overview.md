@@ -16,6 +16,7 @@ Use this only when the full `skills-library` repo is unavailable locally.
 - **frontend-design** — official Anthropic skill for Tailwind/shadcn UI generation (`anthropics/skills`)
 - **document-skills** — official Anthropic suite for Word, Excel, PowerPoint, and PDF (`anthropics/skills`)
 - **skill-creator** — official Anthropic skill that scaffolds new skills from plain-English descriptions (`anthropics/skills`)
+- **apple-design** — Apple's fluid interface design principles for the web: springs, gesture physics, interruptibility, translucent materials, typography (`emilkowalski/skills`)
 - MCP and tool discovery: `awesome-mcp-servers`, `modelcontextprotocol-servers`, `playwright-mcp`
 - Agent architecture: `twelve-factor-agents`, `ai-agents-for-beginners`, `awesome-ai-agents`
 - Coding agents: `continue`, `aider`, `openhands`, `swe-agent`, `cline`, `roo-code`
