@@ -25,7 +25,9 @@ Type `/skills-library` in any Claude Code session to start the guided interview.
 
 Claude will also suggest `/skills-library` automatically when you ask what AI skills, tools, or AI-powered workflows to use for a project or team.
 
-After using a recommended skill, say "I have feedback on [skill name]." Claude appends a dated entry to a local feedback file. Once a skill reaches 3 entries it is marked validated — confirmed working in practice, not universally recommended.
+After using a recommended skill, say "I have feedback on [skill name]." Claude appends a dated entry to a local feedback file at `~/.claude/skills/skills-library/feedback/<skill-id>.md`. Once a skill reaches 3 entries it is marked validated — confirmed working in practice, not universally recommended.
+
+To read the feedback for any skill, ask Claude: "Show me the feedback for graphify" — or open the file directly.
 
 ## Catalog
 
