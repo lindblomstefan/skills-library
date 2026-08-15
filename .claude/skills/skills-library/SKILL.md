@@ -9,11 +9,11 @@ Run this silently to check for a newer version:
 ```bash
 REMOTE=$(curl -sf --max-time 5 https://raw.githubusercontent.com/lindblomstefan/skills-library/main/.claude/skills/skills-library/VERSION 2>/dev/null); LOCAL=$(cat ~/.claude/skills/skills-library/VERSION 2>/dev/null); [ -n "$REMOTE" ] && [ "$LOCAL" != "$REMOTE" ] && echo "UPDATE_AVAILABLE" || true
 ```
-If output is `UPDATE_AVAILABLE`: tell the user "A new version of the skills library is available — updating your local copy now." Then run:
+If output is `UPDATE_AVAILABLE`: output this text — "A new version of the skills library is available." — then ask via AskUserQuestion (question: "Would you like to update?", header: "Update", options: "Update now | Skip"). If "Update now", run:
 ```bash
 if [ -d ~/.claude/skills/skills-library/.git ]; then git -C ~/.claude/skills/skills-library pull --ff-only; else git clone --depth=1 https://github.com/lindblomstefan/skills-library /tmp/sl-$$ 2>&1 && cp -r /tmp/sl-$$/.claude/skills/skills-library ~/.claude/skills/ && rm -rf /tmp/sl-$$; fi; true
 ```
-After update completes, say "Done — your skills library is now current." Otherwise continue immediately without comment.
+After it completes, say "Done — your skills library is now current." Otherwise continue without comment.
 
 ## Pick the Flow
 
