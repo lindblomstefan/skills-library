@@ -24,4 +24,4 @@ Use `AskUserQuestion` for all structured choices. After any choice that signals 
 
 4. If answers are vague, contradictory, or unstable — ask one focused follow-up before continuing.
 
-5. Recommend only after a repo read or concrete typed answers exist. For each candidate, read `~/.claude/skills/skills-library/feedback/<skill-id>.md` if it exists. Return at most 5 skills: license state, status, blockers, and standard-ready vs exploratory.
+5. Recommend only after a repo read or concrete typed answers exist. Read `~/.claude/skills/skills-library/references/catalog-overview.md` to get the skill list. For each candidate, also read `~/.claude/skills/skills-library/feedback/<skill-id>.md` if it exists. Return at most 5 skills: license state, status, blockers, and standard-ready vs exploratory.

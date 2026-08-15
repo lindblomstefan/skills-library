@@ -28,4 +28,4 @@ If unsure, use **Recommendation**.
 - Never download or install recommended skills automatically.
 - Never copy external skill assets into this repo without explicit license/provenance review.
 - A Git remote is only an install source, not the user's task.
-- Use `references/catalog-overview.md` only when the full skills-library repo is unavailable locally.
+- `references/catalog-overview.md` is the skill catalog for installed users. Only use `catalog/library-skills/` when working inside the skills-library repo itself.

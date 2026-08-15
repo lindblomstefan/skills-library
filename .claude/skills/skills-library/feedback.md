@@ -2,7 +2,7 @@
 
 ## Sequence
 
-1. Ask which skill or suite (AskUserQuestion) — treat each source repo as one unit; all sub-skills map to one file (e.g. any gstack sub-skill → `gstack`).
+1. Read `~/.claude/skills/skills-library/references/catalog-overview.md` to get the skill list. Ask which skill or suite (AskUserQuestion, using those skills as options) — treat each source repo as one unit; all sub-skills map to one file (e.g. any gstack sub-skill → `gstack`).
 
 2. Ask (plain text): "Describe your experience — what worked and what didn't?" Wait for the typed answer.
 
