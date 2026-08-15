@@ -19,6 +19,7 @@ These skills have catalog entries and feedback files. Recommend from this list o
 - **document-skills** — Anthropic suite for Word, Excel, PowerPoint, and PDF (`anthropics/skills`)
 - **skill-creator** — Anthropic skill that scaffolds new skills from plain-English descriptions (`anthropics/skills`)
 - **apple-design** — Apple's fluid interface design principles for the web: springs, gesture physics, interruptibility, translucent materials, typography (`emilkowalski/skills`)
+- **squad** — structured skills for multi-agent teams: collaboration, conduct, architectural review, CI validation gates, agentic workflow design (`bradygaster/squad`)
 
 ## Discovery Sources
 

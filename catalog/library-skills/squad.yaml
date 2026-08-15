@@ -1,0 +1,151 @@
+id: squad
+name: Squad
+catalog_visibility: library
+source_type: external
+status: evaluating
+stability: fast-moving
+owner: unassigned
+proposed_by: skills-library
+proposed_at: 2026-08-15
+summary: A structured collection of skills for AI agent teams — covers agent collaboration, conduct, architectural proposals and review, CI validation gates, and agentic workflow design. Designed for multi-agent repos using GitHub Copilot or Claude Code.
+source:
+  type: external-skill
+  url: https://github.com/bradygaster/squad
+  license: MIT License
+  license_spdx: MIT
+  redistribution: allowed
+  modification_allowed: allowed
+  maintainer: bradygaster
+  version_or_commit: dev
+  documentation: https://github.com/bradygaster/squad/blob/dev/README.md
+  dependencies: []
+  copied_assets: []
+domains:
+  - agentic
+  - architecture
+  - devops
+task_types:
+  - project-onboarding
+  - pull-request-review
+  - agentic-workflow-design
+use_when:
+  - Building or coordinating multi-agent teams in a repo.
+  - Wanting structured agent conduct and collaboration rules.
+  - Designing agentic workflows with clear handoffs and review gates.
+  - A team wants CI validation gates enforced by agents.
+do_not_use_when:
+  - Single-agent or single-session tasks with no coordination needed.
+  - The project has no multi-agent or agentic workflow component.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: unknown
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: none
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Skills live under .copilot/skills/ and .github/skills/ in the squad repo.
+      evidence:
+        - https://github.com/bradygaster/squad
+      known_gaps: []
+  tags:
+    - source:community
+    - runtime:claude-code
+    - runtime:copilot
+distribution:
+  install:
+    type: external-skill
+    command: Copy relevant skill folders from bradygaster/squad into your repo under .copilot/skills/ or .github/skills/.
+  invoke:
+    command: Reference the skill by name in a Claude or Copilot session.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - read-repository
+    - write-files
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - build a multi-agent team
+    - design agentic workflows
+    - add agent conduct rules
+    - set up CI validation gates for agents
+    - coordinate agents across a repo
+  caution_for:
+    - teams not yet using multi-agent patterns
+  not_recommended_for:
+    - single-agent sessions
+    - backend-only tasks with no agentic component
+  example_prompts:
+    - Help me set up agent collaboration rules for this repo.
+    - Design a workflow where one agent proposes and another reviews architecture.
+    - Add CI validation gates that agents must pass before merging.
+  anti_examples:
+    - Write a database migration.
+    - Refactor this API handler.
+  keywords:
+    - agent
+    - multi-agent
+    - squad
+    - collaboration
+    - conduct
+    - workflow
+    - agentic
+    - ci
+    - validation
+    - architecture
+    - copilot
+  aliases:
+    - squad
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Written by Brady Gaster (Microsoft). MIT license. Active development on dev branch.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Knowledge-only skill; no external calls or file writes.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-15
+  next_review: 2026-11-15
+  replacement_watch: false
+  deprecation_criteria:
+    - bradygaster archives the squad repo.
+    - Multi-agent patterns shift to a different coordination model.
+decision:
+  outcome: defer
+  rationale: Clear MIT license, credible author (Microsoft), well-structured multi-agent skill collection. Pending local evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-15
+relationships:
+  pairs_with:
+    - gstack
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Skills are structured for GitHub Copilot's convention; may need adaptation for Claude Code.
+  - Repo is on dev branch — main is not the default; consumers should pin to a commit.
+  - No evaluation run completed yet.
