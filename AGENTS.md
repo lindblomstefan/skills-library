@@ -2,7 +2,11 @@
 
 The `bump-version.yml` GitHub Action auto-bumps VERSION after any merge to main that touches `.claude/skills/skills-library/**`. Contributors submitting PRs do not need to bump manually.
 
-**When pushing directly to main** (e.g. in a development session): bump VERSION manually before pushing so the Action does not need to do it as a follow-up commit. The Action will still run and increment again if you forget — installed users will get the update either way.
+**When pushing directly to main** (e.g. in a development session): after pushing, trigger the Action instead of editing VERSION manually:
+```bash
+gh workflow run bump-version.yml
+```
+Never edit VERSION by hand — always let the Action do it.
 
 ## engineering guardrails
 
