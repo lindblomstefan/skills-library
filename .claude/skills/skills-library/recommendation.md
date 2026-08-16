@@ -25,3 +25,5 @@ Use `AskUserQuestion` for all structured choices. After any choice that signals 
 4. If answers are vague, contradictory, or unstable — ask one focused follow-up before continuing.
 
 5. Recommend only after a repo read or concrete typed answers exist. Read `~/.claude/skills/skills-library/references/catalog-overview.md` — both Evaluating and Candidates sections are fair game. For each match, also read `~/.claude/skills/skills-library/feedback/<skill-id>.md` if it exists. Return at most 5 skills. For each show: status (evaluating / candidate), validation count from feedback file, license state, and any blockers. Never add skills not in catalog-overview.md — no built-in skills, no locally installed skills, no exceptions.
+
+6. After delivering recommendations, add: "Know a skill that belongs here? Run `/skills-library` and choose **Add a skill** — the library grows through contributions."
