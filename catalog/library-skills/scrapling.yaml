@@ -1,0 +1,162 @@
+id: scrapling
+name: Scrapling
+catalog_visibility: library
+source_type: external
+status: evaluating
+stability: stable
+owner: unassigned
+proposed_by: skills-library
+proposed_at: 2026-08-16
+summary: Official skill for the Scrapling adaptive web scraping framework — handles everything from single requests to full-scale crawls. Bypasses anti-bot systems (Cloudflare Turnstile), stealth headless browsing, adaptive element relocation when pages change, spider framework with pause/resume and proxy rotation. Requires Python 3.10+.
+source:
+  type: external-skill
+  url: https://github.com/d4vinci/Scrapling
+  license: BSD 3-Clause License
+  license_spdx: BSD-3-Clause
+  redistribution: allowed
+  modification_allowed: allowed
+  maintainer: d4vinci
+  version_or_commit: "0.4.14"
+  documentation: https://scrapling.readthedocs.io/en/latest/index.html
+  dependencies:
+    - python3
+    - pip
+  copied_assets: []
+domains:
+  - coding
+  - repository-analysis
+task_types:
+  - project-onboarding
+  - codebase-navigation
+use_when:
+  - Scraping or crawling websites, especially those with anti-bot protections.
+  - web_fetch fails due to Cloudflare or other anti-bot systems.
+  - Writing Python code to scrape or crawl web pages.
+  - Building spiders for concurrent multi-session crawls.
+  - Extracting structured data from dynamically rendered pages.
+  - Adapting scrapers that break when page structure changes.
+do_not_use_when:
+  - Simple HTTP fetches where web_fetch works fine.
+  - Non-Python environments where pip/Python 3.10+ is unavailable.
+  - Legal or TOS concerns about scraping the target site.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: none
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Use --ai-targeted flag on all CLI scraping commands to guard against prompt injection. Requires Python 3.10+ and pip.
+      evidence:
+        - https://github.com/d4vinci/Scrapling/blob/main/agent-skill/Scrapling-Skill/SKILL.md
+      known_gaps: []
+  tags:
+    - source:community
+    - runtime:claude-code
+distribution:
+  install:
+    type: external-skill
+    command: Copy the Scrapling-Skill folder from d4vinci/Scrapling/agent-skill/ into ~/.claude/skills/. Install scrapling with pip install scrapling.
+  invoke:
+    command: Reference scrapling-official in a Claude session.
+  generated_files: []
+  dependencies:
+    - python3
+    - pip
+    - scrapling
+  required_permissions:
+    - read-repository
+    - write-files
+    - bash
+  required_secrets: []
+  network_access: internet
+routing:
+  recommend_for:
+    - scrape a website
+    - bypass Cloudflare or anti-bot protection
+    - crawl pages with JavaScript rendering
+    - build a web spider
+    - extract data from a website
+    - web_fetch returns blocked or incomplete content
+  caution_for:
+    - sites where scraping violates terms of service
+    - users without Python 3.10+ available
+  not_recommended_for:
+    - simple API calls or pages with no anti-bot protection
+    - non-Python environments
+  example_prompts:
+    - Scrape product prices from this e-commerce site.
+    - Build a spider to crawl and index all pages on this domain.
+    - Extract the main article content from these URLs — web_fetch keeps getting blocked.
+    - Write a stealthy scraper that handles Cloudflare Turnstile.
+  anti_examples:
+    - Fetch the contents of this public JSON API.
+    - Review this pull request for bugs.
+  keywords:
+    - scraping
+    - crawling
+    - web-scraper
+    - anti-bot
+    - cloudflare
+    - playwright
+    - stealth
+    - spider
+    - python
+    - xpath
+    - adaptive
+  aliases:
+    - scrapling
+    - scrapling-official
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Official skill by the library author (d4vinci). BSD-3-Clause license. Active development with 0.4.14 versioned release.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Fetches public web pages. No data sent externally beyond the target URLs.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-16
+  next_review: 2026-11-16
+  replacement_watch: false
+  deprecation_criteria:
+    - d4vinci archives the repo.
+    - Scrapling library is abandoned or superseded.
+decision:
+  outcome: defer
+  rationale: Clear BSD-3 license, official skill by the library author, well-structured with prompt injection protection built in. Pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-16
+relationships:
+  pairs_with: []
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with:
+    - playwright-mcp
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Requires Python 3.10+ and pip.
+  - Always use --ai-targeted flag on CLI commands to guard against prompt injection from scraped content.
+  - Scraping may violate TOS of some sites — user is responsible for legal compliance.
+  - Proxy and CDP mode require user-supplied credentials.

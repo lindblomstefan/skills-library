@@ -14,6 +14,8 @@ These have catalog entries and feedback files. Use them and submit feedback.
 | **graphify** | Repo knowledge graph so agents can query structure before browsing raw files |
 | **skill-creator** | Scaffolds new skills from plain-English descriptions (Anthropic) |
 | **squad** | Multi-agent team skills: collaboration, conduct, architectural review, CI validation gates |
+| **remove-ai-marks** | Strip AI provenance marks: invisible Unicode, statistical text rewrite, C2PA/EXIF/XMP metadata from images and documents (requires local Docker service) |
+| **scrapling** | Adaptive web scraping with anti-bot bypass, stealth browsing, spider framework, JS rendering — official skill by the library author |
 
 ## Candidates
 

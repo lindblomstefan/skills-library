@@ -20,6 +20,8 @@ Have catalog entries and feedback files. Recommend these — show status when yo
 - **skill-creator** — Anthropic skill that scaffolds new skills from plain-English descriptions (`anthropics/skills`)
 - **apple-design** — Apple's fluid interface design principles for the web: springs, gesture physics, interruptibility (`emilkowalski/skills`)
 - **squad** — structured skills for multi-agent teams: collaboration, conduct, architectural review, CI validation gates (`bradygaster/squad`)
+- **remove-ai-marks** — strip AI provenance marks: invisible Unicode, statistical text rewrite, C2PA/EXIF/XMP metadata from images and documents; requires local Docker service (`guillaumemeyer/watermarks-remover`)
+- **scrapling** — adaptive web scraping with anti-bot bypass (Cloudflare), stealth browsing, spider framework, JS rendering; official skill by the library author (`d4vinci/Scrapling`)
 
 ## Candidates
 

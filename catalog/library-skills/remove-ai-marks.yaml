@@ -1,0 +1,166 @@
+id: remove-ai-marks
+name: Remove AI Marks
+catalog_visibility: library
+source_type: external
+status: evaluating
+stability: stable
+owner: unassigned
+proposed_by: skills-library
+proposed_at: 2026-08-16
+summary: Strip multi-vendor AI provenance marks — invisible Unicode (Layer A), statistical text watermarks via rewrite (Layer B), and C2PA/EXIF/XMP/container metadata from PNG/JPEG/SVG/PDF/DOCX/HTML/MD. Covers Claude, Gemini/SynthID, OpenAI provenance, and open-LLM sampling marks. Requires a local HTTP service.
+source:
+  type: external-skill
+  url: https://github.com/guillaumemeyer/watermarks-remover
+  license: MIT License
+  license_spdx: MIT
+  redistribution: allowed
+  modification_allowed: allowed
+  maintainer: guillaumemeyer
+  version_or_commit: main
+  documentation: https://github.com/guillaumemeyer/watermarks-remover/blob/main/skills/remove-ai-marks/SKILL.md
+  dependencies:
+    - docker
+    - docker-compose
+  copied_assets: []
+domains:
+  - security
+  - coding
+task_types:
+  - project-onboarding
+  - pull-request-review
+use_when:
+  - User wants to strip AI watermarks or provenance metadata from text or files.
+  - Removing C2PA/Content Credentials from images or documents.
+  - Cleaning invisible Unicode marks from AI-generated text.
+  - Running a statistical rewrite pass to reduce token-sampling watermarks.
+  - Auditing a directory or website for AI provenance marks.
+do_not_use_when:
+  - No local Docker service is running or can be started — the skill has no fallback.
+  - User wants to fraudulently pass off AI content as human-written in academic or legal contexts.
+  - Audio or video watermark removal (out of scope for this skill).
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: none
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Requires local HTTP service (docker compose up -d or make serve). Skill calls service via curl — Bash permission needed.
+      evidence:
+        - https://github.com/guillaumemeyer/watermarks-remover/blob/main/skills/remove-ai-marks/SKILL.md
+      known_gaps:
+        - PDF strip is best-effort without exiftool/qpdf server-side.
+        - Pixel watermark removal requires optional heavy backends.
+  tags:
+    - source:community
+    - runtime:claude-code
+distribution:
+  install:
+    type: external-skill
+    command: Copy the remove-ai-marks folder from guillaumemeyer/watermarks-remover/skills/ into ~/.claude/skills/. Start the service with docker compose up -d or make serve.
+  invoke:
+    command: Reference the skill by name or run /remove-ai-marks in a Claude session.
+  generated_files: []
+  dependencies:
+    - docker
+    - docker-compose
+    - python3
+  required_permissions:
+    - read-repository
+    - write-files
+    - bash
+  required_secrets:
+    - WATERMARKS_SERVICE_URL (optional, defaults to http://127.0.0.1:8765)
+    - WATERMARKS_SERVER_API_KEY (optional)
+  network_access: local-service
+routing:
+  recommend_for:
+    - strip AI watermarks from text
+    - remove C2PA metadata from images
+    - clean invisible Unicode from AI output
+    - audit files for AI provenance marks
+    - remove AI marks from documents
+  caution_for:
+    - users who may misuse the output to misrepresent AI content as human-written
+    - environments where Docker cannot be run
+  not_recommended_for:
+    - audio or video watermark removal
+    - defeating academic integrity systems
+    - users expecting a zero-setup experience
+  example_prompts:
+    - Strip AI marks from this document before I share it.
+    - Remove C2PA metadata from these images.
+    - Audit this directory for AI provenance watermarks.
+    - Clean invisible Unicode from this text.
+  anti_examples:
+    - Write a database migration.
+    - Review this pull request for bugs.
+  keywords:
+    - watermark
+    - ai-marks
+    - provenance
+    - c2pa
+    - unicode
+    - synthid
+    - detection
+    - cleaning
+    - metadata
+    - steganography
+  aliases:
+    - remove-ai-marks
+    - remove-claude-marks
+    - watermarks-remover
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Written by Guillaume Meyer. MIT license. Active development with CI, CodeQL, and published GHCR images.
+risk:
+  level: medium
+  security: medium
+  privacy: low
+  compliance: medium
+  data_classification: internal
+  data_handling_notes: Processes files locally via a self-hosted service. No external calls from the skill itself.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-16
+  next_review: 2026-11-16
+  replacement_watch: false
+  deprecation_criteria:
+    - guillaumemeyer archives the repo.
+    - C2PA/SynthID standards change in a way that makes the skill misleading.
+decision:
+  outcome: defer
+  rationale: Clear MIT license, well-structured skill with ethics guidance built in. Requires local service — higher setup bar than most skills. Pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-16
+relationships:
+  pairs_with: []
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Requires a running Docker service — not a zero-setup skill.
+  - PDF strip is best-effort without exiftool and qpdf server-side.
+  - Pixel-domain image watermark removal needs optional heavy backends.
+  - Layer B (statistical rewrite) cannot be verified without vendor detectors.
+  - C2PA soft binding is out of scope.
+  - Audio/video watermarks are out of scope.
