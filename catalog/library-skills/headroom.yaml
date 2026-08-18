@@ -1,0 +1,156 @@
+id: headroom
+name: Headroom
+catalog_visibility: library
+source_type: external
+status: evaluating
+stability: fast-moving
+owner: unassigned
+proposed_by: skills-library
+proposed_at: 2026-08-18
+summary: Context compression layer for AI agents — compresses tool outputs, logs, RAG chunks, and files before they reach the LLM. 60-95% fewer tokens for JSON, 15-20% fewer for coding agents. Available as a library (Python/TypeScript), proxy, MCP server, or agent wrapper (headroom wrap claude|codex|cursor|aider|cline|continue and more). Reversible, local-first.
+source:
+  type: external-tool
+  url: https://github.com/headroomlabs-ai/headroom
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: allowed
+  modification_allowed: allowed
+  maintainer: headroomlabs-ai
+  version_or_commit: main
+  documentation: https://headroom-docs.vercel.app/docs
+  dependencies:
+    - python3
+    - pip
+  copied_assets: []
+domains:
+  - coding
+  - codebase-understanding
+task_types:
+  - codebase-navigation
+  - project-onboarding
+use_when:
+  - Context window is filling up quickly during coding sessions.
+  - Tool outputs (JSON, logs, file reads) are consuming excessive tokens.
+  - RAG chunks or file reads need to be compressed before being passed to the LLM.
+  - Running long agentic sessions where token cost is a concern.
+  - Cross-agent memory sharing is needed (Claude + Codex + Gemini etc.).
+do_not_use_when:
+  - Short sessions where context window is not a concern.
+  - The task requires exact verbatim content — compression is lossy for some modes.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: null
+      tested_by: unknown
+      runtime_version: unknown
+      adapter: none
+      install_result: unknown
+      invoke_result: unknown
+      permission_notes: Install via pip install headroom-ai. Wrap Claude Code with headroom wrap claude. Undo with headroom unwrap claude.
+      evidence:
+        - https://github.com/headroomlabs-ai/headroom/blob/main/README.md
+      known_gaps: []
+  tags:
+    - source:community
+    - runtime:claude-code
+    - runtime:codex-cli
+distribution:
+  install:
+    type: external-tool
+    command: pip install headroom-ai && headroom wrap claude
+  invoke:
+    command: Runs transparently after wrapping — no explicit invocation needed. MCP tools headroom_compress, headroom_retrieve, headroom_stats available for manual use.
+  generated_files: []
+  dependencies:
+    - python3
+    - pip
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - reduce token usage in long coding sessions
+    - compress tool outputs before they reach the LLM
+    - context window keeps filling up
+    - reduce cost of agentic workflows
+    - share memory across multiple AI agents
+    - compress logs or JSON before passing to model
+  caution_for:
+    - tasks requiring exact verbatim reproduction of compressed content
+    - users unfamiliar with Python/pip setup
+  not_recommended_for:
+    - short single-turn sessions
+    - tasks where raw content precision is critical
+  example_prompts:
+    - My context window keeps filling up — help me reduce token usage.
+    - Compress these tool outputs before passing them to Claude.
+    - Set up cross-agent memory between Claude and Codex sessions.
+  anti_examples:
+    - Review this pull request for bugs.
+    - Write a database migration.
+  keywords:
+    - compression
+    - context
+    - tokens
+    - rag
+    - memory
+    - proxy
+    - mcp
+    - context-window
+    - token-optimization
+    - agent
+  aliases:
+    - headroom
+    - headroom-ai
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: By headroomlabs-ai (Tejas Chopra). Apache 2.0. Active development with CI, codecov, published on PyPI and npm. Trending on GitHub.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Compression runs locally. No content sent externally. Originals cached locally for retrieval (reversible).
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - headroomlabs-ai archives the repo.
+    - LLM context windows grow large enough that compression is no longer needed.
+decision:
+  outcome: defer
+  rationale: Clear Apache 2.0 license, active development, trending on GitHub. Directly useful for reducing token cost in Claude Code sessions. Pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18
+relationships:
+  pairs_with:
+    - graphify
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+evaluation:
+  golden_tasks_tested: []
+  evidence_links: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: true
+  known_metrics_gaps: []
+known_limitations:
+  - Compression is lossy for some modes — not suitable when exact verbatim content is required.
+  - Requires Python 3 and pip.
+  - headroom learn writes to CLAUDE.local.md by default — review output before committing.
+  - Output token reduction (trimming model responses) is experimental.

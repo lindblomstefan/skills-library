@@ -16,6 +16,7 @@ These have catalog entries and feedback files. Use them and submit feedback.
 | **squad** | Multi-agent team skills: collaboration, conduct, architectural review, CI validation gates |
 | **remove-ai-marks** | Strip AI provenance marks: invisible Unicode, statistical text rewrite, C2PA/EXIF/XMP metadata from images and documents (requires local Docker service) |
 | **scrapling** | Adaptive web scraping with anti-bot bypass, stealth browsing, spider framework, JS rendering — official skill by the library author |
+| **headroom** | Context compression layer: 60-95% fewer tokens for JSON, 15-20% for coding agents; wraps Claude Code, Codex, Cursor, Aider, Cline and more |
 
 ## Candidates
 
