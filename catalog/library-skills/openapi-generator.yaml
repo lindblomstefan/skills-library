@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: candidate
 stability: stable
-owner: unassigned
 proposed_by: github-popularity-research
 proposed_at: 2026-08-13
 summary: API client, server stub, and documentation generator candidate for backend and integration workflows.

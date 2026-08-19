@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: candidate
 stability: fast-moving
-owner: unassigned
 proposed_by: agent-research
 proposed_at: 2026-08-13
 summary: Product discovery skill that reframes early product ideas through structured office-hours questions before implementation starts.

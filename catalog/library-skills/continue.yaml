@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: candidate
 stability: fast-moving
-owner: unassigned
 proposed_by: github-popularity-research
 proposed_at: 2026-08-13
 summary: Open-source coding agent candidate for IDE and CLI assisted development workflows.

@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: candidate
 stability: fast-moving
-owner: unassigned
 proposed_by: agent-research
 proposed_at: 2026-08-13
 summary: Read-only QA reporting skill that finds browser-visible bugs without making code changes.

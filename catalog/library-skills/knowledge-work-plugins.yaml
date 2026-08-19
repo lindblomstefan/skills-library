@@ -1,0 +1,94 @@
+id: knowledge-work-plugins
+name: Knowledge Work Plugins
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Official Anthropic open-source plugins for knowledge workers in Claude Cowork — document analysis, meeting notes, research assistance, and productivity workflows.
+source:
+  type: external-repository
+  url: https://github.com/anthropics/knowledge-work-plugins
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: anthropics
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/anthropics/knowledge-work-plugins
+  stars_observed: 23540
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - documentation
+  - planning
+  - discovery
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Knowledge work workflows including document analysis, meeting notes, and research.
+  - Claude Cowork plugin development reference.
+do_not_use_when:
+  - Engineering-only tasks without knowledge work component.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/anthropics/knowledge-work-plugins
+      known_gaps:
+        - Primarily for Claude Cowork — Claude Code compatibility varies per plugin.
+distribution:
+  install:
+    type: external-repository
+    command: Install individual plugins from the repository.
+  invoke:
+    command: Per-plugin instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - knowledge work automation
+    - document and meeting workflows
+    - Anthropic-official plugin reference
+  caution_for:
+    - primarily designed for Claude Cowork
+  not_recommended_for:
+    - pure engineering tasks
+  keywords:
+    - knowledge-work
+    - documents
+    - meetings
+    - research
+    - anthropic
+    - official
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Apache-2.0. Official Anthropic repository. 23k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Document and meeting content — review per-plugin data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Anthropic restructures plugin distribution.
+decision:
+  outcome: defer
+  rationale: Apache-2.0 official Anthropic knowledge work plugins. High trust.
+  decided_by: skills-library
+  decided_at: 2026-08-18

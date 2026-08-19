@@ -1,0 +1,109 @@
+id: serena
+name: Serena
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Powerful MCP toolkit for coding — provides semantic retrieval and editing capabilities, acting as an IDE for your AI agent. Reduces tool calls through structured code understanding.
+source:
+  type: external-repository
+  url: https://github.com/oraios/serena
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: oraios
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/oraios/serena
+  stars_observed: 28149
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - codebase-understanding
+  - coding
+  - repository-analysis
+task_types:
+  - codebase-navigation
+  - impact-analysis
+  - pull-request-review
+use_when:
+  - Agent needs semantic code search beyond grep.
+  - Reducing token cost of codebase exploration through structured retrieval.
+  - Working on large codebases where context efficiency matters.
+do_not_use_when:
+  - Simple single-file tasks.
+  - MCP server setup is not feasible in the environment.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/oraios/serena
+      known_gaps:
+        - Requires MCP server setup.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository following MCP setup instructions.
+  invoke:
+    command: Available as MCP tools after server setup.
+  generated_files: []
+  dependencies:
+    - python3
+    - mcp-server
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - semantic code retrieval
+    - large codebase navigation
+    - reducing tool call overhead
+  caution_for:
+    - MCP setup complexity
+  not_recommended_for:
+    - simple single-file work
+  keywords:
+    - mcp
+    - semantic
+    - retrieval
+    - code-intelligence
+    - ide
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 28k+ stars. MCP-based.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Reads local codebase — no external transmission.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived or MCP standard changes.
+decision:
+  outcome: defer
+  rationale: MIT MCP semantic retrieval toolkit with 28k stars. Overlaps with graphify — distinct approach via MCP.
+  decided_by: skills-library
+  decided_at: 2026-08-18
+relationships:
+  pairs_with: []
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with:
+    - graphify
+  specializes: []
+  generalizes: []

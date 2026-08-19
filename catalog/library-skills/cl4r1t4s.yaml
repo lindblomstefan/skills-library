@@ -1,0 +1,89 @@
+id: cl4r1t4s
+name: CL4R1T4S
+catalog_visibility: library
+source_type: reference
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: AI systems transparency initiative — leaked system prompts for ChatGPT, Claude, Gemini, Grok, Perplexity, Cursor, Lovable, Replit, and more. AGPL-3.0.
+source:
+  type: external-repository
+  url: https://github.com/elder-plinius/CL4R1T4S
+  license: GNU Affero General Public License v3.0
+  license_spdx: AGPL-3.0
+  redistribution: permitted-copyleft
+  modification_allowed: yes-copyleft
+  maintainer: elder-plinius
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/elder-plinius/CL4R1T4S
+  stars_observed: 47004
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - discovery
+task_types:
+  - architecture-review
+use_when:
+  - Studying system prompt transparency across AI products.
+  - Research into how AI tools are instructed.
+do_not_use_when:
+  - Commercial reuse without AGPL compliance review.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/elder-plinius/CL4R1T4S
+      known_gaps:
+        - Reference only. AGPL-3.0 copyleft for derived works.
+distribution:
+  install:
+    type: external-repository
+    command: Browse as reference.
+  invoke:
+    command: Reference use only.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - AI transparency research
+    - system prompt pattern study
+  caution_for:
+    - AGPL-3.0 copyleft applies to derived works
+    - original provider ToS applies independently
+  not_recommended_for:
+    - commercial reuse without legal review
+  keywords:
+    - transparency
+    - system-prompts
+    - leaked
+    - reference
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: AGPL-3.0. elder-plinius. 47k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: medium
+  data_classification: public
+  data_handling_notes: Reference content — AGPL copyleft and original ToS apply.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: AGPL-3.0 AI transparency reference. Useful for research.
+  decided_by: skills-library
+  decided_at: 2026-08-18

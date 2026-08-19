@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: candidate
 stability: fast-moving
-owner: unassigned
 proposed_by: agent-research
 proposed_at: 2026-08-13
 summary: Performance regression skill for measuring page load, Core Web Vitals, and resource-size changes.

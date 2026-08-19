@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: evaluating
 stability: stable
-owner: unassigned
 proposed_by: skills-library
 proposed_at: 2026-08-16
 summary: Strip multi-vendor AI provenance marks — invisible Unicode (Layer A), statistical text watermarks via rewrite (Layer B), and C2PA/EXIF/XMP/container metadata from PNG/JPEG/SVG/PDF/DOCX/HTML/MD. Covers Claude, Gemini/SynthID, OpenAI provenance, and open-LLM sampling marks. Requires a local HTTP service.

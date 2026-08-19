@@ -1,0 +1,91 @@
+id: vibe-kanban
+name: Vibe Kanban
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Get 10X more out of Claude Code, Codex, or any coding agent — Kanban-style task and workflow management designed for agentic coding sessions. By BloopAI.
+source:
+  type: external-repository
+  url: https://github.com/BloopAI/vibe-kanban
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: BloopAI
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/BloopAI/vibe-kanban
+  stars_observed: 27834
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - planning
+  - coding
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Managing Claude Code or Codex tasks visually with Kanban boards.
+  - Tracking agentic session progress with structured workflow.
+do_not_use_when:
+  - Headless or server environments where GUI is not available.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/BloopAI/vibe-kanban
+      known_gaps:
+        - GUI app — not a skill file.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Launched as a desktop or web application.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - visual task management for agentic coding
+    - Kanban workflow for Claude Code
+  caution_for:
+    - GUI app — not available in headless environments
+  not_recommended_for:
+    - server-only environments
+  keywords:
+    - kanban
+    - task-management
+    - visual
+    - workflow
+    - claude-code
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Apache-2.0. BloopAI. 27k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Local task management — no external transmission.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: Apache-2.0 Kanban for agent workflows with 27k stars.
+  decided_by: skills-library
+  decided_at: 2026-08-18

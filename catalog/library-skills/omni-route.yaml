@@ -1,0 +1,96 @@
+id: omni-route
+name: OmniRoute
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Free MIT AI gateway — one endpoint, 340 providers, 90+ free, 1200+ models. Works with Claude Code, Codex, Cursor, Cline, and Copilot. Quota-aware auto-fallback, RTK+Caveman token compression. Built by 450+ contributors.
+source:
+  type: external-repository
+  url: https://github.com/diegosouzapw/OmniRoute
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: diegosouzapw
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/diegosouzapw/OmniRoute
+  stars_observed: 49916
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - architecture
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Routing Claude Code or Codex across 340+ model providers from one endpoint.
+  - Quota-aware fallback across free model tiers.
+  - Integrating token compression into routing.
+do_not_use_when:
+  - Single-provider setups without routing needs.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/diegosouzapw/OmniRoute
+      known_gaps:
+        - Provider availability and free quotas change frequently.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Runs as a local or hosted gateway.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets:
+    - Provider API keys as needed
+  network_access: required
+routing:
+  recommend_for:
+    - multi-provider model routing
+    - free tier quota maximization
+    - fallback and resilience
+  caution_for:
+    - provider availability changes
+    - review data handling per provider
+  not_recommended_for:
+    - single-provider setups
+  keywords:
+    - gateway
+    - routing
+    - multi-provider
+    - fallback
+    - free
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 49k+ stars. 450+ contributors.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Routes requests through external providers — review per-provider data policies.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: true
+  deprecation_criteria:
+    - Free provider quotas eliminated or project archived.
+decision:
+  outcome: defer
+  rationale: MIT multi-provider gateway with 49k stars. Infrastructure candidate.
+  decided_by: skills-library
+  decided_at: 2026-08-18

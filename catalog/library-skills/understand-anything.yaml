@@ -1,0 +1,101 @@
+id: understand-anything
+name: Understand Anything
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Turn any code into an interactive, explorable, and queryable knowledge graph. Works with Claude Code, Codex, Cursor, Copilot, and Gemini CLI.
+source:
+  type: external-repository
+  url: https://github.com/Egonex-AI/Understand-Anything
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: Egonex-AI
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/Egonex-AI/Understand-Anything
+  stars_observed: 79644
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - codebase-understanding
+  - knowledge-graph
+  - repository-analysis
+task_types:
+  - codebase-navigation
+  - relationship-discovery
+use_when:
+  - Exploring and querying codebase structure interactively.
+  - Building a navigable knowledge graph from code.
+do_not_use_when:
+  - Simple single-file tasks.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/Egonex-AI/Understand-Anything
+      known_gaps:
+        - Overlaps with graphify — different approach.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - interactive codebase exploration
+    - knowledge graph from code
+  caution_for: []
+  not_recommended_for:
+    - simple single-file tasks
+  keywords:
+    - knowledge-graph
+    - codebase
+    - interactive
+    - exploration
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 79k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Reads local codebase — no external transmission.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT interactive code knowledge graph. Overlaps with graphify — different approach.
+  decided_by: skills-library
+  decided_at: 2026-08-18
+relationships:
+  pairs_with: []
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with:
+    - graphify
+  specializes: []
+  generalizes: []

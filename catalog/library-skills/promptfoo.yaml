@@ -1,0 +1,98 @@
+id: promptfoo
+name: Promptfoo
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Test your prompts, agents, and RAGs — red teaming, pentesting, and vulnerability scanning for AI. Compare performance of GPT, Claude, Gemini, and more. Simple declarative configs with CI/CD integration. Used by OpenAI and Anthropic.
+source:
+  type: external-repository
+  url: https://github.com/promptfoo/promptfoo
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: promptfoo
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/promptfoo/promptfoo
+  stars_observed: 24319
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - testing
+  - security
+task_types:
+  - test-strategy
+  - threat-modeling
+use_when:
+  - Testing prompts, agents, and RAG pipelines for correctness and safety.
+  - Red teaming or vulnerability scanning AI systems.
+  - Comparing model performance across Claude, GPT, Gemini, and others.
+do_not_use_when:
+  - No prompt or agent testing is needed.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/promptfoo/promptfoo
+      known_gaps:
+        - Standalone tool — not a Claude Code plugin.
+distribution:
+  install:
+    type: external-repository
+    command: npm install -g promptfoo or npx promptfoo
+  invoke:
+    command: promptfoo eval in a project with promptfooconfig.yaml
+  generated_files:
+    - Test result reports
+  dependencies:
+    - node
+  required_permissions:
+    - bash
+  required_secrets:
+    - LLM provider API keys
+  network_access: required
+routing:
+  recommend_for:
+    - prompt and agent testing
+    - AI red teaming
+    - model comparison
+  caution_for:
+    - API keys required for each provider tested
+  not_recommended_for:
+    - production runtime — test/CI use only
+  keywords:
+    - testing
+    - red-teaming
+    - prompts
+    - agents
+    - rag
+    - evaluation
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. Used by OpenAI and Anthropic. 24k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: medium
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Test prompts and outputs may contain sensitive content — review before sharing results.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT prompt/agent testing with 24k stars. Used by OpenAI and Anthropic — high credibility.
+  decided_by: skills-library
+  decided_at: 2026-08-18

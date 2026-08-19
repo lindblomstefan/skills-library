@@ -1,0 +1,90 @@
+id: system-prompts-leaks
+name: System Prompts Leaks
+catalog_visibility: library
+source_type: reference
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Extracted system prompts from Claude Fable 5, Opus 5, Claude Code, GPT-5, Gemini, Grok, Cursor, Copilot, Perplexity, and more. CC0-1.0 — public domain.
+source:
+  type: external-repository
+  url: https://github.com/asgeirtj/system_prompts_leaks
+  license: Creative Commons Zero v1.0 Universal
+  license_spdx: CC0-1.0
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: asgeirtj
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/asgeirtj/system_prompts_leaks
+  stars_observed: 63092
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - discovery
+  - planning
+task_types:
+  - architecture-review
+use_when:
+  - Studying system prompt patterns across AI tools for skill design.
+  - Researching how top AI products instruct their models.
+do_not_use_when:
+  - Original provider ToS may restrict reuse in commercial products — review case by case.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/asgeirtj/system_prompts_leaks
+      known_gaps:
+        - Reference only. Original provider ToS applies independently of CC0.
+distribution:
+  install:
+    type: external-repository
+    command: Browse as reference.
+  invoke:
+    command: Reference use only.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - system prompt pattern research
+    - AI tool design benchmarking
+  caution_for:
+    - original provider ToS applies independently
+  not_recommended_for:
+    - verbatim commercial reuse without legal review
+  keywords:
+    - system-prompts
+    - leaked
+    - reference
+    - claude
+    - cursor
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: CC0-1.0. 63k+ stars. Original provider ToS applies separately.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: medium
+  data_classification: public
+  data_handling_notes: Reference content — public domain license but original ToS still applies.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: CC0 system prompt reference. Useful for skill design research.
+  decided_by: skills-library
+  decided_at: 2026-08-18

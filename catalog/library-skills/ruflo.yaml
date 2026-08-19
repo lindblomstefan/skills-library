@@ -1,0 +1,95 @@
+id: ruflo
+name: Ruflo
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Agent meta-harness for deploying multi-player agent swarms, coordinating autonomous workflows, and building conversational AI systems. Adaptive memory, self-learning intelligence, RAG integration. Native Claude Code and Codex support. By ruvnet.
+source:
+  type: external-repository
+  url: https://github.com/ruvnet/ruflo
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: ruvnet
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/ruvnet/ruflo
+  stars_observed: 68105
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+  - architecture
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - Building multi-agent swarms or autonomous workflows.
+  - Coordinating multiple AI agents with shared memory.
+  - RAG integration in agent pipelines.
+do_not_use_when:
+  - Single-agent tasks without coordination requirements.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/ruvnet/ruflo
+      known_gaps:
+        - Complex setup — evaluate for specific use case.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - multi-agent swarm coordination
+    - autonomous workflow orchestration
+    - RAG-integrated agent systems
+  caution_for:
+    - complex setup
+  not_recommended_for:
+    - simple single-agent tasks
+  keywords:
+    - swarm
+    - multi-agent
+    - orchestration
+    - rag
+    - memory
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. ruvnet. 68k+ stars.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Multi-agent — data handling depends on configuration.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT multi-agent meta-harness with 68k stars. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

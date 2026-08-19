@@ -1,0 +1,95 @@
+id: 9router
+name: 9router
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Free AI coding router — connects Claude Code, Codex, Cursor, Cline, and Copilot to free Claude/GPT/Gemini via 40+ providers. Auto-fallback, RTK token compression (-40%), never hit limits.
+source:
+  type: external-repository
+  url: https://github.com/decolua/9router
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: decolua
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/decolua/9router
+  stars_observed: 25678
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+task_types:
+  - project-onboarding
+use_when:
+  - Routing Claude Code or Codex to free provider tiers.
+  - Auto-fallback to avoid hitting quota limits.
+  - Token compression in agent routing.
+do_not_use_when:
+  - Paid provider setups with guaranteed quota.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/decolua/9router
+      known_gaps:
+        - Free tier availability changes — verify current providers.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Runs as a local routing service.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - free provider routing
+    - quota limit avoidance
+    - token compression in routing
+  caution_for:
+    - free provider reliability varies
+  not_recommended_for:
+    - production workloads requiring SLA
+  keywords:
+    - router
+    - free
+    - quota
+    - compression
+    - fallback
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 25k+ stars.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Routes through external free providers — review per-provider data policies.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: true
+  deprecation_criteria:
+    - Free providers discontinued or project archived.
+decision:
+  outcome: defer
+  rationale: MIT free-provider router with 25k stars. Overlaps with OmniRoute.
+  decided_by: skills-library
+  decided_at: 2026-08-18
+relationships:
+  overlaps_with:
+    - omni-route

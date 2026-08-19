@@ -1,0 +1,91 @@
+id: claude-code-templates
+name: Claude Code Templates
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: CLI tool for configuring and monitoring Claude Code — templates, setup wizards, and monitoring for Claude Code projects.
+source:
+  type: external-repository
+  url: https://github.com/davila7/claude-code-templates
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: davila7
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/davila7/claude-code-templates
+  stars_observed: 30278
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+task_types:
+  - project-onboarding
+use_when:
+  - Setting up new Claude Code projects with templates.
+  - Monitoring Claude Code usage and configuration.
+do_not_use_when:
+  - Already have a preferred project setup workflow.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: native
+      evidence:
+        - https://github.com/davila7/claude-code-templates
+      known_gaps:
+        - Template currency may lag Claude Code updates.
+distribution:
+  install:
+    type: external-repository
+    command: Install CLI from the original repository.
+  invoke:
+    command: CLI tool — follow repository instructions.
+  generated_files:
+    - Project configuration files
+  dependencies:
+    - node
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - Claude Code project setup
+    - template-based configuration
+  caution_for: []
+  not_recommended_for:
+    - teams with established setup workflows
+  keywords:
+    - templates
+    - setup
+    - configuration
+    - cli
+    - claude-code
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 30k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Local configuration tool.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT Claude Code template CLI with 30k stars.
+  decided_by: skills-library
+  decided_at: 2026-08-18

@@ -1,0 +1,96 @@
+id: diagram-design
+name: Diagram Design
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: 27 editorial diagram types for Claude Code — self-contained HTML and SVG output. No shadows, no Mermaid-slop. Clean, precise technical diagrams.
+source:
+  type: external-repository
+  url: https://github.com/cathrynlavery/diagram-design
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: cathrynlavery
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/cathrynlavery/diagram-design
+  stars_observed: 20870
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - documentation
+  - ui-ux
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - Generating clean technical diagrams without Mermaid or chart libraries.
+  - Documentation needs editorial-quality diagrams in HTML/SVG.
+  - Architecture or flow diagrams should be self-contained and portable.
+do_not_use_when:
+  - Interactive or data-driven charts are needed.
+  - Team is already using a diagram tool like Figma or Mermaid.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/cathrynlavery/diagram-design
+      known_gaps:
+        - Output is static HTML/SVG — not interactive.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Applied via skill invocation or CLAUDE.md.
+  generated_files:
+    - HTML/SVG diagram files
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - technical diagrams
+    - architecture documentation
+    - editorial-quality SVG output
+  caution_for:
+    - data-driven or interactive diagrams
+  not_recommended_for:
+    - dynamic or live-updating diagrams
+  keywords:
+    - diagrams
+    - svg
+    - html
+    - documentation
+    - architecture
+    - editorial
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 20k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Generates local HTML/SVG files — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT diagram generation with 20k stars. Clean alternative to Mermaid.
+  decided_by: skills-library
+  decided_at: 2026-08-18

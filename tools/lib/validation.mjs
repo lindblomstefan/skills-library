@@ -69,7 +69,7 @@ export function validateCatalog(catalog) {
 function validateSkill(item, expectedVisibility, context) {
   const { sourceTypes, statuses, domains, taskTypes, models, runtimes, support, licenseStates, skillIds, errors, warnings } = context;
     const skill = item.data;
-    requireFields(item, ["id", "name", "catalog_visibility", "source_type", "status", "owner", "summary", "source", "domains", "task_types", "use_when", "do_not_use_when", "compatibility", "distribution", "routing", "trust", "risk", "freshness", "decision"], errors);
+    requireFields(item, ["id", "name", "catalog_visibility", "source_type", "status", "summary", "source", "domains", "task_types", "use_when", "do_not_use_when", "compatibility", "distribution", "routing", "trust", "risk", "freshness", "decision"], errors);
     if (skill.catalog_visibility !== expectedVisibility) {
       errors.push(`${item.path}: catalog_visibility must be '${expectedVisibility}' in this directory`);
     }
@@ -80,10 +80,7 @@ function validateSkill(item, expectedVisibility, context) {
     validateSkillLicense(item, licenseStates, errors, warnings);
     validateCompatibility(item, models, runtimes, support, errors);
     validateSkillRelationships(item, skillIds, errors);
-    if ((skill.status === "approved" || skill.status === "in-use") && skill.owner === "unassigned") {
-      errors.push(`${item.path}: ${skill.status} skill cannot have owner unassigned`);
-    }
-    if (skill.status === "approved" && skill.trust?.license_state === "unknown") {
+if (skill.status === "approved" && skill.trust?.license_state === "unknown") {
       errors.push(`${item.path}: approved skill cannot have unknown license_state`);
     }
     if (skill.status === "approved" && !skill.freshness?.next_review) {

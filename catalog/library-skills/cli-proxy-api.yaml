@@ -1,0 +1,93 @@
+id: cli-proxy-api
+name: CLIProxyAPI
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Wraps Claude Code, Codex, Antigravity, and others as OpenAI/Gemini/Claude-compatible API services, allowing CLI agent capabilities to be consumed via standard API endpoints.
+source:
+  type: external-repository
+  url: https://github.com/router-for-me/CLIProxyAPI
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: router-for-me
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/router-for-me/CLIProxyAPI
+  stars_observed: 47651
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - architecture
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - Exposing Claude Code as an API endpoint for other tools.
+  - Building pipelines that consume CLI agent outputs via standard API.
+do_not_use_when:
+  - Direct Claude Code usage without API layer needed.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/router-for-me/CLIProxyAPI
+      known_gaps:
+        - Infrastructure tool — not a behavioral skill.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Runs as a local proxy service.
+  generated_files: []
+  dependencies:
+    - go
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - API-wrapping CLI agents
+    - multi-tool pipeline integration
+  caution_for:
+    - review security of exposed API endpoints
+  not_recommended_for:
+    - direct CLI usage without API needs
+  keywords:
+    - proxy
+    - api
+    - claude-code
+    - codex
+    - openai-compatible
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 47k+ stars.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Proxies agent requests — review network exposure.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT CLI-to-API proxy for agent tools. Infrastructure candidate.
+  decided_by: skills-library
+  decided_at: 2026-08-18

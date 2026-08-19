@@ -1,0 +1,92 @@
+id: archon
+name: Archon
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: First open-source harness builder for AI coding — make AI coding deterministic and repeatable. Build structured harnesses for Claude Code, Codex, Cursor, and more.
+source:
+  type: external-repository
+  url: https://github.com/coleam00/Archon
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: coleam00
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/coleam00/Archon
+  stars_observed: 23221
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+  - architecture
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - Building deterministic, repeatable AI coding harnesses.
+  - Structuring agent workflows for reliability and reproducibility.
+do_not_use_when:
+  - Ad-hoc or exploratory agent sessions.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/coleam00/Archon
+      known_gaps:
+        - Harness builder — evaluate for target agent runtime.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - deterministic harness building
+    - reproducible agent workflows
+  caution_for:
+    - complex setup
+  not_recommended_for:
+    - exploratory or one-off sessions
+  keywords:
+    - harness
+    - deterministic
+    - repeatable
+    - builder
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 23k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Harness configuration — no external data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT harness builder with 23k stars. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

@@ -1,0 +1,89 @@
+id: awesome-claude-code-subagents
+name: Awesome Claude Code Subagents
+catalog_visibility: library
+source_type: reference
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Collection of 100+ specialized Claude Code subagents covering a wide range of development use cases — maintained by VoltAgent.
+source:
+  type: external-repository
+  url: https://github.com/VoltAgent/awesome-claude-code-subagents
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: VoltAgent
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/VoltAgent/awesome-claude-code-subagents
+  stars_observed: 24417
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - discovery
+  - coding
+task_types:
+  - project-onboarding
+use_when:
+  - Looking for pre-built specialized Claude Code subagents.
+  - Needing a subagent for a specific development use case.
+do_not_use_when:
+  - Looking for full skills — this collection focuses on subagents.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/VoltAgent/awesome-claude-code-subagents
+      known_gaps:
+        - Individual subagent quality varies.
+distribution:
+  install:
+    type: external-repository
+    command: Browse and select individual subagents from the repository.
+  invoke:
+    command: Per-subagent instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - finding specialized subagents
+    - multi-agent workflow design
+  caution_for:
+    - individual subagent quality should be evaluated
+  not_recommended_for:
+    - direct bulk installation without review
+  keywords:
+    - subagents
+    - claude-code
+    - specialized
+    - collection
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 24k+ stars. VoltAgent.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Reference collection — individual subagents vary.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT subagent collection. Discovery reference for specialized agents.
+  decided_by: skills-library
+  decided_at: 2026-08-18

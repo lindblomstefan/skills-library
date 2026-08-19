@@ -1,0 +1,91 @@
+id: claude-task-master
+name: Claude Task Master
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: AI-powered task management system for Cursor, Lovable, Windsurf, Roo, and others — structured task tracking, decomposition, and progress management for agentic workflows.
+source:
+  type: external-repository
+  url: https://github.com/eyaltoledano/claude-task-master
+  license: unknown
+  license_spdx: NOASSERTION
+  redistribution: unknown
+  modification_allowed: unknown
+  maintainer: eyaltoledano
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/eyaltoledano/claude-task-master
+  stars_observed: 28004
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - planning
+  - coding
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Managing tasks across long agentic sessions.
+  - Decomposing complex projects into tracked subtasks.
+do_not_use_when:
+  - Simple single-turn tasks without tracking needs.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/eyaltoledano/claude-task-master
+      known_gaps:
+        - License needs review.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - task management in agentic workflows
+    - project decomposition and tracking
+  caution_for:
+    - license unclear
+  not_recommended_for:
+    - simple single-turn tasks
+  keywords:
+    - task-management
+    - planning
+    - decomposition
+    - agentic
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: NOASSERTION license. 28k+ stars. License needs manual review.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Task tracking — local data only.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: Task management with 28k stars. License needs clarification.
+  decided_by: skills-library
+  decided_at: 2026-08-18

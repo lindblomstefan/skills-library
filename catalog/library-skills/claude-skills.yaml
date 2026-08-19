@@ -1,0 +1,92 @@
+id: claude-skills
+name: Claude Skills (alirezarezvani)
+catalog_visibility: library
+source_type: reference
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: 345 Claude Code skills and agent skills covering engineering, marketing, product, compliance, C-level advisory, research, business operations, and daily productivity. Compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.
+source:
+  type: external-repository
+  url: https://github.com/alirezarezvani/claude-skills
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: alirezarezvani
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/alirezarezvani/claude-skills
+  stars_observed: 24585
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - discovery
+  - planning
+  - coding
+task_types:
+  - project-onboarding
+use_when:
+  - Discovering pre-built skills across engineering, product, and business domains.
+  - Bootstrapping a team's skill library from a large curated set.
+do_not_use_when:
+  - Looking for a specific focused skill — find individual skills here instead.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/alirezarezvani/claude-skills
+      known_gaps:
+        - Large collection — individual skill quality varies.
+distribution:
+  install:
+    type: external-repository
+    command: Browse and select individual skills from the repository.
+  invoke:
+    command: Per-skill instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - skill discovery across business domains
+    - bootstrapping a comprehensive skill set
+  caution_for:
+    - individual skill quality should be evaluated before adoption
+  not_recommended_for:
+    - direct bulk installation without review
+  keywords:
+    - skills
+    - collection
+    - engineering
+    - marketing
+    - product
+    - business
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 24k+ stars. Large community collection.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Reference collection — individual skills vary.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT large skill collection. Useful as discovery reference and onboarding resource.
+  decided_by: skills-library
+  decided_at: 2026-08-18

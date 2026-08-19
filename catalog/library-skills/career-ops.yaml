@@ -1,0 +1,93 @@
+id: career-ops
+name: Career Ops
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: AI job search skill — scans job portals, evaluates listings with a structured A-F rubric, tailors your CV, and tracks applications. Runs locally in Claude Code, Codex, OpenCode, and others.
+source:
+  type: external-repository
+  url: https://github.com/santifer/career-ops
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: santifer
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/santifer/career-ops
+  stars_observed: 64862
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - planning
+  - discovery
+task_types:
+  - project-onboarding
+use_when:
+  - Automating job search and application workflows with an AI agent.
+  - Evaluating job listings against structured criteria.
+  - Tailoring CVs and tracking applications.
+do_not_use_when:
+  - Engineering or coding tasks.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/santifer/career-ops
+      known_gaps:
+        - Domain-specific — job search only.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - job search automation
+    - CV tailoring
+    - application tracking
+  caution_for:
+    - personal data involved — review privacy
+  not_recommended_for:
+    - engineering or development tasks
+  keywords:
+    - job-search
+    - career
+    - cv
+    - applications
+    - automation
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 64k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: medium
+  compliance: low
+  data_classification: personal
+  data_handling_notes: Handles personal career data — review privacy implications.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT job search skill with 64k stars. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

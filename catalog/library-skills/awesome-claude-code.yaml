@@ -1,0 +1,88 @@
+id: awesome-claude-code
+name: Awesome Claude Code
+catalog_visibility: library
+source_type: reference
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Hand-picked collection of resources for Claude Code — skills, subagents, status lines, developer tooling, and plugins. Maintained by hesreallyhim.
+source:
+  type: external-repository
+  url: https://github.com/hesreallyhim/awesome-claude-code
+  license: unknown
+  license_spdx: NOASSERTION
+  redistribution: unknown
+  modification_allowed: unknown
+  maintainer: hesreallyhim
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/hesreallyhim/awesome-claude-code
+  stars_observed: 52511
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - discovery
+task_types:
+  - project-onboarding
+use_when:
+  - Discovering Claude Code skills, tools, and community resources.
+  - Finding status lines, plugins, or tooling for Claude Code setup.
+do_not_use_when:
+  - Looking for an installable skill — browse for individual skills instead.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/hesreallyhim/awesome-claude-code
+      known_gaps:
+        - Reference only — license needs review.
+distribution:
+  install:
+    type: external-repository
+    command: Browse as a reference catalog.
+  invoke:
+    command: Reference use only.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - Claude Code ecosystem discovery
+    - finding skills and plugins
+  caution_for: []
+  not_recommended_for:
+    - direct installation
+  keywords:
+    - awesome
+    - claude-code
+    - discovery
+    - resources
+    - plugins
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: 52k+ stars. License NOASSERTION — content from community.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Reference catalog — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: High-star Claude Code resource catalog. License NOASSERTION but content is reference-only.
+  decided_by: skills-library
+  decided_at: 2026-08-18

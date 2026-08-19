@@ -1,0 +1,91 @@
+id: free-claude-code
+name: Free Claude Code
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Use Claude Code, Codex, Pi, and OpenCode for free (1.3B+ free tokens) from terminal, app, IDE, or phone — via legitimate provider free tiers.
+source:
+  type: external-repository
+  url: https://github.com/Alishahryar1/free-claude-code
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: Alishahryar1
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/Alishahryar1/free-claude-code
+  stars_observed: 45730
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+task_types:
+  - project-onboarding
+use_when:
+  - Setting up Claude Code on free provider tiers.
+  - Maximizing free token budget across multiple providers.
+do_not_use_when:
+  - Already on paid plans with sufficient quota.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/Alishahryar1/free-claude-code
+      known_gaps:
+        - Free tier limits and provider availability change frequently.
+distribution:
+  install:
+    type: external-repository
+    command: Follow repository instructions.
+  invoke:
+    command: Configuration guide — not an installable skill file.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets:
+    - Provider accounts and API keys
+  network_access: required
+routing:
+  recommend_for:
+    - setting up Claude Code on free tiers
+    - cost optimization
+  caution_for:
+    - free tier limits change — verify current availability
+  not_recommended_for:
+    - production workloads requiring quota guarantees
+  keywords:
+    - free
+    - tokens
+    - budget
+    - setup
+    - cost
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 45k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Configuration guide — no data handling.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-08-18
+  next_review: 2026-09-18
+  replacement_watch: true
+  deprecation_criteria:
+    - Free tier providers change or discontinue offerings.
+decision:
+  outcome: defer
+  rationale: MIT free-tier setup guide with 45k stars. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

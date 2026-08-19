@@ -1,0 +1,97 @@
+id: obsidian-skills
+name: Obsidian Skills
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Agent skills for Obsidian — teaches AI agents to use Obsidian CLI and open formats including Markdown, Bases, and JSON Canvas. By Obsidian creator kepano.
+source:
+  type: external-repository
+  url: https://github.com/kepano/obsidian-skills
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: kepano
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/kepano/obsidian-skills
+  stars_observed: 46548
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - documentation
+  - knowledge-graph
+  - planning
+task_types:
+  - project-onboarding
+  - codebase-navigation
+use_when:
+  - Working with an Obsidian vault alongside an AI agent.
+  - Agent needs to read, write, or query Obsidian notes and canvas files.
+  - Knowledge management workflows involving Markdown and JSON Canvas.
+do_not_use_when:
+  - Not using Obsidian.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/kepano/obsidian-skills
+      known_gaps:
+        - Requires local Obsidian installation.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies:
+    - obsidian
+  required_permissions:
+    - read-filesystem
+    - write-filesystem
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - Obsidian vault integration
+    - knowledge management with AI agents
+    - markdown and canvas workflows
+  caution_for: []
+  not_recommended_for:
+    - teams not using Obsidian
+  keywords:
+    - obsidian
+    - markdown
+    - canvas
+    - knowledge
+    - vault
+    - notes
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 46k+ stars. By kepano, Obsidian creator — high credibility.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Accesses local Obsidian vault files only.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Obsidian drops CLI support.
+decision:
+  outcome: defer
+  rationale: MIT by Obsidian's own creator. High credibility, niche but clear use case.
+  decided_by: skills-library
+  decided_at: 2026-08-18

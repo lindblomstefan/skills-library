@@ -1,0 +1,88 @@
+id: claude-plugins-official
+name: Claude Plugins (Official)
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Official Anthropic-managed directory of high-quality Claude Code plugins. The canonical source for Anthropic-vetted plugins.
+source:
+  type: external-repository
+  url: https://github.com/anthropics/claude-plugins-official
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: anthropics
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/anthropics/claude-plugins-official
+  stars_observed: 33630
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - discovery
+task_types:
+  - project-onboarding
+use_when:
+  - Finding Anthropic-vetted Claude Code plugins.
+  - Discovering official plugin capabilities.
+do_not_use_when:
+  - Looking for community skills outside official Anthropic scope.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: native
+      evidence:
+        - https://github.com/anthropics/claude-plugins-official
+      known_gaps:
+        - Individual plugin quality should still be evaluated.
+distribution:
+  install:
+    type: external-repository
+    command: Browse and install individual plugins per their instructions.
+  invoke:
+    command: Per-plugin instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - official plugin discovery
+    - Anthropic-vetted Claude Code enhancements
+  caution_for: []
+  not_recommended_for:
+    - community skill discovery — use this library instead
+  keywords:
+    - official
+    - anthropic
+    - plugins
+    - claude-code
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Apache-2.0. Official Anthropic repository. 33k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Official Anthropic plugins — individual plugin data handling varies.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Anthropic restructures plugin distribution.
+decision:
+  outcome: defer
+  rationale: Apache-2.0, official Anthropic plugin directory. High trust, candidate for promotion.
+  decided_by: skills-library
+  decided_at: 2026-08-18

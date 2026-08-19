@@ -1,0 +1,89 @@
+id: learn-claude-code
+name: Learn Claude Code
+catalog_visibility: library
+source_type: reference
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates. A nano claude-code-like agent harness built from scratch.
+source:
+  type: external-repository
+  url: https://github.com/shareAI-lab/learn-claude-code
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: shareAI-lab
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/shareAI-lab/learn-claude-code
+  stars_observed: 74501
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - discovery
+task_types:
+  - project-onboarding
+use_when:
+  - Onboarding to Claude Code from scratch.
+  - Learning agent harness construction through examples.
+do_not_use_when:
+  - Already experienced with Claude Code.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/shareAI-lab/learn-claude-code
+      known_gaps:
+        - Learning resource — not an installable skill.
+distribution:
+  install:
+    type: external-repository
+    command: Browse as learning reference.
+  invoke:
+    command: Reference use only.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - Claude Code onboarding
+    - learning agent concepts from scratch
+  caution_for: []
+  not_recommended_for:
+    - experienced Claude Code users
+  keywords:
+    - learning
+    - onboarding
+    - claude-code
+    - examples
+    - templates
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 74k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Reference only.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT learning resource for Claude Code. Reference candidate.
+  decided_by: skills-library
+  decided_at: 2026-08-18

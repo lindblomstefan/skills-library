@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: evaluating
 stability: stable
-owner: unassigned
 proposed_by: skills-library
 proposed_at: 2026-08-14
 summary: Official Anthropic skill that generates HTML, CSS, and React components with Tailwind and shadcn, with deliberate attention to spacing, alignment, and visual hierarchy.

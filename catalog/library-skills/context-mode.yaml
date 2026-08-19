@@ -1,0 +1,96 @@
+id: context-mode
+name: Context Mode
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Context window optimization for AI coding agents — sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP and hooks.
+source:
+  type: external-repository
+  url: https://github.com/mksglu/context-mode
+  license: unknown
+  license_spdx: NOASSERTION
+  redistribution: unknown
+  modification_allowed: unknown
+  maintainer: mksglu
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/mksglu/context-mode
+  stars_observed: 19927
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - codebase-understanding
+  - coding
+task_types:
+  - codebase-navigation
+  - project-onboarding
+use_when:
+  - Sandboxing tool output to reduce context window usage by up to 98%.
+  - Cross-platform routing enforcement via MCP and hooks.
+  - Persistent session memory across agent restarts.
+do_not_use_when:
+  - Short sessions where context is not a concern.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/mksglu/context-mode
+      known_gaps:
+        - License needs review. MCP setup required.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow MCP and hooks setup instructions.
+  generated_files: []
+  dependencies:
+    - mcp-server
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - context window optimization
+    - tool output sandboxing
+    - cross-platform routing
+  caution_for:
+    - license unclear
+    - MCP setup required
+  not_recommended_for:
+    - short sessions
+  keywords:
+    - context
+    - sandboxing
+    - mcp
+    - hooks
+    - optimization
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: NOASSERTION license. 19k+ stars. License needs manual review.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Local context management — no external transmission.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: 98% context reduction claim. License needs review before recommending.
+  decided_by: skills-library
+  decided_at: 2026-08-18

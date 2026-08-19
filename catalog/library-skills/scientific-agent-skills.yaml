@@ -1,0 +1,95 @@
+id: scientific-agent-skills
+name: Scientific Agent Skills
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: 161 ready-to-use validated skills for scientific AI agents — covering biology, chemistry, medicine, and drug discovery with 100+ scientific databases. Compatible with Claude Code, Cursor, Codex, and more.
+source:
+  type: external-repository
+  url: https://github.com/K-Dense-AI/scientific-agent-skills
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: K-Dense-AI
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/K-Dense-AI/scientific-agent-skills
+  stars_observed: 33764
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - discovery
+  - planning
+task_types:
+  - project-onboarding
+  - relationship-discovery
+use_when:
+  - AI agent needs scientific database access or domain knowledge.
+  - Biology, chemistry, medicine, or drug discovery workflows.
+  - Research tasks requiring structured scientific skills.
+do_not_use_when:
+  - Non-scientific engineering tasks.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/K-Dense-AI/scientific-agent-skills
+      known_gaps:
+        - Domain-specific — only relevant for scientific use cases.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - scientific research workflows
+    - biology, chemistry, medicine tasks
+    - drug discovery
+  caution_for:
+    - regulated research contexts
+  not_recommended_for:
+    - non-scientific software engineering
+  keywords:
+    - science
+    - biology
+    - chemistry
+    - medicine
+    - drug-discovery
+    - research
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 33k+ stars. 170k+ scientists claim.
+risk:
+  level: low
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: May query scientific databases — review for data sensitivity.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived or scientific databases removed.
+decision:
+  outcome: defer
+  rationale: MIT scientific skills with 33k stars. Candidate for science-domain teams.
+  decided_by: skills-library
+  decided_at: 2026-08-18

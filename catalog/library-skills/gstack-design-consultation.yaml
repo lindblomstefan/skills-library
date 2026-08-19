@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: candidate
 stability: fast-moving
-owner: unassigned
 proposed_by: agent-research
 proposed_at: 2026-08-13
 summary: Design partner skill for creating or improving a complete design system and product direction.

@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: evaluating
 stability: fast-moving
-owner: unassigned
 proposed_by: skills-library
 proposed_at: 2026-08-15
 summary: A structured collection of skills for AI agent teams — covers agent collaboration, conduct, architectural proposals and review, CI validation gates, and agentic workflow design. Designed for multi-agent repos using GitHub Copilot or Claude Code.

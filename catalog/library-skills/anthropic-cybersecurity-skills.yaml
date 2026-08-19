@@ -1,0 +1,95 @@
+id: anthropic-cybersecurity-skills
+name: Anthropic Cybersecurity Skills
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: 817 structured cybersecurity skills for AI agents — mapped to 6 frameworks (MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF, MITRE F3) across 29 security domains. Works with Claude Code, Codex, Cursor, and more.
+source:
+  type: external-repository
+  url: https://github.com/mukul975/Anthropic-Cybersecurity-Skills
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: mukul975
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/mukul975/Anthropic-Cybersecurity-Skills
+  stars_observed: 28543
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - security
+  - planning
+task_types:
+  - threat-modeling
+  - architecture-review
+use_when:
+  - Security review mapped to established frameworks.
+  - Threat modeling, vulnerability assessment, or compliance alignment.
+  - AI agents working in security operations or red/blue team contexts.
+do_not_use_when:
+  - Non-security engineering without compliance requirements.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/mukul975/Anthropic-Cybersecurity-Skills
+      known_gaps:
+        - Security domain — requires security expertise to interpret outputs.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - security review
+    - threat modeling
+    - compliance alignment to MITRE or NIST
+  caution_for:
+    - outputs should be reviewed by security professionals
+  not_recommended_for:
+    - non-security contexts
+  keywords:
+    - security
+    - mitre
+    - nist
+    - threat-modeling
+    - cybersecurity
+    - compliance
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Apache-2.0. 28k+ stars. Not affiliated with Anthropic despite name.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Framework-mapped skills — no sensitive data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived or frameworks superseded.
+decision:
+  outcome: defer
+  rationale: Apache-2.0 security skills with strong framework coverage. Not affiliated with Anthropic despite the name.
+  decided_by: skills-library
+  decided_at: 2026-08-18

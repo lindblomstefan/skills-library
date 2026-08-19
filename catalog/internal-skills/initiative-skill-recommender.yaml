@@ -4,7 +4,6 @@ catalog_visibility: internal
 source_type: internal
 status: candidate
 stability: stable
-owner: unassigned
 proposed_by: skills-library
 proposed_at: 2026-08-13
 summary: Internal workflow skill that interviews a user, repo, and runtime context to recommend a set of skills or packs for an initiative.

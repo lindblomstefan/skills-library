@@ -1,0 +1,94 @@
+id: get-shit-done
+name: Get Shit Done
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Lightweight meta-prompting, context engineering, and spec-driven development system for Claude Code by TÂCHES. Structures work into clear specs before execution.
+source:
+  type: external-repository
+  url: https://github.com/gsd-build/get-shit-done
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: gsd-build
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/gsd-build/get-shit-done
+  stars_observed: 64685
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - planning
+  - coding
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Starting a new feature or task without a clear spec.
+  - Wanting structured context engineering before execution.
+  - Applying spec-driven development to Claude Code workflows.
+do_not_use_when:
+  - Task is already well-defined and ready for implementation.
+  - Speed is prioritized over structure.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/gsd-build/get-shit-done
+      known_gaps:
+        - Needs evaluation for specific workflow patterns.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - spec-driven development
+    - context engineering
+    - structuring work before execution
+  caution_for:
+    - small tasks that don't need formal specs
+  not_recommended_for:
+    - pure maintenance tasks
+  keywords:
+    - spec
+    - planning
+    - context-engineering
+    - meta-prompting
+    - gsd
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 64k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Behavioral skill — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT spec-driven development skill with 64k stars. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

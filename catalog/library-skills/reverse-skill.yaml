@@ -1,0 +1,95 @@
+id: reverse-skill
+name: Reverse Skill
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Reverse engineering, authorized penetration testing, and security research skill router — AI-powered routing, on-demand toolchain bootstrapping, and self-evolving knowledge base for Claude Code, Kiro, Cursor, and Cline.
+source:
+  type: external-repository
+  url: https://github.com/zhaoxuya520/reverse-skill
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: zhaoxuya520
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/zhaoxuya520/reverse-skill
+  stars_observed: 26066
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - security
+task_types:
+  - threat-modeling
+  - architecture-review
+use_when:
+  - Authorized penetration testing or security research.
+  - Reverse engineering in sanctioned contexts.
+  - CTF challenges or defensive security analysis.
+do_not_use_when:
+  - Unauthorized systems — this skill is for authorized use only.
+  - Non-security engineering tasks.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/zhaoxuya520/reverse-skill
+      known_gaps:
+        - Requires security expertise and authorized context.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: unknown
+routing:
+  recommend_for:
+    - authorized penetration testing
+    - security research
+    - reverse engineering
+    - CTF challenges
+  caution_for:
+    - must only be used in authorized contexts
+  not_recommended_for:
+    - unauthorized use — ethical and legal risk
+  keywords:
+    - reverse-engineering
+    - penetration-testing
+    - security-research
+    - ctf
+    - authorized
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 26k+ stars. Dual-use security tool — authorized use only.
+risk:
+  level: high
+  security: high
+  privacy: high
+  compliance: high
+  data_classification: restricted
+  data_handling_notes: Dual-use security tool — must be used only in authorized contexts with appropriate oversight.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT security/RE skill with 26k stars. High risk rating — authorized use only.
+  decided_by: skills-library
+  decided_at: 2026-08-18

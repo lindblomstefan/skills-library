@@ -1,0 +1,94 @@
+id: cow-agent
+name: CowAgent
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Open-source super AI assistant and agent harness — plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-model, multi-channel. Lightweight, extensible, one-line install. (formerly chatgpt-on-wechat)
+source:
+  type: external-repository
+  url: https://github.com/zhayujie/CowAgent
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: zhayujie
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/zhayujie/CowAgent
+  stars_observed: 46535
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Building a multi-model, multi-channel agent harness with memory.
+  - Self-evolving agent workflows.
+do_not_use_when:
+  - Simple single-turn tasks.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: unknown
+      evidence:
+        - https://github.com/zhayujie/CowAgent
+      known_gaps:
+        - Originally built around WeChat — Claude Code compatibility needs evaluation.
+distribution:
+  install:
+    type: external-repository
+    command: pip install cowagent or follow repository instructions.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies:
+    - python3
+  required_permissions:
+    - bash
+  required_secrets:
+    - LLM provider API keys
+  network_access: required
+routing:
+  recommend_for:
+    - multi-model agent harness
+    - self-evolving agent with memory
+  caution_for:
+    - originally WeChat-focused — verify Claude Code integration
+  not_recommended_for:
+    - simple single-turn tasks
+  keywords:
+    - multi-model
+    - harness
+    - memory
+    - multi-channel
+    - self-evolving
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 46k+ stars. Formerly chatgpt-on-wechat.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Multi-channel — data flows through connected platforms.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT multi-model agent harness. Claude Code compatibility needs verification.
+  decided_by: skills-library
+  decided_at: 2026-08-18

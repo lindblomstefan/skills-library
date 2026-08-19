@@ -52,6 +52,72 @@ Not yet evaluated — recommend when relevant, always show status as "candidate 
 - **openapi-generator** — API client, server stub, and documentation generator
 - **prompts-chat** — large community prompt catalog as reference for skill design
 - **awesome-ai-agents** — agent landscape catalog for discovering and comparing agent tooling
+- **ecc** — agent harness covering skills, instincts, memory, and security for Claude Code, Codex, and more
+- **andrej-karpathy-skills** — single CLAUDE.md derived from Karpathy's observations on LLM coding pitfalls
+- **ui-ux-pro-max-skill** — design intelligence for professional UI/UX across multiple platforms
+- **ponytail** — deletion-first, simplicity-first behavioral skill (laziest senior dev thinking)
+- **caveman** — ~65% token reduction via compressed caveman-style agent output
+- **claude-mem** — persistent cross-session memory: captures, compresses, and re-injects agent history
+- **taste-skill** — gives the AI good taste; stops generic, formulaic, AI-slop output
+- **awesome-claude-skills** — curated Claude Skills resource list (ComposioHQ)
+- **get-shit-done** — meta-prompting and spec-driven development system for Claude Code
+- **last30days-skill** — research skill querying Reddit, X, YouTube, HN, Polymarket for recent signal
+- **obsidian-skills** — agent skills for Obsidian: Markdown, Bases, JSON Canvas (by kepano, Obsidian creator)
+- **marketingskills** — CRO, copywriting, SEO, analytics, and growth engineering skills
+- **academic-research-skills** — structured academic research workflow: research → write → review → revise → finalize
+- **wshobson-agents** — multi-harness agent plugin marketplace (Claude Code, Codex, Cursor, Copilot, Gemini CLI)
+- **scientific-agent-skills** — 161 validated skills for biology, chemistry, medicine, and drug discovery
+- **anthropic-cybersecurity-skills** — 817 skills mapped to MITRE ATT&CK, NIST CSF 2.0, and 4 other frameworks
+- **serena** — MCP toolkit for semantic code retrieval and editing; fewer tokens, fewer tool calls
+- **planning-with-files** — persistent file-based planning: crash-proof, session-recovery, context-rot resistant
+- **reverse-skill** — authorized reverse engineering and penetration testing skill router
+- **hallmark** — anti-AI-slop design skill for Claude Code, Cursor, and Codex (Nutlope)
+- **claude-skills** — 345 skills across engineering, marketing, product, and productivity (alirezarezvani)
+- **awesome-claude-code-subagents** — 100+ specialized Claude Code subagents (VoltAgent)
+- **book-to-skill** — converts any technical book PDF into a Claude Code skill
+- **diagram-design** — 27 editorial diagram types: clean HTML/SVG, no Mermaid
+- **awesome-claude-code** — hand-picked Claude Code resources: skills, subagents, status lines, tooling
+
+- **9router** — free AI coding router: Claude Code/Codex/Cursor/Cline to 40+ free providers, auto-fallback, token compression
+- **agentmemory** — persistent memory for AI coding agents; benchmarked retrieval across sessions
+- **archon** — open-source harness builder for deterministic, repeatable AI coding workflows
+- **autogpt** — seminal autonomous agent platform for building and using AI agents
+- **career-ops** — AI job search skill: scans portals, evaluates A-F, tailors CVs, tracks applications
+- **cc-switch** — cross-platform tool for switching between Claude Code, Codex, OpenCode, and others
+- **cl4r1t4s** — AI systems transparency: leaked system prompts for Claude, ChatGPT, Gemini, Grok, Cursor (AGPL-3.0)
+- **claude-code-best-practice** — from vibe coding to agentic engineering: best practices guide
+- **claude-code-game-studios** — 49 agents and 72 workflow skills for game development in Claude Code
+- **claude-code-router** — local control plane for routing across models and orchestrating agent tools
+- **claude-code-templates** — CLI tool for configuring and monitoring Claude Code projects
+- **claude-howto** — visual, example-driven Claude Code guide with copy-paste templates
+- **claude-hud** — Claude Code plugin: context usage, active tools, running agents, todo progress
+- **claude-plugins-official** — official Anthropic-managed Claude Code plugin directory
+- **claude-task-master** — AI task management for Cursor, Lovable, Windsurf, Roo, and others
+- **cli-proxy-api** — wraps Claude Code, Codex, and others as OpenAI/Gemini-compatible API services
+- **code-review-graph** — local-first code intelligence graph for MCP and CLI with benchmarked context reduction
+- **codegraph** — pre-indexed auto-syncing code knowledge graph; 100% local
+- **codex-plugin-cc** — official OpenAI plugin: use Codex from Claude Code for review and delegation
+- **codexbar** — macOS menu bar app for Claude Code and Codex token usage and cost stats
+- **context-mode** — context optimization via MCP and hooks: 98% tool output reduction claimed
+- **cow-agent** — multi-model multi-channel agent harness with skills, memory, and self-evolution
+- **free-claude-code** — setup guide for using Claude Code on free provider tiers
+- **hermes-agent** — adaptive AI agent by NousResearch that grows with usage
+- **huashu-design** — HTML-native design skill: 20 design philosophies, prototypes, slides, MP4 export
+- **knowledge-work-plugins** — official Anthropic plugins for documents, meetings, and research workflows
+- **learn-claude-code** — visual Claude Code guide from basics to advanced agents with copy-paste templates
+- **n8n-mcp** — MCP server for Claude Code, Claude Desktop, and Cursor to build n8n workflows
+- **oh-my-claudecode** — teams-first multi-agent orchestration for Claude Code
+- **omni-route** — free AI gateway: 340 providers, 90+ free, 1200+ models, quota-aware auto-fallback
+- **open-design** — open-source design plugin for Claude Code/Codex/Cursor with HTML/PDF/PPTX/MP4 export
+- **open-montage** — agentic video production: 12 pipelines, 100+ tools, 700+ agent skill files (AGPL-3.0)
+- **promptfoo** — test prompts, agents, and RAGs; red teaming and model comparison (used by Anthropic)
+- **repomix** — packs entire repositories into a single AI-friendly file for LLM context
+- **ruflo** — agent meta-harness for multi-player swarms, autonomous workflows, and RAG integration
+- **superclaude** — configuration framework enhancing Claude Code with commands and cognitive personas
+- **system-prompts-and-models** — extracted system prompts from Claude Code, Cursor, Copilot, Windsurf, and 20+ tools (GPL-3.0)
+- **system-prompts-leaks** — extracted system prompts from Claude Fable 5, GPT-5, Gemini, Grok, and more (CC0-1.0)
+- **understand-anything** — turn any code into an interactive, explorable, queryable knowledge graph
+- **vibe-kanban** — Kanban workflow management for Claude Code and Codex sessions (BloopAI/Apache-2.0)
 
 ## Discovery Sources
 

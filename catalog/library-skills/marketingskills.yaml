@@ -1,0 +1,94 @@
+id: marketingskills
+name: Marketing Skills
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Marketing skills for Claude Code and AI agents — covering CRO, copywriting, SEO, analytics, and growth engineering.
+source:
+  type: external-repository
+  url: https://github.com/coreyhaines31/marketingskills
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: coreyhaines31
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/coreyhaines31/marketingskills
+  stars_observed: 44664
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - planning
+  - documentation
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Writing copy, landing pages, or marketing content with an AI agent.
+  - Applying CRO or growth engineering to a product.
+  - SEO or analytics work driven by an agent.
+do_not_use_when:
+  - Pure engineering tasks with no marketing surface.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/coreyhaines31/marketingskills
+      known_gaps:
+        - Domain-specific — evaluation depends on marketing context.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - copywriting
+    - CRO and growth engineering
+    - SEO and analytics
+  caution_for:
+    - regulated marketing contexts
+  not_recommended_for:
+    - pure engineering tasks
+  keywords:
+    - marketing
+    - cro
+    - copywriting
+    - seo
+    - growth
+    - analytics
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 44k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Behavioral skill — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT marketing skills with 44k stars. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

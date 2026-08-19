@@ -1,0 +1,90 @@
+id: codexbar
+name: CodexBar
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: macOS menu bar app showing usage stats for OpenAI Codex and Claude Code — tokens used, cost, session stats — without requiring login to provider dashboards.
+source:
+  type: external-repository
+  url: https://github.com/steipete/CodexBar
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: steipete
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/steipete/CodexBar
+  stars_observed: 20258
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - codebase-understanding
+task_types:
+  - codebase-navigation
+use_when:
+  - Monitoring Claude Code and Codex token usage from the macOS menu bar.
+  - Tracking cost and session stats without logging in to provider dashboards.
+do_not_use_when:
+  - Non-macOS environments.
+  - Not using Claude Code or Codex.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/steipete/CodexBar
+      known_gaps:
+        - macOS only. Menu bar app — not a skill file.
+distribution:
+  install:
+    type: external-repository
+    command: Install macOS app from the original repository.
+  invoke:
+    command: Runs as a macOS menu bar app.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - macOS Claude Code usage monitoring
+    - token cost visibility
+  caution_for:
+    - macOS only
+  not_recommended_for:
+    - Linux or Windows environments
+  keywords:
+    - monitoring
+    - tokens
+    - cost
+    - menubar
+    - macos
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. steipete (known iOS/macOS developer). 20k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Reads local usage data — no external transmission.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived or Claude Code API changes.
+decision:
+  outcome: defer
+  rationale: MIT macOS usage monitor by credible author. Useful for cost visibility.
+  decided_by: skills-library
+  decided_at: 2026-08-18

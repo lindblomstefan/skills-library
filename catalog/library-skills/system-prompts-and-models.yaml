@@ -1,0 +1,94 @@
+id: system-prompts-and-models
+name: System Prompts and Models of AI Tools
+catalog_visibility: library
+source_type: reference
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Extracted and leaked system prompts from Claude Code, Cursor, Copilot, Windsurf, Devin, and 20+ AI coding tools. Reference for understanding how AI products are instructed. GPL-3.0.
+source:
+  type: external-repository
+  url: https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools
+  license: GNU General Public License v3.0
+  license_spdx: GPL-3.0
+  redistribution: permitted-copyleft
+  modification_allowed: yes-copyleft
+  maintainer: x1xhlol
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools
+  stars_observed: 142873
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - discovery
+  - planning
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - Researching how AI coding tools instruct their models.
+  - Studying system prompt patterns for skill and agent design.
+  - Competitive analysis of AI tool approaches.
+do_not_use_when:
+  - Content may be subject to original tool provider ToS — review before use in commercial products.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools
+      known_gaps:
+        - Reference only. GPL-3.0 copyleft if redistributing derived works.
+distribution:
+  install:
+    type: external-repository
+    command: Browse as reference.
+  invoke:
+    command: Reference use only.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - studying AI tool system prompts
+    - skill and agent design research
+  caution_for:
+    - original provider ToS may restrict reuse
+    - GPL-3.0 copyleft applies to derived works
+  not_recommended_for:
+    - direct commercial reuse without legal review
+  keywords:
+    - system-prompts
+    - leaked
+    - ai-tools
+    - reference
+    - cursor
+    - copilot
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: GPL-3.0. 142k+ stars. Content sourced from extraction/leaks — original provider ToS applies separately.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: medium
+  data_classification: public
+  data_handling_notes: Reference content. Legal review advised before commercial derivative use.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: GPL-3.0 reference catalog of AI system prompts. Useful for skill design research.
+  decided_by: skills-library
+  decided_at: 2026-08-18

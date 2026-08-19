@@ -6,7 +6,6 @@ required:
   - catalog_visibility
   - source_type
   - status
-  - owner
   - summary
   - source
   - domains

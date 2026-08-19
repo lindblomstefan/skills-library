@@ -1,0 +1,97 @@
+id: repomix
+name: Repomix
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Packs an entire repository into a single, AI-friendly file. Perfect for feeding codebases to Claude, ChatGPT, DeepSeek, Gemini, and more. Reduces context overhead for large-repo queries.
+source:
+  type: external-repository
+  url: https://github.com/yamadashy/repomix
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: yamadashy
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/yamadashy/repomix
+  stars_observed: 27917
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - codebase-understanding
+  - repository-analysis
+task_types:
+  - codebase-navigation
+  - project-onboarding
+use_when:
+  - Feeding an entire codebase to an LLM in one context window.
+  - Reducing the overhead of individual file reads for large repos.
+do_not_use_when:
+  - Repo is too large to fit in a context window even compressed.
+  - Sensitive code that should not be packed into a single file.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/yamadashy/repomix
+      known_gaps:
+        - Output size depends on repo size — may exceed context limits.
+distribution:
+  install:
+    type: external-repository
+    command: npx repomix or npm install -g repomix
+  invoke:
+    command: repomix in a target repository.
+  generated_files:
+    - repomix-output.txt (packed repo)
+  dependencies:
+    - node
+  required_permissions:
+    - bash
+    - read-filesystem
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - packing a repo for LLM context
+    - large-repo one-shot queries
+  caution_for:
+    - output may be very large — check context limits
+    - sensitive code included by default
+  not_recommended_for:
+    - repos too large to fit in context
+  keywords:
+    - repomix
+    - pack
+    - context
+    - repository
+    - llm
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. yamadashy. 27k+ stars. Well-maintained.
+risk:
+  level: low
+  security: low
+  privacy: medium
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Packs entire repo — review contents before sharing output.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT repo packer with 27k stars. Widely used in LLM workflows.
+  decided_by: skills-library
+  decided_at: 2026-08-18

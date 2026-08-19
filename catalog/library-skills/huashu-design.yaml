@@ -1,0 +1,93 @@
+id: huashu-design
+name: Huashu Design
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: HTML-native design skill for Claude Code — 20 design philosophies, 5-dimension review, high-fidelity prototypes, slides, animations, and MP4 export. Agent-agnostic.
+source:
+  type: external-repository
+  url: https://github.com/alchaincyf/huashu-design
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: alchaincyf
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/alchaincyf/huashu-design
+  stars_observed: 23209
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - ui-ux
+  - coding
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - Generating high-fidelity HTML prototypes, slides, or animations from Claude Code.
+  - Applying structured design philosophy and review to agent output.
+do_not_use_when:
+  - Backend-only work.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/alchaincyf/huashu-design
+      known_gaps:
+        - HTML/CSS output — verify browser compatibility.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Applied via skill invocation or CLAUDE.md.
+  generated_files:
+    - HTML prototypes, slides, MP4
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - HTML-native prototyping
+    - design philosophy-guided agent output
+    - slides and animation generation
+  caution_for:
+    - browser compatibility varies
+  not_recommended_for:
+    - backend tasks
+  keywords:
+    - design
+    - html
+    - prototype
+    - slides
+    - animation
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 23k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Local HTML generation — no external transmission.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT HTML-native design skill with 23k stars.
+  decided_by: skills-library
+  decided_at: 2026-08-18

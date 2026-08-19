@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: evaluating
 stability: fast-moving
-owner: unassigned
 proposed_by: skills-library
 proposed_at: 2026-08-18
 summary: Context compression layer for AI agents — compresses tool outputs, logs, RAG chunks, and files before they reach the LLM. 60-95% fewer tokens for JSON, 15-20% fewer for coding agents. Available as a library (Python/TypeScript), proxy, MCP server, or agent wrapper (headroom wrap claude|codex|cursor|aider|cline|continue and more). Reversible, local-first.

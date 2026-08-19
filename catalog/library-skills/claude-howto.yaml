@@ -1,0 +1,89 @@
+id: claude-howto
+name: Claude Howto
+catalog_visibility: library
+source_type: reference
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.
+source:
+  type: external-repository
+  url: https://github.com/luongnv89/claude-howto
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: luongnv89
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/luongnv89/claude-howto
+  stars_observed: 41083
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - discovery
+task_types:
+  - project-onboarding
+use_when:
+  - Learning Claude Code through visual examples and templates.
+  - Quick-start reference for common Claude Code patterns.
+do_not_use_when:
+  - Looking for an installable skill — this is a reference guide.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/luongnv89/claude-howto
+      known_gaps:
+        - Reference guide only.
+distribution:
+  install:
+    type: external-repository
+    command: Browse as reference.
+  invoke:
+    command: Reference use only.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - Claude Code visual learning
+    - copy-paste templates
+  caution_for: []
+  not_recommended_for:
+    - direct installation
+  keywords:
+    - howto
+    - guide
+    - examples
+    - templates
+    - claude-code
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 41k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Reference only.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT Claude Code how-to guide with 41k stars.
+  decided_by: skills-library
+  decided_at: 2026-08-18

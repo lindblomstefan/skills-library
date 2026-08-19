@@ -1,0 +1,91 @@
+id: claude-code-router
+name: Claude Code Router
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Local control plane for every AI agent — route across models, fuse capabilities, orchestrate tools, and stay in full control. One endpoint for Claude Code, Codex, Cursor, and more.
+source:
+  type: external-repository
+  url: https://github.com/musistudio/claude-code-router
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: musistudio
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/musistudio/claude-code-router
+  stars_observed: 36691
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - architecture
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - Routing requests across multiple AI models from a single control plane.
+  - Orchestrating tools across Claude Code, Codex, and other agents.
+do_not_use_when:
+  - Single-model, single-agent workflows.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/musistudio/claude-code-router
+      known_gaps:
+        - Infrastructure tool — review routing rules before use.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Runs as a local control plane service.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - multi-model routing
+    - agent orchestration control plane
+  caution_for:
+    - review routing rules and security
+  not_recommended_for:
+    - simple single-model workflows
+  keywords:
+    - router
+    - control-plane
+    - multi-model
+    - orchestration
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 36k+ stars.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Routes agent requests — review network exposure.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT agent router with 36k stars. Infrastructure candidate.
+  decided_by: skills-library
+  decided_at: 2026-08-18

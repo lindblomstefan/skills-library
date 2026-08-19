@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: evaluating
 stability: stable
-owner: unassigned
 proposed_by: skills-library
 proposed_at: 2026-08-14
 summary: Official Anthropic skill suite for creating and editing real Office documents — formatted Word reports, Excel models with calculations, PowerPoint decks, and filled PDF forms.

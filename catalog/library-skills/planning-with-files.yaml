@@ -1,0 +1,98 @@
+id: planning-with-files
+name: Planning with Files
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Persistent file-based planning for AI coding agents — crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gating. Manus-style.
+source:
+  type: external-repository
+  url: https://github.com/OthmanAdi/planning-with-files
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: OthmanAdi
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/OthmanAdi/planning-with-files
+  stars_observed: 26217
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - planning
+  - coding
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Long-running agentic tasks that must survive context resets.
+  - Deterministic task completion gates are needed.
+  - Planning must persist across /clear or compaction events.
+do_not_use_when:
+  - Short single-session tasks that don't need plan persistence.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/OthmanAdi/planning-with-files
+      known_gaps:
+        - Needs evaluation for specific planning patterns.
+distribution:
+  install:
+    type: external-repository
+    command: Install via npm or follow repository instructions.
+  invoke:
+    command: Plans persist as markdown files — re-injected each turn.
+  generated_files:
+    - Plan markdown files
+  dependencies:
+    - node
+  required_permissions:
+    - bash
+    - write-filesystem
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - long-running agentic tasks
+    - crash-proof planning
+    - context compaction resilience
+  caution_for:
+    - teams that prefer in-memory planning
+  not_recommended_for:
+    - quick single-turn tasks
+  keywords:
+    - planning
+    - persistence
+    - files
+    - context-rot
+    - manus
+    - deterministic
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 26k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Writes plan files locally — no external transmission.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT persistent planning skill with 26k stars. Strong fit for long agentic sessions.
+  decided_by: skills-library
+  decided_at: 2026-08-18

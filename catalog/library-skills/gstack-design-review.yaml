@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: candidate
 stability: fast-moving
-owner: unassigned
 proposed_by: agent-research
 proposed_at: 2026-08-13
 summary: Live visual audit and fix-loop skill for user-facing product surfaces.

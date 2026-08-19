@@ -1,0 +1,95 @@
+id: n8n-mcp
+name: n8n MCP
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: MCP server for Claude Desktop, Claude Code, Windsurf, and Cursor to build n8n workflows. Lets AI agents create and manage automation workflows in n8n directly.
+source:
+  type: external-repository
+  url: https://github.com/czlonkowski/n8n-mcp
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: czlonkowski
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/czlonkowski/n8n-mcp
+  stars_observed: 22717
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - Building or managing n8n automation workflows from Claude Code.
+  - Connecting AI agents to n8n automation pipelines.
+do_not_use_when:
+  - Not using n8n.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/czlonkowski/n8n-mcp
+      known_gaps:
+        - Requires n8n installation and MCP server setup.
+distribution:
+  install:
+    type: external-repository
+    command: Install following MCP server instructions from the repository.
+  invoke:
+    command: Available as MCP tools after server setup.
+  generated_files: []
+  dependencies:
+    - n8n
+    - mcp-server
+  required_permissions:
+    - bash
+  required_secrets:
+    - n8n API credentials
+  network_access: required
+routing:
+  recommend_for:
+    - n8n workflow creation from Claude Code
+    - agent-driven automation
+  caution_for:
+    - requires n8n and MCP setup
+  not_recommended_for:
+    - environments without n8n
+  keywords:
+    - n8n
+    - mcp
+    - automation
+    - workflows
+    - integration
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 22k+ stars.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_handling_notes: Connects to n8n — data flows depend on workflow configuration.
+  data_classification: internal
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived or n8n MCP API changes.
+decision:
+  outcome: defer
+  rationale: MIT n8n MCP server with 22k stars. Good fit for n8n users.
+  decided_by: skills-library
+  decided_at: 2026-08-18

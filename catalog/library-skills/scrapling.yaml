@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: evaluating
 stability: stable
-owner: unassigned
 proposed_by: skills-library
 proposed_at: 2026-08-16
 summary: Official skill for the Scrapling adaptive web scraping framework — handles everything from single requests to full-scale crawls. Bypasses anti-bot systems (Cloudflare Turnstile), stealth headless browsing, adaptive element relocation when pages change, spider framework with pause/resume and proxy rotation. Requires Python 3.10+.

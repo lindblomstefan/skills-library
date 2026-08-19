@@ -1,0 +1,86 @@
+id: wshobson-agents
+name: Agents (wshobson)
+catalog_visibility: library
+source_type: reference
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, GitHub Copilot, and Gemini CLI — curated collection of agent plugins.
+source:
+  type: external-repository
+  url: https://github.com/wshobson/agents
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: wshobson
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/wshobson/agents
+  stars_observed: 38877
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - discovery
+task_types:
+  - project-onboarding
+use_when:
+  - Discovering agent plugins compatible across multiple AI coding platforms.
+  - Looking for cross-harness agent solutions.
+do_not_use_when:
+  - Looking for a specific single-purpose skill — use this library instead.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/wshobson/agents
+      known_gaps:
+        - Reference marketplace — individual plugins need individual evaluation.
+distribution:
+  install:
+    type: external-repository
+    command: Browse as reference; install individual plugins from their sources.
+  invoke:
+    command: Reference use only.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - discovering cross-platform agent plugins
+  caution_for: []
+  not_recommended_for:
+    - direct installation without plugin-level review
+  keywords:
+    - agents
+    - marketplace
+    - plugins
+    - cross-platform
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 38k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Reference catalog — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT plugin marketplace. Useful as discovery reference.
+  decided_by: skills-library
+  decided_at: 2026-08-18

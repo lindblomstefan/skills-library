@@ -3,7 +3,6 @@ name: Example Skill
 source_type: candidate
 status: candidate
 stability: unknown
-owner: unassigned
 proposed_by: unknown
 proposed_at: null
 

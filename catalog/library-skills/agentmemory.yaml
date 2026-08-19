@@ -1,0 +1,98 @@
+id: agentmemory
+name: Agent Memory
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Number-one rated persistent memory for AI coding agents based on real-world benchmarks. Stores, retrieves, and injects relevant context across sessions for Claude Code and other agents.
+source:
+  type: external-repository
+  url: https://github.com/rohitg00/agentmemory
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: rohitg00
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/rohitg00/agentmemory
+  stars_observed: 27121
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - codebase-understanding
+  - coding
+  - planning
+task_types:
+  - project-onboarding
+  - codebase-navigation
+use_when:
+  - Persistent memory across agent sessions with benchmarked retrieval.
+  - Long-running projects where session history needs to be queryable.
+do_not_use_when:
+  - Single-session tasks with no continuity needs.
+  - Privacy-sensitive repos.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/rohitg00/agentmemory
+      known_gaps:
+        - Benchmark claims need independent verification.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies:
+    - python3
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: unknown
+routing:
+  recommend_for:
+    - persistent agent memory
+    - cross-session context retrieval
+  caution_for:
+    - sensitive repositories
+  not_recommended_for:
+    - single-turn tasks
+  keywords:
+    - memory
+    - persistent
+    - retrieval
+    - context
+    - sessions
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Apache-2.0. 27k+ stars.
+risk:
+  level: medium
+  security: medium
+  privacy: high
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: Stores session context — review privacy for sensitive repos.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: Apache-2.0 persistent memory with 27k stars. Overlaps with claude-mem.
+  decided_by: skills-library
+  decided_at: 2026-08-18
+relationships:
+  overlaps_with:
+    - claude-mem

@@ -1,0 +1,92 @@
+id: andrej-karpathy-skills
+name: Andrej Karpathy Skills
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: A single CLAUDE.md file derived from Andrej Karpathy's observations on LLM coding pitfalls, designed to improve Claude Code behavior and reduce common mistakes.
+source:
+  type: external-repository
+  url: https://github.com/multica-ai/andrej-karpathy-skills
+  license: unknown
+  license_spdx: unknown
+  redistribution: unknown
+  modification_allowed: unknown
+  maintainer: multica-ai
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/multica-ai/andrej-karpathy-skills
+  stars_observed: 203413
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - project-onboarding
+  - pull-request-review
+use_when:
+  - Setting up Claude Code with battle-tested behavioral guidelines.
+  - Reducing common LLM coding mistakes based on expert observations.
+do_not_use_when:
+  - Looking for domain-specific skills beyond general coding behavior.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/multica-ai/andrej-karpathy-skills
+      known_gaps:
+        - License needs review before redistribution.
+distribution:
+  install:
+    type: external-repository
+    command: Copy CLAUDE.md from the repository into your project.
+  invoke:
+    command: Applied automatically via CLAUDE.md on every Claude Code session.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - improving Claude Code behavior
+    - reducing LLM coding pitfalls
+    - general development best practices
+  caution_for:
+    - license unclear — review before organizational adoption
+  not_recommended_for:
+    - domain-specific workflows requiring dedicated skills
+  keywords:
+    - karpathy
+    - claude.md
+    - best practices
+    - coding behavior
+    - llm pitfalls
+trust:
+  level: high
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Derived from Andrej Karpathy's public observations. 203k+ stars. License not declared.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: CLAUDE.md only — no external calls or data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived or superseded by official Anthropic guidance.
+decision:
+  outcome: defer
+  rationale: Extremely high-star CLAUDE.md skill from respected practitioner. License needs clarification.
+  decided_by: skills-library
+  decided_at: 2026-08-18

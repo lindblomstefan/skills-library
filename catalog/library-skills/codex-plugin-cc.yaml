@@ -1,0 +1,94 @@
+id: codex-plugin-cc
+name: Codex Plugin for Claude Code
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Official OpenAI plugin — use Codex from Claude Code to review code or delegate tasks. Cross-runtime delegation between Claude Code and Codex CLI.
+source:
+  type: external-repository
+  url: https://github.com/openai/codex-plugin-cc
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
+  redistribution: permitted-with-attribution
+  modification_allowed: yes
+  maintainer: openai
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/openai/codex-plugin-cc
+  stars_observed: 31997
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - repository-analysis
+task_types:
+  - pull-request-review
+  - impact-analysis
+use_when:
+  - Delegating code review tasks from Claude Code to Codex.
+  - Cross-runtime agent collaboration between Claude and Codex.
+do_not_use_when:
+  - Only using Claude Code without Codex CLI installed.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: native
+      evidence:
+        - https://github.com/openai/codex-plugin-cc
+      known_gaps:
+        - Requires Codex CLI installed and configured.
+distribution:
+  install:
+    type: external-repository
+    command: Install following Claude Code plugin instructions.
+  invoke:
+    command: Invoked via Claude Code plugin system.
+  generated_files: []
+  dependencies:
+    - codex-cli
+  required_permissions:
+    - bash
+  required_secrets:
+    - OpenAI API key for Codex
+  network_access: required
+routing:
+  recommend_for:
+    - cross-runtime code review
+    - Claude Code + Codex collaboration
+  caution_for:
+    - requires Codex CLI and OpenAI API key
+  not_recommended_for:
+    - environments without Codex CLI
+  keywords:
+    - codex
+    - cross-runtime
+    - plugin
+    - code-review
+    - openai
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Apache-2.0. Official OpenAI plugin. 31k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: repository-sensitive
+  data_handling_notes: Code sent to Codex CLI — subject to OpenAI data policies.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - OpenAI deprecates Codex CLI or plugin interface.
+decision:
+  outcome: defer
+  rationale: Apache-2.0 official OpenAI plugin for cross-runtime delegation. High trust.
+  decided_by: skills-library
+  decided_at: 2026-08-18

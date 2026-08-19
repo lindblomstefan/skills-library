@@ -1,0 +1,92 @@
+id: taste-skill
+name: Taste Skill
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Gives your AI agent good taste — stops generation of boring, generic, AI-slop output. Style and quality guidance for code and prose.
+source:
+  type: external-repository
+  url: https://github.com/Leonxlnx/taste-skill
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: Leonxlnx
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/Leonxlnx/taste-skill
+  stars_observed: 77456
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - documentation
+task_types:
+  - pull-request-review
+  - impact-analysis
+use_when:
+  - Agent output feels generic, verbose, or formulaic.
+  - Code or prose quality should reflect style and craft.
+  - Wanting opinionated, high-signal output over safe averages.
+do_not_use_when:
+  - Compliance or standardized output is required.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/Leonxlnx/taste-skill
+      known_gaps:
+        - Subjective — taste definition may vary by team.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Applied via CLAUDE.md or skill invocation.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - improving output quality and style
+    - anti-slop writing and code
+  caution_for:
+    - teams with strong existing style standards
+  not_recommended_for:
+    - regulated output requiring neutrality
+  keywords:
+    - taste
+    - quality
+    - style
+    - anti-slop
+    - craft
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 77k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Behavioral skill — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT quality/style skill with 77k stars. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

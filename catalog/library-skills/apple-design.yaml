@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: evaluating
 stability: stable
-owner: unassigned
 proposed_by: skills-library
 proposed_at: 2026-08-15
 summary: Apple's approach to interface design and fluid, physical motion translated for the web — springs, gesture physics, interruptibility, translucent materials, typography, and the eight design principles from WWDC talks.

@@ -1,0 +1,94 @@
+id: academic-research-skills
+name: Academic Research Skills
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Academic Research Skills for Claude Code — structured research workflow covering research, writing, review, revision, and finalization cycles.
+source:
+  type: external-repository
+  url: https://github.com/Imbad0202/academic-research-skills
+  license: unknown
+  license_spdx: NOASSERTION
+  redistribution: unknown
+  modification_allowed: unknown
+  maintainer: Imbad0202
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/Imbad0202/academic-research-skills
+  stars_observed: 42833
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - documentation
+  - planning
+  - discovery
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Writing academic papers or research reports with an AI agent.
+  - Applying structured review and revision cycles to research output.
+  - Literature synthesis and structured writing workflows.
+do_not_use_when:
+  - Non-academic writing or quick documentation tasks.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/Imbad0202/academic-research-skills
+      known_gaps:
+        - License needs review. Academic domain focus.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - academic writing
+    - research synthesis
+    - structured review cycles
+  caution_for:
+    - license unclear
+  not_recommended_for:
+    - casual or quick documentation
+  keywords:
+    - academic
+    - research
+    - writing
+    - review
+    - paper
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: 42k+ stars. License NOASSERTION — needs manual review.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Behavioral skill — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: High-star academic research skill. License needs clarification.
+  decided_by: skills-library
+  decided_at: 2026-08-18

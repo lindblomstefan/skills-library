@@ -1,0 +1,95 @@
+id: autogpt
+name: AutoGPT
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Vision of accessible AI for everyone — autonomous agent platform providing tools for building and using AI agents. One of the earliest and most-starred agent frameworks.
+source:
+  type: external-repository
+  url: https://github.com/Significant-Gravitas/AutoGPT
+  license: unknown
+  license_spdx: NOASSERTION
+  redistribution: unknown
+  modification_allowed: unknown
+  maintainer: Significant-Gravitas
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/Significant-Gravitas/AutoGPT
+  stars_observed: 186661
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+  - discovery
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Studying autonomous agent architecture patterns.
+  - Building agent systems with tool use and task planning.
+do_not_use_when:
+  - Looking for a Claude Code-specific skill.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: unknown
+      evidence:
+        - https://github.com/Significant-Gravitas/AutoGPT
+      known_gaps:
+        - License needs review. Not Claude Code-native.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies:
+    - python3
+  required_permissions:
+    - bash
+  required_secrets:
+    - LLM provider API key
+  network_access: required
+routing:
+  recommend_for:
+    - studying autonomous agent patterns
+    - building tool-using agents
+  caution_for:
+    - license unclear
+    - not Claude Code-native
+  not_recommended_for:
+    - direct Claude Code integration without adaptation
+  keywords:
+    - autonomous
+    - agent
+    - autogpt
+    - task-planning
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: Significant-Gravitas. 186k+ stars. License NOASSERTION.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Autonomous agent — may access filesystem, web, and external services.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: Seminal autonomous agent framework. License needs review.
+  decided_by: skills-library
+  decided_at: 2026-08-18

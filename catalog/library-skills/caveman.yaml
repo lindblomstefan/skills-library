@@ -1,0 +1,93 @@
+id: caveman
+name: Caveman
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Claude Code skill that cuts ~65% of tokens by having the agent communicate in compressed caveman-style prose. Token reduction without losing reasoning quality.
+source:
+  type: external-repository
+  url: https://github.com/JuliusBrussee/caveman
+  license: unknown
+  license_spdx: NOASSERTION
+  redistribution: unknown
+  modification_allowed: unknown
+  maintainer: JuliusBrussee
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/JuliusBrussee/caveman
+  stars_observed: 98778
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+task_types:
+  - codebase-navigation
+  - impact-analysis
+use_when:
+  - Token budget is tight and verbose model output is consuming too many tokens.
+  - Long agentic sessions where output token cost is a concern.
+  - Complementing headroom or other compression approaches.
+do_not_use_when:
+  - Output must be readable by non-technical stakeholders.
+  - Compliance or audit trails require readable reasoning.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/JuliusBrussee/caveman
+      known_gaps:
+        - License needs review. Output readability may vary.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Applied via CLAUDE.md or skill invocation.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - token reduction in long sessions
+    - cost optimization for agentic workflows
+  caution_for:
+    - stakeholder-facing outputs
+    - audit-trail requirements
+  not_recommended_for:
+    - readable documentation generation
+  keywords:
+    - token
+    - compression
+    - caveman
+    - cost
+    - output-reduction
+trust:
+  level: medium
+  license_state: needs-review
+  maintenance_state: active
+  provenance_notes: 98k+ stars. License NOASSERTION — needs manual review.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Behavioral skill — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: High-star token reduction skill. License needs clarification before recommending.
+  decided_by: skills-library
+  decided_at: 2026-08-18

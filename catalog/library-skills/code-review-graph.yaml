@@ -1,0 +1,99 @@
+id: code-review-graph
+name: Code Review Graph
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Local-first code intelligence graph for MCP and CLI — builds a persistent map of the codebase so AI tools read only what matters. Benchmarked context reductions on reviews and large-repo workflows.
+source:
+  type: external-repository
+  url: https://github.com/tirth8205/code-review-graph
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: tirth8205
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/tirth8205/code-review-graph
+  stars_observed: 30463
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - codebase-understanding
+  - repository-analysis
+  - knowledge-graph
+task_types:
+  - pull-request-review
+  - codebase-navigation
+  - impact-analysis
+use_when:
+  - Reducing context size during code review with AI tools.
+  - Building a persistent code intelligence map for MCP.
+do_not_use_when:
+  - Small single-file projects.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/tirth8205/code-review-graph
+      known_gaps:
+        - Overlaps with graphify and codegraph — different focus on reviews.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Available via MCP or CLI.
+  generated_files: []
+  dependencies:
+    - python3
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - context reduction during code review
+    - persistent code intelligence map
+  caution_for: []
+  not_recommended_for:
+    - small projects
+  keywords:
+    - code-review
+    - graph
+    - mcp
+    - context-reduction
+    - intelligence
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 30k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Local only.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT code review graph with 30k stars. Overlaps with graphify.
+  decided_by: skills-library
+  decided_at: 2026-08-18
+relationships:
+  overlaps_with:
+    - graphify
+    - codegraph
+    - understand-anything

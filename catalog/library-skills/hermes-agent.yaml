@@ -1,0 +1,91 @@
+id: hermes-agent
+name: Hermes Agent
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: The agent that grows with you — adaptive AI agent by NousResearch. Learns from usage and evolves its capabilities over time.
+source:
+  type: external-repository
+  url: https://github.com/NousResearch/hermes-agent
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: NousResearch
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/NousResearch/hermes-agent
+  stars_observed: 232117
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Building adaptive agent systems that improve with use.
+  - NousResearch model workflows.
+do_not_use_when:
+  - Simple single-turn tasks.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: unknown
+      evidence:
+        - https://github.com/NousResearch/hermes-agent
+      known_gaps:
+        - Primary target may not be Claude Code — needs evaluation.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: required
+routing:
+  recommend_for:
+    - adaptive agent systems
+    - NousResearch model workflows
+  caution_for:
+    - may target different runtimes than Claude Code
+  not_recommended_for:
+    - simple single-turn tasks
+  keywords:
+    - agent
+    - adaptive
+    - nousresearch
+    - hermes
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. NousResearch. 232k+ stars.
+risk:
+  level: medium
+  security: medium
+  privacy: medium
+  compliance: unknown
+  data_classification: internal
+  data_handling_notes: Depends on agent configuration.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT adaptive agent by NousResearch. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

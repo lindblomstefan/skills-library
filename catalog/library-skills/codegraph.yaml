@@ -1,0 +1,96 @@
+id: codegraph
+name: Codegraph
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Pre-indexed code knowledge graph that auto-syncs on code changes for Claude Code, Codex, Gemini, Cursor, and more. Fewer tokens, fewer tool calls, 100% local.
+source:
+  type: external-repository
+  url: https://github.com/colbymchenry/codegraph
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: colbymchenry
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/colbymchenry/codegraph
+  stars_observed: 66808
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - codebase-understanding
+  - knowledge-graph
+  - repository-analysis
+task_types:
+  - codebase-navigation
+  - relationship-discovery
+use_when:
+  - Pre-indexing a codebase to reduce token cost during agent sessions.
+  - Auto-syncing knowledge graph on code changes.
+do_not_use_when:
+  - Small or single-file projects.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/colbymchenry/codegraph
+      known_gaps:
+        - Overlaps with graphify — different sync approach.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - pre-indexed codebase navigation
+    - auto-syncing knowledge graphs
+    - token reduction in large repos
+  caution_for: []
+  not_recommended_for:
+    - small single-file projects
+  keywords:
+    - knowledge-graph
+    - code-index
+    - auto-sync
+    - token-reduction
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 66k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Local only — no external transmission.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT auto-syncing code knowledge graph. Overlaps with graphify — different approach.
+  decided_by: skills-library
+  decided_at: 2026-08-18
+relationships:
+  overlaps_with:
+    - graphify
+    - understand-anything

@@ -1,0 +1,91 @@
+id: superclaude
+name: SuperClaude Framework
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Configuration framework that enhances Claude Code with specialized commands, cognitive personas, and development methodologies. Structured approach to Claude Code behavior.
+source:
+  type: external-repository
+  url: https://github.com/SuperClaude-Org/SuperClaude_Framework
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: SuperClaude-Org
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/SuperClaude-Org/SuperClaude_Framework
+  stars_observed: 23835
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Enhancing Claude Code with specialized commands and cognitive personas.
+  - Applying structured development methodologies to Claude Code sessions.
+do_not_use_when:
+  - Preferring minimal configuration over framework-level setup.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: native
+      evidence:
+        - https://github.com/SuperClaude-Org/SuperClaude_Framework
+      known_gaps:
+        - Framework-level — evaluate fit with existing workflow.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Applied via CLAUDE.md and custom commands.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - Claude Code command and persona enhancement
+    - structured development methodology
+  caution_for:
+    - teams preferring minimal setup
+  not_recommended_for:
+    - lightweight or single-task sessions
+  keywords:
+    - framework
+    - commands
+    - personas
+    - methodology
+    - claude-code
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 23k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Behavioral framework — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT Claude Code enhancement framework with 23k stars.
+  decided_by: skills-library
+  decided_at: 2026-08-18

@@ -1,0 +1,93 @@
+id: claude-code-game-studios
+name: Claude Code Game Studios
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Turn Claude Code into a full game development studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy (design, engineering, QA, production).
+source:
+  type: external-repository
+  url: https://github.com/Donchitos/Claude-Code-Game-Studios
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: Donchitos
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/Donchitos/Claude-Code-Game-Studios
+  stars_observed: 24033
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+  - ui-ux
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Building games with Claude Code using structured studio workflows.
+  - Multi-agent coordination for game design, engineering, and QA.
+do_not_use_when:
+  - Non-game development projects.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: native
+      evidence:
+        - https://github.com/Donchitos/Claude-Code-Game-Studios
+      known_gaps:
+        - Domain-specific — game development only.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - game development with Claude Code
+    - multi-agent game studio coordination
+  caution_for:
+    - game domain specific
+  not_recommended_for:
+    - non-game software projects
+  keywords:
+    - game-dev
+    - studio
+    - agents
+    - workflow
+    - coordination
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 24k+ stars. 72 workflow skills.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Behavioral skills — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT game studio skill collection with 72 workflow skills. Niche but comprehensive.
+  decided_by: skills-library
+  decided_at: 2026-08-18

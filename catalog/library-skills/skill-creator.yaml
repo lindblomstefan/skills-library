@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: evaluating
 stability: stable
-owner: unassigned
 proposed_by: skills-library
 proposed_at: 2026-08-14
 summary: Official Anthropic meta-skill that generates standardized skill files and folder structures from a plain-English description, including correct YAML frontmatter and SKILL.md scaffolding.

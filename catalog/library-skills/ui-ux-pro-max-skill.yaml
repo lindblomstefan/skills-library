@@ -1,0 +1,93 @@
+id: ui-ux-pro-max-skill
+name: UI/UX Pro Max Skill
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: AI skill providing design intelligence for building professional UI/UX across multiple platforms. Covers layout, component design, accessibility, and visual hierarchy.
+source:
+  type: external-repository
+  url: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: nextlevelbuilder
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+  stars_observed: 117672
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - ui-ux
+  - coding
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - Building professional UI/UX across web or mobile platforms.
+  - Needing design intelligence beyond basic layout generation.
+  - Improving visual hierarchy, accessibility, and component quality.
+do_not_use_when:
+  - Backend-only work with no UI surface.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+      known_gaps:
+        - Needs local evaluation across target platforms.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - professional UI/UX design
+    - multi-platform design work
+    - design quality improvement
+  caution_for:
+    - teams without a design baseline
+  not_recommended_for:
+    - pure backend or CLI tooling
+  keywords:
+    - ui
+    - ux
+    - design
+    - components
+    - accessibility
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 117k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Design skill only — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: High-star MIT UI/UX skill. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

@@ -1,0 +1,93 @@
+id: open-montage
+name: OpenMontage
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: World's first open-source agentic video production system — 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turns your AI coding assistant into a full video production studio. AGPL-3.0.
+source:
+  type: external-repository
+  url: https://github.com/calesthio/OpenMontage
+  license: GNU Affero General Public License v3.0
+  license_spdx: AGPL-3.0
+  redistribution: permitted-copyleft
+  modification_allowed: yes-copyleft
+  maintainer: calesthio
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/calesthio/OpenMontage
+  stars_observed: 48640
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - AI-assisted video production workflows.
+  - Agentic video editing, scripting, and pipeline management.
+do_not_use_when:
+  - Non-video production tasks.
+  - Environments where AGPL-3.0 is not acceptable.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/calesthio/OpenMontage
+      known_gaps:
+        - Domain-specific — video production only. AGPL-3.0.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: unknown
+routing:
+  recommend_for:
+    - agentic video production
+    - video pipeline management
+  caution_for:
+    - AGPL-3.0 copyleft
+  not_recommended_for:
+    - non-video workflows
+  keywords:
+    - video
+    - production
+    - agentic
+    - pipelines
+    - montage
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: AGPL-3.0. 48k+ stars. 700+ skill files.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: medium
+  data_classification: internal
+  data_handling_notes: Video production pipelines — data handling depends on content.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: AGPL-3.0 agentic video production with 48k stars. Niche but comprehensive.
+  decided_by: skills-library
+  decided_at: 2026-08-18

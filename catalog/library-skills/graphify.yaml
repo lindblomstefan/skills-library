@@ -4,7 +4,6 @@ catalog_visibility: library
 source_type: external
 status: evaluating
 stability: fast-moving
-owner: unassigned
 proposed_by: agent-research
 proposed_at: 2026-08-12
 summary: Repository knowledge graph tooling that builds a navigable graph from code and documentation so agents can query structure before browsing raw files.

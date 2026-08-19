@@ -1,0 +1,89 @@
+id: claude-hud
+name: Claude HUD
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Claude Code plugin that shows what's happening — context usage, active tools, running agents, and todo progress. Real-time visibility into Claude Code sessions.
+source:
+  type: external-repository
+  url: https://github.com/jarrodwatts/claude-hud
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: jarrodwatts
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/jarrodwatts/claude-hud
+  stars_observed: 27452
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - codebase-understanding
+task_types:
+  - codebase-navigation
+  - project-onboarding
+use_when:
+  - Monitoring Claude Code context usage and active tools in real time.
+  - Visibility into running agents and todo progress during sessions.
+do_not_use_when:
+  - Headless environments without display.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: native
+      evidence:
+        - https://github.com/jarrodwatts/claude-hud
+      known_gaps:
+        - Plugin — requires Claude Code plugin system.
+distribution:
+  install:
+    type: external-repository
+    command: Install as a Claude Code plugin from the original repository.
+  invoke:
+    command: Active automatically as a plugin.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - real-time Claude Code session monitoring
+    - context usage visibility
+  caution_for: []
+  not_recommended_for:
+    - headless environments
+  keywords:
+    - hud
+    - monitoring
+    - context
+    - plugin
+    - visibility
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. jarrodwatts. 27k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Reads local session state — no external transmission.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived or Claude Code plugin API changes.
+decision:
+  outcome: defer
+  rationale: MIT Claude Code HUD plugin with 27k stars. Clear utility for session visibility.
+  decided_by: skills-library
+  decided_at: 2026-08-18

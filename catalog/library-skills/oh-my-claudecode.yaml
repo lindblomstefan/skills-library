@@ -1,0 +1,91 @@
+id: oh-my-claudecode
+name: Oh My Claude Code
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Teams-first multi-agent orchestration for Claude Code — coordinate multiple Claude Code agents as a team, with structured collaboration patterns.
+source:
+  type: external-repository
+  url: https://github.com/Yeachan-Heo/oh-my-claudecode
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: Yeachan-Heo
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/Yeachan-Heo/oh-my-claudecode
+  stars_observed: 38621
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - architecture-review
+  - project-onboarding
+use_when:
+  - Coordinating multiple Claude Code agents as a team.
+  - Teams-first multi-agent workflows.
+do_not_use_when:
+  - Single-agent tasks.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: native
+      evidence:
+        - https://github.com/Yeachan-Heo/oh-my-claudecode
+      known_gaps:
+        - Needs evaluation for team size and coordination patterns.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - multi-agent team coordination
+    - teams-first Claude Code workflows
+  caution_for:
+    - complex setup
+  not_recommended_for:
+    - single-agent tasks
+  keywords:
+    - multi-agent
+    - teams
+    - orchestration
+    - claude-code
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 38k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Local orchestration — no external transmission.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT teams-first multi-agent orchestration for Claude Code.
+  decided_by: skills-library
+  decided_at: 2026-08-18

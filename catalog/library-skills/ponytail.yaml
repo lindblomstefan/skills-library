@@ -1,0 +1,93 @@
+id: ponytail
+name: Ponytail
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Makes your AI agent think like the laziest senior developer in the room — favoring deletion over addition, simplicity over complexity. Best code is code you never wrote.
+source:
+  type: external-repository
+  url: https://github.com/DietrichGebert/ponytail
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: DietrichGebert
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/DietrichGebert/ponytail
+  stars_observed: 104817
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - coding
+  - planning
+task_types:
+  - pull-request-review
+  - impact-analysis
+use_when:
+  - Agent is adding unnecessary complexity or over-engineering.
+  - Wanting the simplest, leanest solution possible.
+  - Reducing code surface area and maintenance burden.
+do_not_use_when:
+  - Complex architectural problems that genuinely require thorough implementation.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/DietrichGebert/ponytail
+      known_gaps:
+        - Needs evaluation for specific codebase patterns.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Applied via CLAUDE.md or skill invocation.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - reducing over-engineering
+    - simplifying solutions
+    - deletion-first thinking
+  caution_for:
+    - complex systems that need thorough implementation
+  not_recommended_for:
+    - greenfield complex architecture design
+  keywords:
+    - simplicity
+    - lazy
+    - deletion
+    - lean
+    - senior-dev
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 104k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Behavioral skill only.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: High-star MIT behavioral skill. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

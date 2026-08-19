@@ -1,0 +1,97 @@
+id: book-to-skill
+name: Book to Skill
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Converts any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work. Turns book knowledge into an always-available agent skill.
+source:
+  type: external-repository
+  url: https://github.com/virgiliojr94/book-to-skill
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: virgiliojr94
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/virgiliojr94/book-to-skill
+  stars_observed: 22593
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - planning
+  - documentation
+  - codebase-understanding
+task_types:
+  - project-onboarding
+use_when:
+  - A technical book should be accessible as an agent skill.
+  - Team reference material needs to be queryable by an AI agent.
+  - Converting proprietary or licensed PDFs into local skills.
+do_not_use_when:
+  - The PDF content is copyrighted and redistribution is not permitted.
+  - Real-time web lookup is sufficient.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/virgiliojr94/book-to-skill
+      known_gaps:
+        - PDF copyright must be checked before conversion.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files:
+    - Skill files derived from PDF
+  dependencies:
+    - python3
+  required_permissions:
+    - bash
+    - read-filesystem
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - converting technical books to skills
+    - team knowledge base creation
+  caution_for:
+    - copyright must be verified before use
+  not_recommended_for:
+    - copyrighted material without redistribution rights
+  keywords:
+    - pdf
+    - book
+    - skill-creation
+    - knowledge-base
+    - reference
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 22k+ stars. Content copyright is user responsibility.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: medium
+  data_classification: internal
+  data_handling_notes: PDF processing is local. Copyright of source material is user responsibility.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT PDF-to-skill tool with 22k stars. Creative use case — copyright responsibility lies with user.
+  decided_by: skills-library
+  decided_at: 2026-08-18

@@ -1,0 +1,97 @@
+id: last30days-skill
+name: Last 30 Days Skill
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: fast-moving
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Research skill that queries any topic across Reddit, X, YouTube, Hacker News, Polymarket, and the web — then synthesizes a grounded, signal-rich summary of the last 30 days.
+source:
+  type: external-repository
+  url: https://github.com/mvanhorn/last30days-skill
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: mvanhorn
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/mvanhorn/last30days-skill
+  stars_observed: 58521
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - discovery
+  - planning
+task_types:
+  - project-onboarding
+  - relationship-discovery
+use_when:
+  - Needing a grounded summary of recent community sentiment on a topic.
+  - Research phase before deciding on technology, library, or approach.
+  - Tracking what practitioners are saying about a skill or tool.
+do_not_use_when:
+  - Needing real-time or live data — this synthesizes recent-past signals.
+  - Sensitive topics where web search is inappropriate.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/mvanhorn/last30days-skill
+      known_gaps:
+        - Requires network access and potentially API keys for some sources.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Follow repository instructions.
+  generated_files: []
+  dependencies: []
+  required_permissions:
+    - bash
+  required_secrets:
+    - API keys may be required for some data sources
+  network_access: required
+routing:
+  recommend_for:
+    - technology research
+    - community sentiment analysis
+    - skill and tool research
+  caution_for:
+    - sensitive or proprietary topics
+  not_recommended_for:
+    - real-time monitoring
+  keywords:
+    - research
+    - reddit
+    - twitter
+    - hackernews
+    - synthesis
+    - sentiment
+trust:
+  level: medium
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 58k+ stars.
+risk:
+  level: low
+  security: low
+  privacy: medium
+  compliance: unknown
+  data_classification: public
+  data_handling_notes: Searches public web sources. No private data sent.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived or data sources blocked.
+decision:
+  outcome: defer
+  rationale: MIT research skill with strong source diversity. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18

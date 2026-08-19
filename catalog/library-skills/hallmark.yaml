@@ -1,0 +1,93 @@
+id: hallmark
+name: Hallmark
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: github-ranking-ai
+proposed_at: 2026-08-18
+summary: Anti-AI-slop design skill for Claude Code, Cursor, and Codex — enforces quality design principles to prevent generic, formulaic UI output. By Nutlope.
+source:
+  type: external-repository
+  url: https://github.com/Nutlope/hallmark
+  license: MIT License
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: yes
+  maintainer: Nutlope
+  version_or_commit: observed-2026-08-18
+  documentation: https://github.com/Nutlope/hallmark
+  stars_observed: 25594
+  observed_at: 2026-08-18
+  copied_assets: []
+domains:
+  - ui-ux
+  - coding
+task_types:
+  - pull-request-review
+  - architecture-review
+use_when:
+  - UI output looks generic, safe, or formulaic.
+  - Enforcing design quality standards in agentic workflows.
+  - Preventing AI-slop design patterns.
+do_not_use_when:
+  - Pure backend work with no UI surface.
+  - Teams with established design systems that supersede this.
+compatibility:
+  matrix:
+    - model_id: model-agnostic
+      runtime_id: claude-code
+      support: compatible
+      evidence:
+        - https://github.com/Nutlope/hallmark
+      known_gaps:
+        - Subjective design standards — may conflict with team preferences.
+distribution:
+  install:
+    type: external-repository
+    command: Install from the original repository.
+  invoke:
+    command: Applied via CLAUDE.md or skill invocation.
+  generated_files: []
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - anti-slop UI design
+    - design quality enforcement
+  caution_for:
+    - teams with strict existing design systems
+  not_recommended_for:
+    - backend-only projects
+  keywords:
+    - design
+    - anti-slop
+    - ui
+    - quality
+    - hallmark
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT. 25k+ stars. By Nutlope, known OSS contributor.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Behavioral skill — no data handling.
+freshness:
+  review_cadence: quarterly
+  last_reviewed: 2026-08-18
+  next_review: 2026-11-18
+  replacement_watch: false
+  deprecation_criteria:
+    - Repository archived.
+decision:
+  outcome: defer
+  rationale: MIT anti-slop design skill by credible author. Candidate pending evaluation.
+  decided_by: skills-library
+  decided_at: 2026-08-18
