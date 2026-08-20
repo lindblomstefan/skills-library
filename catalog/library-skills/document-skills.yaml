@@ -99,7 +99,7 @@ routing:
     - excel-skill
 trust:
   level: high
-  license_state: needs-review
+  license_state: clear
   maintenance_state: active
   provenance_notes: Official Anthropic skill suite from the anthropics/skills repository. Ships with paid Claude subscriptions.
 risk:

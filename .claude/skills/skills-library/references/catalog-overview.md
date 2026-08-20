@@ -13,20 +13,20 @@ Use this only when the full `skills-library` repo is unavailable locally.
 
 Have catalog entries and feedback files. Recommend these — show status when you do.
 
-- **gstack** — structured workflow suite: spec, design review, planning, QA, ship, deploy, security, benchmarking (`garrytan/gstack`)
-- **graphify** — repo knowledge graph for structure-aware agents (`graphify`)
-- **frontend-design** — Anthropic skill for Tailwind/shadcn UI generation (`anthropics/skills`)
-- **document-skills** — Anthropic suite for Word, Excel, PowerPoint, and PDF (`anthropics/skills`)
-- **skill-creator** — Anthropic skill that scaffolds new skills from plain-English descriptions (`anthropics/skills`)
-- **apple-design** — Apple's fluid interface design principles for the web: springs, gesture physics, interruptibility (`emilkowalski/skills`)
-- **squad** — structured skills for multi-agent teams: collaboration, conduct, architectural review, CI validation gates (`bradygaster/squad`)
-- **remove-ai-marks** — strip AI provenance marks: invisible Unicode, statistical text rewrite, C2PA/EXIF/XMP metadata from images and documents; requires local Docker service (`guillaumemeyer/watermarks-remover`)
-- **scrapling** — adaptive web scraping with anti-bot bypass (Cloudflare), stealth browsing, spider framework, JS rendering; official skill by the library author (`d4vinci/Scrapling`)
-- **headroom** — context compression layer: 60-95% fewer tokens for JSON, 15-20% for coding agents; wraps Claude Code, Codex, Cursor, Aider, Cline and more; library, proxy, MCP server (`headroomlabs-ai/headroom`)
+- **gstack** — structured workflow suite: spec, design review, planning, QA, ship, deploy, security, benchmarking (`garrytan/gstack`) [license:needs-review]
+- **graphify** — repo knowledge graph for structure-aware agents (`graphify`) [license:needs-review]
+- **frontend-design** — Anthropic skill for Tailwind/shadcn UI generation (`anthropics/skills`) [license:clear — MIT]
+- **document-skills** — Anthropic suite for Word, Excel, PowerPoint, and PDF (`anthropics/skills`) [license:clear — MIT]
+- **skill-creator** — Anthropic skill that scaffolds new skills from plain-English descriptions (`anthropics/skills`) [license:clear — MIT]
+- **apple-design** — Apple's fluid interface design principles for the web: springs, gesture physics, interruptibility (`emilkowalski/skills`) [license:clear — MIT]
+- **squad** — structured skills for multi-agent teams: collaboration, conduct, architectural review, CI validation gates (`bradygaster/squad`) [license:clear — MIT]
+- **remove-ai-marks** — strip AI provenance marks: invisible Unicode, statistical text rewrite, C2PA/EXIF/XMP metadata from images and documents; requires local Docker service (`guillaumemeyer/watermarks-remover`) [license:clear — MIT]
+- **scrapling** — adaptive web scraping with anti-bot bypass (Cloudflare), stealth browsing, spider framework, JS rendering; official skill by the library author (`d4vinci/Scrapling`) [license:clear — BSD 3-Clause]
+- **headroom** — context compression layer: 60-95% fewer tokens for JSON, 15-20% for coding agents; wraps Claude Code, Codex, Cursor, Aider, Cline and more; library, proxy, MCP server (`headroomlabs-ai/headroom`) [license:clear — Apache 2.0]
 
 ## Candidates
 
-Not yet evaluated — recommend when relevant, always show status as "candidate — not yet validated".
+Not yet evaluated — recommend when relevant, always show status as "candidate — not yet validated". License state for all candidates is `needs-review` unless specified — requires human review before approving.
 
 - **aider** — terminal pair-programming agent for code editing and repo-aware refactoring
 - **cline** — autonomous coding agent as SDK, IDE extension, or CLI
