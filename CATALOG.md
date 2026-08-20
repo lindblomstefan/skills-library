@@ -1,6 +1,6 @@
 # Skill Catalog
 
-113 skills tracked. Status moves from **candidate → evaluating → approved** through real usage and community feedback. Use `/skills-library` and choose "Give feedback" to help validate them.
+Skills tracked across all stages. Status moves from **candidate → evaluating → approved** through real usage and community feedback. Use `/skills-library` and choose "Give feedback" to help validate them.
 
 ## Evaluating
 
