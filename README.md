@@ -33,7 +33,7 @@ To read the feedback for any skill, ask Claude: "Show me the feedback for graphi
 
 ## Catalog
 
-113 skills tracked across all stages. The skill recommends from the full catalog — status is always shown so you know the confidence level.
+Over 100 skills tracked across all stages. The skill recommends from the full catalog — status is always shown so you know the confidence level.
 
 See [CATALOG.md](CATALOG.md) for the full list. Skills move from candidate → evaluating → approved through real usage and community feedback.
 
