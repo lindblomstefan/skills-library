@@ -39,7 +39,7 @@ See [CATALOG.md](CATALOG.md) for the full list. Skills move from candidate → e
 
 ## Contributing
 
-**This library is young.** The catalog has 113 skills but almost none have real-world feedback yet. That is the gap. Adding more skills is not the priority right now — validating the ones already here is.
+**This library is still young.** The catalog has over 100 skills but very few have real-world feedback yet. That is the gap. If you have feedback of a skill that is not in the library, add it first.
 
 The most valuable thing you can do is use a skill and leave feedback. No GitHub account needed:
 
