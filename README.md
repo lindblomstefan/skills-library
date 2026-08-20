@@ -33,16 +33,18 @@ To read the feedback for any skill, ask Claude: "Show me the feedback for graphi
 
 ## Catalog
 
-45 skills tracked across all stages. The skill recommends from the full catalog — status is always shown so you know the confidence level.
+113 skills tracked across all stages. The skill recommends from the full catalog — status is always shown so you know the confidence level.
 
 See [CATALOG.md](CATALOG.md) for the full list. Skills move from candidate → evaluating → approved through real usage and community feedback.
 
 ## Contributing
 
-The library grows through use. No GitHub account required for the first two paths:
+**This library is young.** The catalog has 113 skills but almost none have real-world feedback yet. That is the gap. Adding more skills is not the priority right now — validating the ones already here is.
 
-- **Validate a skill** — use a skill, then say "I have feedback on [skill name]" in Claude. Three feedback entries from real sessions marks a skill as validated.
-- **Add a skill** — type `/skills-library` and say "I have a skill to add." Claude runs the onboarding flow and prepares a PR package for you to open.
+The most valuable thing you can do is use a skill and leave feedback. No GitHub account needed:
+
+- **Give feedback on a skill** — use a skill, then say "I have feedback on [skill name]" in any Claude Code session. Claude appends a dated entry to a local file. Once a skill reaches 3 real-session entries it is marked validated. This is how the library earns trust.
+- **Add a skill** — type `/skills-library` and say "I have a skill to add." Only when there is something genuinely missing.
 - **Improve the library** — fork, edit, open a PR. Run `npm test` before pushing.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the validation model and what makes a good skill addition.
