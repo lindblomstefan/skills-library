@@ -10,10 +10,10 @@ summary: Official Anthropic skill suite for creating and editing real Office doc
 source:
   type: external-skill
   url: https://github.com/anthropics/skills
-  license: MIT License
-  license_spdx: MIT
-  redistribution: needs-review
-  modification_allowed: needs-review
+  license: source-available (Anthropic proprietary)
+  license_spdx: LicenseRef-Anthropic-source-available
+  redistribution: no
+  modification_allowed: no
   maintainer: anthropics/skills
   version_or_commit: main
   documentation: https://github.com/anthropics/skills
@@ -99,7 +99,7 @@ routing:
     - excel-skill
 trust:
   level: high
-  license_state: clear
+  license_state: needs-review
   maintenance_state: active
   provenance_notes: Official Anthropic skill suite from the anthropics/skills repository. Ships with paid Claude subscriptions.
 risk:

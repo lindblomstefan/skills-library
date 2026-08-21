@@ -10,8 +10,8 @@ summary: Official Anthropic skill that generates HTML, CSS, and React components
 source:
   type: external-skill
   url: https://github.com/anthropics/skills/tree/main/skills/frontend-design
-  license: MIT License
-  license_spdx: MIT
+  license: Apache License 2.0
+  license_spdx: Apache-2.0
   redistribution: needs-review
   modification_allowed: needs-review
   maintainer: anthropics/skills
