@@ -19,6 +19,12 @@ Use `AskUserQuestion` only where specified. Decide everything else yourself. If 
    - Derive skill-id from the skill's `name` field in its SKILL.md, or from the source repo name. Say "Writing feedback file for <skill-id>." Read `~/.claude/skills/skills-library/feedback/_template.md` and write `~/.claude/skills/skills-library/feedback/<skill-id>.md` from it — only if the file does not already exist.
    - Ask (plain text): "What's your initial take on this skill?" If answered, write as entry #1 and say: "One entry added. Two more from any user will validate this skill." If skipped, leave the file empty.
    - Say "Here is the catalog YAML to add as `catalog/library-skills/<skill-id>.yaml` in your PR:" then output the YAML as a code block (source, license, domains, routing metadata). Do not write this file to disk.
-   - Say "Adding to catalog overview." Add a one-line entry to `~/.claude/skills/skills-library/references/catalog-overview.md` under the library skills section — only if the skill is not already listed. Include `[license:clear — <SPDX name>]` or `[license:needs-review]` at the end of the line, matching what was determined in step 2.
+   - Say "Adding to catalog overview." Add a one-line entry to `~/.claude/skills/skills-library/references/catalog-overview.md` under the library skills section — only if the skill is not already listed. Include a `[license:...]` tag at the end of the line using these plain-English formats:
+   - Clear permissive (MIT/Apache/BSD/ISC): `[license:clear — MIT, use freely]`
+   - Clear weak copyleft (MPL-2.0): `[license:clear — MPL-2.0, use freely; if you modify the skill files themselves those changes must stay MPL]`
+   - Needs-review strong copyleft (AGPL/GPL): `[license:needs-review — AGPL-3.0, strong copyleft; check org policy before approving]`
+   - Needs-review share-alike (CC-BY-SA): `[license:needs-review — CC-BY-SA-4.0, share-alike; not a standard software license; check org policy]`
+   - Needs-review source-available: `[license:needs-review — source-available; reference use only, not open source]`
+   - Needs-review no license: `[license:needs-review — no LICENSE file; contact maintainer before approving]`
 
 No evaluation run. Do not push directly to main.

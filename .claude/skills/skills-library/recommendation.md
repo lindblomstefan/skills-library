@@ -25,7 +25,7 @@ Use `AskUserQuestion` for all structured choices. After any choice that signals 
 4. If answers are vague, contradictory, or unstable — ask one focused follow-up before continuing.
 
 5. Recommend only after a repo read or concrete typed answers exist. Read `~/.claude/skills/skills-library/references/catalog-overview.md` — both Evaluating and Candidates sections are fair game. For each match, also read `~/.claude/skills/skills-library/feedback/<skill-id>.md` if it exists. Return at most 5 skills. For each show:
-   - License state
+   - License: show the plain-English note from the `[license:...]` tag in catalog-overview.md verbatim (e.g. "MIT, use freely" or "AGPL-3.0, strong copyleft — check org policy before approving"). Never summarize or shorten it.
    - Status: evaluating or candidate
    - Feedback count — if 0, say explicitly "**No community feedback yet**"; if >0, show the count and whether validated
    - Any known blockers or setup requirements
