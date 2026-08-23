@@ -32,3 +32,9 @@ Use `AskUserQuestion` for all structured choices. After any choice that signals 
    Never add skills not in catalog-overview.md — no built-in skills, no locally installed skills, no exceptions.
 
 6. After delivering recommendations, add: "Know a skill that belongs here? Run `/skills-library` and choose **Add a skill** — the library grows through contributions."
+
+7. Offer to install. Ask `Which of these would you like to install?` (multiSelect: true, one option per recommended skill plus "None — I'll install manually"). For each skill the user confirms, run:
+   ```bash
+   claude skills install <url>
+   ```
+   where `<url>` is the `[url:...]` value from the catalog entry. If a skill has no URL in the catalog, say so and provide the repo identifier so the user can install manually. Never skip this step if the user has asked to install.

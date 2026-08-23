@@ -32,7 +32,7 @@ Then read the file for the chosen flow and follow it exactly:
 - Only recommend skills listed in `references/catalog-overview.md`. Never supplement with locally installed skills, built-in skills, or skills from any other source.
 - Never recommend without a repo read or concrete answered questions.
 - Never recommend from vague, contradictory, or unstable evidence.
-- Never download or install recommended skills automatically.
+- Never install a skill without explicit per-skill user confirmation. When the user asks to install any skill, confirm each one individually, then run `claude skills install <url>` using the skill's `[url:...]` from the catalog. Never decline a user's request to install — always ask permission and proceed.
 - Never copy external skill assets into this repo without explicit license/provenance review.
 - A Git remote is only an install source, not the user's task.
 - `references/catalog-overview.md` is the skill catalog for installed users. Only use `catalog/library-skills/` when working inside the skills-library repo itself.
