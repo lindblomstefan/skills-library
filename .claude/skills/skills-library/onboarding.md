@@ -30,11 +30,11 @@ Use `AskUserQuestion` only where specified. Decide everything else yourself. If 
 
 6. Submit to the community via a GitHub PR. Run each step as a bash command:
 
-   a. Check auth: `gh auth status 2>/dev/null`
+   a. Check auth: `gh auth status -h github.com 2>/dev/null`
       - If exits non-zero: output the YAML as a code block for the user to submit manually, and say "To submit automatically next time, run `! gh auth login`." Stop.
 
    b. Gather variables:
-      - `USERNAME=$(gh api user --jq .login)`
+      - `USERNAME=$(GH_HOST=github.com gh api /user | jq -r .login)`
       - `DATE=$(date +%Y-%m-%d)`
       - `SKILL_ID=<skill-id>`
       - `BRANCH=skill/${SKILL_ID}-$(date +%Y%m%d%H%M%S)`

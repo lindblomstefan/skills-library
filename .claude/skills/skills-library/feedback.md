@@ -14,11 +14,11 @@
 
 4. Share with the community via a GitHub PR. Run each step as a bash command:
 
-   a. Check auth: `gh auth status 2>/dev/null`
+   a. Check auth: `gh auth status -h github.com 2>/dev/null`
       - If the command exits non-zero: say "Your feedback was saved locally. To share it with the community, run `! gh auth login` then re-run `/skills-library`." Stop — the local save from step 3 already succeeded.
 
    b. Gather variables by running these commands and capturing their output:
-      - `USERNAME=$(gh api user --jq .login)`
+      - `USERNAME=$(GH_HOST=github.com gh api /user | jq -r .login)`
       - `DATE=$(date +%Y-%m-%d)`
       - `BRANCH=feedback/<skill-id>-$(date +%Y%m%d%H%M%S)`
       - `FEEDBACK_PATH=.claude/skills/skills-library/feedback/<skill-id>.md`
