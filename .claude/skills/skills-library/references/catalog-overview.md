@@ -41,6 +41,7 @@ Have catalog entries and feedback files. Recommend these — show status when yo
 - **scrapling** — adaptive web scraping with anti-bot bypass (Cloudflare), stealth browsing, spider framework, JS rendering; official skill by the library author [url:https://github.com/D4Vinci/Scrapling] [license:clear — BSD 3-Clause, use freely]
 - **headroom** — context compression layer: 60-95% fewer tokens for JSON, 15-20% for coding agents; wraps Claude Code, Codex, Cursor, Aider, Cline and more; library, proxy, MCP server [url:https://github.com/headroomlabs-ai/headroom] [license:clear — Apache 2.0, use freely]
 - **context7** — MCP server that pulls live, version-specific library documentation into Claude's context; eliminates hallucinated or outdated API references [url:https://github.com/upstash/context7] [license:clear — MIT, use freely]
+- **exa-mcp** — neural search MCP server for web search and crawl; optimized for technical and AI-agent queries, returns high-signal results over SEO noise [url:https://github.com/exa-labs/exa-mcp-server] [license:clear — MIT, use freely]
 
 ## Candidates
 

@@ -1,0 +1,142 @@
+id: exa-mcp
+name: Exa MCP
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: skills-library-onboarding
+proposed_at: 2026-09-04
+summary: MCP server for Exa's neural search engine. Returns high-quality, technically relevant results optimized for AI agents — surfaces real docs and code over SEO content. Supports web search, similar-page discovery, and full-page crawl.
+source:
+  type: external-tool
+  url: https://github.com/exa-labs/exa-mcp-server
+  license: clear
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: permitted
+  maintainer: external
+  version_or_commit: latest
+  documentation: https://github.com/exa-labs/exa-mcp-server#readme
+  dependencies: []
+  copied_assets: []
+domains:
+  - web-search
+  - information-retrieval
+  - developer-tooling
+task_types:
+  - web-search
+  - technical-documentation-lookup
+  - similar-content-discovery
+  - full-page-crawl
+use_when:
+  - Claude needs current web information not in its training data.
+  - Searching for technical docs, migration guides, or library changelogs.
+  - Finding similar pages or crawling a specific URL for content.
+  - General search produces too much SEO noise for the task.
+do_not_use_when:
+  - Air-gapped or restricted-network environments.
+  - The user does not have an Exa API key.
+  - Task requires no external web data.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: 2026-09-04
+      tested_by: skills-library
+      runtime_version: local
+      adapter: mcp
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Requires EXA_API_KEY in environment and MCP server entry in .mcp.json. Makes outbound HTTP calls to api.exa.ai.
+      known_gaps: []
+  tags:
+    - status:candidate
+    - runtime:claude-code
+distribution:
+  install:
+    type: mcp-server
+    command: npx -y exa-mcp-server
+  invoke:
+    command: use exa mcp server
+  dependencies:
+    - node
+  required_permissions:
+    - network-outbound
+  required_secrets:
+    - EXA_API_KEY
+  network_access: outbound
+routing:
+  recommend_for:
+    - web search
+    - current events
+    - technical documentation
+    - migration guides
+    - library changelogs
+    - finding similar pages
+  caution_for:
+    - tasks where no external network is available
+    - tasks where the user has no Exa API key
+  not_recommended_for:
+    - fully offline tasks
+    - tasks where web data is irrelevant
+  example_prompts:
+    - Search for the Prisma v6 migration guide.
+    - Find current examples of using the Vercel AI SDK with streaming.
+    - What changed in React 19?
+    - Crawl this URL and summarize the content.
+  keywords:
+    - search
+    - web
+    - exa
+    - neural search
+    - crawl
+    - mcp
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Official Exa Labs project. MIT license. 5k+ GitHub stars.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Sends search queries to api.exa.ai. No user code or private data is transmitted.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-09-04
+  next_review: 2026-10-04
+  replacement_watch: false
+  deprecation_criteria:
+    - Exa discontinues the MCP server or API
+    - A clearly superior search MCP replaces it
+decision:
+  outcome: candidate
+  rationale: High-quality search for AI agents, low risk, MIT license. Needs community feedback to validate.
+  decided_by: skills-library-onboarding
+  decided_at: 2026-09-04
+relationships:
+  pairs_with:
+    - context7
+    - firecrawl
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with:
+    - firecrawl
+  specializes: []
+  generalizes: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: false
+  known_metrics_gaps:
+    - No usage telemetry yet.
+known_limitations:
+  - Requires an Exa API key (free tier available at exa.ai).
+  - Outbound network required; will not work in air-gapped environments.
+  - Search quality depends on Exa's index coverage.
