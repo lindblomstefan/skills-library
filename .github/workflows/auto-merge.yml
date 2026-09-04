@@ -4,52 +4,43 @@ on:
   pull_request_target:
     types: [opened, synchronize]
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      contents: write
     steps:
-      - name: Check paths and merge
+      - name: Guard paths and merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
         run: |
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          REPO=${{ github.repository }}
+          set -euo pipefail
 
-          # Fetch changed files via API — PR code is never checked out
           FILES=$(gh api "repos/${REPO}/pulls/${PR_NUMBER}/files" --jq '.[].filename')
-
-          if [ -z "$FILES" ]; then
-            echo "No files found in PR."
-            exit 1
-          fi
+          echo "Files in PR:"
+          echo "$FILES"
 
           ALLOWED='^(\.claude/skills/skills-library/feedback/|catalog/library-skills/|\.claude/skills/skills-library/references/catalog-overview\.md)'
-          BLOCKED=false
-          BLOCKED_FILE=""
+          BLOCKED=""
 
-          while IFS= read -r file; do
-            if ! echo "$file" | grep -qE "$ALLOWED"; then
-              BLOCKED=true
-              BLOCKED_FILE="$file"
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            if ! echo "$f" | grep -qE "$ALLOWED"; then
+              BLOCKED="$f"
               break
             fi
           done <<< "$FILES"
 
-          if [ "$BLOCKED" = "true" ]; then
-            gh pr comment "$PR_NUMBER" \
-              --repo "$REPO" \
-              --body "⚠️ **Auto-merge blocked.**
-
-This PR touches \`${BLOCKED_FILE}\`, which is outside the auto-merge allowed paths:
-- \`.claude/skills/skills-library/feedback/\`
-- \`catalog/library-skills/\`
-- \`.claude/skills/skills-library/references/catalog-overview.md\`
-
-A maintainer will review this manually."
+          if [ -n "$BLOCKED" ]; then
+            echo "BLOCKED by: $BLOCKED"
+            gh pr comment "$PR_NUMBER" --repo "$REPO" \
+              --body "Auto-merge blocked: ${BLOCKED} is outside the allowed paths. A maintainer will review."
             exit 1
           fi
 
+          echo "All paths allowed. Merging."
           gh pr merge "$PR_NUMBER" --repo "$REPO" --squash
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
