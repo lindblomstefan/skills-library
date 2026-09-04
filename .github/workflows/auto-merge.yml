@@ -1,0 +1,55 @@
+name: Auto-merge community PRs
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - name: Check paths and merge
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          REPO=${{ github.repository }}
+
+          # Fetch changed files via API — PR code is never checked out
+          FILES=$(gh api "repos/${REPO}/pulls/${PR_NUMBER}/files" --jq '.[].filename')
+
+          if [ -z "$FILES" ]; then
+            echo "No files found in PR."
+            exit 1
+          fi
+
+          ALLOWED='^(\.claude/skills/skills-library/feedback/|catalog/library-skills/|\.claude/skills/skills-library/references/catalog-overview\.md)'
+          BLOCKED=false
+          BLOCKED_FILE=""
+
+          while IFS= read -r file; do
+            if ! echo "$file" | grep -qE "$ALLOWED"; then
+              BLOCKED=true
+              BLOCKED_FILE="$file"
+              break
+            fi
+          done <<< "$FILES"
+
+          if [ "$BLOCKED" = "true" ]; then
+            gh pr comment "$PR_NUMBER" \
+              --repo "$REPO" \
+              --body "⚠️ **Auto-merge blocked.**
+
+This PR touches \`${BLOCKED_FILE}\`, which is outside the auto-merge allowed paths:
+- \`.claude/skills/skills-library/feedback/\`
+- \`catalog/library-skills/\`
+- \`.claude/skills/skills-library/references/catalog-overview.md\`
+
+A maintainer will review this manually."
+            exit 1
+          fi
+
+          gh pr merge "$PR_NUMBER" --repo "$REPO" --squash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

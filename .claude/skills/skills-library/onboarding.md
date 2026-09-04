@@ -15,16 +15,81 @@ Use `AskUserQuestion` only where specified. Decide everything else yourself. If 
    - External URL + clear license → Reference only
    - Build internal → Adapt
 
-4. Prepare the PR package. First tell the user: "I'll now create three things for the PR: a feedback file, a catalog YAML entry, and a line in the catalog overview." Then in this exact order:
+4. Prepare local files. First tell the user: "I'll create a local feedback file and prepare the catalog entry." Then:
    - Derive skill-id from the skill's `name` field in its SKILL.md, or from the source repo name. Say "Writing feedback file for <skill-id>." Read `~/.claude/skills/skills-library/feedback/_template.md` and write `~/.claude/skills/skills-library/feedback/<skill-id>.md` from it — only if the file does not already exist.
    - Ask (plain text): "What's your initial take on this skill?" If answered, write as entry #1 and say: "One entry added. Two more from any user will validate this skill." If skipped, leave the file empty.
-   - Say "Here is the catalog YAML to add as `catalog/library-skills/<skill-id>.yaml` in your PR:" then output the YAML as a code block (source, license, domains, routing metadata). Do not write this file to disk.
-   - Say "Adding to catalog overview." Add a one-line entry to `~/.claude/skills/skills-library/references/catalog-overview.md` under the library skills section — only if the skill is not already listed. Include a `[url:...]` tag with the exact GitHub URL captured in step 1, then a `[license:...]` tag. Format: `**skill-id** — description [url:https://github.com/owner/repo] [license:...]`. For internal builds with no external URL, omit the `[url:...]` tag. Use these plain-English license formats:
-   - Clear permissive (MIT/Apache/BSD/ISC): `[license:clear — MIT, use freely]`
-   - Clear weak copyleft (MPL-2.0): `[license:clear — MPL-2.0, use freely; if you modify the skill files themselves those changes must stay MPL]`
-   - Needs-review strong copyleft (AGPL/GPL): `[license:needs-review — AGPL-3.0, strong copyleft; check org policy before approving]`
-   - Needs-review share-alike (CC-BY-SA): `[license:needs-review — CC-BY-SA-4.0, share-alike; not a standard software license; check org policy]`
-   - Needs-review source-available: `[license:needs-review — source-available; reference use only, not open source]`
-   - Needs-review no license: `[license:needs-review — no LICENSE file; contact maintainer before approving]`
+   - Add a one-line entry to `~/.claude/skills/skills-library/references/catalog-overview.md` under the library skills section — only if the skill is not already listed. Include a `[url:...]` tag with the exact GitHub URL captured in step 1, then a `[license:...]` tag. Format: `**skill-id** — description [url:https://github.com/owner/repo] [license:...]`. For internal builds with no external URL, omit the `[url:...]` tag. Use these plain-English license formats:
+     - Clear permissive (MIT/Apache/BSD/ISC): `[license:clear — MIT, use freely]`
+     - Clear weak copyleft (MPL-2.0): `[license:clear — MPL-2.0, use freely; if you modify the skill files themselves those changes must stay MPL]`
+     - Needs-review strong copyleft (AGPL/GPL): `[license:needs-review — AGPL-3.0, strong copyleft; check org policy before approving]`
+     - Needs-review share-alike (CC-BY-SA): `[license:needs-review — CC-BY-SA-4.0, share-alike; not a standard software license; check org policy]`
+     - Needs-review source-available: `[license:needs-review — source-available; reference use only, not open source]`
+     - Needs-review no license: `[license:needs-review — no LICENSE file; contact maintainer before approving]`
 
-No evaluation run. Do not push directly to main.
+5. Construct the catalog YAML. Build the full YAML for `catalog/library-skills/<skill-id>.yaml` matching the schema of existing entries (see `catalog/library-skills/graphify.yaml` as reference). Set `status: candidate`. Do not write it to disk yet — hold it in memory.
+
+6. Submit to the community via a GitHub PR. Run each step as a bash command:
+
+   a. Check auth: `gh auth status 2>/dev/null`
+      - If exits non-zero: output the YAML as a code block for the user to submit manually, and say "To submit automatically next time, run `! gh auth login`." Stop.
+
+   b. Gather variables:
+      - `USERNAME=$(gh api user --jq .login)`
+      - `DATE=$(date +%Y-%m-%d)`
+      - `SKILL_ID=<skill-id>`
+      - `BRANCH=skill/${SKILL_ID}-$(date +%Y%m%d%H%M%S)`
+      - `REPO=lindblomstefan/skills-library`
+      - `YAML_PATH=catalog/library-skills/${SKILL_ID}.yaml`
+      - `OVERVIEW_PATH=.claude/skills/skills-library/references/catalog-overview.md`
+
+   c. Fork (idempotent):
+      `gh repo fork "$REPO" --clone=false --remote=false 2>/dev/null; true`
+
+   d. Create branch on the fork from upstream main HEAD:
+      ```
+      DEFAULT_SHA=$(gh api "repos/${REPO}/git/refs/heads/main" --jq .object.sha)
+      gh api "repos/${USERNAME}/skills-library/git/refs" \
+        -X POST \
+        -f ref="refs/heads/${BRANCH}" \
+        -f sha="$DEFAULT_SHA"
+      ```
+
+   e. Write the YAML to the fork branch (new file — no SHA needed):
+      `YAML_B64=$(echo -n "<yaml content>" | base64 | tr -d '\n')`
+      ```
+      gh api "repos/${USERNAME}/skills-library/contents/${YAML_PATH}" \
+        -X PUT \
+        -f message="skill: add ${SKILL_ID} (${DATE})" \
+        -f content="$YAML_B64" \
+        -f branch="$BRANCH"
+      ```
+
+   f. Append the catalog-overview.md line to the fork branch. Get the current upstream file:
+      ```
+      OVERVIEW=$(gh api "repos/${REPO}/contents/${OVERVIEW_PATH}")
+      OVERVIEW_SHA=$(echo "$OVERVIEW" | jq -r .sha)
+      OVERVIEW_CONTENT=$(echo "$OVERVIEW" | jq -r .content | base64 -d)
+      ```
+      Append the new skill line (same line as written locally in step 4) to `OVERVIEW_CONTENT`.
+      Write back:
+      ```
+      NEW_OVERVIEW_B64=$(echo -n "$NEW_OVERVIEW_CONTENT" | base64 | tr -d '\n')
+      gh api "repos/${USERNAME}/skills-library/contents/${OVERVIEW_PATH}" \
+        -X PUT \
+        -f message="skill: add ${SKILL_ID} to catalog overview (${DATE})" \
+        -f content="$NEW_OVERVIEW_B64" \
+        -f branch="$BRANCH" \
+        -f sha="$OVERVIEW_SHA"
+      ```
+
+   g. Open the PR:
+      ```
+      PR_URL=$(gh pr create \
+        --repo "$REPO" \
+        --title "skill: add ${SKILL_ID} — $DATE (@$USERNAME)" \
+        --body "Adds **${SKILL_ID}** as a candidate skill.\n\nSubmitted by @$USERNAME via the skills-library onboarding flow." \
+        --head "${USERNAME}:${BRANCH}" \
+        --base main)
+      ```
+
+   h. Confirm: "Done — <skill-id> has been submitted to the community library: $PR_URL. It will merge automatically and be available to all users on their next update."
