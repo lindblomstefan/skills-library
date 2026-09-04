@@ -18,7 +18,7 @@
       - If the command exits non-zero: say "Your feedback was saved locally. To share it with the community, run `! gh auth login` then re-run `/skills-library`." Stop — the local save from step 3 already succeeded.
 
    b. Gather variables by running these commands and capturing their output:
-      - `USERNAME=$(GH_HOST=github.com gh api /user | jq -r .login)`
+      - `GH_USER=$(GH_HOST=github.com gh api /user | jq -r .login)`
       - `DATE=$(date +%Y-%m-%d)`
       - `BRANCH=feedback/<skill-id>-$(date +%Y%m%d%H%M%S)`
       - `FEEDBACK_PATH=.claude/skills/skills-library/feedback/<skill-id>.md`
@@ -37,7 +37,7 @@
       - If `VALIDATED=true`, replace `validated: false` with `validated: true`
       - Append after `## Entries`:
         ```
-        ### <DATE> (@<USERNAME>)
+        ### <DATE> (@<GH_USER>)
 
         <the full feedback text from step 2>
         ```
@@ -46,7 +46,7 @@
    f. Create a branch on the fork from the upstream main HEAD:
       ```
       DEFAULT_SHA=$(gh api "repos/${REPO}/git/refs/heads/main" --jq .object.sha)
-      gh api "repos/${USERNAME}/skills-library/git/refs" \
+      gh api "repos/${GH_USER}/skills-library/git/refs" \
         -X POST \
         -f ref="refs/heads/${BRANCH}" \
         -f sha="$DEFAULT_SHA"
@@ -56,7 +56,7 @@
       `NEW_B64=$(base64 < "$NEW_CONTENT_FILE" | tr -d '\n')`
       - If `SHA` is non-empty (file existed upstream): PUT with sha field:
         ```
-        gh api "repos/${USERNAME}/skills-library/contents/${FEEDBACK_PATH}" \
+        gh api "repos/${GH_USER}/skills-library/contents/${FEEDBACK_PATH}" \
           -X PUT \
           -f message="feedback: <skill-id> ($DATE)" \
           -f content="$NEW_B64" \
@@ -65,7 +65,7 @@
         ```
       - If `SHA` is empty (new file): PUT without sha field:
         ```
-        gh api "repos/${USERNAME}/skills-library/contents/${FEEDBACK_PATH}" \
+        gh api "repos/${GH_USER}/skills-library/contents/${FEEDBACK_PATH}" \
           -X PUT \
           -f message="feedback: <skill-id> ($DATE)" \
           -f content="$NEW_B64" \
@@ -77,9 +77,9 @@
       ```
       PR_URL=$(gh pr create \
         --repo "$REPO" \
-        --title "feedback: <skill-id> — $DATE (@$USERNAME)" \
-        --body "Community feedback on <skill-name> from @$USERNAME." \
-        --head "${USERNAME}:${BRANCH}" \
+        --title "feedback: <skill-id> — $DATE (@$GH_USER)" \
+        --body "Community feedback on <skill-name> from @$GH_USER." \
+        --head "${GH_USER}:${BRANCH}" \
         --base main)
       ```
 

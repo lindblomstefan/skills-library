@@ -34,7 +34,7 @@ Use `AskUserQuestion` only where specified. Decide everything else yourself. If 
       - If exits non-zero: output the YAML as a code block for the user to submit manually, and say "To submit automatically next time, run `! gh auth login`." Stop.
 
    b. Gather variables:
-      - `USERNAME=$(GH_HOST=github.com gh api /user | jq -r .login)`
+      - `GH_USER=$(GH_HOST=github.com gh api /user | jq -r .login)`
       - `DATE=$(date +%Y-%m-%d)`
       - `SKILL_ID=<skill-id>`
       - `BRANCH=skill/${SKILL_ID}-$(date +%Y%m%d%H%M%S)`
@@ -48,7 +48,7 @@ Use `AskUserQuestion` only where specified. Decide everything else yourself. If 
    d. Create branch on the fork from upstream main HEAD:
       ```
       DEFAULT_SHA=$(gh api "repos/${REPO}/git/refs/heads/main" --jq .object.sha)
-      gh api "repos/${USERNAME}/skills-library/git/refs" \
+      gh api "repos/${GH_USER}/skills-library/git/refs" \
         -X POST \
         -f ref="refs/heads/${BRANCH}" \
         -f sha="$DEFAULT_SHA"
@@ -57,7 +57,7 @@ Use `AskUserQuestion` only where specified. Decide everything else yourself. If 
    e. Write the YAML to the fork branch (new file — no SHA needed):
       `YAML_B64=$(echo -n "<yaml content>" | base64 | tr -d '\n')`
       ```
-      gh api "repos/${USERNAME}/skills-library/contents/${YAML_PATH}" \
+      gh api "repos/${GH_USER}/skills-library/contents/${YAML_PATH}" \
         -X PUT \
         -f message="skill: add ${SKILL_ID} (${DATE})" \
         -f content="$YAML_B64" \
@@ -74,7 +74,7 @@ Use `AskUserQuestion` only where specified. Decide everything else yourself. If 
       Write back:
       ```
       NEW_OVERVIEW_B64=$(echo -n "$NEW_OVERVIEW_CONTENT" | base64 | tr -d '\n')
-      gh api "repos/${USERNAME}/skills-library/contents/${OVERVIEW_PATH}" \
+      gh api "repos/${GH_USER}/skills-library/contents/${OVERVIEW_PATH}" \
         -X PUT \
         -f message="skill: add ${SKILL_ID} to catalog overview (${DATE})" \
         -f content="$NEW_OVERVIEW_B64" \
@@ -86,9 +86,9 @@ Use `AskUserQuestion` only where specified. Decide everything else yourself. If 
       ```
       PR_URL=$(gh pr create \
         --repo "$REPO" \
-        --title "skill: add ${SKILL_ID} — $DATE (@$USERNAME)" \
-        --body "Adds **${SKILL_ID}** as a candidate skill.\n\nSubmitted by @$USERNAME via the skills-library onboarding flow." \
-        --head "${USERNAME}:${BRANCH}" \
+        --title "skill: add ${SKILL_ID} — $DATE (@$GH_USER)" \
+        --body "Adds **${SKILL_ID}** as a candidate skill.\n\nSubmitted by @$GH_USER via the skills-library onboarding flow." \
+        --head "${GH_USER}:${BRANCH}" \
         --base main)
       ```
 
