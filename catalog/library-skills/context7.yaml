@@ -1,0 +1,132 @@
+id: context7
+name: Context7
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: skills-library-onboarding
+proposed_at: 2026-09-04
+summary: MCP server that resolves live, version-specific documentation for any library directly into Claude's context window. Eliminates hallucinated or outdated API references by fetching real docs at query time.
+source:
+  type: external-tool
+  url: https://github.com/upstash/context7
+  license: clear
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: permitted
+  maintainer: external
+  version_or_commit: latest
+  documentation: https://github.com/upstash/context7#readme
+  dependencies: []
+  copied_assets: []
+domains:
+  - documentation
+  - context-management
+  - developer-tooling
+task_types:
+  - library-documentation-lookup
+  - api-reference-resolution
+  - version-specific-guidance
+use_when:
+  - Working with any library where Claude may use outdated or hallucinated API docs.
+  - Upgrading a dependency and needing accurate migration guidance.
+  - The user asks about a specific library version's API surface.
+do_not_use_when:
+  - The project has no external library dependencies.
+  - Docs are already fully provided in the prompt.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: 2026-09-04
+      tested_by: skills-library
+      runtime_version: local
+      adapter: mcp
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Requires MCP server entry in .mcp.json; makes outbound HTTP calls to fetch docs.
+      known_gaps: []
+  tags:
+    - status:candidate
+    - runtime:claude-code
+distribution:
+  install:
+    type: mcp-server
+    command: npx -y @upstash/context7-mcp
+  invoke:
+    command: use context7 mcp server
+  dependencies:
+    - node
+  required_permissions:
+    - network-outbound
+  required_secrets: []
+  network_access: outbound
+routing:
+  recommend_for:
+    - library documentation
+    - api reference
+    - dependency upgrades
+    - framework onboarding
+  caution_for:
+    - air-gapped environments
+    - projects where external network calls are restricted
+  not_recommended_for:
+    - pure logic tasks with no library dependency
+  example_prompts:
+    - How do I use the new React 19 useActionState hook?
+    - What changed in Next.js 15 routing?
+    - Show me the correct Pydantic v2 model validator syntax.
+  keywords:
+    - docs
+    - documentation
+    - library
+    - api reference
+    - mcp
+    - context7
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Official Upstash project. MIT license confirmed via GitHub API.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Sends library names and version queries to Upstash API; no user code is transmitted.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-09-04
+  next_review: 2026-10-04
+  replacement_watch: false
+  deprecation_criteria:
+    - Upstash discontinues the service
+    - A superior live-docs MCP server replaces it
+decision:
+  outcome: candidate
+  rationale: High-value, low-risk MCP server solving a real hallucination problem. Needs community feedback entries to validate.
+  decided_by: skills-library-onboarding
+  decided_at: 2026-09-04
+relationships:
+  pairs_with:
+    - graphify
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with:
+    - awesome-mcp-servers
+  specializes: []
+  generalizes: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: false
+  known_metrics_gaps:
+    - No usage telemetry in place yet.
+known_limitations:
+  - Requires outbound internet access; will not work in air-gapped environments.
+  - Quality depends on Upstash's documentation index coverage.
