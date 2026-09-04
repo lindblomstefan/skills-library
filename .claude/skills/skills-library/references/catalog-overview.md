@@ -40,6 +40,7 @@ Have catalog entries and feedback files. Recommend these — show status when yo
 - **remove-ai-marks** — strip AI provenance marks: invisible Unicode, statistical text rewrite, C2PA/EXIF/XMP metadata from images and documents; requires local Docker service [url:https://github.com/guillaumemeyer/watermarks-remover] [license:clear — MIT, use freely]
 - **scrapling** — adaptive web scraping with anti-bot bypass (Cloudflare), stealth browsing, spider framework, JS rendering; official skill by the library author [url:https://github.com/D4Vinci/Scrapling] [license:clear — BSD 3-Clause, use freely]
 - **headroom** — context compression layer: 60-95% fewer tokens for JSON, 15-20% for coding agents; wraps Claude Code, Codex, Cursor, Aider, Cline and more; library, proxy, MCP server [url:https://github.com/headroomlabs-ai/headroom] [license:clear — Apache 2.0, use freely]
+- **context7** — MCP server that pulls live, version-specific library documentation into Claude's context; eliminates hallucinated or outdated API references [url:https://github.com/upstash/context7] [license:clear — MIT, use freely]
 
 ## Candidates
 
