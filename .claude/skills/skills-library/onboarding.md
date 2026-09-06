@@ -1,35 +1,47 @@
 # Onboarding
 
-Use `AskUserQuestion` only where specified. Decide everything else yourself. If the user declines, say "Onboarding cancelled." and stop.
+Decide everything yourself unless `AskUserQuestion` is specified. If the user declines any step, say "Onboarding cancelled." and stop. Minimize tool calls — combine bash operations into single scripts.
 
 ## Sequence
 
-1. **Source** — header `"Source"`, options: `URL or path | Build internal | Chat about this`. If URL: ask "What is the GitHub URL?" Record it exactly.
+1. **Source** — `AskUserQuestion`, header `"Source"`, options: `URL or path | Build internal | Chat about this`. If URL: ask plain text "What is the GitHub URL?" Record it.
 
-2. **License** — check it yourself. Look for a LICENSE file at the source:
-   - Permissive (MIT, Apache 2.0, BSD, ISC) → proceed silently as Clear
-   - Proprietary/restricted → stop; tell the user why
-   - No license → ask (`"License"`, options `Proceed anyway | Cancel`)
+2. **License** — check it yourself via GitHub API. Permissive (MIT/Apache/BSD/ISC) → proceed silently. Proprietary → stop and explain. No license → `AskUserQuestion`, header `"License"`, options `Proceed anyway | Cancel`.
 
-3. **Mode** — silently: external URL + clear license → Reference only; internal → Adapt.
+3. **Mode** — silently: external + clear license → Reference only; internal → Adapt.
 
-4. **Local files** — say "I'll create a local feedback file and prepare the catalog entry." Then:
-   - Write `~/.claude/skills/skills-library/feedback/<skill-id>.md` from `_template.md` if it doesn't exist.
-   - Ask (plain text): "What's your initial take?" If answered, write as entry #1 and say "One entry added. Two more will validate this skill."
-   - Add one line to `~/.claude/skills/skills-library/references/catalog-overview.md` under library skills if not already listed: `**skill-id** — description [url:…] [license:…]`. License tag: `[license:clear — MIT, use freely]` for permissive; adjust wording for other types (see feedback.md step 4 for full list).
+4. **Local files** — say "Setting up local files." Run ONE bash script:
+   ```
+   SKILL=<skill-id>
+   FEEDBACK=~/.claude/skills/skills-library/feedback/${SKILL}.md
+   OVERVIEW=~/.claude/skills/skills-library/references/catalog-overview.md
+   [ -f "$FEEDBACK" ] || printf -- "---\nskill_id: ${SKILL}\nfeedback_count: 0\nvalidated: false\n---\n\n## Entries\n" > "$FEEDBACK"
+   grep -qF "**${SKILL}**" "$OVERVIEW" 2>/dev/null || echo "**${SKILL}** — <desc> [url:<url>] [license:<tag>]" >> "$OVERVIEW"
+   ```
+   Then ask plain text: "What's your initial take?" If answered, append a `### YYYY-MM-DD` entry to the feedback file and say "One entry added. Two more will validate this skill."
 
-5. **YAML** — build full `catalog/library-skills/<skill-id>.yaml` matching `graphify.yaml` schema. `status: candidate`. Hold in memory. Use ONLY these taxonomy values:
-   - `source_type`: `external` | `internal` | `adapted` | `reference` | `candidate`
-   - `domains`: `architecture` | `codebase-understanding` | `coding` | `discovery` | `feedback` | `documentation` | `knowledge-graph` | `planning` | `repository-analysis` | `security` | `testing` | `ui-ux`
-   - `task_types`: `architecture-review` | `codebase-navigation` | `impact-analysis` | `project-onboarding` | `pull-request-review` | `release-readiness` | `relationship-discovery` | `skill-feedback` | `test-strategy` | `threat-modeling`
-   - `relationships.pairs_with` / `overlaps_with`: only skill IDs that exist in `catalog/library-skills/`; omit rather than guess.
+5. **YAML** — read `_skill-template.yaml` from this skill's directory; fill every placeholder. Use ONLY these taxonomy values:
+   - `domains`: `architecture` `codebase-understanding` `coding` `discovery` `documentation` `feedback` `knowledge-graph` `planning` `repository-analysis` `security` `testing` `ui-ux`
+   - `task_types`: `architecture-review` `codebase-navigation` `impact-analysis` `project-onboarding` `pull-request-review` `release-readiness` `relationship-discovery` `skill-feedback` `test-strategy` `threat-modeling`
+   - `relationships`: only IDs that exist in `catalog/library-skills/`; omit rather than guess.
+   Hold the completed YAML in memory.
 
-6. **GitHub PR** — run each as bash:
-   a. `gh auth status -h github.com 2>/dev/null` — if non-zero, print YAML as code block and say "Run `! gh auth login` to submit automatically." Stop.
-   b. Capture: `GH_USER=$(GH_HOST=github.com gh api /user | jq -r .login)` · `DATE=$(date +%Y-%m-%d)` · `BRANCH=skill/<skill-id>-$(date +%Y%m%d%H%M%S)` · `REPO=lindblomstefan/skills-library` · `YAML_PATH=catalog/library-skills/<skill-id>.yaml` · `OVERVIEW_PATH=.claude/skills/skills-library/references/catalog-overview.md`
-   c. Fork: `gh repo fork "$REPO" --clone=false --remote=false 2>/dev/null; true`
-   d. Branch: get `DEFAULT_SHA` via `gh api "repos/${REPO}/git/refs/heads/main" --jq .object.sha`; create ref on fork at that SHA.
-   e. PUT YAML: base64-encode content; PUT to `repos/${GH_USER}/skills-library/contents/${YAML_PATH}` on `$BRANCH` (new file — no sha field).
-   f. PUT catalog-overview: fetch from upstream, get sha+content, decode, append new skill line, re-encode; PUT back to fork branch with sha.
-   g. `PR_URL=$(gh pr create --repo "$REPO" --title "skill: add <skill-id> — $DATE (@$GH_USER)" --body "Adds **<skill-id>** as a candidate skill.\n\nSubmitted by @$GH_USER via the skills-library onboarding flow." --head "${GH_USER}:${BRANCH}" --base main)`
-   h. Confirm: "Done — <skill-id> submitted: $PR_URL. It will merge automatically and be available to all users on their next update."
+6. **GitHub PR** — run in as few bash calls as possible:
+
+   **Call 1 — setup:** auth check + capture all vars in one script. If auth fails, print YAML as code block, say "Run `! gh auth login` to submit automatically." and stop.
+   ```
+   gh auth status -h github.com 2>/dev/null || exit 1
+   GH_USER=$(GH_HOST=github.com gh api /user | jq -r .login)
+   DATE=$(date +%Y-%m-%d)
+   BRANCH=skill/<skill-id>-$(date +%Y%m%d%H%M%S)
+   REPO=lindblomstefan/skills-library
+   gh repo fork "$REPO" --clone=false --remote=false 2>/dev/null; true
+   DEFAULT_SHA=$(GH_HOST=github.com gh api "repos/${REPO}/git/refs/heads/main" --jq .object.sha)
+   GH_HOST=github.com gh api "repos/${GH_USER}/skills-library/git/refs" -X POST -f ref="refs/heads/${BRANCH}" -f sha="$DEFAULT_SHA"
+   ```
+
+   **Call 2 — PUT YAML:** base64-encode the completed YAML; PUT to `repos/${GH_USER}/skills-library/contents/catalog/library-skills/<skill-id>.yaml` on `$BRANCH` (new file — no sha field).
+
+   **Call 3 — update overview + open PR:** fetch upstream catalog-overview.md, extract sha and content (`jq -r .content | base64 -d`), append the skill line, re-encode, PUT to fork branch with sha; then `gh pr create` and capture `$PR_URL`.
+
+   Confirm: "Done — submitted: $PR_URL. It will merge automatically."
