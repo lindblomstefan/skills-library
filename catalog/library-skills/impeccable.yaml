@@ -1,0 +1,133 @@
+id: impeccable
+name: Impeccable
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: skills-library-onboarding
+proposed_at: 2026-09-06
+summary: Design language skill that installs a principled, opinionated design vocabulary into the AI harness. Reduces generic output by teaching the agent to reason about craft, visual hierarchy, and design intent rather than pattern-matching to safe defaults.
+source:
+  type: external-skill
+  url: https://github.com/pbakaus/impeccable
+  license: clear
+  license_spdx: Apache-2.0
+  redistribution: permitted
+  modification_allowed: permitted
+  maintainer: external
+  version_or_commit: latest
+  documentation: https://github.com/pbakaus/impeccable#readme
+  dependencies: []
+  copied_assets: []
+domains:
+  - ui-ux
+  - coding
+task_types:
+  - project-onboarding
+  - architecture-review
+use_when:
+  - Starting a new product and wanting the AI to make considered design decisions, not safe defaults.
+  - The agent keeps producing generic layouts, predictable color schemes, or formulaic component hierarchies.
+  - Needing a shared design language between the user and agent without writing it from scratch.
+  - Prototyping where craft and visual distinction matter from the first iteration.
+do_not_use_when:
+  - The project already has a locked, established design system -- impeccable may conflict.
+  - The task is backend-only with no UI surface.
+  - Strict brand compliance leaves no room for stylistic interpretation.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: 2026-09-06
+      tested_by: skills-library
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Pure prompt-based skill -- no external dependencies, no network calls.
+      known_gaps: []
+  tags:
+    - status:candidate
+    - runtime:claude-code
+distribution:
+  install:
+    type: claude-skill
+    command: claude skills install https://github.com/pbakaus/impeccable
+  invoke:
+    command: /impeccable or describe the design challenge
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - new product design
+    - UI prototyping
+    - design system creation
+    - visual quality improvement
+    - reducing AI-slop output in design work
+  caution_for:
+    - projects with strict existing brand guidelines
+    - compliance-driven design contexts
+  not_recommended_for:
+    - backend-only tasks
+    - data pipeline work
+  example_prompts:
+    - Design a landing page for a creative agency.
+    - The UI feels too generic -- apply design principles to improve it.
+    - Build a dashboard that looks considered, not templated.
+    - What visual hierarchy would work best for this onboarding flow?
+  keywords:
+    - design
+    - ui
+    - ux
+    - craft
+    - visual hierarchy
+    - design language
+    - impeccable
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Apache-2.0 license confirmed. 65k+ GitHub stars. Created by pbakaus (veteran product designer).
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Pure prompt skill -- no data leaves the local context.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-09-06
+  next_review: 2026-10-06
+  replacement_watch: false
+  deprecation_criteria:
+    - Repo abandoned or design language guidance becomes significantly outdated
+decision:
+  outcome: candidate
+  rationale: High-signal design language skill with 65k stars and Apache-2.0 license. Complements ui-ux-pro-max by focusing on craft and opinionated decision-making over style enumeration. Needs community feedback to validate.
+  decided_by: skills-library-onboarding
+  decided_at: 2026-09-06
+relationships:
+  pairs_with:
+    - ui-ux-pro-max
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with:
+    - ui-ux-pro-max
+  specializes: []
+  generalizes: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: false
+  known_metrics_gaps:
+    - No usage telemetry yet.
+known_limitations:
+  - Opinionated by design -- works best when the user wants strong aesthetic direction, not neutrality.
+  - Coverage depends on pbakaus keeping the design language current with evolving UI trends.
