@@ -20,7 +20,7 @@ Decide everything yourself unless `AskUserQuestion` is specified. If the user de
    ```
    Then ask plain text: "What's your initial take?" If answered, append a `### YYYY-MM-DD` entry to the feedback file and say "One entry added. Two more will validate this skill."
 
-5. **YAML** — read `_skill-template.yaml` from this skill's directory; fill every placeholder. Use ONLY these taxonomy values:
+5. **YAML** — read `_skill-template.yaml` from this skill's directory; fill every placeholder. **Critical: use block-style lists (`- item`) never flow-style (`[item1, item2]`) — the parser rejects flow style.** Use ONLY these taxonomy values:
    - `domains`: `architecture` `codebase-understanding` `coding` `discovery` `documentation` `feedback` `knowledge-graph` `planning` `repository-analysis` `security` `testing` `ui-ux`
    - `task_types`: `architecture-review` `codebase-navigation` `impact-analysis` `project-onboarding` `pull-request-review` `release-readiness` `relationship-discovery` `skill-feedback` `test-strategy` `threat-modeling`
    - `relationships`: only IDs that exist in `catalog/library-skills/`; omit rather than guess.

@@ -1,3 +1,5 @@
+# Fill in every <placeholder>. Use ONLY the taxonomy values listed in onboarding.md step 5.
+# IMPORTANT: use block-style lists (- item) not flow-style ([item1, item2]) — the parser requires it.
 id: <skill-id>
 name: <Human Name>
 catalog_visibility: library
@@ -6,7 +8,7 @@ status: candidate
 stability: stable
 proposed_by: skills-library-onboarding
 proposed_at: <YYYY-MM-DD>
-summary: <One clear sentence — what it does and why it's useful.>
+summary: <One clear sentence — what it does and why it is useful.>
 source:
   type: external-skill
   url: <https://github.com/owner/repo>
@@ -19,31 +21,92 @@ source:
   documentation: <readme-url>
   dependencies: []
   copied_assets: []
-domains: [<see valid list in onboarding.md step 5>]
-task_types: [<see valid list in onboarding.md step 5>]
-use_when: [<scenario 1>, <scenario 2>]
-do_not_use_when: [<scenario>]
+domains:
+  - <valid-domain>
+task_types:
+  - <valid-task-type>
+use_when:
+  - <scenario 1>
+  - <scenario 2>
+do_not_use_when:
+  - <scenario>
 compatibility:
   matrix:
-    - {model_id: claude, runtime_id: claude-code, support: compatible, tested_at: <YYYY-MM-DD>, tested_by: skills-library, runtime_version: local, adapter: none, install_result: pass, invoke_result: pass, permission_notes: <note>, known_gaps: []}
-  tags: [status:candidate, runtime:claude-code]
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: <YYYY-MM-DD>
+      tested_by: skills-library
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: <brief note>
+      known_gaps: []
+  tags:
+    - status:candidate
+    - runtime:claude-code
 distribution:
-  install: {type: claude-skill, command: "claude skills install <url>"}
-  invoke: {command: "/<skill-id> or describe the use case"}
+  install:
+    type: claude-skill
+    command: claude skills install <url>
+  invoke:
+    command: /<skill-id> or describe the use case
   dependencies: []
   required_permissions: []
   required_secrets: []
   network_access: none
 routing:
-  recommend_for: [<kw1>, <kw2>]
+  recommend_for:
+    - <keyword1>
+    - <keyword2>
   caution_for: []
   not_recommended_for: []
-  example_prompts: [<prompt 1>, <prompt 2>]
-  keywords: [<kw1>, <kw2>]
-trust: {level: high, license_state: clear, maintenance_state: active, provenance_notes: <license + star count>}
-risk: {level: low, security: low, privacy: low, compliance: low, data_classification: public, data_handling_notes: <note>}
-freshness: {review_cadence: monthly, last_reviewed: <YYYY-MM-DD>, next_review: <YYYY-MM-DD+1mo>, replacement_watch: false, deprecation_criteria: [Repo abandoned or superseded]}
-decision: {outcome: candidate, rationale: <why added>, decided_by: skills-library-onboarding, decided_at: <YYYY-MM-DD>}
-relationships: {pairs_with: [], replaces: [], replaced_by: [], depends_on: [], conflicts_with: [], overlaps_with: [], specializes: [], generalizes: []}
-metrics_readiness: {usage_signal_available: false, review_signal_available: false, install_signal_available: false, recommendation_signal_available: false, known_metrics_gaps: [No usage telemetry yet.]}
-known_limitations: [<limitation, or remove this line if none>]
+  example_prompts:
+    - <prompt 1>
+    - <prompt 2>
+  keywords:
+    - <keyword1>
+    - <keyword2>
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: <license + star count>
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: <note>
+freshness:
+  review_cadence: monthly
+  last_reviewed: <YYYY-MM-DD>
+  next_review: <YYYY-MM-DD+1mo>
+  replacement_watch: false
+  deprecation_criteria:
+    - Repo abandoned or superseded
+decision:
+  outcome: candidate
+  rationale: <why added>
+  decided_by: skills-library-onboarding
+  decided_at: <YYYY-MM-DD>
+relationships:
+  pairs_with: []
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: false
+  known_metrics_gaps:
+    - No usage telemetry yet.
+known_limitations:
+  - <limitation, or remove this line if none>
