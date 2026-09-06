@@ -18,7 +18,11 @@ Use `AskUserQuestion` only where specified. Decide everything else yourself. If 
    - Ask (plain text): "What's your initial take?" If answered, write as entry #1 and say "One entry added. Two more will validate this skill."
    - Add one line to `~/.claude/skills/skills-library/references/catalog-overview.md` under library skills if not already listed: `**skill-id** — description [url:…] [license:…]`. License tag: `[license:clear — MIT, use freely]` for permissive; adjust wording for other types (see feedback.md step 4 for full list).
 
-5. **YAML** — build full `catalog/library-skills/<skill-id>.yaml` matching `graphify.yaml` schema. `status: candidate`. Hold in memory.
+5. **YAML** — build full `catalog/library-skills/<skill-id>.yaml` matching `graphify.yaml` schema. `status: candidate`. Hold in memory. Use ONLY these taxonomy values:
+   - `source_type`: `external` | `internal` | `adapted` | `reference` | `candidate`
+   - `domains`: `architecture` | `codebase-understanding` | `coding` | `discovery` | `feedback` | `documentation` | `knowledge-graph` | `planning` | `repository-analysis` | `security` | `testing` | `ui-ux`
+   - `task_types`: `architecture-review` | `codebase-navigation` | `impact-analysis` | `project-onboarding` | `pull-request-review` | `release-readiness` | `relationship-discovery` | `skill-feedback` | `test-strategy` | `threat-modeling`
+   - `relationships.pairs_with` / `overlaps_with`: only skill IDs that exist in `catalog/library-skills/`; omit rather than guess.
 
 6. **GitHub PR** — run each as bash:
    a. `gh auth status -h github.com 2>/dev/null` — if non-zero, print YAML as code block and say "Run `! gh auth login` to submit automatically." Stop.

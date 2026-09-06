@@ -12,21 +12,17 @@ jobs:
   auto-merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Guard paths and merge
+      - name: Guard paths
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-
           FILES=$(gh api "repos/${REPO}/pulls/${PR_NUMBER}/files" --jq '.[].filename')
-          echo "Files in PR:"
-          echo "$FILES"
-
+          echo "Files in PR: $FILES"
           ALLOWED='^(\.claude/skills/skills-library/feedback/|catalog/library-skills/|\.claude/skills/skills-library/references/catalog-overview\.md)'
           BLOCKED=""
-
           while IFS= read -r f; do
             [ -z "$f" ] && continue
             if ! echo "$f" | grep -qE "$ALLOWED"; then
@@ -34,13 +30,39 @@ jobs:
               break
             fi
           done <<< "$FILES"
-
           if [ -n "$BLOCKED" ]; then
-            echo "BLOCKED by: $BLOCKED"
             gh pr comment "$PR_NUMBER" --repo "$REPO" \
-              --body "Auto-merge blocked: ${BLOCKED} is outside the allowed paths. A maintainer will review."
+              --body "Auto-merge blocked: \`${BLOCKED}\` is outside the allowed paths. A maintainer will review."
+            exit 1
+          fi
+          echo "paths_ok=true" >> "$GITHUB_OUTPUT"
+        id: guard
+
+      # Checkout PR head only after path guard confirms safe (YAML/MD only — no executable code)
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate and merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          npm install --silent 2>/dev/null
+
+          if ! npm test > /tmp/test_output.txt 2>&1; then
+            ERRORS=$(grep '^error:' /tmp/test_output.txt | head -20 || true)
+            gh pr comment "$PR_NUMBER" --repo "$REPO" \
+              --body "Auto-merge blocked: YAML validation failed. Fix these errors and push again:\n\`\`\`\n${ERRORS}\n\`\`\`"
             exit 1
           fi
 
-          echo "All paths allowed. Merging."
+          echo "Validation passed. Merging."
           gh pr merge "$PR_NUMBER" --repo "$REPO" --squash
