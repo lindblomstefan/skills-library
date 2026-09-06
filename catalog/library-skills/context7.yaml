@@ -21,12 +21,10 @@ source:
   copied_assets: []
 domains:
   - documentation
-  - context-management
-  - developer-tooling
+  - coding
 task_types:
-  - library-documentation-lookup
-  - api-reference-resolution
-  - version-specific-guidance
+  - codebase-navigation
+  - project-onboarding
 use_when:
   - Working with any library where Claude may use outdated or hallucinated API docs.
   - Upgrading a dependency and needing accurate migration guidance.

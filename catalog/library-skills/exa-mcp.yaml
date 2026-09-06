@@ -20,14 +20,11 @@ source:
   dependencies: []
   copied_assets: []
 domains:
-  - web-search
-  - information-retrieval
-  - developer-tooling
+  - discovery
+  - coding
 task_types:
-  - web-search
-  - technical-documentation-lookup
-  - similar-content-discovery
-  - full-page-crawl
+  - codebase-navigation
+  - project-onboarding
 use_when:
   - Claude needs current web information not in its training data.
   - Searching for technical docs, migration guides, or library changelogs.
@@ -120,13 +117,11 @@ decision:
 relationships:
   pairs_with:
     - context7
-    - firecrawl
   replaces: []
   replaced_by: []
   depends_on: []
   conflicts_with: []
-  overlaps_with:
-    - firecrawl
+  overlaps_with: []
   specializes: []
   generalizes: []
 metrics_readiness:

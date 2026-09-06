@@ -20,14 +20,11 @@ source:
   dependencies: []
   copied_assets: []
 domains:
-  - multi-agent-orchestration
-  - developer-tooling
-  - parallel-development
+  - coding
+  - architecture
 task_types:
-  - parallel-agent-orchestration
-  - git-worktree-management
-  - agent-fleet-coordination
-  - remote-agent-runtime
+  - architecture-review
+  - codebase-navigation
 use_when:
   - Running multiple coding agents in parallel on independent modules or tasks.
   - Large refactors or features that benefit from concurrent agent work across git worktrees.
