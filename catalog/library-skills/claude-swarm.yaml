@@ -19,8 +19,12 @@ source:
   documentation: https://github.com/affaan-m/claude-swarm#readme
   dependencies: []
   copied_assets: []
-domains: [coding, architecture]
-task_types: [architecture-review, codebase-navigation]
+domains:
+  - coding
+  - architecture
+task_types:
+  - architecture-review
+  - codebase-navigation
 use_when:
   - Running complex tasks that benefit from parallel Claude Code agents.
   - Decomposing a large feature or refactor across independent workstreams.
@@ -30,30 +34,94 @@ do_not_use_when:
   - Single-agent tasks with no parallelism benefit.
 compatibility:
   matrix:
-    - {model_id: claude, runtime_id: claude-code, support: compatible, tested_at: 2026-09-06, tested_by: skills-library, runtime_version: local, adapter: none, install_result: pass, invoke_result: pass, permission_notes: Requires Claude Code and spawns sub-agents., known_gaps: []}
-  tags: [status:candidate, runtime:claude-code]
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: 2026-09-06
+      tested_by: skills-library
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Requires Claude Code and spawns sub-agents.
+      known_gaps: []
+  tags:
+    - status:candidate
+    - runtime:claude-code
 distribution:
-  install: {type: claude-skill, command: "claude skills install https://github.com/affaan-m/claude-swarm"}
-  invoke: {command: "/claude-swarm or describe the multi-agent task"}
+  install:
+    type: claude-skill
+    command: claude skills install https://github.com/affaan-m/claude-swarm
+  invoke:
+    command: /claude-swarm or describe the multi-agent task
   dependencies: []
   required_permissions: []
   required_secrets: []
   network_access: none
 routing:
-  recommend_for: [multi-agent, orchestration, parallel agents, swarm, task decomposition]
+  recommend_for:
+    - multi-agent
+    - orchestration
+    - parallel agents
+    - swarm
+    - task decomposition
   caution_for: []
-  not_recommended_for: [single-agent tasks, tasks requiring shared state]
+  not_recommended_for:
+    - single-agent tasks
+    - tasks requiring shared state
   example_prompts:
     - Decompose this feature into parallel agents and coordinate them.
     - Run a multi-agent swarm to tackle this large refactor.
     - Show me a live view of my agents working in parallel.
-  keywords: [swarm, multi-agent, orchestration, claude-code, parallel, decompose]
-trust: {level: high, license_state: clear, maintenance_state: active, provenance_notes: "MIT license. 346 GitHub stars. Hackathon project."}
-risk: {level: low, security: low, privacy: low, compliance: low, data_classification: public, data_handling_notes: Orchestrates local Claude Code agents — no data sent externally.}
-freshness: {review_cadence: monthly, last_reviewed: 2026-09-06, next_review: 2026-10-06, replacement_watch: false, deprecation_criteria: [Repo abandoned or superseded by official Claude multi-agent tooling]}
-decision: {outcome: candidate, rationale: "MIT license, clear multi-agent use case for Claude Code users.", decided_by: skills-library-onboarding, decided_at: 2026-09-06}
-relationships: {pairs_with: [orca], replaces: [], replaced_by: [], depends_on: [], conflicts_with: [], overlaps_with: [orca], specializes: [], generalizes: []}
-metrics_readiness: {usage_signal_available: false, review_signal_available: false, install_signal_available: false, recommendation_signal_available: false, known_metrics_gaps: [No usage telemetry yet.]}
+  keywords:
+    - swarm
+    - multi-agent
+    - orchestration
+    - claude-code
+    - parallel
+    - decompose
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT license. 346 GitHub stars. Hackathon project.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Orchestrates local Claude Code agents — no data sent externally.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-09-06
+  next_review: 2026-10-06
+  replacement_watch: false
+  deprecation_criteria:
+    - Repo abandoned or superseded by official Claude multi-agent tooling
+decision:
+  outcome: candidate
+  rationale: MIT license, clear multi-agent use case for Claude Code users.
+  decided_by: skills-library-onboarding
+  decided_at: 2026-09-06
+relationships:
+  pairs_with:
+    - orca
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with:
+    - orca
+  specializes: []
+  generalizes: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: false
+  known_metrics_gaps:
+    - No usage telemetry yet.
 known_limitations:
   - 346 stars — smaller community than Orca; may have rougher edges.
   - Hackathon-origin project — production readiness unknown.
