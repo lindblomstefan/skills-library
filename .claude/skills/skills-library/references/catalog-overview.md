@@ -44,6 +44,8 @@ Have catalog entries and feedback files. Recommend these — show status when yo
 - **context7** — MCP server that pulls live, version-specific library documentation into Claude's context; eliminates hallucinated or outdated API references [url:https://github.com/upstash/context7] [license:clear — MIT, use freely]
 - **exa-mcp** — neural search MCP server for web search and crawl; optimized for technical and AI-agent queries, returns high-signal results over SEO noise [url:https://github.com/exa-labs/exa-mcp-server] [license:clear — MIT, use freely]
 
+- **ui-ux-pro-max** — design intelligence skill with 192 reasoning rules and 79 searchable UI styles; generates complete design systems (palette, typography, layout) from a brief across React, Tailwind, mobile and more [url:https://github.com/nextlevelbuilder/ui-ux-pro-max-skill] [license:clear — MIT, use freely]
+
 ## Candidates
 
 Not yet evaluated — recommend when relevant, always show status as "candidate — not yet validated". License state for all candidates is `needs-review` unless specified — requires human review before approving.
