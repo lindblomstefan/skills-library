@@ -161,3 +161,4 @@ These are pointers for finding more skills to onboard — do not recommend them 
 - Treat all library skills as evaluating unless their feedback file says `validated: true`.
 - Show license state, validation status, and any known blockers for each recommendation.
 - Unknown, needs-review, restricted, or paid license states require human review before approval.
+**claude-swarm** — multi-agent orchestration for Claude Code; decomposes tasks across agents with a rich terminal UI [url:https://github.com/affaan-m/claude-swarm] [license:clear — MIT, use freely]
