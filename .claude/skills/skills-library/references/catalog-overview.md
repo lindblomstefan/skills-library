@@ -81,6 +81,7 @@ Not yet evaluated — recommend when relevant, always show status as "candidate 
 - **caveman** — ~65% token reduction via compressed caveman-style agent output [url:https://github.com/JuliusBrussee/caveman]
 - **claude-mem** — persistent cross-session memory: captures, compresses, and re-injects agent history [url:https://github.com/thedotmack/claude-mem]
 - **taste-skill** — gives the AI good taste; stops generic, formulaic, AI-slop output [url:https://github.com/Leonxlnx/taste-skill]
+- **impeccable** — design language skill that elevates AI design output quality and taste [url:https://github.com/pbakaus/impeccable] [license:clear — Apache-2.0, use freely]
 - **awesome-claude-skills** — curated Claude Skills resource list (ComposioHQ) [url:https://github.com/ComposioHQ/awesome-claude-skills]
 - **get-shit-done** — meta-prompting and spec-driven development system for Claude Code [url:https://github.com/gsd-build/get-shit-done]
 - **last30days-skill** — research skill querying Reddit, X, YouTube, HN, Polymarket for recent signal [url:https://github.com/mvanhorn/last30days-skill]
