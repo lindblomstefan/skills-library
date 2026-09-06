@@ -42,6 +42,6 @@ Decide everything yourself unless `AskUserQuestion` is specified. If the user de
 
    **Call 2 — PUT YAML:** base64-encode the completed YAML; PUT to `repos/${GH_USER}/skills-library/contents/catalog/library-skills/<skill-id>.yaml` on `$BRANCH` (new file — no sha field).
 
-   **Call 3 — update overview + open PR:** fetch upstream catalog-overview.md, extract sha and content (`jq -r .content | base64 -d`), append the skill line, re-encode, PUT to fork branch with sha; then `gh pr create` and capture `$PR_URL`.
+   **Call 3 — update overview + open PR:** fetch upstream catalog-overview.md using two separate `--jq` calls to avoid multiline JSON parse errors: `OV_SHA=$(gh api "repos/${REPO}/contents/${OVERVIEW_PATH}" --jq .sha)` and `OV_CONTENT=$(gh api "repos/${REPO}/contents/${OVERVIEW_PATH}" --jq .content | base64 -d)`. Append skill line, re-encode, PUT to fork branch with sha. Then `gh pr create` and capture `$PR_URL`.
 
    Confirm: "Done — submitted: $PR_URL. It will merge automatically."
