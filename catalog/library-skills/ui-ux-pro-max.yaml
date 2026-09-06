@@ -1,0 +1,140 @@
+id: ui-ux-pro-max
+name: UI UX Pro Max
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: skills-library-onboarding
+proposed_at: 2026-09-06
+summary: Design intelligence skill with 192 reasoning rules and 79 searchable UI styles. Generates complete design systems (palette, typography, layout patterns, component guidance) from a plain-English brief. Works across React, Tailwind, mobile UI, and more.
+source:
+  type: external-skill
+  url: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+  license: clear
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: permitted
+  maintainer: external
+  version_or_commit: latest
+  documentation: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill#readme
+  dependencies: []
+  copied_assets: []
+domains:
+  - ui-design
+  - design-systems
+  - frontend-development
+task_types:
+  - design-system-generation
+  - ui-style-selection
+  - component-design
+  - landing-page-design
+  - mobile-ui-design
+use_when:
+  - Starting a new UI and needing a coherent design system quickly.
+  - Choosing a visual style for a product (SaaS, landing page, mobile app).
+  - Generating palette, typography, and layout from a one-sentence brief.
+  - Reducing back-and-forth on aesthetic decisions with a shared style vocabulary.
+do_not_use_when:
+  - The project already has a locked design system to follow.
+  - The task is backend-only with no UI component.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: 2026-09-06
+      tested_by: skills-library
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Pure prompt skill — no external dependencies or network calls.
+      known_gaps: []
+  tags:
+    - status:candidate
+    - runtime:claude-code
+distribution:
+  install:
+    type: claude-skill
+    command: claude skills install https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+  invoke:
+    command: /ui-ux-pro-max or describe the design brief
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - new UI projects
+    - design system creation
+    - landing page design
+    - SaaS product UI
+    - mobile UI design
+    - style selection
+  caution_for:
+    - projects with strict existing design systems
+  not_recommended_for:
+    - backend-only tasks
+    - data pipeline work
+  example_prompts:
+    - Generate a design system for a wellness SaaS app.
+    - What UI style fits a fintech mobile app targeting young professionals?
+    - Give me a complete palette and typography for a luxury e-commerce site.
+    - Design the component structure for a dashboard with soft UI style.
+  keywords:
+    - ui
+    - ux
+    - design
+    - design system
+    - palette
+    - typography
+    - tailwind
+    - react
+    - mobile
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: MIT license. 125k GitHub stars. Active community with multilingual docs.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Pure prompt skill — no data leaves the local context.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-09-06
+  next_review: 2026-10-06
+  replacement_watch: false
+  deprecation_criteria:
+    - Repo abandoned or style rules become significantly outdated
+decision:
+  outcome: candidate
+  rationale: Highly popular design skill with structured reasoning rules. MIT license, 125k stars. Needs community feedback to validate.
+  decided_by: skills-library-onboarding
+  decided_at: 2026-09-06
+relationships:
+  pairs_with:
+    - frontend-design
+    - apple-design
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with:
+    - frontend-design
+    - apple-design
+  specializes: []
+  generalizes: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: false
+  known_metrics_gaps:
+    - No usage telemetry yet.
+known_limitations:
+  - Style recommendations are opinionated — best used as a starting point, not gospel.
+  - 79 style vocabulary is strong for common categories; niche or highly specialized aesthetics may need manual refinement.
