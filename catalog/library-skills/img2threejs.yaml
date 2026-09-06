@@ -1,0 +1,133 @@
+id: img2threejs
+name: img2threejs
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: skills-library-onboarding
+proposed_at: 2026-09-06
+summary: Rebuilds any object from a reference image as a code-only, procedural, quality-gated, animation-ready Three.js model. Token-efficient image-to-3D pipeline with built-in quality gates that catch geometry mismatches before output.
+source:
+  type: external-skill
+  url: https://github.com/img2threejs/img2threejs
+  license: clear
+  license_spdx: Apache-2.0
+  redistribution: permitted
+  modification_allowed: permitted
+  maintainer: external
+  version_or_commit: latest
+  documentation: https://github.com/img2threejs/img2threejs#readme
+  dependencies: []
+  copied_assets: []
+domains:
+  - coding
+  - ui-ux
+task_types:
+  - project-onboarding
+  - codebase-navigation
+use_when:
+  - Converting a product photo or reference image into a 3D model for web use.
+  - Building animation-ready Three.js objects without manual geometry work.
+  - Prototyping 3D UI components or e-commerce configurators from existing images.
+  - Generating procedural Three.js code with no external texture dependencies.
+do_not_use_when:
+  - The target is a non-web 3D format (GLTF export, Blender, Unity, etc.).
+  - Photorealistic rendering is required — output is procedural code, not mesh capture.
+  - The input image is too ambiguous to infer 3D structure from.
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: 2026-09-06
+      tested_by: skills-library
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Pure prompt skill — no external APIs or network calls required.
+      known_gaps: []
+  tags:
+    - status:candidate
+    - runtime:claude-code
+distribution:
+  install:
+    type: claude-skill
+    command: claude skills install https://github.com/img2threejs/img2threejs
+  invoke:
+    command: /img2threejs or describe the object to model
+  dependencies: []
+  required_permissions: []
+  required_secrets: []
+  network_access: none
+routing:
+  recommend_for:
+    - image-to-3D conversion
+    - Three.js model generation
+    - procedural 3D for web
+    - e-commerce 3D configurators
+    - animation-ready WebGL models
+  caution_for:
+    - tasks where the source image has ambiguous depth or structure
+  not_recommended_for:
+    - non-web 3D formats
+    - photorealistic mesh capture
+    - tasks not involving Three.js or WebGL
+  example_prompts:
+    - Convert this product photo into a Three.js 3D model.
+    - Build an animation-ready Three.js object from this reference image.
+    - Generate procedural Three.js geometry for this lamp image.
+    - Create a WebGL-ready model from this reference photo for an e-commerce configurator.
+  keywords:
+    - threejs
+    - 3d
+    - image-to-3d
+    - procedural
+    - webgl
+    - animation
+    - three.js
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: Apache-2.0 license. 15k GitHub stars. Dedicated organization account.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: public
+  data_handling_notes: Pure prompt skill — no data leaves the local context.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-09-06
+  next_review: 2026-10-06
+  replacement_watch: false
+  deprecation_criteria:
+    - Repo abandoned or Three.js API changes break the skill's output patterns
+decision:
+  outcome: candidate
+  rationale: Novel image-to-3D skill with clear license and strong star count. Pure prompt, zero dependencies. Needs community feedback to validate.
+  decided_by: skills-library-onboarding
+  decided_at: 2026-09-06
+relationships:
+  pairs_with:
+    - ui-ux-pro-max
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: false
+  known_metrics_gaps:
+    - No usage telemetry yet.
+known_limitations:
+  - Procedural output — accuracy depends on how well the 3D structure can be inferred from a 2D image.
+  - Not a photogrammetry or mesh-capture tool; output is code-first geometry, not a scan.
+  - Complex organic shapes may need manual refinement after generation.

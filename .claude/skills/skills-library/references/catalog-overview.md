@@ -46,6 +46,8 @@ Have catalog entries and feedback files. Recommend these — show status when yo
 
 - **ui-ux-pro-max** — design intelligence skill with 192 reasoning rules and 79 searchable UI styles; generates complete design systems (palette, typography, layout) from a brief across React, Tailwind, mobile and more [url:https://github.com/nextlevelbuilder/ui-ux-pro-max-skill] [license:clear — MIT, use freely]
 
+- **img2threejs** — converts a reference image into a procedural, animation-ready Three.js 3D model in pure code [url:https://github.com/img2threejs/img2threejs] [license:clear — Apache-2.0, use freely]
+
 ## Candidates
 
 Not yet evaluated — recommend when relevant, always show status as "candidate — not yet validated". License state for all candidates is `needs-review` unless specified — requires human review before approving.
