@@ -1,0 +1,143 @@
+id: orca
+name: Orca
+catalog_visibility: library
+source_type: external
+status: candidate
+stability: stable
+proposed_by: skills-library-onboarding
+proposed_at: 2026-09-06
+summary: Agent Development Environment (ADE) for orchestrating fleets of parallel coding agents across git worktrees. Run Claude Code, Codex, Cursor Agent, and others simultaneously using your own subscription. Available on desktop, mobile, and remote runtime.
+source:
+  type: external-tool
+  url: https://github.com/stablyai/orca
+  license: clear
+  license_spdx: MIT
+  redistribution: permitted
+  modification_allowed: permitted
+  maintainer: external
+  version_or_commit: latest
+  documentation: https://github.com/stablyai/orca#readme
+  dependencies: []
+  copied_assets: []
+domains:
+  - multi-agent-orchestration
+  - developer-tooling
+  - parallel-development
+task_types:
+  - parallel-agent-orchestration
+  - git-worktree-management
+  - agent-fleet-coordination
+  - remote-agent-runtime
+use_when:
+  - Running multiple coding agents in parallel on independent modules or tasks.
+  - Large refactors or features that benefit from concurrent agent work across git worktrees.
+  - Monitoring and directing agents from mobile while desktop runs.
+  - Using your own Claude Code or Codex subscription rather than a shared pool.
+do_not_use_when:
+  - Single-agent tasks with no parallelism benefit.
+  - The user does not want to connect their own subscription key.
+  - The task requires agents to share mutable state (worktree model assumes isolation).
+compatibility:
+  matrix:
+    - model_id: claude
+      runtime_id: claude-code
+      support: compatible
+      tested_at: 2026-09-06
+      tested_by: skills-library
+      runtime_version: local
+      adapter: none
+      install_result: pass
+      invoke_result: pass
+      permission_notes: Requires connecting your own Claude Code subscription. Manages git worktrees automatically.
+      known_gaps: []
+  tags:
+    - status:candidate
+    - runtime:claude-code
+distribution:
+  install:
+    type: desktop-app
+    command: see https://github.com/stablyai/orca for install
+  invoke:
+    command: orca
+  dependencies: []
+  required_permissions:
+    - git-worktrees
+    - read-repository
+    - write-repository
+  required_secrets:
+    - CLAUDE_CODE_SUBSCRIPTION or OPENAI_KEY (user's own)
+  network_access: outbound
+routing:
+  recommend_for:
+    - parallel agent work
+    - large refactors
+    - multi-module features
+    - agent fleet management
+    - running agents on mobile
+  caution_for:
+    - tasks where agent isolation (worktrees) causes friction
+    - teams without individual subscriptions
+  not_recommended_for:
+    - single-agent sequential tasks
+    - tasks requiring shared mutable state across agents
+  example_prompts:
+    - Run four agents in parallel on these four modules.
+    - I want to work on multiple features simultaneously with separate agents.
+    - How do I orchestrate a fleet of Claude Code agents?
+    - Can I monitor my agents from my phone?
+  keywords:
+    - parallel
+    - agents
+    - fleet
+    - worktree
+    - orchestration
+    - orca
+    - ade
+    - multi-agent
+trust:
+  level: high
+  license_state: clear
+  maintenance_state: active
+  provenance_notes: YC-backed, 62k GitHub stars. MIT license confirmed via GitHub API.
+risk:
+  level: low
+  security: low
+  privacy: low
+  compliance: low
+  data_classification: internal
+  data_handling_notes: Agents run with the user's own subscription key; no code is sent to Stably servers beyond orchestration metadata.
+freshness:
+  review_cadence: monthly
+  last_reviewed: 2026-09-06
+  next_review: 2026-10-06
+  replacement_watch: false
+  deprecation_criteria:
+    - Stably discontinues Orca
+    - A clearly superior parallel-agent ADE replaces it
+decision:
+  outcome: candidate
+  rationale: High-signal tool for serious multi-agent workflows. MIT license, YC-backed, 62k stars. Needs community feedback entries to validate.
+  decided_by: skills-library-onboarding
+  decided_at: 2026-09-06
+relationships:
+  pairs_with:
+    - graphify
+    - context7
+  replaces: []
+  replaced_by: []
+  depends_on: []
+  conflicts_with: []
+  overlaps_with: []
+  specializes: []
+  generalizes: []
+metrics_readiness:
+  usage_signal_available: false
+  review_signal_available: false
+  install_signal_available: false
+  recommendation_signal_available: false
+  known_metrics_gaps:
+    - No usage telemetry yet.
+known_limitations:
+  - Requires the user's own coding agent subscription (Claude Code, Codex, etc.).
+  - Worktree isolation means agents cannot share live state — tasks must be decomposable.
+  - Desktop/mobile app install required; no CLI-only mode documented yet.
